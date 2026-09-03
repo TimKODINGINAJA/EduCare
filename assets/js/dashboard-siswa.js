@@ -3417,10 +3417,29 @@ function loadUser(initialUser, initialSeed) {
 // progress.json siswa) ke dalam data lokal, tanpa menimpa/mengurangi
 // progres yang sudah lebih maju di sisi klien.
 function syncRealProgress(initialSeed) {
-  (initialSeed.enrolledCourses || []).forEach((seedEc) => {
+  const serverEnrolled = initialSeed.enrolledCourses || [];
+
+  // Server (progress.json) adalah sumber kebenaran untuk kursus guru
+  // (id >= 5000, yaitu "materi" buatan guru). Kursus semacam ini TIDAK
+  // pernah mendapat progres dari sisi klien (buka materi lewat
+  // mark-materi.php yang langsung menulis ke server), jadi kumpulan
+  // kursus guru di data lokal harus PERSIS mengikuti seed server.
+  // Ini mencegah data basi dari akun lain di browser yang sama ikut
+  // "keingat" sebagai materi selesai untuk akun baru (yang seed-nya
+  // kosong) — masalah "Kursus Saya terisi materi padahal akun baru".
+  const guruSeedIds = new Set(
+    serverEnrolled.map((e) => e.id).filter((id) => id >= 5000),
+  );
+  UD.enrolledCourses = UD.enrolledCourses.filter(
+    (e) => e.id < 5000 || guruSeedIds.has(e.id),
+  );
+
+  serverEnrolled.forEach((seedEc) => {
     const existing = UD.enrolledCourses.find((e) => e.id === seedEc.id);
     if (!existing) {
-      UD.enrolledCourses.push(seedEc);
+      // Kursus bawaan (id < 5000) yang belum ada di lokal tetap ditambah;
+      // kursus guru sudah terfilter di atas sehingga sudah pasti belum ada.
+      if (seedEc.id < 5000) UD.enrolledCourses.push(seedEc);
       return;
     }
     existing.progress = Math.max(existing.progress, seedEc.progress);
@@ -3431,6 +3450,15 @@ function syncRealProgress(initialSeed) {
       ]),
     );
   });
+
+  // Bersihkan daftar kursus tuntas & sertifikat yang menunjuk kursus guru
+  // yang sudah tidak ada di seed (data basi / akun baru).
+  UD.completedCourses = UD.completedCourses.filter(
+    (id) => id < 5000 || guruSeedIds.has(id),
+  );
+  UD.certificates = UD.certificates.filter(
+    (cert) => (cert.courseId ?? cert.id ?? 0) < 5000 || guruSeedIds.has(cert.courseId ?? cert.id ?? 0),
+  );
 
   (initialSeed.completedCourses || []).forEach((id) => {
     if (!UD.completedCourses.includes(id)) UD.completedCourses.push(id);
@@ -4100,6 +4128,17 @@ function enrollOrOpen(courseId) {
 // belum selesai), lalu membuka materi yang sama seperti di "Materi
 // Pembelajaran" (lewat enrollOrOpen) supaya tampilannya konsisten.
 function continueLearning() {
+  // Akun baru yang belum pernah membuka materi / mendaftar kursus apa pun
+  // tidak punya "lanjutan". Cukup arahkan ke daftar Materi, jangan sampai
+  // terkesan seolah-olah sudah mengklik/membaca suatu materi.
+  const hasStarted =
+    (Array.isArray(UD.enrolledCourses) && UD.enrolledCourses.length > 0) ||
+    (Array.isArray(MATERI) && MATERI.some((m) => m.done));
+  if (!hasStarted) {
+    goDash("materi");
+    return;
+  }
+
   // Prioritas utama: materi pembelajaran yang BELUM SELESAI dibaca.
   // Ini yang dimaksud "Lanjut Belajar" — bukan kursus yang sudah 100%,
   // tapi materi asli buatan guru yang masih perlu dipelajari siswa.
@@ -5698,6 +5737,9 @@ let materiGroupFilter = "all";
 let materiSearchTerm = "";
 let SEED_GURU_QUIZZES = [];
 let SEED_COURSE_QUIZ = {};
+let activeMateriId = null;
+let materiScrollHandler = null;
+let materiLastScrollY = 0;
 
 function loadMateri(materiList) {
   MATERI = Array.isArray(materiList) ? materiList : [];
@@ -5744,6 +5786,11 @@ function renderMateriList() {
   if (detailView) {
     detailView.style.display = "none";
     detailView.innerHTML = "";
+  }
+  activeMateriId = null;
+  if (materiScrollHandler) {
+    window.removeEventListener("scroll", materiScrollHandler);
+    materiScrollHandler = null;
   }
 
   const el = document.getElementById("materiGrid");
@@ -5796,18 +5843,16 @@ function openMateriDetail(id) {
   if (!dv) return;
   dv.style.display = "";
 
-  if (!m.done) {
-    const csrf = (typeof CU !== "undefined" && CU && CU.csrf) ? CU.csrf : "";
-    fetch("mark-materi.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: "category=" + encodeURIComponent(m.category) + "&csrf_token=" + encodeURIComponent(csrf),
-    }).catch(() => {});
-    m.done = true;
-    addXP(20, dashT("siswa.chrome.materi.openedXp", 'Membuka materi "{title}"', { title: m.title }));
-    addActivity(dashT("siswa.chrome.materi.openedXp", 'Membuka materi "{title}"', { title: m.title }), "📘");
-    addNotif("📘", dashT("siswa.chrome.materi.openedNotifTitle", "Materi Dipelajari"), dashT("siswa.chrome.materi.openedNotifMsg", 'Kamu membuka materi "{title}".', { title: m.title }));
-    saveUD();
+  // Jangan tandai materi "selesai" saat baru dibuka. Materi baru masuk ke
+  // "Kursus Saya" / badge selesai setelah siswa benar-benar membaca sampai
+  // akhir (scroll ke bagian bawah konten) — cek di checkMateriScrollComplete.
+  activeMateriId = id;
+  materiLastScrollY = window.scrollY;
+  if (!materiScrollHandler) {
+    materiScrollHandler = function () {
+      checkMateriScrollComplete();
+    };
+    window.addEventListener("scroll", materiScrollHandler, { passive: true });
   }
 
   const videoHtml = m.video_url
@@ -5915,6 +5960,77 @@ function openMateriDetail(id) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Menandai materi selesai dipelajari (server + tampilan).
+function markMateriDone(m) {
+  if (!m || m.done) return;
+  const csrf = (typeof CU !== "undefined" && CU && CU.csrf) ? CU.csrf : "";
+  fetch("mark-materi.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: "category=" + encodeURIComponent(m.category) + "&csrf_token=" + encodeURIComponent(csrf),
+  }).catch(() => {});
+  m.done = true;
+
+  // Materi = kurus guru (id 5000 + id materi). Sinkronkan langsung ke data
+  // lokal supaya kursus langsung muncul di "Kursus Saya" & statistik naik,
+  // tanpa harus menunggu reload (server seed baru terbaca saat load ulang).
+  const guruCourseId = 5000 + (m.id || 0);
+  if (guruCourseId > 5000) {
+    let ec = (UD.enrolledCourses || []).find((e) => e.id === guruCourseId);
+    if (!ec) {
+      ec = {
+        id: guruCourseId,
+        progress: 100,
+        completedLessons: [],
+        enrolledAt: new Date().toISOString(),
+      };
+      UD.enrolledCourses.push(ec);
+    } else {
+      ec.progress = 100;
+    }
+    if (!UD.completedCourses.includes(guruCourseId)) {
+      UD.completedCourses.push(guruCourseId);
+    }
+    if (!UD.certificates.some((c) => c.courseId === guruCourseId)) {
+      UD.certificates.push({
+        courseId: guruCourseId,
+        title: m.title || "Kursus",
+        date: new Date().toLocaleDateString(localeForLang()),
+        emoji: m.emoji || "🏅",
+      });
+    }
+  }
+
+  addXP(20, dashT("siswa.chrome.materi.openedXp", 'Membaca materi "{title}"', { title: m.title }));
+  addActivity(dashT("siswa.chrome.materi.openedXp", 'Membaca materi "{title}"', { title: m.title }), "📘");
+  addNotif("📘", dashT("siswa.chrome.materi.openedNotifTitle", "Materi Selesai Dipelajari"), dashT("siswa.chrome.materi.openedNotifMsg", 'Kamu telah selesai membaca materi "{title}".', { title: m.title }));
+  saveUD();
+  initHeader();
+}
+
+// Menandai materi selesai hanya ketika siswa benar-benar scroll ke bawah
+// sampai bagian bawah konten materi terlihat. Efek scroll-to-top saat
+// membuka materi (& navigasi antar halaman) diabaikan supaya materi tidak
+// "ke-klick" jadi selesai padahal belum dibaca sampai akhir.
+function checkMateriScrollComplete() {
+  if (activeMateriId == null) return;
+  const m = MATERI.find((x) => x.id === activeMateriId);
+  if (!m || m.done) return;
+  const dv = document.getElementById("materiDetailView");
+  if (!dv || dv.style.display === "none") return;
+
+  const y = window.scrollY;
+  const scrolledDown = y > materiLastScrollY + 2;
+  materiLastScrollY = y;
+  if (!scrolledDown) return;
+
+  const rect = dv.getBoundingClientRect();
+  // Bagian bawah konten materi sudah terlihat di layar.
+  if (rect.bottom - window.innerHeight <= 120) {
+    markMateriDone(m);
+  }
+}
+
 function closeMateriDetail() {
   const gridView = document.getElementById("materiGridView");
   const dv = document.getElementById("materiDetailView");
@@ -5923,6 +6039,11 @@ function closeMateriDetail() {
     dv.innerHTML = "";
   }
   if (gridView) gridView.style.display = "";
+  activeMateriId = null;
+  if (materiScrollHandler) {
+    window.removeEventListener("scroll", materiScrollHandler);
+    materiScrollHandler = null;
+  }
 }
 
 function initApp(initialUser, initialSeed) {
