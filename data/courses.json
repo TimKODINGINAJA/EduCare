@@ -1,0 +1,2642 @@
+[
+    {
+        "id": 1,
+        "catGroup": "it",
+        "cat": "web",
+        "emoji": "💻",
+        "title": "Pemrograman Web dari Nol",
+        "desc": "Mulai dari HTML dasar hingga website responsif modern. Cocok untuk pemula total.",
+        "level": "beginner",
+        "stars": 4.9,
+        "students": 8432,
+        "modules": 28,
+        "color": "#0a0a0a",
+        "lessons": [
+            {
+                "ch": "Bab 1: HTML Dasar",
+                "items": [
+                    {
+                        "t": "Pengenalan HTML",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Struktur Dasar",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Tags & Elemen",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Form & Input",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Tabel & List",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Link & Media",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Semantic HTML",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Atribut HTML",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Validasi Dasar",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Praktik HTML",
+                        "dur": "22min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: CSS Dasar",
+                "items": [
+                    {
+                        "t": "Selector CSS",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Box Model",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Warna & Tipografi",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Margin & Padding",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Display & Position",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Background & Border",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Pseudo Class",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Transition Dasar",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Responsifitas",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Praktik CSS",
+                        "dur": "24min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: CSS Modern",
+                "items": [
+                    {
+                        "t": "Flexbox Dasar",
+                        "dur": "25min"
+                    },
+                    {
+                        "t": "CSS Grid Layout",
+                        "dur": "30min"
+                    },
+                    {
+                        "t": "Responsive Design",
+                        "dur": "28min"
+                    },
+                    {
+                        "t": "Animasi CSS",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Variable CSS",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Dark Mode",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Utility Class",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Layout Modern",
+                        "dur": "21min"
+                    },
+                    {
+                        "t": "Pseudoelement",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Praktik Layout",
+                        "dur": "24min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: JavaScript",
+                "items": [
+                    {
+                        "t": "JS Fundamentals",
+                        "dur": "35min"
+                    },
+                    {
+                        "t": "DOM Manipulation",
+                        "dur": "30min"
+                    },
+                    {
+                        "t": "Events & Functions",
+                        "dur": "28min"
+                    },
+                    {
+                        "t": "Async & Fetch",
+                        "dur": "32min"
+                    },
+                    {
+                        "t": "Array & Object",
+                        "dur": "24min"
+                    },
+                    {
+                        "t": "Loop & Condition",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Scope & Hoisting",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "ES6 Basics",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Form Handling",
+                        "dur": "21min"
+                    },
+                    {
+                        "t": "Praktik JS",
+                        "dur": "26min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Project Mini",
+                "items": [
+                    {
+                        "t": "Merancang Landing Page",
+                        "dur": "26min"
+                    },
+                    {
+                        "t": "Membuat Navbar",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Menambahkan Animasi",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Integrasi JS",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Testing Dasar",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Optimasi UI",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Publikasi Demo",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Review Project",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Presentasi Hasil",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Refleksi Belajar",
+                        "dur": "15min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "catGroup": "it",
+        "cat": "ai",
+        "emoji": "🧠",
+        "title": "AI & Machine Learning Dasar",
+        "desc": "Pengenalan kecerdasan buatan dan ML tanpa background matematika berat.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 5891,
+        "modules": 20,
+        "color": "#141414",
+        "lessons": [
+            {
+                "ch": "Bab 1: Konsep AI",
+                "items": [
+                    {
+                        "t": "Apa itu AI?",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Sejarah AI",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "AI vs ML vs DL",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Aplikasi AI",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Etika AI",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Kekurangan AI",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Bias Data",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Keamanan AI",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Contoh Kasus",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Refleksi AI",
+                        "dur": "14min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Python untuk AI",
+                "items": [
+                    {
+                        "t": "Pengenalan Python",
+                        "dur": "25min"
+                    },
+                    {
+                        "t": "NumPy & Pandas",
+                        "dur": "30min"
+                    },
+                    {
+                        "t": "Matplotlib",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Variabel & List",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Fungsi Python",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Looping",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Manipulasi Data",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Pandas Dasar",
+                        "dur": "21min"
+                    },
+                    {
+                        "t": "Visualisasi Data",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Praktik Python",
+                        "dur": "24min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Machine Learning Dasar",
+                "items": [
+                    {
+                        "t": "Apa itu ML?",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Supervised Learning",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Unsupervised Learning",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Dataset",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Feature & Label",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Model Training",
+                        "dur": "21min"
+                    },
+                    {
+                        "t": "Evaluasi Model",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Overfitting",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Prediksi Sederhana",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Refleksi ML",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: AI Tools",
+                "items": [
+                    {
+                        "t": "Chatbot",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "OCR",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Recommendation",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Computer Vision",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "NLP Dasar",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Voice AI",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "AI Workflow",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Integrasi API",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Demo Singkat",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Review Tools",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Project AI",
+                "items": [
+                    {
+                        "t": "Menentukan Ide",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Membuat Dataset",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Training Model",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Menguji Hasil",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Membuat Demo",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Memperbaiki Model",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Presentasi",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Evaluasi",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Refleksi",
+                        "dur": "14min"
+                    },
+                    {
+                        "t": "Next Step",
+                        "dur": "13min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "catGroup": "it",
+        "cat": "data",
+        "emoji": "📊",
+        "title": "Data Science untuk Pemula",
+        "desc": "Analisis data dengan Python dan visualisasi yang mudah dipahami.",
+        "level": "beginner",
+        "stars": 4.7,
+        "students": 3247,
+        "modules": 25,
+        "color": "#1c1c1c",
+        "lessons": [
+            {
+                "ch": "Bab 1: Pengenalan Data",
+                "items": [
+                    {
+                        "t": "Apa itu Data Science?",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Tipe Data",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Tools yang Digunakan",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Collection Data",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Data Cleaning",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Missing Value",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Outlier",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Analisis Awal",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Kualitas Data",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Refleksi Data",
+                        "dur": "14min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Python Dasar",
+                "items": [
+                    {
+                        "t": "Setup Environment",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Variabel & Tipe Data",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Fungsi Dasar",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "List & Dictionary",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Pandas Dasar",
+                        "dur": "21min"
+                    },
+                    {
+                        "t": "Input Output",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Looping",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Condition",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Error Handling",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Praktik Python",
+                        "dur": "24min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Visualisasi Data",
+                "items": [
+                    {
+                        "t": "Grafik Batang",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Grafik Garis",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Grafik Pie",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Histogram",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Scatter Plot",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Box Plot",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Warna & Label",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Dashboard Sederhana",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Storytelling Data",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Review Visual",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: Statistik Dasar",
+                "items": [
+                    {
+                        "t": "Mean Median Modus",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Deviasi",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Probabilitas",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Distribusi",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Korelasi",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Regresi Dasar",
+                        "dur": "21min"
+                    },
+                    {
+                        "t": "Hipotesis",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Uji Sederhana",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Interpretasi",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Review Statistik",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Project Data",
+                "items": [
+                    {
+                        "t": "Menentukan Topik",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Mengambil Data",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Membersihkan Data",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Menganalisis Data",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Visualisasi Hasil",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Membuat Insight",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Presentasi",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Feedback",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Refleksi",
+                        "dur": "14min"
+                    },
+                    {
+                        "t": "Next Step",
+                        "dur": "13min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "catGroup": "it",
+        "cat": "mobile",
+        "emoji": "📱",
+        "title": "Android Development Dasar",
+        "desc": "Bangun aplikasi Android pertamamu dengan Kotlin dari nol.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 2100,
+        "modules": 22,
+        "color": "#242424",
+        "lessons": [
+            {
+                "ch": "Bab 1: Setup",
+                "items": [
+                    {
+                        "t": "Install Android Studio",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Mengenal Interface",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "SDK & Emulator",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Project Baru",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Struktur Folder",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Gradle Dasar",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Manifest",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Build & Run",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Debugging",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Review Setup",
+                        "dur": "14min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Kotlin Dasar",
+                "items": [
+                    {
+                        "t": "Sintaks Kotlin",
+                        "dur": "25min"
+                    },
+                    {
+                        "t": "Variabel & Fungsi",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Class & Object",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Data Class",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Collection",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Null Safety",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Extention Function",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Coroutines Dasar",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Higher Order",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Praktik Kotlin",
+                        "dur": "24min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: UI Android",
+                "items": [
+                    {
+                        "t": "Compose Dasar",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Layout",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Button & Text",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "RecyclerView",
+                        "dur": "21min"
+                    },
+                    {
+                        "t": "Navigation",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Style & Theme",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Material Design",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Animation UI",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Responsive UI",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Review UI",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: Data & API",
+                "items": [
+                    {
+                        "t": "Shared Preferences",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Room Database",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Retrofit Dasar",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "API Request",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "JSON Parsing",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "ViewModel",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "LiveData",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "State Management",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Error Handling",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Review Data",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Project Android",
+                "items": [
+                    {
+                        "t": "Tentukan Ide",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Rancang UI",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Implementasi Fitur",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Hubungkan API",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Testing",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Perbaikan Bug",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Optimasi",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Presentasi",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Refleksi",
+                        "dur": "14min"
+                    },
+                    {
+                        "t": "Next Step",
+                        "dur": "13min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "catGroup": "it",
+        "cat": "uiux",
+        "emoji": "🎨",
+        "title": "UI/UX Design Fundamentals",
+        "desc": "Prinsip desain, Figma, dan cara membuat pengalaman pengguna yang luar biasa.",
+        "level": "beginner",
+        "stars": 4.9,
+        "students": 4567,
+        "modules": 20,
+        "color": "#2c2c2c",
+        "lessons": [
+            {
+                "ch": "Bab 1: Dasar Desain",
+                "items": [
+                    {
+                        "t": "Prinsip Visual Design",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Warna & Tipografi",
+                        "dur": "25min"
+                    },
+                    {
+                        "t": "Layout & Grid",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Hierarki Visual",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Konsistensi",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Whitespace",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Contrast",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Komposisi",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Desain Sistem",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Review Desain",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Figma",
+                "items": [
+                    {
+                        "t": "Mengenal Figma",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Frame & Component",
+                        "dur": "25min"
+                    },
+                    {
+                        "t": "Auto Layout",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Prototipe",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Variant",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Style Guide",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Sharing Prototype",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Feedback Review",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "UI Kit",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Praktik Figma",
+                        "dur": "22min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: UX Research",
+                "items": [
+                    {
+                        "t": "Apa itu UX",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "User Persona",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "User Journey",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Needs & Pain",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Interview",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Observasi",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Insight",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Prioritas Masalah",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Membuat Hypothesis",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Review UX",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: Wireframe & Prototype",
+                "items": [
+                    {
+                        "t": "Low Fidelity",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "High Fidelity",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Flow Aplikasi",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Navigation",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Micro Interaction",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "State UI",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Prototype Interaktif",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Testing Prototype",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Revisi Desain",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Review Prototype",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Project UI/UX",
+                "items": [
+                    {
+                        "t": "Menentukan Tema",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Riset User",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Buat Wireframe",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Desain UI",
+                        "dur": "22min"
+                    },
+                    {
+                        "t": "Prototype",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Testing",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Perbaikan",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Presentasi",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Feedback",
+                        "dur": "14min"
+                    },
+                    {
+                        "t": "Refleksi",
+                        "dur": "13min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "catGroup": "it",
+        "cat": "cloud",
+        "emoji": "☁️",
+        "title": "Cloud Computing Essentials",
+        "desc": "AWS, GCP, dan Azure — fondasi infrastruktur cloud modern.",
+        "level": "intermediate",
+        "stars": 4.6,
+        "students": 1890,
+        "modules": 18,
+        "color": "#343434",
+        "lessons": [
+            {
+                "ch": "Bab 1: Konsep Cloud",
+                "items": [
+                    {
+                        "t": "Apa itu Cloud?",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "IaaS vs PaaS vs SaaS",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Deployment Model",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "On Premise vs Cloud",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Scalability",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Availability",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Cost Model",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Security Basics",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Use Case Cloud",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Review Konsep",
+                        "dur": "14min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: AWS Dasar",
+                "items": [
+                    {
+                        "t": "Pengenalan AWS",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "EC2",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "S3",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "RDS",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "IAM",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "VPC",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Lambda",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "CloudWatch",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Pricing",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Review AWS",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: GCP & Azure",
+                "items": [
+                    {
+                        "t": "Pengenalan GCP",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Pengenalan Azure",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Compute Engine",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Storage Service",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Networking",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Identity",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Perbandingan Provider",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Migrasi Data",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Best Practice",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Review Provider",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: DevOps Cloud",
+                "items": [
+                    {
+                        "t": "CI/CD",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Container",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Docker",
+                        "dur": "19min"
+                    },
+                    {
+                        "t": "Kubernetes",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Infrastructure as Code",
+                        "dur": "21min"
+                    },
+                    {
+                        "t": "Monitoring",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Backup",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Disaster Recovery",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Automation",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Review DevOps",
+                        "dur": "15min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Project Cloud",
+                "items": [
+                    {
+                        "t": "Tentukan Project",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Deploy Aplikasi",
+                        "dur": "20min"
+                    },
+                    {
+                        "t": "Konfigurasi Server",
+                        "dur": "18min"
+                    },
+                    {
+                        "t": "Monitoring",
+                        "dur": "17min"
+                    },
+                    {
+                        "t": "Keamanan Dasar",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Backup",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Optimasi Biaya",
+                        "dur": "16min"
+                    },
+                    {
+                        "t": "Presentasi",
+                        "dur": "15min"
+                    },
+                    {
+                        "t": "Refleksi",
+                        "dur": "14min"
+                    },
+                    {
+                        "t": "Next Step",
+                        "dur": "13min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "catGroup": "umum",
+        "cat": "mtk",
+        "emoji": "➗",
+        "title": "Matematika Dasar",
+        "desc": "Materi pelajaran Matematika dasar dengan contoh sederhana.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 3120,
+        "modules": 8,
+        "color": "#3c3c3c",
+        "lessons": [
+            {
+                "ch": "Bab 1: Bilangan",
+                "items": [
+                    {
+                        "t": "Materi: bilangan bulat, pecahan, dan desimal",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: 1/2 + 1/4 = 3/4",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Operasi hitung campuran",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Urutan bilangan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Pembulatan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Perbandingan bilangan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Nilai tempat",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan sederhana",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal cerita",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review bilangan",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Aljabar",
+                "items": [
+                    {
+                        "t": "Materi: variabel dan persamaan sederhana",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: x + 3 = 7, maka x = 4",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Persamaan satu variabel",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Sifat operasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Pemfaktoran sederhana",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Pertidaksamaan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Koefisien dan konstanta",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan aljabar",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review aljabar",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Geometri",
+                "items": [
+                    {
+                        "t": "Materi: garis, sudut, dan bangun datar",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Jenis sudut",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Keliling bangun",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Luas bangun",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Segitiga",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Persegi panjang",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Lingkaran",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Latihan geometri",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal cerita geometri",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review geometri",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: Pengukuran",
+                "items": [
+                    {
+                        "t": "Materi: satuan panjang, berat, dan waktu",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Konversi satuan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Panjang dan jarak",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Berat dan volume",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Waktu dan jam",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Skala",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Estimasi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan pengukuran",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review pengukuran",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Logika & Pola",
+                "items": [
+                    {
+                        "t": "Materi: pola bilangan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Menentukan pola",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Logika sederhana",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Deret angka",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Pikir kritis",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kombinasi operasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Latihan logika",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal tantangan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Kesimpulan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Review akhir",
+                        "dur": "8min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "catGroup": "umum",
+        "cat": "ipa",
+        "emoji": "🧪",
+        "title": "Ilmu Pengetahuan Alam",
+        "desc": "Materi IPA singkat dengan contoh nyata yang mudah dipahami.",
+        "level": "beginner",
+        "stars": 4.7,
+        "students": 2780,
+        "modules": 8,
+        "color": "#444444",
+        "lessons": [
+            {
+                "ch": "Bab 1: Makhluk Hidup",
+                "items": [
+                    {
+                        "t": "Materi: ekosistem dan rantai makanan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: rumput → kelinci → elang",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Habitat makhluk hidup",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Adaptasi hewan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Adaptasi tumbuhan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Interaksi makhluk hidup",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Peran organisme",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan ekosistem",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review ekosistem",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Energi",
+                "items": [
+                    {
+                        "t": "Materi: energi panas, cahaya, dan bunyi",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: matahari memberi energi cahaya",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Sumber energi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Energi listrik",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Energi kinetik",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Konversi energi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Hemat energi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan energi",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal contoh",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review energi",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Tata Surya",
+                "items": [
+                    {
+                        "t": "Materi: planet dan orbit",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Matahari",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Bulan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Gerhana",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Rotasi dan revolusi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Bintang",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Galaksi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan tata surya",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review tata surya",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: Bumi dan Cuaca",
+                "items": [
+                    {
+                        "t": "Materi: lapisan bumi",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Cuaca dan iklim",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Hujan dan angin",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Musim",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Pelapukan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Gempa bumi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Gunung berapi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan cuaca",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review bumi",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Kesehatan dan Kebersihan",
+                "items": [
+                    {
+                        "t": "Materi: pola hidup sehat",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Makan bergizi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Cuci tangan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Olahraga",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Istirahat",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kebersihan tubuh",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kebersihan lingkungan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan kesehatan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review kesehatan",
+                        "dur": "8min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "catGroup": "umum",
+        "cat": "ips",
+        "emoji": "🌍",
+        "title": "Ilmu Pengetahuan Sosial",
+        "desc": "Materi IPS sederhana dengan contoh kehidupan sehari-hari.",
+        "level": "beginner",
+        "stars": 4.6,
+        "students": 2410,
+        "modules": 8,
+        "color": "#4c4c4c",
+        "lessons": [
+            {
+                "ch": "Bab 1: Geografi",
+                "items": [
+                    {
+                        "t": "Materi: letak wilayah dan peta",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: Indonesia terletak di Asia Tenggara",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Jenis peta",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Letak geografis",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Iklim dan cuaca",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Sumber daya alam",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Peta tematik",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan geografi",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review geografi",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Sejarah",
+                "items": [
+                    {
+                        "t": "Materi: peristiwa penting dan tokoh",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: Soekarno adalah tokoh proklamasi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Zaman kerajaan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Perjuangan kemerdekaan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Tokoh nasional",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Perubahan zaman",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Warisan sejarah",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan sejarah",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review sejarah",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Ekonomi",
+                "items": [
+                    {
+                        "t": "Materi: kebutuhan dan keinginan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Pengeluaran harian",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Tabungan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Produksi & konsumsi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Peran pasar",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Jenis pekerjaan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Pengelolaan uang",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan ekonomi",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review ekonomi",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: Sosiologi",
+                "items": [
+                    {
+                        "t": "Materi: masyarakat dan peran",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Norma sosial",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Interaksi sosial",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kebudayaan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Perbedaan individu",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kerja sama",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Toleransi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan sosiologi",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review sosiologi",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Pemerintahan",
+                "items": [
+                    {
+                        "t": "Materi: aturan dan lembaga",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Hak dan kewajiban",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Pemerintahan desa",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Pemerintahan daerah",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Pemilu",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Partisipasi warga",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Musyawarah",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan pemerintahan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review pemerintahan",
+                        "dur": "8min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "catGroup": "umum",
+        "cat": "bahasa",
+        "emoji": "🗣️",
+        "title": "Bahasa Indonesia & Bahasa Inggris",
+        "desc": "Materi bahasa dengan contoh kalimat sederhana.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 3035,
+        "modules": 8,
+        "color": "#545454",
+        "lessons": [
+            {
+                "ch": "Bab 1: Bahasa Indonesia",
+                "items": [
+                    {
+                        "t": "Materi: kata benda, kata kerja, dan kalimat",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: Ani membaca buku",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kata sifat",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kata ganti",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kalimat tanya",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kata hubung",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Paragraf sederhana",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Latihan bahasa",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review bahasa Indonesia",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Bahasa Inggris",
+                "items": [
+                    {
+                        "t": "Materi: kata sapaan dan kosakata dasar",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: I am happy",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Simple present",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Pronoun",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Verb be",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Daily routine",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Question words",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan bahasa Inggris",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review bahasa Inggris",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Membaca",
+                "items": [
+                    {
+                        "t": "Materi: memahami ide pokok",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Membaca cepat",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Menemukan informasi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kesimpulan bacaan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Kosakata dalam konteks",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Inti paragraf",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan membaca",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review membaca",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Refleksi membaca",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: Menulis",
+                "items": [
+                    {
+                        "t": "Materi: menulis kalimat",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Menulis paragraf",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Menyusun ide",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Penggunaan tanda baca",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Menulis cerita pendek",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Menulis surat singkat",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan menulis",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review menulis",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Refleksi menulis",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Berbicara",
+                "items": [
+                    {
+                        "t": "Materi: percakapan sederhana",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Sapaan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Mengungkapkan pendapat",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Bertanya jawab",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Presentasi singkat",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Percakapan sehari-hari",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan berbicara",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal aplikasi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review berbicara",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Refleksi berbicara",
+                        "dur": "8min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "catGroup": "umum",
+        "cat": "self",
+        "emoji": "🌱",
+        "title": "Pengembangan Diri",
+        "desc": "Materi pengembangan diri dengan contoh praktik sehari-hari.",
+        "level": "beginner",
+        "stars": 4.9,
+        "students": 2560,
+        "modules": 8,
+        "color": "#5c5c5c",
+        "lessons": [
+            {
+                "ch": "Bab 1: Kebiasaan",
+                "items": [
+                    {
+                        "t": "Materi: manajemen waktu dan disiplin",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: membuat jadwal belajar setiap pagi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Prioritas harian",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Rutinitas belajar",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Konsistensi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Menghindari penundaan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Target kecil",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan kebiasaan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal refleksi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review kebiasaan",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Percaya Diri",
+                "items": [
+                    {
+                        "t": "Materi: komunikasi dan sikap positif",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Contoh: berani bertanya saat belum paham",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Berbicara di depan umum",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Mengakui kekurangan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Menerima kritik",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Sikap tenang",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Mengembangkan motivasi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan percaya diri",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal refleksi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review percaya diri",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Fokus",
+                "items": [
+                    {
+                        "t": "Materi: mengurangi gangguan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Teknik fokus",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Mindfulness",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Mengatur perhatian",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Membagi tugas",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Memilih prioritas",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan fokus",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal refleksi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review fokus",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Refleksi diri",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 4: Kemandirian",
+                "items": [
+                    {
+                        "t": "Materi: bertanggung jawab",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Mengambil keputusan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Memecahkan masalah",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Belajar mandiri",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Mengatur emosi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Tanggung jawab kecil",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan kemandirian",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal refleksi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review kemandirian",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Target pribadi",
+                        "dur": "8min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 5: Tujuan Hidup",
+                "items": [
+                    {
+                        "t": "Materi: menetapkan tujuan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Membuat visi",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Langkah kecil",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Motivasi jangka panjang",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Evaluasi progres",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Menentukan prioritas",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Latihan tujuan",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Soal refleksi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Review tujuan",
+                        "dur": "8min"
+                    },
+                    {
+                        "t": "Kesimpulan",
+                        "dur": "8min"
+                    }
+                ]
+            }
+        ]
+    }
+]

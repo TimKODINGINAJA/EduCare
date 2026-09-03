@@ -1,0 +1,828 @@
+[
+    {
+        "id": 1,
+        "materi_id": 1,
+        "name": "Quiz: Dasar-Dasar HTML",
+        "status": "Aktif",
+        "questions": 15,
+        "questions_list": [
+            {
+                "q": "Apa kepanjangan dari HTML?",
+                "o": [
+                    "Hyper Text Markup Language",
+                    "Hyperlink and Text Markup Language",
+                    "Home Tool Markup Language",
+                    "Hyper Text Makeup Language"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Tag HTML mana yang digunakan untuk membuat judul terbesar?",
+                "o": [
+                    "<h6>",
+                    "<heading>",
+                    "<h1>",
+                    "<head>"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Tag apa yang digunakan untuk membuat tautan (link)?",
+                "o": [
+                    "<link>",
+                    "<a>",
+                    "<href>",
+                    "<url>"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Atribut apa pada tag <img> yang menyediakan teks alternatif?",
+                "o": [
+                    "src",
+                    "alt",
+                    "title",
+                    "href"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Tag untuk membuat daftar tidak berurutan (bullet) adalah?",
+                "o": [
+                    "<ol>",
+                    "<li>",
+                    "<ul>",
+                    "<dl>"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Elemen semantik untuk bagian navigasi halaman adalah?",
+                "o": [
+                    "<nav>",
+                    "<menu>",
+                    "<section>",
+                    "<div>"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Deklarasi DOCTYPE standar untuk HTML5 adalah?",
+                "o": [
+                    "<!DOCTYPE HTML5>",
+                    "<!DOCTYPE html>",
+                    "<html5>",
+                    "<!HTML5>"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Tag apa yang digunakan untuk membuat tabel?",
+                "o": [
+                    "<table>",
+                    "<tab>",
+                    "<grid>",
+                    "<tr>"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Atribut 'href' digunakan pada tag apa?",
+                "o": [
+                    "<img>",
+                    "<a>",
+                    "<div>",
+                    "<p>"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Tag untuk membuat form input?",
+                "o": [
+                    "<input>",
+                    "<form>",
+                    "<field>",
+                    "<data>"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Tag untuk membuat baris baru adalah?",
+                "o": [
+                    "<newline>",
+                    "<break>",
+                    "<br>",
+                    "<nl>"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Elemen semantik untuk konten utama halaman adalah?",
+                "o": [
+                    "<main>",
+                    "<core>",
+                    "<content>",
+                    "<body>"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Tag <head> pada dokumen HTML berisi?",
+                "o": [
+                    "Konten yang tampil di layar",
+                    "Metadata seperti judul dan link CSS",
+                    "Gambar utama halaman",
+                    "Skrip JavaScript saja"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Tag apa yang digunakan untuk membuat paragraf?",
+                "o": [
+                    "<para>",
+                    "<p>",
+                    "<text>",
+                    "<pg>"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Elemen <footer> biasanya digunakan untuk?",
+                "o": [
+                    "Bagian atas halaman",
+                    "Bagian bawah\/penutup halaman",
+                    "Navigasi utama",
+                    "Judul halaman"
+                ],
+                "a": 1
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "materi_id": 3,
+        "name": "Quiz: JavaScript Dasar",
+        "status": "Aktif",
+        "questions": 15,
+        "questions_list": [
+            {
+                "q": "JavaScript utamanya digunakan untuk?",
+                "o": [
+                    "Membuat struktur halaman",
+                    "Menambah interaktivitas di browser",
+                    "Mengatur styling halaman",
+                    "Mengelola database"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Apa cara yang benar mendeklarasikan variabel di JavaScript?",
+                "o": [
+                    "var x = 5;",
+                    "declare x = 5;",
+                    "variable x = 5;",
+                    "let = 5;"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Tipe data apa yang merupakan string?",
+                "o": [
+                    "'Hello'",
+                    "123",
+                    "true",
+                    "undefined"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Fungsi console.log() digunakan untuk?",
+                "o": [
+                    "Membuat elemen HTML baru",
+                    "Menampilkan output di console",
+                    "Mengubah CSS",
+                    "Menghapus variabel"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Apa operator untuk penambahan di JavaScript?",
+                "o": [
+                    "++",
+                    "+=",
+                    "add",
+                    "++="
+                ],
+                "a": 0
+            },
+            {
+                "q": "Pernyataan if...else digunakan untuk?",
+                "o": [
+                    "Membuat loop",
+                    "Kondisi dan pengambilan keputusan",
+                    "Deklarasi fungsi",
+                    "Membuat array"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Loop for digunakan untuk?",
+                "o": [
+                    "Mengambil keputusan",
+                    "Mengulangi blok kode",
+                    "Membuat fungsi",
+                    "Deklarasi variabel"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Apa itu array di JavaScript?",
+                "o": [
+                    "Tipe data untuk menyimpan satu nilai",
+                    "Tipe data untuk menyimpan kumpulan nilai",
+                    "Pernyataan kondisi",
+                    "Fungsi bawaan"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Cara mengakses elemen array dengan indeks berapa?",
+                "o": [
+                    "Dimulai dari 1",
+                    "Dimulai dari 0",
+                    "Dimulai dari -1",
+                    "Dimulai dari huruf a"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Apa itu function (fungsi) di JavaScript?",
+                "o": [
+                    "Blok kode yang bisa dijalankan berkali-kali",
+                    "Tipe data khusus",
+                    "Operator perbandingan",
+                    "Loop statement"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Keyword apa untuk mengembalikan nilai dari fungsi?",
+                "o": [
+                    "give",
+                    "send",
+                    "return",
+                    "output"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Object di JavaScript adalah?",
+                "o": [
+                    "Array multidimensi",
+                    "Kumpulan property dan method",
+                    "Jenis loop",
+                    "Tipe data angka"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Apa metode untuk mengubah string menjadi huruf besar?",
+                "o": [
+                    "toUpperCase()",
+                    "uppercase()",
+                    "upper()",
+                    "toBig()"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Operator === di JavaScript digunakan untuk?",
+                "o": [
+                    "Penambahan",
+                    "Perbandingan ketat (nilai dan tipe)",
+                    "Penugasan",
+                    "Perbandingan biasa"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Apa itu DOM?",
+                "o": [
+                    "Document Object Model",
+                    "Data Oriented Mapping",
+                    "Dynamic Object Method",
+                    "Display Output Markup"
+                ],
+                "a": 0
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "materi_id": 4,
+        "name": "Quiz: PHP Dasar",
+        "status": "Aktif",
+        "questions": 15,
+        "questions_list": [
+            {
+                "q": "Apa kepanjangan dari PHP?",
+                "o": [
+                    "Personal Home Page",
+                    "PHP: Hypertext Preprocessor",
+                    "Programmable Hypertext Page",
+                    "Public Home Protocol"
+                ],
+                "a": 1
+            },
+            {
+                "q": "PHP dijalankan di mana?",
+                "o": [
+                    "Di browser klien",
+                    "Di server",
+                    "Di komputer lokal saja",
+                    "Di database"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Cara mendeklarasikan variabel di PHP adalah?",
+                "o": [
+                    "$var = 5;",
+                    "var $var = 5;",
+                    "variable $var;",
+                    "declare var $var"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Fungsi untuk menampilkan output di PHP?",
+                "o": [
+                    "print",
+                    "echo",
+                    "output",
+                    "display"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Cara menambahkan komentar single line di PHP?",
+                "o": [
+                    "\/\/()",
+                    "#",
+                    "<!---->",
+                    "**"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Tipe data string di PHP ditulis dengan tanda?",
+                "o": [
+                    "Petik satu ' atau petik dua \"",
+                    "Hanya petik satu '",
+                    "Hanya petik dua \"",
+                    "Garis miring \/"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Fungsi untuk mendapatkan panjang string di PHP?",
+                "o": [
+                    "length()",
+                    "strlen()",
+                    "size()",
+                    "count()"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Loop yang mengulangi blok sampai kondisi false di PHP?",
+                "o": [
+                    "for",
+                    "foreach",
+                    "while",
+                    "do...while"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Cara mengakses nilai dari array di PHP dengan key?",
+                "o": [
+                    "$array[index]",
+                    "$array.index",
+                    "$array->index",
+                    "$array::index"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Fungsi isset() di PHP digunakan untuk?",
+                "o": [
+                    "Menghapus variabel",
+                    "Mengecek apakah variabel terdefinisi",
+                    "Mengubah tipe data",
+                    "Membuat array baru"
+                ],
+                "a": 1
+            },
+            {
+                "q": "GET dan POST adalah metode apa di PHP?",
+                "o": [
+                    "Loop",
+                    "Kondisi",
+                    "Metode HTTP untuk mengirim data",
+                    "Tipe data"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Cara mengakses data dari form dengan metode GET?",
+                "o": [
+                    "$_GET['nama']",
+                    "$GET['nama']",
+                    "$_POST['nama']",
+                    "$_REQUEST['nama']"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Fungsi untuk menghubungkan ke database MySQL di PHP?",
+                "o": [
+                    "mysql_connect()",
+                    "mysqli_connect()",
+                    "PDO()",
+                    "Semua di atas bisa"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Apa itu session di PHP?",
+                "o": [
+                    "Variabel global saja",
+                    "Data yang disimpan di server untuk user tertentu",
+                    "Database management",
+                    "Metode pengiriman data"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Cara memulai session di PHP?",
+                "o": [
+                    "start_session()",
+                    "session_start()",
+                    "begin_session()",
+                    "initialize_session()"
+                ],
+                "a": 1
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "materi_id": 5,
+        "name": "Quiz: Python Dasar",
+        "status": "Aktif",
+        "questions": 15,
+        "questions_list": [
+            {
+                "q": "Apa kepanjangan dari Python?",
+                "o": [
+                    "Programming Yourself through Online Networks",
+                    "Adalah bahasa pemrograman (tidak ada kepanjangan)",
+                    "Python Yield Type High-Level Object Notation",
+                    "Personal Young Trusted Home Operating Network"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Python dikembangkan oleh?",
+                "o": [
+                    "Guido van Rossum",
+                    "Bjarne Stroustrup",
+                    "Dennis Ritchie",
+                    "James Gosling"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Cara menampilkan output di Python?",
+                "o": [
+                    "print()",
+                    "output()",
+                    "display()",
+                    "echo()"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Cara mendeklarasikan variabel di Python?",
+                "o": [
+                    "var x = 5",
+                    "x = 5",
+                    "$x = 5",
+                    "declare x"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Tipe data yang menyimpan nilai true\/false disebut?",
+                "o": [
+                    "integer",
+                    "string",
+                    "boolean",
+                    "float"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Fungsi untuk mendapatkan tipe data variabel?",
+                "o": [
+                    "datatype()",
+                    "typeof()",
+                    "type()",
+                    "getType()"
+                ],
+                "a": 2
+            },
+            {
+                "q": "String di Python bisa ditulis dengan?",
+                "o": [
+                    "Single quotes ', double quotes \", atau triple quotes",
+                    "Hanya single quotes",
+                    "Hanya double quotes",
+                    "Tanda kurung ()"
+                ],
+                "a": 0
+            },
+            {
+                "q": "List di Python adalah?",
+                "o": [
+                    "Tipe data untuk menyimpan satu nilai",
+                    "Tipe data untuk menyimpan kumpulan nilai terurut",
+                    "Fungsi bawaan",
+                    "Operator perbandingan"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Cara mengakses elemen list dengan indeks?",
+                "o": [
+                    "Dimulai dari 1",
+                    "Dimulai dari 0",
+                    "Dimulai dari -1",
+                    "Tidak ada indeks"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Dictionary di Python adalah?",
+                "o": [
+                    "Array multidimensi",
+                    "Kumpulan key-value pairs",
+                    "Jenis loop",
+                    "Fungsi bawaan"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Loop for di Python digunakan untuk?",
+                "o": [
+                    "Kondisi if-else",
+                    "Mengulangi blok kode untuk setiap item",
+                    "Deklarasi fungsi",
+                    "Membuat class"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Indentasi di Python berfungsi untuk?",
+                "o": [
+                    "Keindahan kode",
+                    "Menentukan blok kode",
+                    "Komentar",
+                    "Tidak ada fungsi"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Keyword def di Python digunakan untuk?",
+                "o": [
+                    "Deklarasi variabel",
+                    "Mendefinisikan fungsi",
+                    "Membuat loop",
+                    "Import modul"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Cara mengimpor modul di Python?",
+                "o": [
+                    "include module",
+                    "import module",
+                    "use module",
+                    "require module"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Class di Python adalah?",
+                "o": [
+                    "Fungsi khusus",
+                    "Tempat siswa belajar",
+                    "Blueprint untuk membuat object",
+                    "Jenis variable"
+                ],
+                "a": 2
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "materi_id": 8,
+        "name": "Quiz: UI\/UX Design & Figma",
+        "status": "Aktif",
+        "questions": 15,
+        "questions_list": [
+            {
+                "q": "UI adalah kepanjangan dari?",
+                "o": [
+                    "User Interface",
+                    "User Interaction",
+                    "Unique Input",
+                    "Unified Integration"
+                ],
+                "a": 0
+            },
+            {
+                "q": "UX adalah kepanjangan dari?",
+                "o": [
+                    "User Extension",
+                    "User Experience",
+                    "Universal Exchange",
+                    "Unit Expansion"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Perbedaan utama antara UI dan UX adalah?",
+                "o": [
+                    "Tidak ada perbedaan",
+                    "UI fokus pada tampilan, UX fokus pada pengalaman pengguna",
+                    "UI untuk web, UX untuk mobile",
+                    "UI lebih penting dari UX"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Figma adalah tools untuk?",
+                "o": [
+                    "Coding",
+                    "Design dan prototyping interface",
+                    "Video editing",
+                    "Database management"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Wireframe dalam design adalah?",
+                "o": [
+                    "Desain final dengan warna",
+                    "Kerangka dasar layout tanpa detail visual",
+                    "Kode HTML",
+                    "Database schema"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Mockup berbeda dari wireframe karena?",
+                "o": [
+                    "Tidak ada perbedaan",
+                    "Mockup lebih detail dan mirip produk final",
+                    "Wireframe lebih detail",
+                    "Mockup hanya untuk desktop"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Color theory dalam design berkaitan dengan?",
+                "o": [
+                    "Kode warna HTML",
+                    "Pemilihan kombinasi warna yang harmonis",
+                    "Video editing",
+                    "Database design"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Typography dalam design menyangkut?",
+                "o": [
+                    "Pemilihan dan penggunaan font\/typeface",
+                    "Pemilihan warna",
+                    "Layout grid",
+                    "User behavior"
+                ],
+                "a": 0
+            },
+            {
+                "q": "White space (negative space) dalam design berfungsi untuk?",
+                "o": [
+                    "Mengisi seluruh halaman",
+                    "Memberikan napas visual dan meningkatkan readability",
+                    "Menyembunyikan konten",
+                    "Menambah loading time"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Hierarchy dalam design adalah?",
+                "o": [
+                    "Ukuran file",
+                    "Pengaturan urutan kepentingan elemen visual",
+                    "Jumlah layer",
+                    "Jumlah halaman"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Prototyping dalam design adalah?",
+                "o": [
+                    "Testing terakhir produk",
+                    "Membuat versi interaktif dari design untuk testing",
+                    "Membuat dokumentasi",
+                    "Presenting ke klien"
+                ],
+                "a": 1
+            },
+            {
+                "q": "User persona adalah?",
+                "o": [
+                    "Desain avatar",
+                    "Representasi fiktif dari target user",
+                    "Kompetitor produk",
+                    "Feedback pelanggan"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Usability testing dalam UX bertujuan untuk?",
+                "o": [
+                    "Mempercantik desain",
+                    "Mengecek apakah produk mudah digunakan pengguna",
+                    "Membuat backup",
+                    "Menambah fitur"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Responsive design berarti?",
+                "o": [
+                    "Desain yang cepat loading",
+                    "Desain yang menyesuaikan dengan berbagai ukuran layar",
+                    "Desain yang interaktif",
+                    "Desain yang colorful"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Accessibility (a11y) dalam design adalah?",
+                "o": [
+                    "Menggunakan kode ganjil",
+                    "Memastikan produk bisa digunakan oleh semua orang termasuk yang disabled",
+                    "Keamanan data",
+                    "Backup otomatis"
+                ],
+                "a": 1
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "ekosistem",
+        "questions": 1,
+        "status": "Aktif",
+        "items": [
+            {
+                "q": "apa itu ekosistem?",
+                "opts": [
+                    "sebuah benda padat",
+                    "sebuah benda cair",
+                    "sebuah lingkungan yang terdiri dari beberapa makhluk hidup",
+                    "salah semua"
+                ],
+                "ans": 0
+            }
+        ],
+        "questions_list": [
+            {
+                "q": "apa itu ekosistem?",
+                "o": [
+                    "sebuah benda padat",
+                    "sebuah benda cair",
+                    "sebuah lingkungan yang terdiri dari beberapa makhluk hidup",
+                    "salah semua"
+                ],
+                "a": 0
+            }
+        ],
+        "materi_id": 10
+    }
+]

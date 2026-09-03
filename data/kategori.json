@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "name": "HTML",
+        "desc": "Struktur dasar halaman web.",
+        "group": "it"
+    },
+    {
+        "id": 2,
+        "name": "CSS",
+        "desc": "Mendesain tampilan dan tata letak halaman web.",
+        "group": "it"
+    },
+    {
+        "id": 3,
+        "name": "JavaScript",
+        "desc": "Interaktivitas sisi klien (browser).",
+        "group": "it"
+    },
+    {
+        "id": 4,
+        "name": "PHP",
+        "desc": "Pemrograman sisi server untuk website dinamis.",
+        "group": "it"
+    },
+    {
+        "id": 5,
+        "name": "Python",
+        "desc": "Bahasa pemrograman serbaguna untuk pemula hingga AI.",
+        "group": "it"
+    },
+    {
+        "id": 6,
+        "name": "Basis Data",
+        "desc": "Pengelolaan data dengan SQL dan MySQL.",
+        "group": "it"
+    },
+    {
+        "id": 7,
+        "name": "Version Control",
+        "desc": "Git dan GitHub untuk kolaborasi kode.",
+        "group": "it"
+    },
+    {
+        "id": 8,
+        "name": "UI/UX Design",
+        "desc": "Merancang antarmuka dan pengalaman pengguna.",
+        "group": "it"
+    },
+    {
+        "id": 9,
+        "name": "Matematika",
+        "desc": "Bilangan, aljabar, geometri, dan logika dasar.",
+        "group": "mtk"
+    },
+    {
+        "id": 10,
+        "name": "IPA",
+        "desc": "Ilmu Pengetahuan Alam: makhluk hidup, energi, dan alam semesta.",
+        "group": "umum"
+    },
+    {
+        "id": 11,
+        "name": "IPS",
+        "desc": "Ilmu Pengetahuan Sosial: geografi, sejarah, dan kehidupan bermasyarakat.",
+        "group": "umum"
+    },
+    {
+        "id": 12,
+        "name": "Bahasa Indonesia & Inggris",
+        "desc": "Kemampuan membaca, menulis, dan berbicara dalam dua bahasa.",
+        "group": "umum"
+    },
+    {
+        "id": 13,
+        "name": "Pengembangan Diri",
+        "desc": "Manajemen waktu, fokus, dan kebiasaan belajar yang efektif.",
+        "group": "umum"
+    }
+]

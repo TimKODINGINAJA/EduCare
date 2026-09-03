@@ -1,0 +1,523 @@
+@import "./tailwind.css";
+@import "./Navbar.css";
+@import "./Faq.css";
+
+/* Sembunyikan marker segitiga default browser pada <summary> */
+  #faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #faq summary::marker {
+    content: "";
+  }
+
+  /* ===================== ANIMASI: reveal saat discroll ===================== */
+  .reveal {
+    opacity: 0;
+    transition: opacity .8s cubic-bezier(.16,.8,.3,1), transform .8s cubic-bezier(.16,.8,.3,1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal[data-reveal="up"]    { transform: translateY(28px); }
+  .reveal[data-reveal="left"]  { transform: translateX(-28px); }
+  .reveal[data-reveal="right"] { transform: translateX(28px); }
+  .reveal[data-reveal="scale"] { transform: scale(.96); }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translate(0,0) scale(1);
+  }
+
+  /* ===================== Hover cards ===================== */
+  .hover-card {
+    transition: transform .35s cubic-bezier(.16,.8,.3,1), box-shadow .35s ease, border-color .35s ease;
+  }
+  .hover-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -24px rgba(15,23,42,.18);
+    border-color: rgba(37,99,235,.25);
+  }
+  .icon-pop { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+  .hover-card:hover .icon-pop { transform: scale(1.12) rotate(-4deg); }
+
+  /* ===================== Dashboard mockup mengambang ===================== */
+  .float-card { animation: floatY 6s ease-in-out infinite; }
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+  .mini-card { transition: transform .3s ease, background-color .3s ease; }
+  .mini-card:hover { transform: translateY(-2px); background-color: #eff6ff; }
+
+  /* ===================== Progress bar animasi fill ===================== */
+  .bar-fill { transition: width 1.1s cubic-bezier(.16,.8,.3,1); }
+
+  /* ===================== Badge pulse (dot "Platform Digital Sekolah") ===================== */
+  .pulse-dot { position: relative; }
+  .pulse-dot::after {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: 9999px;
+    background: currentColor;
+    animation: pulseRing 1.8s cubic-bezier(0,.4,.6,1) infinite;
+  }
+  @keyframes pulseRing {
+    0%   { opacity: .55; transform: scale(1); }
+    100% { opacity: 0;   transform: scale(3.2); }
+  }
+
+  /* ===================== Trust bar: fade-in berurutan + kontras di atas aurora ===================== */
+  .trust-item { display: inline-block; transition: color .3s ease, transform .3s ease; }
+  .trust-item:hover { color: #475569; transform: translateY(-2px); }
+
+  /* Lapisan "kaca buram" di belakang trust bar: aurora tetap kelihatan mengalir,
+     tapi diredamkan sedikit supaya teks di atasnya tetap kontras & terbaca. */
+  #trust-bar {
+    position: relative;
+    isolation: isolate;
+  }
+  #trust-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    pointer-events: none;
+  }
+  .trust-label { letter-spacing: 0.12em; }
+
+  /* ===================== Pipeline (alur penggunaan) ===================== */
+  .pipeline-fill { width: 0%; transition: width 1.4s cubic-bezier(.16,.8,.3,1) .3s; }
+  .reveal.is-visible ~ .pipeline-fill,
+  #alur .reveal.is-visible .pipeline-fill { width: 100%; }
+  .step-dot { transition: transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .is-visible .step-dot { animation: stepPop .5s cubic-bezier(.34,1.56,.64,1) both; }
+  @keyframes stepPop {
+    0%   { transform: scale(0); }
+    70%  { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
+
+  /* ===================== Issue tracker rows ===================== */
+  .issue-row { transition: background-color .25s ease, padding-left .25s ease; }
+  .issue-row:hover { padding-left: 22px; }
+
+  /* ===================== CTA glow ===================== */
+  .cta-glow { position: relative; overflow: hidden; }
+  .cta-glow::before {
+    content: "";
+    position: absolute; inset: -40%;
+    background: radial-gradient(circle at 50% 0%, rgba(59,130,246,.18), transparent 60%);
+    animation: glowShift 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes glowShift {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(20px) scale(1.1); }
+  }
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid currentColor;
+    width: 0;
+    animation: typing 1.6s steps(20,end) forwards, blinkCursor .8s step-end infinite;
+  }
+  .cta-glow.is-visible .typewriter,
+  .reveal.is-visible .typewriter { animation-play-state: running; }
+  @keyframes typing { from { width: 0 } to { width: 15ch } }
+  @keyframes blinkCursor { 50% { border-color: transparent; } }
+
+  /* ===================== Aurora background (full page, fixed) ===================== */
+  body {
+    position: relative;
+    background-color: #C6E7FF;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.5), transparent 45%),
+                radial-gradient(circle at 80% 70%, rgba(59,130,246,0.45), transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(168,85,247,0.3), transparent 55%),
+                radial-gradient(circle at 85% 15%, rgba(34,211,238,0.28), transparent 40%);
+    background-size: 200% 200%;
+    animation: aurora-shift 12s ease-in-out infinite;
+    display: none;
+  }
+  @keyframes aurora-shift {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+
+  /* Grid tech tipis di belakang seluruh halaman, konsisten dengan tema halaman login/register.
+     Otomatis "hilang" di balik section ber-background solid (bg-white, dsb) karena z-index paling belakang,
+     jadi paling terlihat di hero & celah antar-section (trust bar, SiLapor, testimoni). */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(100,116,139,.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100,116,139,.14) 1px, transparent 1px);
+    background-size: 46px 46px;
+    -webkit-mask-image: radial-gradient(circle at 50% 0%, black, transparent 65%);
+    mask-image: radial-gradient(circle at 50% 0%, black, transparent 65%);
+    animation: authGridPan 46s linear infinite;
+    display: none;
+  }
+  @keyframes authGridPan {
+    0%   { background-position: 0 0, 0 0; }
+    100% { background-position: 220px 220px, 220px 220px; }
+  }
+
+  /* ===================== Hero: glow border "bernapas" pada dashboard mockup ===================== */
+  .glow-card { position: relative; }
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(120deg, rgba(37,99,235,.6), rgba(34,211,238,.4), rgba(168,85,247,.6));
+    background-size: 200% 200%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: authCardBorder 6s ease infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  @keyframes authCardBorder {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+  }
+
+  /* ===================== FAQ jawaban slide-in halus ===================== */
+  .faq-item[open] .faq-answer {
+    animation: faqIn .35s ease both;
+  }
+  @keyframes faqIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===================== Konten Materi Terstruktur (IT / Matematika / Umum) ===================== */
+  .materi-content { display: flex; flex-direction: column; gap: 22px; }
+  .materi-intro { font-size: 0.8rem; line-height: 1.75; color: #334155; }
+  .materi-intro p { margin: 0 0 10px 0; }
+  .materi-intro p:last-child { margin-bottom: 0; }
+
+  .materi-section {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(226,232,240,0.9);
+    border-radius: 20px;
+    padding: 18px 20px;
+  }
+  .materi-section__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 12px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(226,232,240,0.9);
+  }
+  .materi-section__icon {
+    width: 15px; height: 15px;
+    color: #2563EB;
+    flex-shrink: 0;
+  }
+  .materi-section__body {
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: #334155;
+    font-weight: 500;
+  }
+  .materi-section__body p { margin: 0 0 12px 0; }
+  .materi-section__body p:last-child { margin-bottom: 0; }
+
+  .materi-list { margin: 4px 0 14px 0; padding-left: 4px; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .materi-list li { position: relative; padding-left: 22px; }
+  .materi-list:not(.materi-list--ol) li::before {
+    content: "";
+    position: absolute; left: 2px; top: 8px;
+    width: 6px; height: 6px; border-radius: 999px;
+    background: #2563EB;
+  }
+  .materi-list--ol { counter-reset: materiStep; }
+  .materi-list--ol li { counter-increment: materiStep; }
+  .materi-list--ol li::before {
+    content: counter(materiStep);
+    position: absolute; left: 0; top: 0;
+    width: 16px; height: 16px; border-radius: 6px;
+    background: #2563EB; color: #fff;
+    font-size: 0.6rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .materi-list li:last-child { margin-bottom: 0; }
+
+  .materi-inline-code {
+    background: #eef2ff;
+    color: #4338ca;
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.78em;
+  }
+
+  /* Blok code dengan header bahasa + tombol copy */
+  .code-block {
+    margin: 14px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    box-shadow: 0 10px 24px -14px rgba(15,23,42,0.4);
+  }
+  .code-block__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+  }
+  .code-block__lang {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #93c5fd;
+    font-family: var(--font-mono, ui-monospace, monospace);
+  }
+  .code-block__copy {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 0.65rem; font-weight: 700;
+    color: #cbd5e1;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 4px 9px;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .code-block__copy:hover { background: rgba(255,255,255,0.14); color: #fff; }
+  .code-block__copy.is-copied { color: #34d399; border-color: rgba(52,211,153,0.4); }
+  .code-block pre {
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+    font-size: 0.76rem;
+    line-height: 1.6;
+  }
+  .code-block code {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    color: #e2e8f0;
+    background: transparent !important;
+  }
+
+  /* Kartu Rumus (Matematika) */
+  .materi-content--mtk .materi-section__title { color: #7c3aed; }
+  .materi-content--mtk .materi-section__icon { color: #7c3aed; }
+  .materi-content--mtk .materi-section {
+    border-color: rgba(196,181,253,0.6);
+    background: rgba(250,245,255,0.6);
+  }
+
+  /* Reading progress bar pada halaman detail materi */
+  .reading-progress-track { position: sticky; top: 0; z-index: 30; height: 4px; background: rgba(226,232,240,0.6); border-radius: 999px; overflow: hidden; }
+  .reading-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg,#2563EB,#4F46E5); transition: width .15s ease-out; }
+
+  /* Empty selesai badge di card materi */
+  .materi-done-badge {
+    position: absolute; top: 12px; right: 12px;
+    display: flex; align-items: center; gap: 4px;
+    background: #10b981; color: #fff;
+    font-size: 9px; font-weight: 800; text-transform: uppercase;
+    padding: 4px 9px; border-radius: 999px;
+    box-shadow: 0 4px 10px -2px rgba(16,185,129,.5);
+  }
+
+  /* Tabs grup kategori pada portal materi */
+  .group-tab {
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    transition: all .2s ease;
+    white-space: nowrap;
+  }
+  .group-tab:hover { background: #f8fafc; }
+  .group-tab.is-active {
+    background: #2563EB;
+    color: #fff;
+    border-color: #2563EB;
+    box-shadow: 0 6px 14px -6px rgba(37,99,235,.5);
+  }
+
+  /* ===================== Hormati preferensi reduce-motion ===================== */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .hover-card, .icon-pop, .float-card, .mini-card,
+    .bar-fill, .pulse-dot::after, .pipeline-fill, .step-dot,
+    .issue-row, .cta-glow::before, .typewriter,
+    body::before, body::after, .glow-card::before {
+      animation: none !important;
+      transition: none !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+    .typewriter { width: auto; border-right: none; }
+  }
+
+  
+  /* ======================================================================
+     DARK MODE — Landing Page, Navbar, Footer, FAQ
+     Ditulis sebagai override CSS biasa (bukan utility "dark:") supaya bisa
+     menyasar semua class Tailwind yang sudah ada di markup tanpa perlu
+     mengubah tiap elemen satu per satu. Diaktifkan lewat class "dark" di
+     <html> (lihat script toggle di includes/navbar.php).
+     ====================================================================== */
+
+  html.dark body { background-color: #2C2C2C; }
+
+  /* ---- Latar section ---- */
+  html.dark .bg-white { background-color: #131b2c !important; }
+  html.dark .bg-\[\#f8fafc\] { background-color: #0f1729 !important; }
+  html.dark .bg-slate-50 { background-color: #141b2c !important; }
+  html.dark .hover\:bg-slate-50:hover { background-color: #182036 !important; }
+  html.dark .bg-slate-50\/50 { background-color: rgba(30,41,59,.5) !important; }
+  html.dark .hover\:bg-slate-50\/50:hover { background-color: rgba(30,41,59,.5) !important; }
+  html.dark .bg-gray-50 { background-color: #141b2c !important; }
+  html.dark .hover\:bg-gray-50:hover { background-color: #182036 !important; }
+  html.dark .bg-gray-100\/80 { background-color: #1b2436 !important; }
+  html.dark .hover\:bg-gray-100:hover { background-color: #1b2436 !important; }
+  html.dark .bg-blue-50 { background-color: rgba(37,99,235,.15) !important; }
+
+  /* ---- Teks ---- */
+  html.dark .text-slate-900,
+  html.dark .text-gray-900 { color: #f1f5f9 !important; }
+  html.dark .text-slate-800 { color: #e2e8f0 !important; }
+  html.dark .text-slate-700,
+  html.dark .text-gray-700 { color: #cbd5e1 !important; }
+  html.dark .text-slate-600,
+  html.dark .text-gray-600 { color: #94a3b8 !important; }
+  html.dark .text-slate-500 { color: #94a3b8 !important; }
+  html.dark .text-slate-400 { color: #64748b !important; }
+  html.dark .hover\:text-slate-900:hover,
+  html.dark .hover\:text-gray-900:hover { color: #f1f5f9 !important; }
+
+  /* ---- Border & divider ---- */
+  html.dark .border-slate-100,
+  html.dark .border-slate-200,
+  html.dark .border-slate-300,
+  html.dark .border-gray-200,
+  html.dark .border-gray-200\/60,
+  html.dark .border-gray-200\/80 { border-color: #1e293b !important; }
+  html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) { border-color: #1e293b !important; }
+  html.dark .hover\:border-slate-300:hover { border-color: #334155 !important; }
+
+  /* ---- Badge status (SiLapor, dsb) ---- */
+  html.dark .bg-amber-50 { background-color: rgba(245,158,11,.15) !important; }
+  html.dark .bg-green-50 { background-color: rgba(34,197,94,.15) !important; }
+  html.dark .bg-red-50 { background-color: rgba(239,68,68,.15) !important; }
+  html.dark .text-amber-700 { color: #fbbf24 !important; }
+  html.dark .text-green-700 { color: #4ade80 !important; }
+  html.dark .text-red-700,
+  html.dark .text-red-600 { color: #f87171 !important; }
+  html.dark .text-emerald-600 { color: #34d399 !important; }
+  html.dark .border-amber-200 { border-color: rgba(245,158,11,.35) !important; }
+  html.dark .border-green-200 { border-color: rgba(34,197,94,.35) !important; }
+  html.dark .border-red-100,
+  html.dark .border-red-200 { border-color: rgba(239,68,68,.35) !important; }
+
+  /* ---- Navbar & drawer mobile (elemen non-utility / hardcoded warna) ---- */
+  html.dark #site-navbar.bg-white\/80 { background-color: rgba(11,17,32,.85) !important; }
+  html.dark .navbar-drawer { background-color: #0f172a !important; }
+  html.dark .navbar-overlay { background-color: rgba(0,0,0,.6); }
+
+  /* ---- CTA gelap (sudah gelap sejak awal, tetap kontras di kedua tema) ---- */
+  html.dark .cta-glow { border: 1px solid #1e293b; }
+  html.dark .cta-glow .bg-white,
+  html.dark .cta-glow .hover\:bg-slate-100:hover { background-color: #ffffff !important; }
+  html.dark .cta-glow .text-slate-900 { color: #0f172a !important; }
+
+  /* ---- Aurora (lebih terang & lebih "menyala" di dark mode) ---- */
+  html.dark body::before {
+    background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.65), transparent 45%),
+                radial-gradient(circle at 80% 70%, rgba(59,130,246,0.6), transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(168,85,247,0.4), transparent 55%),
+                radial-gradient(circle at 85% 15%, rgba(34,211,238,0.38), transparent 40%);
+    background-size: 200% 200%;
+    display: none;
+  }
+  html.dark body::after {
+    background-image:
+      linear-gradient(rgba(148,163,184,.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.16) 1px, transparent 1px);
+    display: none;
+  }
+
+  /* ---- Biarkan aurora tembus di section SiLapor & Testimoni ---- */
+  #silapor.bg-\[\#f8fafc\],
+  #testimoni.bg-\[\#f8fafc\] {
+    background-color: transparent !important;
+  }
+
+  /* ---- Trust bar: paksa tetap kontras & terbaca di atas aurora dark mode ----
+     Section ini transparan (tidak punya bg-white/bg-slate-50) supaya aurora
+     tetap terlihat mengalir di baliknya, jadi teksnya butuh perlakuan khusus
+     alih-alih ikut aturan .text-slate-400 umum yang terlalu redup di sini. */
+  html.dark #trust-bar::before {
+    background: rgba(11,17,32,0.55);
+  }
+  html.dark #trust-bar .trust-label {
+    color: #94a3b8 !important;
+  }
+  html.dark #trust-bar .trust-item {
+    color: #cbd5e1 !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,.45);
+  }
+  html.dark #trust-bar .trust-item:hover {
+    color: #f8fafc !important;
+  }
+
+  /* ---- Transisi halus saat berganti tema ---- */
+  body, #site-navbar, .navbar-drawer, section, .bg-white, .bg-slate-50, .bg-\[\#f8fafc\] {
+    transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+  }
+
+  /* ======================================================================
+     RESPONSIF — Guard global agar konten tidak meluber di layar sempit (HP)
+     ====================================================================== */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  img, svg, video, canvas, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  pre, code, table, .overflow-x-auto {
+    max-width: 100%;
+  }
+  h1, h2, h3, h4, p, li, a, span, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  @media (max-width: 640px) {
+    .code-block pre { padding: 12px; font-size: 0.7rem; }
+    .materi-section { padding: 14px 14px; border-radius: 16px; }
+  }

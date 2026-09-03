@@ -1,0 +1,30 @@
+# File environment lokal yang berisi kredensial/setting pribadi.
+# JANGAN commit ke git.
+.env
+
+# Vendor & dependency
+vendor/
+
+# node_modules (frontend build)
+node_modules/
+
+# Data runtime pribadi: berisi identitas pengguna, token, dan aktivitas asli.
+# JANGAN commit ke git. Konten kurikulum (courses/materi/quiz/kategori.json)
+# TETAP di-push sebagai seed aplikasi.
+data/users.json
+data/progress.json
+data/activities.json
+data/notifications.json
+data/reports.json
+data/leaderboard.json
+
+# Log & cache
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
