@@ -1,61 +1,78 @@
 <?php
+
 require_once __DIR__ . '/../function.php';
+
 $pageTitle = 'Tentang EduCare — Profil';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="page.about"><?= htmlspecialchars($pageTitle) ?></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Dark mode: terapkan tema tersimpan ke <html> SEBELUM CSS/paint pertama,
-     supaya tidak ada kedipan (flash) dari light ke dark saat halaman dibuka/direfresh. -->
+  <title><?= htmlspecialchars($pageTitle) ?></title>
+
+  <!-- Dark mode sebelum paint -->
   <script>
     (function() {
       try {
-        var saved = localStorage.getItem('educare-theme');
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var isDark = saved ? saved === 'dark' : prefersDark;
-        if (isDark) {
+        const saved = localStorage.getItem('educare-theme');
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (saved === 'dark' || (!saved && prefersDark)) {
           document.documentElement.classList.add('dark');
         }
-      } catch (e) {
-        /* localStorage tidak tersedia: fallback ke light mode */
-      }
+      } catch (e) {}
     })();
   </script>
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
-  <!-- Override dark mode global (navbar, footer, warna umum) -->
-  <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl('assets/css/style.css')) ?>">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Existing CSS -->
+  <link
+    rel="stylesheet"
+    href="<?= htmlspecialchars(assetUrl('assets/css/style.css')) ?>">
 
   <script>
     tailwind.config = {
       darkMode: 'class',
+
       theme: {
         extend: {
           colors: {
-            primary: '#2563EB',
-            'primary-deep': '#1D4ED8',
+            primary: '#1e40af',
+            'primary-light': '#3b82f6'
           },
+
           fontFamily: {
-            serif: ['"Source Serif 4"', 'Georgia', 'serif'],
-            body: ['"Inter"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['Inter', 'sans-serif'],
+            serif: ['"Source Serif 4"', 'Georgia', 'serif']
           }
         }
       }
-    }
+    };
   </script>
 
   <style>
-    * {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
     }
 
@@ -63,53 +80,34 @@ $pageTitle = 'Tentang EduCare — Profil';
       font-family: 'Source Serif 4', Georgia, serif;
     }
 
-    .font-mono-tech {
-      font-family: 'JetBrains Mono', monospace;
+    .about-card {
+      transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
     }
 
-    body {
-      background: #ffffff;
-      color: #0f172a;
+    .about-card:hover {
+      transform: translateY(-3px);
     }
 
-    html.dark body {
-      background: #0b1120;
-      color: #e2e8f0;
+    .fade-up {
+      animation: fadeUp .6s ease both;
     }
 
-    .drop-cap::first-letter {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 3.6rem;
-      font-weight: 700;
-      float: left;
-      line-height: .8;
-      padding-right: .55rem;
-      padding-top: .35rem;
-      color: #2563EB;
+    .delay-1 {
+      animation-delay: .08s;
     }
 
-    .pull-quote {
-      border-left: 3px solid #2563EB;
+    .delay-2 {
+      animation-delay: .16s;
     }
 
-    .related-item {
-      transition: background-color .2s ease;
+    .delay-3 {
+      animation-delay: .24s;
     }
 
-    .related-item:hover {
-      background-color: #F8FAFC;
-    }
-
-    .tag-pill {
-      transition: border-color .2s ease, color .2s ease;
-    }
-
-    .tag-pill:hover {
-      border-color: #2563EB;
-      color: #2563EB;
-    }
-
-    @keyframes riseIn {
+    @keyframes fadeUp {
       from {
         opacity: 0;
         transform: translateY(16px);
@@ -120,218 +118,815 @@ $pageTitle = 'Tentang EduCare — Profil';
         transform: translateY(0);
       }
     }
-
-    .rise {
-      animation: riseIn .6s cubic-bezier(.16, 1, .3, 1) both;
-    }
-
-    .d1 {
-      animation-delay: .05s
-    }
-
-    .d2 {
-      animation-delay: .12s
-    }
-
-    .d3 {
-      animation-delay: .2s
-    }
-
-    .d4 {
-      animation-delay: .28s
-    }
   </style>
 </head>
 
-<body class="antialiased bg-white dark:bg-[#0b1120] transition-colors duration-300">
-
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-white antialiased transition-colors duration-200">
 
   <?php include __DIR__ . '/../includes/navbar.php'; ?>
 
-  <section id="about" class="px-6 py-20 md:py-24">
-    <div class="max-w-6xl mx-auto">
 
-      <!-- ===== Section label ===== -->
-      <div class="rise flex items-center gap-2 mb-6">
-        <span class="w-2.5 h-2.5 bg-primary rounded-sm"></span>
-        <p class="text-[12.5px] font-bold tracking-[0.14em] text-primary uppercase" data-i18n="about.badge">Profil</p>
-        <span class="text-slate-300 dark:text-slate-600">/</span>
-        <p class="text-[12.5px] font-semibold tracking-[0.1em] text-slate-400 dark:text-slate-500 uppercase" data-i18n="about.crumb">Tentang EduCare</p>
+  <!-- =========================================================
+     HERO
+========================================================= -->
+
+  <section class="px-6 pt-20 pb-16 md:pt-28 md:pb-20">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+      <!-- Badge -->
+      <div class="fade-up inline-flex items-center gap-2
+                    rounded-full border border-slate-200
+                    dark:border-slate-800
+                    px-3 py-1.5 mb-7">
+
+        <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+
+        <span
+          class="text-xs font-semibold tracking-wide
+                       text-slate-500 dark:text-slate-400"
+          data-i18n="about.badge">
+          Tentang EduCare
+        </span>
+
       </div>
 
-      <!-- ===== Headline + deck ===== -->
-      <div class="max-w-3xl mb-8">
-        <h2 class="rise d1 font-serif text-[2.15rem] sm:text-[2.75rem] font-bold leading-[1.15] text-slate-900 dark:text-white" data-i18n="about.title">
-          Satu Platform untuk Menjawab Dua Kebutuhan Sekolah Sekaligus
-        </h2>
-        <p class="rise d2 mt-4 text-[17px] text-slate-500 dark:text-slate-400 leading-relaxed font-serif" data-i18n="about.deck">
-          Di tengah sekolah yang masih mengelola pembelajaran dan pengaduan secara terpisah, EduCare hadir menyatukan keduanya — dari ruang kelas digital sampai laporan fasilitas rusak, dalam satu alur yang sama.
+
+      <!-- Heading -->
+
+      <h1
+        class="fade-up delay-1
+                   font-serif
+                   text-4xl
+                   sm:text-5xl
+                   md:text-6xl
+                   font-semibold
+                   leading-tight
+                   tracking-tight
+                   text-slate-900
+                   dark:text-white">
+        Satu Platform untuk
+        <span class="text-primary dark:text-blue-400">
+          Sekolah yang Lebih Baik
+        </span>
+      </h1>
+
+
+      <!-- Description -->
+
+      <p
+        class="fade-up delay-2
+                   max-w-2xl
+                   mx-auto
+                   mt-6
+                   text-base
+                   md:text-lg
+                   leading-relaxed
+                   text-slate-600
+                   dark:text-slate-400">
+        EduCare adalah platform digital sekolah yang menghubungkan
+        proses pembelajaran, komunikasi, dan pelaporan dalam satu
+        sistem yang sederhana dan mudah digunakan.
+      </p>
+
+
+      <!-- CTA -->
+
+      <div class="fade-up delay-3 flex flex-wrap justify-center gap-3 mt-8">
+
+        <a
+          href="<?= htmlspecialchars($baseUrl . 'auth/register.php') ?>"
+          class="inline-flex items-center gap-2
+                       rounded-lg
+                       bg-primary
+                       px-5 py-2.5
+                       text-sm
+                       font-semibold
+                       text-white
+                       hover:bg-blue-800
+                       transition">
+          Mulai Menggunakan EduCare
+
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14" />
+            <path d="m13 6 6 6-6 6" />
+          </svg>
+        </a>
+
+        <a
+          href="#tentang"
+          class="inline-flex items-center
+                       rounded-lg
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       px-5 py-2.5
+                       text-sm
+                       font-semibold
+                       text-slate-700
+                       dark:text-slate-300
+                       hover:bg-slate-50
+                       dark:hover:bg-slate-900
+                       transition">
+          Pelajari lebih lanjut
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+     INTRO
+========================================================= -->
+
+  <section
+    id="tentang"
+    class="px-6 py-16 md:py-20
+           border-y
+           border-slate-100
+           dark:border-slate-900
+           bg-slate-50/70
+           dark:bg-slate-900/30">
+
+    <div class="max-w-4xl mx-auto">
+
+      <div class="grid md:grid-cols-[180px_1fr] gap-8 md:gap-14">
+
+        <!-- Label -->
+
+        <div>
+
+          <p
+            class="text-xs
+                           font-bold
+                           uppercase
+                           tracking-[0.18em]
+                           text-primary">
+            Tentang Kami
+          </p>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="space-y-6">
+
+          <h2
+            class="font-serif
+                           text-3xl
+                           md:text-4xl
+                           font-semibold
+                           leading-tight">
+            Pendidikan tidak hanya
+            tentang belajar.
+          </h2>
+
+          <p
+            class="text-base
+                           md:text-lg
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            EduCare dibuat dari sebuah kebutuhan sederhana:
+            bagaimana membuat aktivitas sekolah menjadi lebih
+            terhubung secara digital.
+          </p>
+
+          <p
+            class="text-base
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Dalam satu platform, siswa dapat mengakses materi,
+            mengikuti pembelajaran, mengerjakan kuis, dan
+            memantau perkembangan mereka. Di sisi lain, guru
+            dan pihak sekolah dapat mengelola informasi serta
+            menerima laporan dari siswa dengan lebih terstruktur.
+          </p>
+
+          <p
+            class="text-base
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Dengan pendekatan tersebut, EduCare ingin membantu
+            menciptakan lingkungan sekolah yang lebih terbuka,
+            responsif, dan siap menghadapi kebutuhan pendidikan
+            di era digital.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+     VISI & MISI
+========================================================= -->
+
+  <section class="px-6 py-20">
+
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-12">
+
+        <p
+          class="text-xs
+                       font-bold
+                       uppercase
+                       tracking-[0.18em]
+                       text-primary
+                       mb-3">
+          Visi & Tujuan
         </p>
+
+        <h2
+          class="font-serif
+                       text-3xl
+                       md:text-4xl
+                       font-semibold">
+          Membangun sekolah yang lebih terhubung
+        </h2>
+
       </div>
 
-      <!-- ===== Byline row ===== -->
-      <div class="rise d3 flex flex-wrap items-center gap-4 pb-6 mb-10 border-b border-slate-200 dark:border-slate-800">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-400 to-primary flex items-center justify-center text-white text-[13px] font-bold font-serif">E</div>
-          <div>
-            <p class="text-[13.5px] font-semibold text-slate-800 dark:text-slate-200" data-i18n="about.byline_name">Tim EduCare</p>
-            <p class="text-[12px] text-slate-400 dark:text-slate-500 font-mono-tech" data-i18n="about.byline_meta">Diperbarui 20 Jul 2026 · 4 menit baca</p>
+
+      <div class="grid md:grid-cols-2 gap-5">
+
+
+        <!-- Vision -->
+
+        <div
+          class="about-card
+                       rounded-2xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-7
+                       md:p-8">
+
+          <div
+            class="w-11 h-11
+                           rounded-xl
+                           bg-blue-50
+                           dark:bg-blue-500/10
+                           text-primary
+                           flex items-center
+                           justify-center
+                           mb-6">
+
+            <svg
+              width="21"
+              height="21"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+
           </div>
+
+          <h3
+            class="text-xl
+                           font-semibold
+                           mb-3">
+            Visi
+          </h3>
+
+          <p
+            class="leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Menjadi platform digital yang membantu sekolah
+            menciptakan proses belajar dan komunikasi yang
+            lebih mudah, transparan, dan terintegrasi.
+          </p>
+
         </div>
-        <div class="ml-auto flex items-center gap-2">
-          <button class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-primary hover:border-primary transition-colors" aria-label="Bagikan">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v14" />
+
+
+
+        <!-- Mission -->
+
+        <div
+          class="about-card
+                       rounded-2xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-7
+                       md:p-8">
+
+          <div
+            class="w-11 h-11
+                           rounded-xl
+                           bg-blue-50
+                           dark:bg-blue-500/10
+                           text-primary
+                           flex items-center
+                           justify-center
+                           mb-6">
+
+            <svg
+              width="21"
+              height="21"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8">
+              <path d="M12 2v20" />
+              <path d="m5 9 7-7 7 7" />
+              <path d="M5 15h14" />
             </svg>
-          </button>
-          <button class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-primary hover:border-primary transition-colors" aria-label="Simpan">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-            </svg>
-          </button>
+
+          </div>
+
+          <h3
+            class="text-xl
+                           font-semibold
+                           mb-3">
+            Tujuan
+          </h3>
+
+          <p
+            class="leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Menghadirkan teknologi yang sederhana dan bermanfaat
+            agar siswa, guru, dan sekolah dapat beraktivitas
+            dengan lebih efektif.
+          </p>
+
         </div>
+
       </div>
 
-      <!-- ===== Main grid: article column + sidebar ===== -->
-      <div class="grid lg:grid-cols-[1fr_320px] gap-12">
+    </div>
 
-        <!-- ===================== ARTICLE COLUMN ===================== -->
-        <div class="rise d4 min-w-0">
+  </section>
 
-          <!-- Feature visual styled like a news lead image -->
-          <figure class="mb-8">
-            <div class="rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 aspect-[16/9] flex items-center justify-center relative">
-              <div class="grid grid-cols-3 gap-3 w-full max-w-md px-6">
-                <div class="col-span-2 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-3">
-                  <p class="text-[10px] font-mono-tech text-slate-400 dark:text-slate-500 mb-1.5">BELAJAR ONLINE</p>
-                  <div class="h-1.5 rounded-full bg-slate-100 dark:bg-slate-700 mb-1.5">
-                    <div class="h-1.5 rounded-full bg-primary w-3/4"></div>
-                  </div>
-                  <div class="h-1.5 rounded-full bg-slate-100 dark:bg-slate-700 w-2/3"></div>
-                </div>
-                <div class="rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-3 flex flex-col items-center justify-center">
-                  <span class="text-[18px]">📚</span>
-                </div>
-                <div class="rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-3 flex flex-col items-center justify-center">
-                  <span class="text-[18px]">📢</span>
-                </div>
-                <div class="col-span-2 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-3">
-                  <p class="text-[10px] font-mono-tech text-slate-400 dark:text-slate-500 mb-1.5">SILAPOR</p>
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 text-[9px] font-medium border border-amber-200 dark:border-amber-500/30">in-review</span>
-                </div>
-              </div>
-            </div>
-            <figcaption class="text-[12px] text-slate-400 dark:text-slate-500 mt-2.5 font-mono-tech" data-i18n="about.figcaption">Ilustrasi — tampilan Belajar Online dan SiLapor dalam satu dashboard EduCare.</figcaption>
-          </figure>
 
-          <p class="drop-cap text-[16.5px] text-slate-700 dark:text-slate-300 leading-[1.85] mb-6" data-i18n="about.p1">
-            EduCare dimulai dari pengamatan sederhana: siswa belajar lewat satu aplikasi, sementara keluhan tentang fasilitas atau lingkungan sekolah dilaporkan lewat cara yang berbeda-beda — dari kertas, grup chat, sampai kotak saran yang jarang dibuka. Dua kebutuhan yang sebenarnya berjalan setiap hari, tapi tidak pernah benar-benar terhubung.
+
+  <!-- =========================================================
+     FITUR UTAMA
+========================================================= -->
+
+  <section
+    class="px-6 py-20
+           bg-slate-50
+           dark:bg-slate-900/40
+           border-y
+           border-slate-100
+           dark:border-slate-900">
+
+    <div class="max-w-5xl mx-auto">
+
+      <div class="max-w-2xl mb-12">
+
+        <p
+          class="text-xs
+                       font-bold
+                       uppercase
+                       tracking-[0.18em]
+                       text-primary
+                       mb-3">
+          Apa yang Ada di EduCare
+        </p>
+
+        <h2
+          class="font-serif
+                       text-3xl
+                       md:text-4xl
+                       font-semibold
+                       mb-4">
+          Semua kebutuhan penting,
+          dalam satu tempat.
+        </h2>
+
+        <p
+          class="text-slate-600
+                       dark:text-slate-400
+                       leading-relaxed">
+          EduCare menggabungkan beberapa kebutuhan utama
+          sekolah ke dalam pengalaman digital yang sederhana.
+        </p>
+
+      </div>
+
+
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+
+        <!-- Card -->
+
+        <div
+          class="about-card
+                       rounded-xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-6">
+
+          <span class="text-2xl">📚</span>
+
+          <h3
+            class="font-semibold
+                           text-lg
+                           mt-5
+                           mb-2">
+            Belajar Online
+          </h3>
+
+          <p
+            class="text-sm
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Akses materi pembelajaran dan sumber belajar
+            secara digital kapan saja.
           </p>
 
-          <p class="text-[16.5px] text-slate-700 dark:text-slate-300 leading-[1.85] mb-6" data-i18n-html="about.p2_html">
-            Dari situ EduCare dibangun sebagai satu platform yang menggabungkan <strong class="font-semibold text-slate-900">Belajar Online</strong> — mulai dari mata pelajaran umum seperti Matematika dan IPA, sampai bidang IT seperti Pemrograman dan AI — dengan <strong class="font-semibold text-slate-900">SiLapor Sekolah</strong>, sistem pelaporan yang membuat setiap laporan tercatat, terlacak statusnya, dan sampai ke pihak yang tepat.
+        </div>
+
+
+
+        <!-- Card -->
+
+        <div
+          class="about-card
+                       rounded-xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-6">
+
+          <span class="text-2xl">📝</span>
+
+          <h3
+            class="font-semibold
+                           text-lg
+                           mt-5
+                           mb-2">
+            Kuis & Evaluasi
+          </h3>
+
+          <p
+            class="text-sm
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Latih pemahaman siswa melalui kuis dan evaluasi
+            pembelajaran yang terstruktur.
           </p>
 
-          <blockquote class="pull-quote pl-5 py-1 my-8">
-            <p class="font-serif text-[20px] leading-relaxed text-slate-800 dark:text-slate-200 italic" data-i18n="about.quote">
-              "Sekolah yang responsif bukan cuma soal mengajar dengan baik, tapi juga mendengar dengan cepat."
+        </div>
+
+
+
+        <!-- Card -->
+
+        <div
+          class="about-card
+                       rounded-xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-6">
+
+          <span class="text-2xl">📢</span>
+
+          <h3
+            class="font-semibold
+                           text-lg
+                           mt-5
+                           mb-2">
+            SiLapor Sekolah
+          </h3>
+
+          <p
+            class="text-sm
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Sampaikan laporan mengenai fasilitas atau
+            lingkungan sekolah secara lebih terstruktur.
+          </p>
+
+        </div>
+
+
+
+        <!-- Card -->
+
+        <div
+          class="about-card
+                       rounded-xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-6">
+
+          <span class="text-2xl">📊</span>
+
+          <h3
+            class="font-semibold
+                           text-lg
+                           mt-5
+                           mb-2">
+            Progress Belajar
+          </h3>
+
+          <p
+            class="text-sm
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Pantau perkembangan pembelajaran dan pencapaian
+            siswa dengan lebih mudah.
+          </p>
+
+        </div>
+
+
+
+        <!-- Card -->
+
+        <div
+          class="about-card
+                       rounded-xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-6">
+
+          <span class="text-2xl">👨‍🏫</span>
+
+          <h3
+            class="font-semibold
+                           text-lg
+                           mt-5
+                           mb-2">
+            Untuk Guru
+          </h3>
+
+          <p
+            class="text-sm
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Membantu guru mengelola aktivitas pembelajaran
+            dan informasi siswa.
+          </p>
+
+        </div>
+
+
+
+        <!-- Card -->
+
+        <div
+          class="about-card
+                       rounded-xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-6">
+
+          <span class="text-2xl">🏫</span>
+
+          <h3
+            class="font-semibold
+                           text-lg
+                           mt-5
+                           mb-2">
+            Untuk Sekolah
+          </h3>
+
+          <p
+            class="text-sm
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400">
+            Mendorong pengelolaan sekolah yang lebih
+            modern dan terintegrasi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+     SIMPLE STAT
+========================================================= -->
+
+  <section class="px-6 py-20">
+
+    <div class="max-w-4xl mx-auto">
+
+      <div
+        class="rounded-2xl
+                   border
+                   border-slate-200
+                   dark:border-slate-800
+                   bg-white
+                   dark:bg-slate-900
+                   p-8
+                   md:p-10">
+
+        <div
+          class="grid
+                       sm:grid-cols-3
+                       gap-8
+                       text-center">
+
+          <div>
+
+            <p
+              class="font-serif
+                               text-3xl
+                               font-semibold
+                               text-primary">
+              100+
             </p>
-          </blockquote>
 
-          <p class="text-[16.5px] text-slate-700 dark:text-slate-300 leading-[1.85] mb-6" data-i18n="about.p3">
-            Bagi siswa, ini berarti satu akun untuk mengakses materi, mengerjakan kuis, dan memantau progres belajar dari mata pelajaran apa pun. Bagi guru dan pihak sekolah, setiap laporan yang masuk melalui SiLapor punya status yang jelas — mulai dari diterima, diproses, hingga selesai ditangani — sehingga tidak ada laporan yang hilang begitu saja.
-          </p>
+            <p
+              class="text-sm
+                               text-slate-500
+                               dark:text-slate-400
+                               mt-1">
+              Materi Pembelajaran
+            </p>
 
-          <p class="text-[16.5px] text-slate-700 dark:text-slate-300 leading-[1.85] mb-8" data-i18n="about.p4">
-            Hari ini, EduCare digunakan oleh guru dan siswa untuk menjalankan dua sisi kehidupan sekolah yang sama pentingnya: belajar setiap hari, dan memastikan lingkungan belajar itu sendiri tetap layak digunakan.
-          </p>
-
-          <!-- Tags -->
-          <div class="flex flex-wrap gap-2 pt-6 border-t border-slate-200 dark:border-slate-800">
-            <span class="tag-pill px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 text-[12px] font-medium text-slate-500 dark:text-slate-400" data-i18n="about.tag1">Pendidikan</span>
-            <span class="tag-pill px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 text-[12px] font-medium text-slate-500 dark:text-slate-400" data-i18n="about.tag2">Digitalisasi Sekolah</span>
-            <span class="tag-pill px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 text-[12px] font-medium text-slate-500 dark:text-slate-400" data-i18n="about.tag3">SiLapor</span>
-            <span class="tag-pill px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 text-[12px] font-medium text-slate-500 dark:text-slate-400" data-i18n="about.tag4">Belajar Online</span>
           </div>
+
+
+          <div>
+
+            <p
+              class="font-serif
+                               text-3xl
+                               font-semibold
+                               text-primary">
+              50+
+            </p>
+
+            <p
+              class="text-sm
+                               text-slate-500
+                               dark:text-slate-400
+                               mt-1">
+              Video Pembelajaran
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <p
+              class="font-serif
+                               text-3xl
+                               font-semibold
+                               text-primary">
+              1 Platform
+            </p>
+
+            <p
+              class="text-sm
+                               text-slate-500
+                               dark:text-slate-400
+                               mt-1">
+              Untuk Ekosistem Sekolah
+            </p>
+
+          </div>
+
         </div>
 
-        <!-- ===================== SIDEBAR ===================== -->
-        <aside class="space-y-8">
-
-          <!-- Quick facts box -->
-          <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-5">
-            <p class="text-[11px] font-bold tracking-[0.1em] text-slate-400 dark:text-slate-500 uppercase mb-4" data-i18n="about.facts_heading">Fakta Singkat</p>
-            <dl class="space-y-3.5">
-              <div class="flex items-center justify-between">
-                <dt class="text-[13px] text-slate-500 dark:text-slate-400" data-i18n="about.fact1_label">Materi tersedia</dt>
-                <dd class="font-mono-tech text-[13px] font-semibold text-slate-800 dark:text-slate-200">100+</dd>
-              </div>
-              <div class="flex items-center justify-between">
-                <dt class="text-[13px] text-slate-500 dark:text-slate-400" data-i18n="about.fact2_label">Video pembelajaran</dt>
-                <dd class="font-mono-tech text-[13px] font-semibold text-slate-800 dark:text-slate-200">50+</dd>
-              </div>
-              <div class="flex items-center justify-between">
-                <dt class="text-[13px] text-slate-500 dark:text-slate-400" data-i18n="about.fact3_label">Siswa aktif</dt>
-                <dd class="font-mono-tech text-[13px] font-semibold text-slate-800 dark:text-slate-200">1.000+</dd>
-              </div>
-              <div class="flex items-center justify-between">
-                <dt class="text-[13px] text-slate-500 dark:text-slate-400" data-i18n="about.fact4_label">Sekolah mitra</dt>
-                <dd class="font-mono-tech text-[13px] font-semibold text-slate-800 dark:text-slate-200">SMK Telekomunikasi Telesandi Bekasi</dd>
-              </div>
-            </dl>
-          </div>
-
-          <!-- Related list -->
-          <div>
-            <p class="text-[11px] font-bold tracking-[0.1em] text-slate-400 dark:text-slate-500 uppercase mb-3 px-1" data-i18n="about.related_heading">Baca Juga</p>
-            <div class="divide-y divide-slate-100 dark:divide-slate-800 border-t border-b border-slate-100 dark:border-slate-800">
-              <a href="#" class="related-item flex gap-3 py-3.5 px-1">
-                <div class="w-16 h-16 shrink-0 rounded-md bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center text-[20px]">💻</div>
-                <div class="min-w-0">
-                  <p class="text-[13.5px] font-semibold text-slate-800 dark:text-slate-200 leading-snug line-clamp-2" data-i18n="about.related1_title">Belajar Pemrograman dari Nol lewat EduCare</p>
-                  <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-1 font-mono-tech" data-i18n="about.related1_cat">Edukasi IT</p>
-                </div>
-              </a>
-              <a href="#" class="related-item flex gap-3 py-3.5 px-1">
-                <div class="w-16 h-16 shrink-0 rounded-md bg-amber-50 dark:bg-amber-500/10 flex items-center justify-center text-[20px]">📢</div>
-                <div class="min-w-0">
-                  <p class="text-[13.5px] font-semibold text-slate-800 dark:text-slate-200 leading-snug line-clamp-2" data-i18n="about.related2_title">Cara Kerja SiLapor: dari Laporan Masuk sampai Selesai</p>
-                  <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-1 font-mono-tech" data-i18n="about.related2_cat">SiLapor</p>
-                </div>
-              </a>
-              <a href="#" class="related-item flex gap-3 py-3.5 px-1">
-                <div class="w-16 h-16 shrink-0 rounded-md bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-[20px]">📈</div>
-                <div class="min-w-0">
-                  <p class="text-[13.5px] font-semibold text-slate-800 dark:text-slate-200 leading-snug line-clamp-2" data-i18n="about.related3_title">Memantau Progres Belajar Siswa secara Real-Time</p>
-                  <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-1 font-mono-tech" data-i18n="about.related3_cat">Belajar Online</p>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- CTA box - FIXED PATH TO REGISTER -->
-          <div class="rounded-lg bg-slate-900 dark:bg-slate-950 dark:border dark:border-slate-800 p-5">
-            <p class="font-serif text-[15px] text-white leading-snug mb-3" data-i18n="about.cta_text">Mau lihat sendiri bagaimana EduCare bekerja?</p>
-            <a href="<?= htmlspecialchars($baseUrl . 'auth/register.php') ?>" class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white bg-primary hover:bg-primary-deep px-4 py-2.5 rounded-md transition-colors">
-              <span data-i18n="about.cta_button">Mulai Belajar</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
-          </div>
-        </aside>
-
       </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================================
+     CTA
+========================================================= -->
+
+  <section class="px-6 pb-20">
+
+    <div
+      class="max-w-4xl
+               mx-auto
+               rounded-2xl
+               bg-primary
+               px-7
+               py-12
+               md:px-12
+               md:py-14
+               text-center">
+
+      <h2
+        class="font-serif
+                   text-3xl
+                   md:text-4xl
+                   font-semibold
+                   text-white">
+        Mari mulai perjalanan belajar
+        yang lebih baik.
+      </h2>
+
+      <p
+        class="max-w-xl
+                   mx-auto
+                   mt-4
+                   text-blue-100
+                   leading-relaxed">
+        Bergabung dengan EduCare dan nikmati pengalaman
+        pembelajaran sekolah yang lebih sederhana dan terhubung.
+      </p>
+
+      <a
+        href="<?= htmlspecialchars($baseUrl . 'auth/register.php') ?>"
+        class="inline-flex
+                   items-center
+                   gap-2
+                   mt-7
+                   rounded-lg
+                   bg-white
+                   px-5
+                   py-2.5
+                   text-sm
+                   font-semibold
+                   text-primary
+                   hover:bg-blue-50
+                   transition">
+        Mulai Sekarang
+
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2">
+          <path d="M5 12h14" />
+          <path d="m13 6 6 6-6 6" />
+        </svg>
+      </a>
     </div>
   </section>
 
   <?php include __DIR__ . '/../includes/footer.php'; ?>
 
-  <!-- Javascript: wajib dimuat supaya tombol menu mobile (hamburger) bisa
-     membuka drawer -- termasuk lang switcher versi mobile yang ada di
-     dalam drawer tersebut. Tanpa ini, di layar mobile drawer tidak akan
-     pernah terbuka. -->
-  <script type="module" src="<?= htmlspecialchars($baseUrl) ?>assets/js/app.js" defer></script>
+
+  <script
+    type="module"
+    src="<?= htmlspecialchars($baseUrl) ?>assets/js/app.js"
+    defer></script>
 
 </body>
 
