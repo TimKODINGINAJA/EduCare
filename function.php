@@ -498,7 +498,6 @@ function renderMateriLessons(array $lessons, string $group = 'umum'): string
 
             foreach ($items as $li => $item) {
                 $t        = trim($item['t'] ?? '');
-                $dur      = trim($item['dur'] ?? '');
                 $content  = trim($item['content'] ?? '');
                 $videoUrl = trim($item['video_url'] ?? '');
                 if ($t === '' && $content === '' && $videoUrl === '') {
@@ -508,9 +507,6 @@ function renderMateriLessons(array $lessons, string $group = 'umum'): string
                 $html .= '<div class="materi-lesson">';
 
                 $badge = '';
-                if ($dur !== '') {
-                    $badge .= '<span class="materi-lesson__dur">' . escMateri($dur) . '</span>';
-                }
                 if ($videoUrl !== '') {
                     $badge .= '<span class="materi-lesson__video">' . escMateri('🎬 Video') . '</span>';
                 }

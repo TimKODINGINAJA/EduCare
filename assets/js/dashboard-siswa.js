@@ -2244,8 +2244,8 @@ landing.innerHTML = \`
             <p>Dibimbing oleh pengajar berpengalaman.</p>
         </div>
         <div style="flex:1; background:#f0f0f0; padding:20px; border-radius:8px;">
-            <h3>🏆 Sertifikat</h3>
-            <p>Dapatkan pengakuan atas kemampuanmu.</p>
+            <h3>🏆 Prestasi</h3>
+            <p>Pantau kemajuan belajarmu.</p>
         </div>
     </section>
     <footer style="text-align:center; padding:20px; background:#333; color:white; border-radius:8px;">
@@ -3323,7 +3323,6 @@ function newUserData(userId) {
     materiQuizzesDoneCount: 0,
     enrolledCourses: [],
     completedCourses: [],
-    certificates: [],
     achievements: [],
     activity: [],
     notifications: [
@@ -3367,7 +3366,6 @@ function loadUser(initialUser, initialSeed) {
       UD.materiQuizzesDoneCount = initialSeed.quizzesDoneCount ?? 0;
       UD.enrolledCourses = initialSeed.enrolledCourses ?? UD.enrolledCourses;
       UD.completedCourses = initialSeed.completedCourses ?? UD.completedCourses;
-      UD.certificates = initialSeed.certificates ?? UD.certificates;
       UD.activity = initialSeed.activity ?? UD.activity;
       UD.leaderboard = initialSeed.leaderboard ?? UD.leaderboard;
       UD.notifications = (initialSeed.notifications ?? UD.notifications).map(
@@ -3451,23 +3449,14 @@ function syncRealProgress(initialSeed) {
     );
   });
 
-  // Bersihkan daftar kursus tuntas & sertifikat yang menunjuk kursus guru
-  // yang sudah tidak ada di seed (data basi / akun baru).
+  // Bersihkan daftar kursus tuntas yang menunjuk kursus guru yang sudah
+  // tidak ada di seed (data basi / akun baru).
   UD.completedCourses = UD.completedCourses.filter(
     (id) => id < 5000 || guruSeedIds.has(id),
-  );
-  UD.certificates = UD.certificates.filter(
-    (cert) => (cert.courseId ?? cert.id ?? 0) < 5000 || guruSeedIds.has(cert.courseId ?? cert.id ?? 0),
   );
 
   (initialSeed.completedCourses || []).forEach((id) => {
     if (!UD.completedCourses.includes(id)) UD.completedCourses.push(id);
-  });
-
-  (initialSeed.certificates || []).forEach((cert) => {
-    if (!UD.certificates.some((c) => c.courseId === cert.courseId)) {
-      UD.certificates.push(cert);
-    }
   });
 }
 
@@ -3666,7 +3655,6 @@ function goDash(name) {
     lesson: renderLesson,
     quiz: initQuiz,
     progress: renderProgress,
-    cert: renderCerts,
     laporan: () => {},
     leaderboard: renderLB,
     notif: renderNotifs,
@@ -4565,20 +4553,14 @@ function completeLesson() {
 
     if (ec.progress === 100) {
       UD.completedCourses.push(activeCourseId);
-      UD.certificates.push({
-        courseId: activeCourseId,
-        title: c.title,
-        date: new Date().toLocaleDateString(localeForLang()),
-        emoji: c.emoji,
-      });
       addXP(500, dashT("siswa.chrome.complete.courseReason", 'Menyelesaikan kursus "{title}"', { title: c.title }));
       addNotif(
         "🏅",
         dashT("siswa.chrome.complete.courseTitle", "Kursus Selesai!"),
-        dashT("siswa.chrome.complete.courseMsg", 'Selamat! Kamu telah menyelesaikan "{title}". Sertifikatmu sudah tersedia!', { title: c.title }),
+        dashT("siswa.chrome.complete.courseMsg", 'Selamat! Kamu telah menyelesaikan kursus "{title}".', { title: c.title }),
       );
       showToast(
-        dashT("siswa.chrome.complete.courseDone", "🎉 Selamat! Kursus selesai! +500 XP & Sertifikat diraih!"),
+        dashT("siswa.chrome.complete.courseDone", "🎉 Selamat! Kursus selesai! +500 XP!"),
         "ok",
       );
     }
@@ -5106,85 +5088,7 @@ function renderProgress() {
 }
 
 // ================================================================
-// 20. CERTIFICATES
-// ================================================================
-
-function renderCerts() {
-  const el = document.getElementById("certGrid");
-  if (!UD.certificates.length) {
-    el.innerHTML = `
-            <div class="es" style="grid-column:1/-1">
-                <div class="ei">🏅</div>
-                <h3>${dashT("siswa.chrome.certs.emptyTitle", "Belum ada sertifikat")}</h3>
-                <p>${dashT("siswa.chrome.certs.emptyDesc", "Selesaikan kursus untuk mendapatkan sertifikat resmi EduCare yang diakui.")}</p>
-                <button class="btn bcyan" onclick="goDash('myCourses')">${dashT("siswa.chrome.certs.viewMyCourses", "📚 Lihat Kursus Saya")}</button>
-            </div>
-            ${UD.enrolledCourses
-              .map((e) => {
-                const c = COURSES.find((c) => c.id === e.id);
-                if (!c) return "";
-                return `
-                    <div class="dc" style="border-style:dashed;opacity:.6">
-                        <div style="padding:40px;text-align:center">
-                            <div style="font-size:2.5rem;margin-bottom:12px;filter:grayscale(1)">🔒</div>
-                            <div style="font-weight:700;font-size:.92rem;margin-bottom:6px">${escapeHtml(c.title)}</div>
-                            <div style="font-size:.78rem;color:var(--text2)">${dashT("siswa.chrome.certs.stillNeeds", "Selesaikan {n}% lagi untuk sertifikat ini", { n: 100 - e.progress })}</div>
-                            <div class="cpb" style="margin-top:12px">
-                                <div class="cpbf" style="width:${e.progress}%;background:linear-gradient(90deg,var(--cyan),var(--violet))"></div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-              })
-              .join("")}
-        `;
-    return;
-  }
-
-  const disp = CU.fname + (CU.lname ? " " + CU.lname : "");
-  el.innerHTML =
-    UD.certificates
-      .map(
-        (cert) => `
-        <div class="dc" style="border-color:rgba(0,255,219,.2)">
-            <div style="background:linear-gradient(135deg,rgba(0,255,219,.08),rgba(139,92,246,.08));border:1px solid rgba(0,255,219,.15);border-radius:var(--rmd);padding:24px;text-align:center;margin-bottom:16px">
-                <div style="font-size:2.5rem;margin-bottom:8px">${escapeHtml(cert.emoji)}</div>
-                <div style="font-family:var(--mono);font-size:.62rem;color:var(--cyan);letter-spacing:2px;margin-bottom:8px">${dashT("siswa.chrome.certs.official", "SERTIFIKAT RESMI")}</div>
-                <h3 style="font-size:1.1rem;font-weight:800">${escapeHtml(cert.title)}</h3>
-                <div style="font-size:.78rem;color:var(--text2);margin-top:4px">${dashT("siswa.chrome.certs.earnedBy", "Diraih oleh <strong>{name}</strong>", { name: escapeHtml(disp) })}</div>
-                <div style="font-size:.72rem;color:var(--text3);margin-top:4px;font-family:var(--mono)">${escapeHtml(cert.date)}</div>
-            </div>
-            <div style="display:flex;gap:.75rem">
-                <button class="btn bghost bsm" style="flex:1" onclick="showToast(dashT('siswa.chrome.certs.viewToast', 'Membuka sertifikat...'),'info')">👁 ${dashT("siswa.chrome.certs.view", "Lihat")}</button>
-                <button class="btn bcyan bsm" style="flex:1" onclick="showToast(dashT('siswa.chrome.certs.downloadToast', 'Mengunduh PDF...'),'ok')">⬇ ${dashT("siswa.chrome.certs.download", "Unduh PDF")}</button>
-            </div>
-        </div>
-    `,
-      )
-      .join("") +
-    UD.enrolledCourses
-      .filter((e) => !UD.completedCourses.includes(e.id))
-      .map((e) => {
-        const c = COURSES.find((c) => c.id === e.id);
-        if (!c) return "";
-        return `
-            <div class="dc" style="border-style:dashed;opacity:.6">
-                <div style="padding:40px;text-align:center">
-                    <div style="font-size:2.5rem;margin-bottom:12px;filter:grayscale(1)">🔒</div>
-                    <div style="font-weight:700;font-size:.92rem;margin-bottom:6px">${escapeHtml(c.title)}</div>
-                    <div style="font-size:.78rem;color:var(--text2)">${dashT("siswa.chrome.certs.stillNeedsShort", "Selesaikan {n}% lagi", { n: 100 - e.progress })}</div>
-                    <div class="cpb" style="margin-top:12px">
-                        <div class="cpbf" style="width:${e.progress}%;background:linear-gradient(90deg,var(--cyan),var(--violet))"></div>
-                    </div>
-                </div>
-            </div>
-        `;
-      })
-      .join("");
-}
-
-// ================================================================
-// 21. LEADERBOARD
+// 20. LEADERBOARD
 // ================================================================
 
 function renderLB() {
@@ -5418,11 +5322,10 @@ function renderProfile() {
         </div>
     `;
 
-  const achIcons = ["🌟", "🔥", "🏅", "💬", "⚡", "📚", "🚀", "🏆"];
+  const achIcons = ["🌟", "🔥", "💬", "⚡", "📚", "🚀", "🏆"];
   const achKeys = [
     "first_lesson",
     "streak_3",
-    "first_cert",
     "first_forum",
     "xp_100",
     "first_enroll",
@@ -5432,7 +5335,6 @@ function renderProfile() {
   const achDefs = dashboardText("siswa.chrome.profile.ach", [
     ["First Blood", "Selesaikan pelajaran pertama"],
     ["Streak 3 Hari", "Belajar 3 hari berturut"],
-    ["Certified", "Raih sertifikat pertama"],
     ["Komunitas", "Post pertama di forum"],
     ["100 XP", "Kumpulkan 100 XP"],
     ["Enrolled", "Daftar kursus pertama"],
@@ -5454,7 +5356,6 @@ function renderProfile() {
   );
   if (totLessons > 0) earned.add("first_lesson");
   if (UD.streak >= 3) earned.add("streak_3");
-  if (UD.certificates.length > 0) earned.add("first_cert");
   const forumPosts = Object.values(UD.courseForums || {}).reduce(
     (a, b) => a + b.length,
     0,
@@ -6001,14 +5902,6 @@ function markMateriDone(m) {
     }
     if (!UD.completedCourses.includes(guruCourseId)) {
       UD.completedCourses.push(guruCourseId);
-    }
-    if (!UD.certificates.some((c) => c.courseId === guruCourseId)) {
-      UD.certificates.push({
-        courseId: guruCourseId,
-        title: m.title || "Kursus",
-        date: new Date().toLocaleDateString(localeForLang()),
-        emoji: m.emoji || "🏅",
-      });
     }
   }
 

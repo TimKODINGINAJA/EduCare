@@ -2,11 +2,11 @@
 
 # 🎓 EduCare
 
-### Platform Digital Sekolah — Belajar Online, Quiz & Sertifikat Terpadu dengan Sistem Pengaduan Sekolah (SiLapor)
+### Platform Digital Sekolah — Belajar Online, Quiz & Gamifikasi Terpadu dengan Sistem Pengaduan Sekolah (SiLapor)
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://[URL_DEMO])
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://[URL_REPO])
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/TimKODINGINAJA/EduCare)
 
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
@@ -52,13 +52,13 @@ Banyak sekolah masih mengandalkan proses manual dalam pembelajaran dan pengelola
 
 ### Solusi yang Ditawarkan
 
-**EduCare** hadir sebagai platform digital terpadu yang menggabungkan **Learning Management System (LMS)** dan **sistem pengaduan sekolah (SiLapor)** dalam satu aplikasi web ringan berbasis PHP Native. Siswa dapat belajar materi, menonton video, mengerjakan quiz, memantau progress & XP, hingga mengunduh sertifikat — sekaligus melaporkan permasalahan sekolah dan memantau statusnya secara transparan. Guru dapat mengelola materi, bank soal, memantau nilai siswa, dan menindaklanjuti laporan dalam satu dashboard.
+**EduCare** hadir sebagai platform digital terpadu yang menggabungkan **Learning Management System (LMS)** dan **sistem pengaduan sekolah (SiLapor)** dalam satu aplikasi web ringan berbasis PHP Native. Siswa dapat belajar materi, menonton video, mengerjakan quiz, memantau progress & XP — sekaligus melaporkan permasalahan sekolah dan memantau statusnya secara transparan. Guru dapat mengelola materi, bank soal, memantau nilai siswa, dan menindaklanjuti laporan dalam satu dashboard.
 
 ### Tujuan Proyek
 
 - 🎯 **Tujuan Utama**: Mendigitalisasi pembelajaran dan pelaporan sekolah dalam satu platform yang mudah dipakai.
 - 📊 **Target Pengguna**: Siswa, guru, dan pihak sekolah (admin).
-- 💡 **Value Proposition**: PHP Native + database JSON membuat aplikasi ringan, mudah dipasang tanpa setup MySQL, namun sudah mencakup fitur LMS lengkap (materi, video, quiz, sertifikat, progress) plus sistem pengaduan terintegrasi.
+- 💡 **Value Proposition**: PHP Native + database JSON membuat aplikasi ringan, mudah dipasang tanpa setup MySQL, namun sudah mencakup fitur LMS lengkap (materi, video, quiz, progress) plus sistem pengaduan terintegrasi.
 
 ---
 
@@ -69,7 +69,7 @@ Banyak sekolah masih mengandalkan proses manual dalam pembelajaran dan pengelola
 | Fitur                                               | Deskripsi                                                                                                                                                           | Keunggulan                                                             |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | **Belajar Online (`/belajar`)**                     | Portal materi per kategori (Web Development, Matematika, IPA, IPS, Bahasa, dll) dengan detail materi, video pembelajaran, dan syntax highlighting untuk contoh kode | Konten bertahap per modul dengan progress otomatis tersimpan per siswa |
-| **Quiz & Sertifikat**                               | Quiz interaktif per materi lengkap dengan halaman hasil, diakhiri sertifikat belajar setelah materi/quiz diselesaikan                                               | Evaluasi pembelajaran terukur dan penghargaan otomatis                 |
+| **Quiz**                                         | Quiz interaktif per materi lengkap dengan halaman hasil setelah materi di selesaikan                                                                          | Evaluasi pembelajaran terukur                                                                 |
 | **Gamifikasi (XP & Leaderboard)**                   | Siswa memperoleh XP (level = 1 + XP/250) disertai leaderboard dan notifikasi dalam aplikasi                                                                         | Meningkatkan motivasi belajar siswa                                    |
 | **SiLapor — Sistem Pengaduan Sekolah (`/silapor`)** | Siswa membuat laporan (bullying, fasilitas rusak, kebersihan, barang hilang) dan memantau status (Menunggu / Diproses / Selesai)                                    | Transparansi pelaporan dengan tindak lanjut langsung oleh guru         |
 | **Multi-role Dashboard**                            | Dashboard khusus Guru (kelola materi, bank soal, laporan, pengguna) dan Siswa (progress, quiz, laporan, profil)                                                     | Proteksi akses per halaman via `requireRole()`                         |
@@ -89,7 +89,6 @@ Banyak sekolah masih mengandalkan proses manual dalam pembelajaran dan pengelola
 ### Live Demo
 
 🔗 **[Kunjungi Website](https://[URL_DEMO])**
-
 ### Link Github
 🔗 **[Kunjungi Repo Github EduCare](https://github.com/TimKODINGINAJA/EduCare)**
 
@@ -232,10 +231,6 @@ Banyak sekolah masih mengandalkan proses manual dalam pembelajaran dan pengelola
   <p><em>Laporan Siswa</em></p>
 </div>
 
-### Video Demo
-
-📹 **[Link Video Demo](https://[URL_VIDEO])** _(opsional)_
-
 ---
 
 ## 🛠️ Teknologi
@@ -360,7 +355,7 @@ courses.json        → data kursus/pengaturan
 EduCare/
 ├── assets/               # css, js, img (logo & gambar)
 ├── auth/                 # login, register, forgot/reset password, remember, logout
-├── belajar/              # materi, video, quiz, hasil, sertifikat
+├── belajar/              # materi, video, quiz, hasil
 ├── silapor/              # tambah-laporan, riwayat, status, detail-laporan
 ├── dashboard-siswa/      # dashboard, quiz, mark-materi, profile, settings
 ├── dashboard-guru/       # dashboard, materi, kategori, quiz, laporan, user, pengaturan
@@ -466,8 +461,7 @@ composer install
 
 1. **Registrasi/Login**: Daftar akun baru melalui halaman **Daftar/Register**, lalu login.
 2. **Belajar Online**: Buka menu **Belajar** → pilih **kategori** → pilih **materi** → tonton video & baca materi, lalu kerjakan **quiz**.
-3. **Sertifikat**: Setelah materi & quiz selesai, unduh **sertifikat** dari halaman hasil.
-4. **SiLapor**: Buka menu **SiLapor** → buat laporan → pantau statusnya (Menunggu / Diproses / Selesai) di halaman **Status/Riwayat**.
+3. **SiLapor**: Buka menu **SiLapor** → buat laporan → pantau statusnya (Menunggu / Diproses / Selesai) di halaman **Status/Riwayat**.
 5. **Profil & Pengaturan**: Kelola data diri di **dashboard siswa** pada menu Profil & Pengaturan.
 
 #### Untuk Admin / Guru
@@ -516,7 +510,6 @@ GET /belajar/detail-materi.php → Isi materi + video + tombol quiz
 GET /belajar/video.php         → Halaman video
 POST /belajar/quiz.php         → Submit jawaban quiz
 GET /belajar/hasil.php         → Hasil quiz
-GET /belajar/sertifikat.php    → Unduh sertifikat
 ```
 
 #### SiLapor (Siswa)
@@ -549,7 +542,7 @@ komposer install & konfigurasi .env (test reset password email)
 
 1. **Autentikasi** — register siswa baru, login, logout, remember me, reset password via email.
 2. **Proteksi role** — siswa tidak bisa mengakses halaman guru (`dashboard-guru`) dan sebaliknya.
-3. **Belajar** — buka materi, tonton video, kerjakan quiz, cek hasil & progress, unduh sertifikat.
+3. **Belajar** — buka materi, tonton video, kerjakan quiz, cek hasil & progress.
 4. **XP / Leaderboard** — cek kenaikan XP & level setelah quiz, urutan leaderboard.
 5. **SiLapor** — buat laporan sebagai siswa, ubah status sebagai guru, cek riwayat & detail.
 6. **Notifikasi & aktivitas** — cek munculnya notifikasi/aktivitas baru di dashboard.

@@ -180,15 +180,15 @@ $totalQuestions = count($questions);
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-1: #0f1424;
-            --bg-2: #1a1f3a;
-            --card: #161c33;
-            --card-border: rgba(148, 163, 184, 0.12);
+            --bg-1: #f8fafc;
+            --bg-2: #ffffff;
+            --card: #ffffff;
+            --card-border: rgba(148, 163, 184, 0.2);
             --accent-1: #6366f1;
             --accent-2: #8b5cf6;
             --accent-3: #ec4899;
-            --text-main: #f1f5f9;
-            --text-dim: #94a3b8;
+            --text-main: #1e293b;
+            --text-dim: #64748b;
             --success: #22c55e;
             --danger: #ef4444;
             --warn: #f59e0b;
@@ -208,8 +208,8 @@ $totalQuestions = count($questions);
             align-items: center;
             justify-content: center;
             background:
-                radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.18), transparent 45%),
-                radial-gradient(circle at 85% 80%, rgba(236, 72, 153, 0.14), transparent 45%),
+                radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.08), transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(236, 72, 153, 0.07), transparent 45%),
                 linear-gradient(160deg, var(--bg-1), var(--bg-2));
             background-attachment: fixed;
         }
@@ -217,13 +217,13 @@ $totalQuestions = count($questions);
         .quiz-container {
             max-width: 800px;
             width: 100%;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+            background: #ffffff;
             backdrop-filter: blur(20px);
             padding: 36px;
             border-radius: 24px;
             box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.45),
-                0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+                0 20px 60px rgba(15, 23, 42, 0.1),
+                0 0 0 1px rgba(15, 23, 42, 0.03) inset;
             border: 1px solid var(--card-border);
             animation: containerIn 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         }
@@ -268,7 +268,7 @@ $totalQuestions = count($questions);
             font-size: 1.7rem;
             font-weight: 800;
             letter-spacing: -0.01em;
-            background: linear-gradient(135deg, #a5b4fc, #f0abfc);
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -281,16 +281,16 @@ $totalQuestions = count($questions);
             font-size: 1.05rem;
             font-weight: 700;
             font-variant-numeric: tabular-nums;
-            color: #fde68a;
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.25);
+            color: #b45309;
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.3);
             padding: 8px 16px;
             border-radius: 999px;
             transition: all 0.3s ease;
         }
 
         .quiz-timer.timer-warn {
-            color: #fca5a5;
+            color: #b91c1c;
             background: rgba(239, 68, 68, 0.12);
             border-color: rgba(239, 68, 68, 0.35);
             animation: pulse 1s infinite;
@@ -311,7 +311,7 @@ $totalQuestions = count($questions);
         .progress-bar {
             width: 100%;
             height: 8px;
-            background: rgba(148, 163, 184, 0.12);
+            background: rgba(148, 163, 184, 0.25);
             border-radius: 999px;
             margin: 24px 0 4px;
             overflow: hidden;
@@ -384,22 +384,22 @@ $totalQuestions = count($questions);
             align-items: center;
             gap: 14px;
             padding: 14px 18px;
-            background: rgba(255, 255, 255, 0.03);
+            background: #f8fafc;
             border-radius: 14px;
             cursor: pointer;
             transition: all 0.18s ease;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid #e2e8f0;
             position: relative;
         }
 
         .option:hover {
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(99, 102, 241, 0.08);
             border-color: rgba(99, 102, 241, 0.35);
             transform: translateY(-1px);
         }
 
         .option:has(input:checked) {
-            background: rgba(99, 102, 241, 0.16);
+            background: rgba(99, 102, 241, 0.12);
             border-color: var(--accent-1);
             box-shadow: 0 0 0 1px var(--accent-1) inset;
         }
@@ -453,13 +453,13 @@ $totalQuestions = count($questions);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.06);
+            background: #f1f5f9;
             color: var(--text-main);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #e2e8f0;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: #e2e8f0;
         }
 
         .btn-success {
@@ -479,10 +479,10 @@ $totalQuestions = count($questions);
             font-size: 0.88rem;
             color: var(--text-dim);
             font-weight: 700;
-            background: rgba(255, 255, 255, 0.04);
+            background: #f1f5f9;
             padding: 6px 14px;
             border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid #e2e8f0;
         }
 
         .submit-area {

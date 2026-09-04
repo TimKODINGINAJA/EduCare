@@ -187,7 +187,7 @@ include __DIR__ . '/../includes/header.php';
                         <div class="space-y-2 text-center md:text-left">
                             <span class="px-2.5 py-0.5 rounded-md text-[9px] font-extrabold uppercase bg-blue-500 text-white tracking-wider" data-i18n="belajar.detail.quiz_badge">Uji Kompetensi</span>
                             <h3 class="text-lg font-bold" data-i18n="belajar.detail.quiz_cta_title">Siap Menguji Pemahaman Anda?</h3>
-                            <p class="text-xs text-blue-100 max-w-lg leading-relaxed"><span data-i18n="belajar.detail.quiz_cta_desc_prefix">Selesaikan kuis interaktif</span> <strong><?= htmlspecialchars(t_dynamic($linkedQuiz['name'], 'quiz.' . $linkedQuiz['id'] . '.name')) ?></strong> <span data-i18n="belajar.detail.quiz_cta_desc_min">(minimal</span> <?= (int)($linkedQuiz['questions'] ?? count($linkedQuiz['items'] ?? [])) ?> <span data-i18n="belajar.detail.quiz_cta_desc_questions">soal)</span> <span data-i18n="belajar.detail.quiz_cta_desc_suffix">untuk menguji materi ini dan klaim sertifikat belajar Anda.</span></p>
+                            <p class="text-xs text-blue-100 max-w-lg leading-relaxed"><span data-i18n="belajar.detail.quiz_cta_desc_prefix">Selesaikan kuis interaktif</span> <strong><?= htmlspecialchars(t_dynamic($linkedQuiz['name'], 'quiz.' . $linkedQuiz['id'] . '.name')) ?></strong> <span data-i18n="belajar.detail.quiz_cta_desc_min">(minimal</span> <?= (int)($linkedQuiz['questions'] ?? count($linkedQuiz['items'] ?? [])) ?> <span data-i18n="belajar.detail.quiz_cta_desc_questions">soal)</span> <span data-i18n="belajar.detail.quiz_cta_desc_suffix">untuk menguji pemahamanmu terhadap materi ini.</span></p>
                         </div>
 
                         <a href="quiz.php?materi_id=<?= (int)$m['id'] ?>" class="px-6 py-4 bg-white text-blue-600 font-bold rounded-2xl hover:bg-blue-50 transition shadow-lg text-xs flex items-center gap-2 flex-shrink-0">
@@ -250,6 +250,7 @@ include __DIR__ . '/../includes/header.php';
                     markedDone = true;
                     const body = new URLSearchParams();
                     body.append('category', materyCategory);
+                    body.append('csrf_token', '<?= htmlspecialchars(csrfToken(), ENT_QUOTES, 'UTF-8') ?>');
                     fetch('../dashboard-siswa/mark-materi.php', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

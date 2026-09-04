@@ -64,7 +64,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
                 <h2 class="text-3xl font-extrabold text-slate-900 leading-tight" data-i18n="belajar.materi.page_title">Materi Pembelajaran</h2>
-                <p class="text-sm text-slate-500 mt-1" data-i18n="belajar.materi.page_subtitle">Jelajahi materi, tonton modul video, dan selesaikan quiz untuk mendapatkan sertifikat.</p>
+                <p class="text-sm text-slate-500 mt-1" data-i18n="belajar.materi.page_subtitle">Jelajahi materi, tonton modul video, dan selesaikan quiz untuk menguji pemahamanmu.</p>
             </div>
             
             <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-4 py-2.5 shadow-xs self-end md:self-auto">
@@ -146,12 +146,6 @@ include __DIR__ . '/../includes/header.php';
         </div>
     </main>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        if (window.lucide) lucide.createIcons();
-    });
-</script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
 

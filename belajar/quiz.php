@@ -213,7 +213,7 @@ $dashboardUrl    = '../dashboard-siswa/index.php#quiz';
 
 body{
     font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    background:#C6E7FF;
+    background:#ffffff;
     color:#1e293b;
     padding:40px 20px;
     min-height:100vh;
