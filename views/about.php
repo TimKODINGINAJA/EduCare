@@ -39,7 +39,7 @@ $pageTitle = 'Tentang EduCare — Profil';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Valley+Sans:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
   <!-- Existing CSS -->
@@ -59,8 +59,8 @@ $pageTitle = 'Tentang EduCare — Profil';
           },
 
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            serif: ['"Source Serif 4"', 'Georgia', 'serif']
+            sans: ['"Valley Sans"', 'sans-serif'],
+            serif: ['"Valley Sans"', 'sans-serif']
           }
         }
       }
@@ -73,11 +73,11 @@ $pageTitle = 'Tentang EduCare — Profil';
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Valley Sans', sans-serif;
     }
 
     .font-serif {
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: 'Valley Sans', sans-serif;
     }
 
     .about-card {
@@ -490,7 +490,7 @@ $pageTitle = 'Tentang EduCare — Profil';
 
 
   <!-- =========================================================
-     FITUR UTAMA
+     PERAN PENGGUNA (Siswa / Guru / Sekolah)
 ========================================================= -->
 
   <section
@@ -503,249 +503,135 @@ $pageTitle = 'Tentang EduCare — Profil';
 
     <div class="max-w-5xl mx-auto">
 
-      <div class="max-w-2xl mb-12">
+      <!-- Heading -->
+      <div class="grid md:grid-cols-[1fr_320px] gap-8 items-start
+                  border-b border-slate-200 dark:border-slate-800 pb-10 mb-2">
 
-        <p
-          class="text-xs
-                       font-bold
-                       uppercase
-                       tracking-[0.18em]
-                       text-primary
-                       mb-3">
-          Apa yang Ada di EduCare
-        </p>
-
-        <h2
-          class="font-serif
-                       text-3xl
-                       md:text-4xl
-                       font-semibold
-                       mb-4">
-          Semua kebutuhan penting,
-          dalam satu tempat.
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold leading-tight">
+          Satu login, tiga
+          pengalaman yang fokus.
         </h2>
 
-        <p
-          class="text-slate-600
-                       dark:text-slate-400
-                       leading-relaxed">
-          EduCare menggabungkan beberapa kebutuhan utama
-          sekolah ke dalam pengalaman digital yang sederhana.
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed md:pt-2">
+          Siswa, guru, dan pihak sekolah masing-masing punya ruang kerja
+          sendiri, sementara seluruh sekolah berjalan di atas data yang
+          sama dan terhubung.
         </p>
 
       </div>
 
 
+      <!-- Row: Siswa -->
+      <div class="grid md:grid-cols-[80px_260px_1fr] gap-6 md:gap-10
+                  py-10 border-b border-slate-200 dark:border-slate-800">
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <p class="font-serif text-xl text-primary dark:text-blue-400">01</p>
 
-
-        <!-- Card -->
-
-        <div
-          class="about-card
-                       rounded-xl
-                       border
-                       border-slate-200
-                       dark:border-slate-800
-                       bg-white
-                       dark:bg-slate-900
-                       p-6">
-
-          <span class="text-2xl">📚</span>
-
-          <h3
-            class="font-semibold
-                           text-lg
-                           mt-5
-                           mb-2">
-            Belajar Online
-          </h3>
-
-          <p
-            class="text-sm
-                           leading-relaxed
-                           text-slate-600
-                           dark:text-slate-400">
-            Akses materi pembelajaran dan sumber belajar
-            secara digital kapan saja.
+        <div>
+          <h3 class="text-xl font-semibold mb-1">Siswa</h3>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500 mb-3">
+            Belajar
           </p>
-
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Satu tempat untuk materi, tugas, dan hasil belajar, lengkap
+            dengan kuis dan pemantauan progress.
+          </p>
         </div>
 
-
-
-        <!-- Card -->
-
-        <div
-          class="about-card
-                       rounded-xl
-                       border
-                       border-slate-200
-                       dark:border-slate-800
-                       bg-white
-                       dark:bg-slate-900
-                       p-6">
-
-          <span class="text-2xl">📝</span>
-
-          <h3
-            class="font-semibold
-                           text-lg
-                           mt-5
-                           mb-2">
-            Kuis & Evaluasi
-          </h3>
-
-          <p
-            class="text-sm
-                           leading-relaxed
-                           text-slate-600
-                           dark:text-slate-400">
-            Latih pemahaman siswa melalui kuis dan evaluasi
-            pembelajaran yang terstruktur.
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 content-start">
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Akses materi dan tugas pembelajaran
           </p>
-
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Kuis dan evaluasi terstruktur
+          </p>
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Pantau progress belajar
+          </p>
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Sampaikan laporan lewat SiLapor
+          </p>
         </div>
 
+      </div>
 
 
-        <!-- Card -->
+      <!-- Row: Guru -->
+      <div class="grid md:grid-cols-[80px_260px_1fr] gap-6 md:gap-10
+                  py-10 border-b border-slate-200 dark:border-slate-800">
 
-        <div
-          class="about-card
-                       rounded-xl
-                       border
-                       border-slate-200
-                       dark:border-slate-800
-                       bg-white
-                       dark:bg-slate-900
-                       p-6">
+        <p class="font-serif text-xl text-primary dark:text-blue-400">02</p>
 
-          <span class="text-2xl">📢</span>
-
-          <h3
-            class="font-semibold
-                           text-lg
-                           mt-5
-                           mb-2">
-            SiLapor Sekolah
-          </h3>
-
-          <p
-            class="text-sm
-                           leading-relaxed
-                           text-slate-600
-                           dark:text-slate-400">
-            Sampaikan laporan mengenai fasilitas atau
-            lingkungan sekolah secara lebih terstruktur.
+        <div>
+          <h3 class="text-xl font-semibold mb-1">Guru</h3>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500 mb-3">
+            Mengajar
           </p>
-
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Kelola aktivitas pembelajaran dan informasi siswa dengan
+            lebih terstruktur, tanpa proses yang berbelit.
+          </p>
         </div>
 
-
-
-        <!-- Card -->
-
-        <div
-          class="about-card
-                       rounded-xl
-                       border
-                       border-slate-200
-                       dark:border-slate-800
-                       bg-white
-                       dark:bg-slate-900
-                       p-6">
-
-          <span class="text-2xl">📊</span>
-
-          <h3
-            class="font-semibold
-                           text-lg
-                           mt-5
-                           mb-2">
-            Progress Belajar
-          </h3>
-
-          <p
-            class="text-sm
-                           leading-relaxed
-                           text-slate-600
-                           dark:text-slate-400">
-            Pantau perkembangan pembelajaran dan pencapaian
-            siswa dengan lebih mudah.
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 content-start">
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Kelola aktivitas pembelajaran
           </p>
-
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Buat dan nilai kuis siswa
+          </p>
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Pantau perkembangan siswa
+          </p>
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Terima dan tindak lanjuti laporan SiLapor
+          </p>
         </div>
 
+      </div>
 
 
-        <!-- Card -->
+      <!-- Row: Sekolah -->
+      <div class="grid md:grid-cols-[80px_260px_1fr] gap-6 md:gap-10 py-10">
 
-        <div
-          class="about-card
-                       rounded-xl
-                       border
-                       border-slate-200
-                       dark:border-slate-800
-                       bg-white
-                       dark:bg-slate-900
-                       p-6">
+        <p class="font-serif text-xl text-primary dark:text-blue-400">03</p>
 
-          <span class="text-2xl">👨‍🏫</span>
-
-          <h3
-            class="font-semibold
-                           text-lg
-                           mt-5
-                           mb-2">
-            Untuk Guru
-          </h3>
-
-          <p
-            class="text-sm
-                           leading-relaxed
-                           text-slate-600
-                           dark:text-slate-400">
-            Membantu guru mengelola aktivitas pembelajaran
-            dan informasi siswa.
+        <div>
+          <h3 class="text-xl font-semibold mb-1">Sekolah</h3>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500 mb-3">
+            Kelola
           </p>
-
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            Dorong pengelolaan sekolah yang lebih modern lewat data
+            yang terintegrasi dalam satu ekosistem.
+          </p>
         </div>
 
-
-
-        <!-- Card -->
-
-        <div
-          class="about-card
-                       rounded-xl
-                       border
-                       border-slate-200
-                       dark:border-slate-800
-                       bg-white
-                       dark:bg-slate-900
-                       p-6">
-
-          <span class="text-2xl">🏫</span>
-
-          <h3
-            class="font-semibold
-                           text-lg
-                           mt-5
-                           mb-2">
-            Untuk Sekolah
-          </h3>
-
-          <p
-            class="text-sm
-                           leading-relaxed
-                           text-slate-600
-                           dark:text-slate-400">
-            Mendorong pengelolaan sekolah yang lebih
-            modern dan terintegrasi.
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 content-start">
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Kelola data siswa dan guru terpusat
           </p>
-
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Pantau seluruh aktivitas sekolah
+          </p>
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Kelola laporan SiLapor secara terstruktur
+          </p>
+          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
+            Satu ekosistem untuk seluruh sekolah
+          </p>
         </div>
 
       </div>
