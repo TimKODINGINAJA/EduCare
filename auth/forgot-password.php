@@ -276,7 +276,7 @@ if (isset($_SESSION['user'])) {
         <!-- Logo -->
         <a href="<?= htmlspecialchars(pageUrl('index.php')) ?>" class="mb-5">
             <img
-                src="<?= htmlspecialchars(assetUrl('assets/img/EduCare-logo.png')) ?>"
+                src="<?= htmlspecialchars(assetUrl('assets/logo/EduCare-logo.png')) ?>"
                 alt="Logo EduCare"
                 class="w-20 h-20 object-contain rounded-xl">
         </a>

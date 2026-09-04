@@ -130,7 +130,7 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                 class="flex items-center gap-3 group shrink-0">
 
                 <img
-                    src="<?= htmlspecialchars(assetUrl('assets/img/EduCare-logo.png')) ?>"
+                    src="<?= htmlspecialchars(assetUrl('assets/logo/EduCare-logo.png')) ?>"
                     alt="Logo EduCare"
                     width="40"
                     height="40"

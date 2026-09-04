@@ -1,18 +1,18 @@
 <div align="center">
 
-  # 🎓 EduCare
+# 🎓 EduCare
 
-  ### Platform Digital Sekolah — Belajar Online, Quiz & Sertifikat Terpadu dengan Sistem Pengaduan Sekolah (SiLapor)
+### Platform Digital Sekolah — Belajar Online, Quiz & Sertifikat Terpadu dengan Sistem Pengaduan Sekolah (SiLapor)
 
-  [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://[URL_DEMO])
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://[URL_DEMO])
 
-  [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://[URL_REPO])
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://[URL_REPO])
 
-  [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-  **Submission for ITECHNO CUP 2026 - Web Development**
+**Submission for ITECHNO CUP 2026 - Web Development**
 
-  **By [KODINGINAJA]**
+**By [KODINGINAJA]**
 
 </div>
 
@@ -36,11 +36,12 @@
 
 ## 👥 Tim Developer
 
-| Nama | Peran | GitHub |
-|------|-------|--------|
-| **[Lutfi Andika]** | Project Lead & Full Stack Developer | [GitHub](https://github.com/lutfi-dika) |
-| **[Khaerul Fakhri]** | Frontend Developer | [GitHub](https://github.com/KhaerulFakhri) |
-| **[Morren Bangkit Al Fatih]** | Backend Developer | [GitHub](https://github.com/MorrenBA) |
+| Nama                          | Peran                               | GitHub                                     |
+| ----------------------------- | ----------------------------------- | ------------------------------------------ |
+| **[Lutfi Andika]**            | Project Lead & Full Stack Developer | [GitHub](https://github.com/lutfi-dika)    |
+| **[Khaerul Fakhri]**          | Frontend Developer                  | [GitHub](https://github.com/KhaerulFakhri) |
+| **[Morren Bangkit Al Fatih]** | Backend Developer                   | [GitHub](https://github.com/MorrenBA)      |
+
 ---
 
 ## 🎯 Tentang Proyek
@@ -65,13 +66,13 @@ Banyak sekolah masih mengandalkan proses manual dalam pembelajaran dan pengelola
 
 ### Fitur Utama
 
-| Fitur | Deskripsi | Keunggulan |
-|----------|--------------|---------------|
-| **Belajar Online (`/belajar`)** | Portal materi per kategori (Web Development, Matematika, IPA, IPS, Bahasa, dll) dengan detail materi, video pembelajaran, dan syntax highlighting untuk contoh kode | Konten bertahap per modul dengan progress otomatis tersimpan per siswa |
-| **Quiz & Sertifikat** | Quiz interaktif per materi lengkap dengan halaman hasil, diakhiri sertifikat belajar setelah materi/quiz diselesaikan | Evaluasi pembelajaran terukur dan penghargaan otomatis |
-| **Gamifikasi (XP & Leaderboard)** | Siswa memperoleh XP (level = 1 + XP/250) disertai leaderboard dan notifikasi dalam aplikasi | Meningkatkan motivasi belajar siswa |
-| **SiLapor — Sistem Pengaduan Sekolah (`/silapor`)** | Siswa membuat laporan (bullying, fasilitas rusak, kebersihan, barang hilang) dan memantau status (Menunggu / Diproses / Selesai) | Transparansi pelaporan dengan tindak lanjut langsung oleh guru |
-| **Multi-role Dashboard** | Dashboard khusus Guru (kelola materi, bank soal, laporan, pengguna) dan Siswa (progress, quiz, laporan, profil) | Proteksi akses per halaman via `requireRole()` |
+| Fitur                                               | Deskripsi                                                                                                                                                           | Keunggulan                                                             |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Belajar Online (`/belajar`)**                     | Portal materi per kategori (Web Development, Matematika, IPA, IPS, Bahasa, dll) dengan detail materi, video pembelajaran, dan syntax highlighting untuk contoh kode | Konten bertahap per modul dengan progress otomatis tersimpan per siswa |
+| **Quiz & Sertifikat**                               | Quiz interaktif per materi lengkap dengan halaman hasil, diakhiri sertifikat belajar setelah materi/quiz diselesaikan                                               | Evaluasi pembelajaran terukur dan penghargaan otomatis                 |
+| **Gamifikasi (XP & Leaderboard)**                   | Siswa memperoleh XP (level = 1 + XP/250) disertai leaderboard dan notifikasi dalam aplikasi                                                                         | Meningkatkan motivasi belajar siswa                                    |
+| **SiLapor — Sistem Pengaduan Sekolah (`/silapor`)** | Siswa membuat laporan (bullying, fasilitas rusak, kebersihan, barang hilang) dan memantau status (Menunggu / Diproses / Selesai)                                    | Transparansi pelaporan dengan tindak lanjut langsung oleh guru         |
+| **Multi-role Dashboard**                            | Dashboard khusus Guru (kelola materi, bank soal, laporan, pengguna) dan Siswa (progress, quiz, laporan, profil)                                                     | Proteksi akses per halaman via `requireRole()`                         |
 
 ### Fitur Tambahan
 
@@ -89,22 +90,146 @@ Banyak sekolah masih mengandalkan proses manual dalam pembelajaran dan pengelola
 
 🔗 **[Kunjungi Website](https://[URL_DEMO])**
 
+### Link Github
+🔗 **[Kunjungi Repo Github EduCare](https://github.com/TimKODINGINAJA/EduCare)**
+
 ### Screenshot Aplikasi
 
 <div align="center">
 
-  <img src="[URL_SCREENSHOT_1]" alt="Homepage" width="800"/>
+<h1>Lending Page</h1>
 
-  <p><em>Homepage - Tampilan utama aplikasi</em></p>
+  <img src="./assets/img/Lending-Page/LandingPage1.png" alt="Homepage" width="800"/>
+  <p><em>Tampilan utama aplikasi</em></p>
 
-  <img src="[URL_SCREENSHOT_2]" alt="Dashboard" width="800"/>
+   <img src="./assets/img/Lending-Page/LandingPage2.png" alt="Homepage" width="800"/>
+  <p><em>Educare Memilikli 2 role yaitu murid dan guru</em></p>
 
-  <p><em>Dashboard - Panel kontrol pengguna</em></p>
+   <img src="./assets/img/Lending-Page/LandingPage3.png" alt="Homepage" width="800"/>
+  <p><em>Materi-Materi Yang Ada Di Website EduCare</em></p>
 
-  <img src="[URL_SCREENSHOT_3]" alt="Feature" width="800"/>
+   <img src="./assets/img/Lending-Page/LandingPage4.png" alt="Homepage" width="800"/>
+  <p><em>Cara Kerja Website EduCare Dan Testimoni Website EduCare</em></p>
 
-  <p><em>[Nama Fitur] - [Deskripsi screenshot]</em></p>
+   <img src="./assets/img/Lending-Page/LandingPage5.png" alt="Homepage" width="800"/>
+  <p><em>Pertanyaan Yang Sering Di Tanyakan Tentang EduCare</em></p>
 
+  <h1>Login & Register</h1>
+
+<img src="./assets/img/Login&Register/Register.png" alt="Homepage" width="800"/>
+  <p><em>Register</em></p>
+
+
+<img src="./assets/img/Login&Register/Login.png" alt="Homepage" width="800"/>
+  <p><em>Login</em></p>
+
+<img src="./assets/img/Login&Register/Forgot.png" alt="Homepage" width="800"/>
+  <p><em>Forgot Password</em></p>
+
+  <h1>Dashboard Siswa</h1>
+<img src="./assets/img/Dashboard-Siswa/Siswa1.png" alt="Homepage" width="800"/>
+  <p><em>Tampilan Awal Dashboard Siswa</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa2.png" alt="Homepage" width="800"/>
+  <p><em>Profile</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa3.png" alt="Homepage" width="800"/>
+  <p><em>Pengaturan</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa4.png" alt="Homepage" width="800"/>
+  <p><em>Notofikasi</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa5.png" alt="Homepage" width="800"/>
+  <p><em>Privacy</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa6.png" alt="Homepage" width="800"/>
+  <p><em>Tampilan & Tema</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa7.png" alt="Homepage" width="800"/>
+  <p><em>Halaman Materi Yang Sudah Di Kerjakan</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa8.png" alt="Homepage" width="800"/>
+  <p><em>Halaman Materi</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa9.png" alt="Homepage" width="800"/>
+  <p><em>Halaman Materi IT</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa10.png" alt="Homepage" width="800"/>
+  <p><em>Halaman Materi Umum</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa11.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa12.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa13.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa14.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa15.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa16.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa17.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa18.png" alt="Homepage" width="800"/>
+  <p><em>Materi IT</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa19.png" alt="Homepage" width="800"/>
+  <p><em>Materi IT Yang Sudah Selesai</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa20.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa21.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Siswa/Siswa22.png" alt="Homepage" width="800"/>
+  <p><em>Materi Umum</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa23.png" alt="Homepage" width="800"/>
+  <p><em>Materi Umum Yang Sudah Selesai</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa24.png" alt="Homepage" width="800"/>
+  <p><em>Lanjutan Materi</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa25.png" alt="Homepage" width="800"/>
+  <p><em>Progres Belajar</em></p>
+  
+<img src="./assets/img/Dashboard-Siswa/Siswa26.png" alt="Homepage" width="800"/>
+  <p><em>Quiz</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa27.png" alt="Homepage" width="800"/>
+  <p><em>Halaman Quiz</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa28.png" alt="Homepage" width="800"/>
+  <p><em>Memilih Jawaban Quiz</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa29.png" alt="Homepage" width="800"/>
+  <p><em>Quiz Yang Sudah Selesai</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa30.png" alt="Homepage" width="800"/>
+  <p><em>Laporan Siswa</em></p>
+
+<img src="./assets/img/Dashboard-Siswa/Siswa31.png" alt="Homepage" width="800"/>
+  <p><em>Peringkat Siswa</em></p>
+
+  <h1>Dashboard Guru</h1>
+
+<img src="./assets/img/Dashboard-Guru/Guru1.png" alt="Homepage" width="800"/>
+  <p><em>Tampilan Awal Dashboard Guru</em></p>
+
+<img src="./assets/img/Dashboard-Guru/Guru2.png" alt="Homepage" width="800"/>
+  <p><em>Analitik Pembelejaran</em></p>
+
+<img src="./assets/img/Dashboard-Guru/Guru3.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Guru/Guru4.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Guru/Guru5.png" alt="Homepage" width="800"/>
+  <p><em>Kelola Kursus</em></p>
+
+<img src="./assets/img/Dashboard-Guru/Guru6.png" alt="Homepage" width="800"/>
+<img src="./assets/img/Dashboard-Guru/Guru7.png" alt="Homepage" width="800"/>
+  <p><em>Kelola Quiz</em></p>
+
+<img src="./assets/img/Dashboard-Guru/Guru8.png" alt="Homepage" width="800"/>
+  <p><em>Nilai Siswa</em></p>
+
+<img src="./assets/img/Dashboard-Guru/Guru9.png" alt="Homepage" width="800"/>
+  <p><em>Data Siswa</em></p>
+
+<img src="./assets/img/Dashboard-Guru/Guru10.png" alt="Homepage" width="800"/>
+  <p><em>Aktifitas Siswa Siswa</em></p>
+
+<img src="./assets/img/Dashboard-Guru/Guru11.png" alt="Homepage" width="800"/>
+  <p><em>Laporan Siswa</em></p>
 </div>
 
 ### Video Demo
@@ -147,13 +272,13 @@ Monitoring   : -
 
 ### Alasan Pemilihan Teknologi
 
-| Teknologi | Alasan Pemilihan |
-|-----------|------------------|
-| **PHP Native** | Ringan, mudah dipelajari, tanpa dependency framework berat — cocok untuk edukasi & demo, dan berjalan di hosting murah |
-| **File JSON sebagai database** | Tanpa perlu setup MySQL/database server, langsung jalan di XAMPP/Laragon — ideal untuk kebutuhan lomba & portofolio |
-| **Tailwind CSS v4 + Alpine.js** | Pengembangan UI cepat, konsisten, dan responsive tanpa menulis banyak CSS manual |
-| **PHPMailer + SMTP Gmail** | Pengiriman email reset password yang reliable dengan dukungan App Password Gmail |
-| **Composer & NPM** | Manajemen dependency PHP (PHPMailer) dan frontend (Tailwind CLI) secara terstandar |
+| Teknologi                       | Alasan Pemilihan                                                                                                       |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **PHP Native**                  | Ringan, mudah dipelajari, tanpa dependency framework berat — cocok untuk edukasi & demo, dan berjalan di hosting murah |
+| **File JSON sebagai database**  | Tanpa perlu setup MySQL/database server, langsung jalan di XAMPP/Laragon — ideal untuk kebutuhan lomba & portofolio    |
+| **Tailwind CSS v4 + Alpine.js** | Pengembangan UI cepat, konsisten, dan responsive tanpa menulis banyak CSS manual                                       |
+| **PHPMailer + SMTP Gmail**      | Pengiriman email reset password yang reliable dengan dukungan App Password Gmail                                       |
+| **Composer & NPM**              | Manajemen dependency PHP (PHPMailer) dan frontend (Tailwind CLI) secara terstandar                                     |
 
 ### Dependencies Utama
 
@@ -350,7 +475,7 @@ composer install
 1. **Akses Admin/Guru Panel**: Login dengan akun **guru** — `guru@gmail.com` / password `123` (akun disemai otomatis saat pertama login), lalu masuk ke **Dashboard Guru**.
 2. **Kelola Materi**: Tambah/edit **materi**, **kategori**, dan **video** pembelajaran.
 3. **Kelola Bank Soal**: Buat dan kelola **quiz** beserta jawabannya.
-4. **Tindak Lanjuti Laporan**: Buka menu **Laporan**, ubah status laporan siswa ke *Diproses* / *Selesai*.
+4. **Tindak Lanjuti Laporan**: Buka menu **Laporan**, ubah status laporan siswa ke _Diproses_ / _Selesai_.
 5. **Kelola Pengguna**: Kelola data siswa & guru di menu **User**.
 
 ---
@@ -405,7 +530,7 @@ GET  /silapor/status.php           → Cek status laporan
 GET  /silapor/detail-laporan.php   → Detail laporan
 ```
 
->> _Untuk proyek berbasis REST API, dokumentasi endpoint dapat diganti dengan format `GET/POST/PUT/DELETE /api/...`._
+> > _Untuk proyek berbasis REST API, dokumentasi endpoint dapat diganti dengan format `GET/POST/PUT/DELETE /api/...`._
 
 ---
 
@@ -449,6 +574,6 @@ Proyek ini dibuat untuk kebutuhan pembelajaran, pengembangan portofolio, dan kom
 
 <div align="center">
 
-  **Made with ❤️ by [KODINGINAJA] for ITECHNO CUP 2026**
+**Made with ❤️ by [KODINGINAJA] for ITECHNO CUP 2026**
 
 </div>
