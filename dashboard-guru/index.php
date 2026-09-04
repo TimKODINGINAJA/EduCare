@@ -62,7 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $t = trim($it['t'] ?? '');
         $dur = trim($it['dur'] ?? '') ?: '15min';
         if ($t === '') continue;
-        $cleanItems[] = ['t' => $t, 'dur' => $dur];
+        $cleanItems[] = [
+          't' => $t,
+          'dur' => $dur,
+          'content' => trim($it['content'] ?? ''),
+          'video_url' => trim($it['video_url'] ?? ''),
+        ];
       }
       if (empty($cleanItems)) continue;
       $cleanChapters[] = ['ch' => $chTitle, 'items' => $cleanItems];
@@ -369,7 +374,7 @@ $analyticsData = [
     /* Pastikan latar mode terang ikut terang (selector bersama .light-mode body
        pada dashboard-siswa.css tidak terpicu karena class diletakkan di <body>). */
     body.light-mode {
-      background: #C6E7FF;
+      background: #ffffff;
     }
 
     .star:nth-child(1) { left: 5%; top: 10%; --duration: 2s; opacity: 0.6; }
@@ -447,9 +452,10 @@ $analyticsData = [
 
     .lessrow {
       display: flex;
-      gap: 10px;
-      align-items: center;
-      padding: 8px 10px;
+      flex-direction: column;
+      gap: 8px;
+      align-items: stretch;
+      padding: 10px;
       margin-top: 8px;
       background: rgba(255, 255, 255, 0.03);
       border-radius: 8px;
@@ -478,6 +484,22 @@ $analyticsData = [
       flex: 1;
       min-width: 0;
       font-size: .85rem;
+    }
+
+    .lessrow textarea.fi,
+    .lessrow input.fi {
+      width: 100%;
+    }
+
+    .lessrow textarea.less-content {
+      font-size: .82rem;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    .lessrow .less-video {
+      font-size: .82rem;
+      color: #a5b4fc;
     }
 
     .lessrow .less-title::placeholder,
@@ -2797,9 +2819,13 @@ $analyticsData = [
       const row = document.createElement('div');
       row.className = 'lessrow';
       row.innerHTML = `
-        <input type="text" class="fi less-title" style="flex:2" placeholder="Judul pelajaran">
-        <input type="text" class="fi less-dur" style="flex:1" placeholder="Durasi (cth 15min)">
-        <button type="button" style="all:unset;font-size:.7rem;color:var(--rose);font-weight:600;cursor:pointer;flex-shrink:0" onclick="this.parentElement.remove()">✕</button>
+        <div style="display:flex;align-items:center;gap:8px">
+          <input type="text" class="fi less-title" style="flex:2" placeholder="Judul pelajaran">
+          <input type="text" class="fi less-dur" style="flex:1" placeholder="Durasi (cth 15min)">
+          <button type="button" style="all:unset;font-size:.7rem;color:var(--rose);font-weight:600;cursor:pointer;flex-shrink:0" onclick="this.parentElement.remove()">✕</button>
+        </div>
+        <textarea class="fi less-content" rows="3" placeholder="Isi materi pelajaran (opsional). Mendukung teks biasa, list, dan blok kode fenced \`\`\`...\`\`\`"></textarea>
+        <input type="text" class="fi less-video" placeholder="Link video YouTube pelajaran ini (opsional)">
       `;
       document.getElementById('ch-lessons-' + chIdx).appendChild(row);
     }
@@ -2814,7 +2840,9 @@ $analyticsData = [
         lessonRows.forEach(lr => {
           const t = lr.querySelector('.less-title').value.trim();
           const dur = lr.querySelector('.less-dur').value.trim() || '15min';
-          if (t) items.push({ t, dur });
+          const content = lr.querySelector('.less-content').value.trim() || '';
+          const video_url = lr.querySelector('.less-video').value.trim() || '';
+          if (t) items.push({ t, dur, content, video_url });
         });
         if (chTitle && items.length) chapters.push({ ch: chTitle, items });
       });
@@ -2969,12 +2997,25 @@ $analyticsData = [
       } catch (e) {}
     })();
 
-    /* ============ THEME TOGGLE ============ */
-    function toggleTheme() {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      const btn = document.getElementById('themeToggle');
+    /* ============ THEME TOGGLE (disinkronkan dgn landing page) ============ */
+    // Sumber kebenaran tema global adalah key 'educare-theme' (dipakai bareng
+    // landing page & dashboard siswa). Nilai: 'dark' | 'light'.
+    // Terang (light)  -> body diberi class 'light-mode'
+    // Gelap  (dark)   -> body TANPA 'light-mode' (default)
+    function getSavedTheme() {
+      var saved = localStorage.getItem('educare-theme');
+      if (saved === 'dark' || saved === 'light') return saved;
+      // Fallback: pengaturan lama dashboard-guru
+      var legacy = localStorage.getItem('theme');
+      if (legacy === 'dark' || legacy === 'light') return legacy;
+      // Fallback ke preferensi sistem
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+      return 'light';
+    }
+    function applyThemeMode(mode) {
+      var isLight = mode !== 'dark';
+      document.body.classList.toggle('light-mode', isLight);
+      var btn = document.getElementById('themeToggle');
       if (btn) {
         btn.innerHTML = `<i data-lucide="${isLight ? 'sun' : 'moon'}"></i>`;
         if (window.lucide) lucide.createIcons();
@@ -2984,12 +3025,15 @@ $analyticsData = [
         window._rebuildCharts();
       }
     }
+    function toggleTheme() {
+      var current = getSavedTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('educare-theme', next);
+      localStorage.setItem('theme', next); // juga perbarui key lama agar tak bentrok
+      applyThemeMode(next);
+    }
     (function loadTheme() {
-      if (localStorage.getItem('theme') !== 'dark') document.body.classList.add('light-mode');
-      const btn = document.getElementById('themeToggle');
-      if (btn) {
-        btn.innerHTML = `<i data-lucide="${document.body.classList.contains('light-mode') ? 'sun' : 'moon'}"></i>`;
-      }
+      applyThemeMode(getSavedTheme());
     })();
     document.addEventListener('DOMContentLoaded', function() {
       if (window.lucide) lucide.createIcons();

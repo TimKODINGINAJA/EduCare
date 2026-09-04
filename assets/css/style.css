@@ -384,6 +384,81 @@ body::after {
   margin-bottom: 0;
 }
 
+/* Materi berstruktur chapter & pelajaran (dibuat guru di Kelola Kursus) */
+.materi-lesson {
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-left: 3px solid #2563eb;
+  border-radius: 12px;
+}
+.materi-lesson:last-child {
+  margin-bottom: 0;
+}
+.materi-lesson__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+.materi-lesson__badges {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+.materi-lesson__dur {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.materi-lesson__video {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #db2777;
+  background: rgba(219, 39, 119, 0.1);
+  border: 1px solid rgba(219, 39, 119, 0.25);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.materi-lesson__body {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: #334155;
+  font-weight: 500;
+}
+.materi-lesson__body > :last-child {
+  margin-bottom: 0;
+}
+.materi-lesson__embed {
+  display: block;
+  max-width: 640px;
+  margin: 0 auto 12px auto;
+}
+.materi-lesson__video-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f172a;
+}
+.materi-lesson__video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .materi-list {
   margin: 4px 0 14px 0;
   padding-left: 4px;
@@ -746,6 +821,16 @@ html.dark .materi-section__title {
 }
 html.dark .materi-section__body,
 html.dark .materi-intro {
+  color: #cbd5e1;
+}
+html.dark .materi-lesson {
+  background: rgba(20, 20, 20, 0.5);
+  border-color: #2a2a2a;
+}
+html.dark .materi-lesson__title {
+  color: #f1f5f9;
+}
+html.dark .materi-lesson__body {
   color: #cbd5e1;
 }
 html.dark .materi-inline-code {

@@ -461,6 +461,96 @@ function escMateri(string $text): string
 }
 
 /**
+ * Mengubah URL YouTube menjadi URL embed (iframe). Mengembalikan string kosong
+ * jika bukan URL YouTube yang valid.
+ */
+function materiYoutubeEmbed(string $url): string
+{
+    if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|win/?\?v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
+        return 'https://www.youtube.com/embed/' . $match[1];
+    }
+    return '';
+}
+
+/**
+ * Merender struktur chapter & pelajaran (lessons) buatan guru menjadi HTML.
+ * Setiap pelajaran bisa berisi judul (t), durasi (dur), isi materi (content),
+ * dan video (video_url). Konten dirender dengan renderMateriBodyWithCode.
+ */
+function renderMateriLessons(array $lessons, string $group = 'umum'): string
+{
+    if (empty($lessons)) {
+        return '';
+    }
+
+    $html = '<div class="materi-lessons materi-content materi-content--' . escMateri($group) . '">';
+
+    foreach ($lessons as $ci => $ch) {
+        $chTitle = trim($ch['ch'] ?? '');
+        $items   = $ch['items'] ?? [];
+        if (is_array($items) && !empty($items)) {
+            $html .= '<section class="materi-section">';
+            $html .= '<h3 class="materi-section__title">'
+                    . '<i data-lucide="book-open" class="materi-section__icon"></i>'
+                    . escMateri($chTitle !== '' ? $chTitle : ('Chapter ' . ($ci + 1)))
+                    . '</h3>';
+            $html .= '<div class="materi-section__body">';
+
+            foreach ($items as $li => $item) {
+                $t        = trim($item['t'] ?? '');
+                $dur      = trim($item['dur'] ?? '');
+                $content  = trim($item['content'] ?? '');
+                $videoUrl = trim($item['video_url'] ?? '');
+                if ($t === '' && $content === '' && $videoUrl === '') {
+                    continue;
+                }
+
+                $html .= '<div class="materi-lesson">';
+
+                $badge = '';
+                if ($dur !== '') {
+                    $badge .= '<span class="materi-lesson__dur">' . escMateri($dur) . '</span>';
+                }
+                if ($videoUrl !== '') {
+                    $badge .= '<span class="materi-lesson__video">' . escMateri('🎬 Video') . '</span>';
+                }
+
+                if ($t !== '') {
+                    $html .= '<h4 class="materi-lesson__title">'
+                            . escMateri(($li + 1) . '. ' . $t)
+                            . ($badge !== '' ? '<span class="materi-lesson__badges">' . $badge . '</span>' : '')
+                            . '</h4>';
+                } elseif ($badge !== '') {
+                    $html .= '<div class="materi-lesson__badges">' . $badge . '</div>';
+                }
+
+                $embed = '';
+                if ($videoUrl !== '') {
+                    $embed = materiYoutubeEmbed($videoUrl);
+                }
+                if ($embed !== '') {
+                    $html .= '<div class="materi-lesson__embed">'
+                            . '<div class="materi-lesson__video-wrap">'
+                            . '<iframe src="' . escMateri($embed) . '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                            . '</div></div>';
+                }
+
+                if ($content !== '') {
+                    $html .= '<div class="materi-lesson__body">' . renderMateriBodyWithCode($content) . '</div>';
+                }
+
+                $html .= '</div>';
+            }
+
+            $html .= '</div></section>';
+        }
+    }
+
+    $html .= '</div>';
+    return $html;
+}
+
+/**
  * Mengubah teks inline (bold **x**, inline code `x`) menjadi HTML aman.
  */
 function parseInlineMateri(string $text): string

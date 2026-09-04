@@ -1,0 +1,971 @@
+[
+    {
+        "id": 1,
+        "title": "Dasar-Dasar HTML: Fondasi Membangun Halaman Web",
+        "category": "HTML",
+        "cat": "web",
+        "emoji": "📘",
+        "desc": "Pelajari struktur dokumen HTML, tag-tag penting, form, tabel, hingga elemen semantik untuk membangun kerangka halaman web.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 1204,
+        "modules": 14,
+        "color": "#e34c26",
+        "date": "2026-07-10",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=hMDJyb7VkYw",
+        "content": "## Deskripsi Singkat\nHTML (HyperText Markup Language) adalah fondasi dari setiap halaman web. Materi ini membahas struktur dasar dokumen HTML, tag-tag penting, hingga elemen semantik modern.\n\n## Pengertian\nHTML adalah bahasa markup standar yang digunakan untuk membangun struktur sebuah halaman web. Setiap website yang kamu kunjungi, mulai dari halaman berita sampai media sosial, dibangun di atas fondasi HTML. Tanpa HTML, browser tidak akan tahu bagaimana menampilkan judul, paragraf, gambar, atau tombol di layar.\n\n## Tujuan Pembelajaran\n- Memahami struktur dasar dokumen HTML: `<!DOCTYPE html>`, `<html>`, `<head>`, dan `<body>`.\n- Mampu menggunakan tag-tag penting seperti heading, paragraf, tautan, dan gambar.\n- Mampu membuat daftar, tabel, dan form interaktif sederhana.\n- Memahami elemen semantik modern untuk struktur halaman yang lebih rapi dan ramah SEO.\n\n## Penjelasan Materi\nSetiap dokumen HTML memiliki kerangka baku yang terdiri dari `<!DOCTYPE html>` untuk menandai versi HTML5, elemen `<html>` sebagai pembungkus utama, `<head>` yang berisi informasi halaman (judul, meta, link CSS), dan `<body>` yang berisi seluruh konten yang tampil di layar.\n\nBeberapa tag penting yang wajib dikuasai pemula:\n- `<h1>` sampai `<h6>` untuk judul dengan tingkat kepentingan berbeda.\n- `<p>` untuk paragraf teks.\n- `<a href=\"...\">` untuk membuat tautan (link) ke halaman lain.\n- `<img src=\"...\" alt=\"...\">` untuk menampilkan gambar.\n- `<ul>`, `<ol>`, dan `<li>` untuk membuat daftar.\n- `<table>`, `<tr>`, `<td>` untuk menampilkan data dalam bentuk tabel.\n- `<form>`, `<input>`, `<select>`, `<textarea>` untuk menerima data dari pengguna.\n\nUntuk struktur yang lebih rapi dan mudah dibaca mesin pencari, gunakan elemen semantik seperti `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, dan `<footer>` dibandingkan hanya mengandalkan `<div>` di semua bagian.\n\n## Contoh\nBerikut contoh kerangka dasar sebuah halaman HTML sederhana yang menampilkan judul dan paragraf pembuka.\n\n## Code\n```html\n<!DOCTYPE html>\n<html lang=\"id\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>Halaman Pertamaku<\/title>\n  <\/head>\n  <body>\n    <h1>Selamat Datang di EduCare<\/h1>\n    <p>Ini adalah paragraf pertama saya menggunakan HTML.<\/p>\n    <a href=\"https:\/\/educare.local\">Kunjungi Beranda<\/a>\n  <\/body>\n<\/html>\n```\n\n## Penjelasan Code\n- `<!DOCTYPE html>` memberi tahu browser bahwa dokumen ini menggunakan standar HTML5.\n- `<html lang=\"id\">` adalah elemen utama dokumen, atribut `lang` menandai bahasa konten.\n- `<head>` berisi informasi halaman yang tidak tampil langsung di layar, seperti `<title>` dan `<meta charset>`.\n- `<body>` berisi seluruh konten yang ditampilkan ke pengguna.\n- `<h1>` membuat judul utama, `<p>` membuat paragraf, dan `<a href=\"...\">` membuat tautan yang dapat diklik.\n\n## Output\nSaat file di atas dibuka di browser, akan tampil judul tab \"Halaman Pertamaku\", sebuah heading besar bertuliskan \"Selamat Datang di EduCare\", paragraf penjelasan, dan tautan \"Kunjungi Beranda\" yang bisa diklik.\n\n## Langkah-langkah Praktik\n1. Buka editor kode seperti VS Code, lalu buat file baru bernama `index.html`.\n2. Salin contoh kode di atas ke dalam file tersebut.\n3. Ganti isi judul, heading, dan paragraf sesuai keinginanmu.\n4. Simpan file, lalu buka menggunakan browser (klik dua kali atau gunakan Live Server).\n5. Amati hasilnya, lalu coba tambahkan tag baru seperti `<img>` atau `<ul>`.\n\n## Kesimpulan\nHTML adalah bahasa markup fondasional yang membentuk struktur setiap halaman web. Menguasai tag dasar dan elemen semantik adalah langkah pertama sebelum mempelajari CSS untuk tampilan dan JavaScript untuk interaktivitas.\n\n## Modul 2: Tabel HTML — Menyusun Data dalam Baris dan Kolom\nTabel digunakan untuk menampilkan data yang memiliki hubungan baris dan kolom, misalnya jadwal pelajaran, daftar nilai, atau data statistik. Elemen utama tabel adalah `<table>` sebagai pembungkus, `<tr>` (table row) untuk setiap baris, `<th>` (table header) untuk sel judul kolom, dan `<td>` (table data) untuk sel data biasa. Elemen `<thead>`, `<tbody>`, dan `<tfoot>` membantu mengelompokkan bagian kepala, isi, dan kaki tabel agar lebih terstruktur.\n\nAtribut `colspan` dan `rowspan` berguna saat sebuah sel perlu menggabungkan beberapa kolom atau baris sekaligus, misalnya untuk membuat judul yang membentang di atas beberapa kolom.\n\n```html\n<table border=\"1\">\n  <thead>\n    <tr>\n      <th>No<\/th>\n      <th>Nama Siswa<\/th>\n      <th>Nilai<\/th>\n    <\/tr>\n  <\/thead>\n  <tbody>\n    <tr>\n      <td>1<\/td>\n      <td>Andi<\/td>\n      <td>90<\/td>\n    <\/tr>\n    <tr>\n      <td>2<\/td>\n      <td>Budi<\/td>\n      <td>85<\/td>\n    <\/tr>\n  <\/tbody>\n<\/table>\n```\n\nKode di atas akan menampilkan tabel dua baris data dengan header \"No\", \"Nama Siswa\", dan \"Nilai\" di baris paling atas.\n\n## Modul 3: Formulir HTML — Menerima Input dari Pengguna\nForm adalah cara utama sebuah halaman web menerima data dari pengguna, seperti pada halaman login, pendaftaran, atau kontak. Elemen `<form>` membungkus seluruh input, dengan atribut `action` (tujuan pengiriman data) dan `method` (cara pengiriman, biasanya `GET` atau `POST`).\n\nBeberapa elemen input yang sering dipakai:\n- `<input type=\"text\">` untuk teks singkat, `type=\"email\"` untuk email, `type=\"password\"` untuk kata sandi.\n- `<label>` untuk memberi keterangan pada input agar lebih mudah dipahami dan ramah aksesibilitas.\n- `<select>` dan `<option>` untuk membuat dropdown pilihan.\n- `<textarea>` untuk teks panjang seperti pesan atau komentar.\n- `<button type=\"submit\">` untuk mengirim data formulir.\n\n```html\n<form action=\"\/kirim\" method=\"POST\">\n  <label for=\"nama\">Nama:<\/label>\n  <input type=\"text\" id=\"nama\" name=\"nama\" placeholder=\"Masukkan nama\" required>\n\n  <label for=\"pesan\">Pesan:<\/label>\n  <textarea id=\"pesan\" name=\"pesan\"><\/textarea>\n\n  <button type=\"submit\">Kirim<\/button>\n<\/form>\n```\n\nAtribut `required` membuat browser otomatis menolak pengiriman form jika kolom tersebut masih kosong, sehingga membantu validasi data sederhana tanpa JavaScript.\n\n## Modul 4: Elemen Semantik HTML5 — Struktur Halaman yang Rapi\nElemen semantik adalah tag HTML yang namanya menjelaskan makna dari konten di dalamnya, berbeda dengan `<div>` yang tidak memiliki arti khusus. Penggunaan elemen semantik membuat kode lebih mudah dibaca oleh developer lain, lebih ramah mesin pencari (SEO), dan lebih mudah diakses oleh pembaca layar (screen reader) bagi penyandang disabilitas.\n\nElemen semantik yang umum digunakan:\n- `<header>` untuk bagian kepala halaman atau bagian atas sebuah artikel.\n- `<nav>` untuk kumpulan tautan navigasi.\n- `<main>` untuk konten utama halaman (hanya boleh satu per halaman).\n- `<section>` untuk mengelompokkan konten yang berkaitan berdasarkan tema.\n- `<article>` untuk konten mandiri yang bisa berdiri sendiri, seperti postingan blog.\n- `<aside>` untuk konten pelengkap seperti sidebar atau catatan tambahan.\n- `<footer>` untuk bagian kaki halaman, biasanya berisi hak cipta atau tautan sosial media.\n\n```html\n<body>\n  <header>\n    <h1>EduCare Blog<\/h1>\n    <nav>\n      <a href=\"#\">Beranda<\/a>\n      <a href=\"#\">Artikel<\/a>\n    <\/nav>\n  <\/header>\n\n  <main>\n    <article>\n      <h2>Belajar HTML Semantik<\/h2>\n      <p>Elemen semantik membuat struktur halaman lebih jelas...<\/p>\n    <\/article>\n  <\/main>\n\n  <footer>\n    <p>&copy; 2026 EduCare<\/p>\n  <\/footer>\n<\/body>\n```\n\n## Modul 5: Multimedia dalam HTML — Gambar, Audio, dan Video\nHTML tidak hanya menampilkan teks, tetapi juga mendukung berbagai jenis media. Elemen `<img>` menampilkan gambar dan wajib memiliki atribut `alt` sebagai teks alternatif, penting bagi aksesibilitas maupun saat gambar gagal dimuat. Untuk memberi keterangan pada gambar, gunakan `<figure>` bersama `<figcaption>`.\n\nUntuk audio dan video, HTML5 menyediakan elemen `<audio>` dan `<video>` yang bisa langsung diputar tanpa plugin tambahan. Atribut `controls` menampilkan tombol putar\/jeda, dan elemen `<source>` di dalamnya memungkinkan menyediakan lebih dari satu format file.\n\n```html\n<figure>\n  <img src=\"laptop.jpg\" alt=\"Laptop dengan kode HTML di layar\" width=\"400\">\n  <figcaption>Menulis kode HTML di editor teks<\/figcaption>\n<\/figure>\n\n<video controls width=\"400\">\n  <source src=\"tutorial.mp4\" type=\"video\/mp4\">\n  Browser Anda tidak mendukung tag video.\n<\/video>\n\n<audio controls>\n  <source src=\"penjelasan.mp3\" type=\"audio\/mpeg\">\n  Browser Anda tidak mendukung tag audio.\n<\/audio>\n```\n\n## Modul 6: Atribut Global & Aksesibilitas Dasar HTML\nSelain atribut khusus tiap tag, HTML memiliki atribut global yang bisa dipasang di hampir semua elemen. Contohnya `id` (penanda unik satu elemen), `class` (penanda kelompok elemen untuk styling atau JavaScript), `style` (CSS langsung pada elemen), `title` (tooltip saat elemen di-hover), dan `data-*` untuk menyimpan data kustom.\n\nUntuk aksesibilitas, atribut `alt` pada gambar dan atribut `aria-*` (seperti `aria-label`) membantu pengguna pembaca layar memahami fungsi sebuah elemen, terutama pada tombol atau ikon tanpa teks. Atribut `lang` pada tag `<html>` juga penting agar browser dan mesin pencari tahu bahasa utama konten halaman.\n\n```html\n<button aria-label=\"Tutup notifikasi\" class=\"btn-close\" data-id=\"123\">\n  &times;\n<\/button>\n\n<img src=\"ikon-info.png\" alt=\"Ikon informasi\" title=\"Klik untuk info lebih lanjut\">\n```\n\nDengan menguasai keenam modul ini — struktur dasar, tabel, formulir, elemen semantik, multimedia, hingga atribut global dan aksesibilitas — kamu sudah memiliki fondasi HTML yang cukup kuat untuk melanjutkan ke pembelajaran CSS dan JavaScript.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Pengenalan & Struktur HTML",
+                "items": [
+                    {
+                        "t": "Apa itu HTML dan cara kerja browser",
+                        "dur": "12"
+                    },
+                    {
+                        "t": "Struktur dokumen: DOCTYPE, html, head, body",
+                        "dur": "15"
+                    },
+                    {
+                        "t": "Heading, paragraf, dan teks dasar",
+                        "dur": "14"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Tag & Elemen Penting",
+                "items": [
+                    {
+                        "t": "Link, gambar, dan media",
+                        "dur": "16"
+                    },
+                    {
+                        "t": "List dan tabel data",
+                        "dur": "18"
+                    },
+                    {
+                        "t": "Form dan input pengguna",
+                        "dur": "20"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: HTML Semantik & Praktik",
+                "items": [
+                    {
+                        "t": "Elemen semantik modern (header, nav, section)",
+                        "dur": "17"
+                    },
+                    {
+                        "t": "Atribut, class, dan id",
+                        "dur": "13"
+                    },
+                    {
+                        "t": "Praktik: membangun halaman profil sederhana",
+                        "dur": "25"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "CSS Dasar: Mempercantik Tampilan Website",
+        "category": "CSS",
+        "cat": "web",
+        "emoji": "🎨",
+        "desc": "Kuasai selector, box model, flexbox, dan grid untuk mengubah halaman HTML polos menjadi tampilan web yang modern dan responsif.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 1076,
+        "modules": 14,
+        "color": "#264de4",
+        "date": "2026-07-11",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=8FhmFuGLhaQ",
+        "content": "## Deskripsi Singkat\nCSS (Cascading Style Sheets) digunakan untuk mempercantik dan mengatur tata letak halaman HTML, mulai dari warna, ukuran, hingga layout responsif.\n\n## Pengertian\nCSS adalah bahasa yang digunakan untuk mengatur tampilan (styling) dari elemen HTML, seperti warna, ukuran font, jarak antar elemen, hingga tata letak (layout) sebuah halaman web. Tanpa CSS, halaman web hanya akan berupa teks polos tanpa desain.\n\n## Tujuan Pembelajaran\n- Memahami cara menghubungkan CSS ke HTML (inline, internal, eksternal).\n- Menguasai selector dasar (element, class, id) untuk menargetkan elemen.\n- Mampu mengatur warna, ukuran, jarak (margin & padding), dan border.\n- Memahami dasar layout dengan Flexbox untuk membuat tampilan responsif.\n\n## Penjelasan Materi\nCSS bekerja dengan cara \"menargetkan\" elemen HTML menggunakan selector, lalu memberikan aturan (property dan value) pada elemen tersebut. Ada tiga cara menghubungkan CSS ke HTML:\n- **Inline CSS**: ditulis langsung pada atribut `style` sebuah tag.\n- **Internal CSS**: ditulis di dalam tag `<style>` pada bagian `<head>`.\n- **External CSS**: ditulis di file terpisah berekstensi `.css` lalu dihubungkan menggunakan `<link>`. Cara ini paling direkomendasikan karena lebih rapi dan bisa dipakai berulang.\n\nSelector CSS yang paling sering dipakai:\n- Selector elemen, contoh `p { }` menargetkan semua tag `<p>`.\n- Selector class, contoh `.judul { }` menargetkan elemen dengan `class=\"judul\"`.\n- Selector id, contoh `#header { }` menargetkan elemen dengan `id=\"header\"`.\n\nUntuk layout modern, Flexbox (`display: flex`) sangat membantu menyusun elemen secara horizontal maupun vertikal dengan rapi dan responsif di berbagai ukuran layar.\n\n## Contoh\nContoh berikut menunjukkan cara mengatur warna latar, teks, dan menyusun beberapa kartu secara horizontal menggunakan Flexbox.\n\n## Code\n```css\nbody {\n  font-family: \"Segoe UI\", sans-serif;\n  background-color: #f8fafc;\n  color: #1e293b;\n}\n\n.container {\n  display: flex;\n  gap: 16px;\n  padding: 24px;\n}\n\n.card {\n  flex: 1;\n  background: #ffffff;\n  border-radius: 12px;\n  padding: 16px;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.08);\n}\n```\n\n## Penjelasan Code\n- `font-family` dan `color` mengatur jenis huruf dan warna teks pada seluruh halaman.\n- `.container { display: flex; }` mengubah elemen menjadi flex container sehingga anak-anaknya tersusun sejajar (horizontal secara default).\n- `gap: 16px` memberi jarak antar elemen di dalam flex container tanpa perlu margin manual.\n- `.card { flex: 1; }` membuat setiap kartu memiliki lebar yang sama dan otomatis menyesuaikan ruang yang tersedia.\n- `border-radius` dan `box-shadow` memberi sudut melengkung dan efek bayangan agar tampilan lebih modern.\n\n## Output\nHalaman akan menampilkan latar belakang abu-abu muda dengan beberapa kartu putih melengkung berjajar horizontal, masing-masing memiliki bayangan halus dan lebar yang sama rata.\n\n## Langkah-langkah Praktik\n1. Buat file `style.css` dan hubungkan ke HTML menggunakan `<link rel=\"stylesheet\" href=\"style.css\">`.\n2. Salin contoh CSS di atas ke dalam file `style.css`.\n3. Buat 3 elemen `<div class=\"card\">` di dalam `<div class=\"container\">` pada file HTML.\n4. Buka di browser dan amati bagaimana kartu tersusun sejajar.\n5. Coba ubah nilai `gap`, `flex`, atau warna untuk melihat efeknya secara langsung.\n\n## Kesimpulan\nCSS adalah kunci untuk membuat tampilan web menjadi menarik dan terstruktur. Dengan menguasai selector dan Flexbox, kamu sudah bisa membuat layout dasar yang rapi dan responsif.\n\n## Modul 2: Box Model — Memahami Ruang di Sekitar Elemen\nSetiap elemen HTML sebenarnya berbentuk kotak (box), yang terdiri dari empat lapisan: **content** (isi elemen), **padding** (jarak antara isi dan border), **border** (garis tepi), dan **margin** (jarak ke elemen lain di luar border). Memahami box model penting agar tata letak halaman tidak berantakan saat menambahkan jarak atau garis tepi.\n\nSecara default, `width` dan `height` hanya menghitung bagian content, sehingga menambahkan padding atau border bisa membuat elemen lebih lebar dari yang direncanakan. Properti `box-sizing: border-box` mengubah perilaku ini sehingga padding dan border sudah termasuk dalam `width`\/`height`, membuat perhitungan ukuran jauh lebih mudah.\n\n```css\n* {\n  box-sizing: border-box;\n}\n\n.box {\n  width: 300px;\n  padding: 20px;\n  border: 4px solid #2563eb;\n  margin: 16px auto;\n}\n```\n\nDengan `box-sizing: border-box`, lebar total elemen `.box` tetap 300px meskipun ada padding dan border, karena keduanya \"dipotong\" dari dalam, bukan ditambahkan ke luar.\n\n## Modul 3: Positioning — Mengatur Posisi Elemen\nProperti `position` menentukan bagaimana sebuah elemen ditempatkan pada halaman. Ada lima nilai utama: `static` (default, mengikuti alur normal dokumen), `relative` (bergeser dari posisi normalnya sendiri), `absolute` (mengikuti elemen induk terdekat yang memiliki position selain static), `fixed` (menempel pada layar meskipun halaman di-scroll), dan `sticky` (gabungan relative dan fixed, menempel setelah melewati titik tertentu saat scroll).\n\nProperti `top`, `right`, `bottom`, dan `left` digunakan bersama `position` untuk mengatur jarak elemen dari sisi tersebut, sedangkan `z-index` mengatur tumpukan elemen (elemen dengan z-index lebih besar tampil di atas).\n\n```css\n.navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: 50;\n  background: #ffffff;\n}\n```\n\nKode di atas membuat navbar selalu menempel di bagian atas layar meskipun pengguna men-scroll halaman ke bawah, karena `position: fixed` melepaskannya dari alur dokumen normal.\n\n## Modul 4: CSS Grid — Layout Dua Dimensi\nJika Flexbox cocok untuk menyusun elemen dalam satu arah (baris atau kolom), CSS Grid dirancang khusus untuk layout dua dimensi (baris **dan** kolom sekaligus). Properti `display: grid` mengubah sebuah elemen menjadi grid container, lalu `grid-template-columns` menentukan jumlah dan lebar kolom.\n\n```css\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n}\n\n.gallery img {\n  width: 100%;\n  border-radius: 8px;\n}\n```\n\n`repeat(3, 1fr)` membuat tiga kolom dengan lebar yang sama rata (`1fr` berarti satu bagian dari ruang yang tersedia). Grid sangat berguna untuk membuat galeri foto, dashboard, atau layout halaman yang kompleks tanpa perlu banyak `<div>` pembantu.\n\n## Modul 5: Responsive Design & Media Query\nResponsive design memastikan tampilan website tetap nyaman dilihat di berbagai ukuran layar, mulai dari HP, tablet, hingga desktop. Kuncinya adalah `@media`, yaitu aturan CSS yang hanya berlaku saat kondisi tertentu terpenuhi, misalnya lebar layar maksimal sekian piksel.\n\n```css\n.container {\n  display: flex;\n  gap: 16px;\n}\n\n@media (max-width: 768px) {\n  .container {\n    flex-direction: column;\n  }\n}\n```\n\nPada layar dengan lebar di atas 768px, kartu-kartu di dalam `.container` akan tersusun sejajar (baris). Namun saat layar menyempit (misalnya di HP), `@media (max-width: 768px)` mengubah arah flex menjadi kolom, sehingga kartu tersusun ke bawah agar tetap mudah dibaca.\n\n## Modul 6: Transisi & Animasi CSS\nCSS memungkinkan elemen berubah tampilan secara halus (tidak langsung berubah tiba-tiba) menggunakan properti `transition`, misalnya saat tombol di-hover. Untuk animasi yang lebih kompleks dan berulang, gunakan `@keyframes` yang mendefinisikan beberapa \"titik\" perubahan gaya dari awal hingga akhir animasi.\n\n```css\n.btn {\n  background: #2563eb;\n  transition: background 0.3s ease, transform 0.3s ease;\n}\n\n.btn:hover {\n  background: #1d4ed8;\n  transform: translateY(-2px);\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n.card {\n  animation: fadeIn 0.6s ease-in;\n}\n```\n\n`transition` membuat perubahan warna dan posisi tombol saat di-hover terasa lembut, bukan langsung berubah. Sementara `@keyframes fadeIn` mendefinisikan animasi elemen yang muncul secara perlahan (dari transparan menjadi terlihat penuh), lalu dipasang ke `.card` melalui properti `animation`.\n\nDengan menguasai box model, positioning, grid, responsive design, dan animasi, kamu sudah memiliki bekal CSS yang cukup lengkap untuk membangun tampilan web modern yang rapi di berbagai perangkat.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Selector & Box Model",
+                "items": [
+                    {
+                        "t": "Cara kerja selector CSS",
+                        "dur": "14"
+                    },
+                    {
+                        "t": "Box model: margin, border, padding",
+                        "dur": "18"
+                    },
+                    {
+                        "t": "Warna dan tipografi",
+                        "dur": "15"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Layout Modern",
+                "items": [
+                    {
+                        "t": "Flexbox dari nol",
+                        "dur": "22"
+                    },
+                    {
+                        "t": "CSS Grid layout",
+                        "dur": "24"
+                    },
+                    {
+                        "t": "Positioning & display",
+                        "dur": "16"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Responsive & Efek",
+                "items": [
+                    {
+                        "t": "Media query untuk desain responsif",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Hover, transition, dan animasi ringan",
+                        "dur": "17"
+                    },
+                    {
+                        "t": "Praktik: landing page responsif",
+                        "dur": "28"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "JavaScript Dasar: Membuat Website jadi Interaktif",
+        "category": "JavaScript",
+        "cat": "web",
+        "emoji": "⚡",
+        "desc": "Pelajari variabel, fungsi, DOM manipulation, dan event handling untuk menambahkan interaktivitas ke halaman web.",
+        "level": "intermediate",
+        "stars": 4.7,
+        "students": 987,
+        "modules": 14,
+        "color": "#f7df1e",
+        "date": "2026-07-13",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=SDROba_M42g",
+        "content": "## Deskripsi Singkat\nJavaScript adalah bahasa pemrograman yang membuat website menjadi interaktif, mulai dari validasi form hingga animasi dan manipulasi konten secara dinamis.\n\n## Pengertian\nJavaScript adalah bahasa pemrograman sisi klien (client-side) yang berjalan langsung di browser. JavaScript memungkinkan sebuah halaman web bereaksi terhadap interaksi pengguna, seperti klik tombol, mengisi form, atau mengubah tampilan tanpa perlu memuat ulang halaman.\n\n## Tujuan Pembelajaran\n- Memahami variabel, tipe data, dan operator dasar di JavaScript.\n- Mampu menulis fungsi dan menggunakan kondisi (if-else) serta perulangan.\n- Memahami cara memilih dan memanipulasi elemen HTML lewat DOM.\n- Mampu menangani event seperti klik tombol.\n\n## Penjelasan Materi\nJavaScript menyimpan data menggunakan variabel yang dideklarasikan dengan `let`, `const`, atau `var`. Tipe data dasar meliputi string (teks), number (angka), boolean (benar\/salah), array (daftar), dan object.\n\nDOM (Document Object Model) adalah representasi halaman HTML yang bisa diakses dan diubah oleh JavaScript. Dengan `document.querySelector()` kita bisa memilih elemen HTML, lalu mengubah isi, gaya, atau atributnya secara dinamis.\n\nEvent listener memungkinkan kode JavaScript \"mendengarkan\" aksi pengguna, misalnya `addEventListener('click', ...)` akan menjalankan fungsi tertentu saat sebuah tombol diklik.\n\n## Contoh\nContoh berikut membuat tombol yang saat diklik akan mengubah teks pada sebuah elemen halaman.\n\n## Code\n```javascript\n\/\/ Memilih elemen berdasarkan id\nconst tombol = document.querySelector('#btnUbah');\nconst teks = document.querySelector('#teksTarget');\n\n\/\/ Menambahkan event listener pada tombol\ntombol.addEventListener('click', function () {\n  teks.textContent = 'Teks berhasil diubah dengan JavaScript!';\n  teks.style.color = '#2563EB';\n});\n```\n\n## Penjelasan Code\n- `document.querySelector('#btnUbah')` mencari elemen HTML dengan id `btnUbah` dan menyimpannya ke variabel `tombol`.\n- `addEventListener('click', function () { ... })` mendaftarkan sebuah fungsi yang akan dijalankan setiap kali `tombol` diklik.\n- `teks.textContent = '...'` mengubah isi teks dari elemen `teks` secara langsung tanpa reload halaman.\n- `teks.style.color = '#2563EB'` mengubah warna teks menggunakan JavaScript.\n\n## Output\nSebelum tombol diklik, teks target tampil seperti biasa. Setelah tombol \"Ubah Teks\" diklik, teks berubah menjadi \"Teks berhasil diubah dengan JavaScript!\" dengan warna biru, tanpa memuat ulang halaman.\n\n## Langkah-langkah Praktik\n1. Siapkan HTML dengan sebuah tombol `<button id=\"btnUbah\">Ubah Teks<\/button>` dan elemen `<p id=\"teksTarget\">Teks awal<\/p>`.\n2. Buat file `script.js` dan hubungkan dengan `<script src=\"script.js\"><\/script>` sebelum tag penutup `<\/body>`.\n3. Salin contoh kode JavaScript di atas ke dalam `script.js`.\n4. Buka halaman di browser, lalu klik tombolnya dan amati perubahan teks.\n5. Coba tambahkan event lain, misalnya `mouseover`, untuk bereksperimen.\n\n## Kesimpulan\nJavaScript menghidupkan halaman web dengan interaktivitas. Dengan memahami variabel, DOM, dan event listener, kamu sudah bisa membuat elemen halaman merespons aksi pengguna secara dinamis.\n\n## Modul 2: Array & Method Array di JavaScript\nArray adalah struktur data untuk menyimpan kumpulan nilai dalam satu variabel, misalnya daftar nama siswa atau daftar nilai. JavaScript menyediakan banyak method bawaan untuk mengolah array tanpa perlu menulis perulangan manual, di antaranya `map()` (mengubah setiap elemen menjadi bentuk baru), `filter()` (menyaring elemen sesuai kondisi), dan `forEach()` (menjalankan fungsi untuk setiap elemen).\n\n```javascript\nconst nilai = [70, 85, 90, 60, 95];\n\nconst lulus = nilai.filter(n => n >= 75);\nconst dengBonus = nilai.map(n => n + 5);\n\nconsole.log(lulus);\nconsole.log(dengBonus);\n```\n\n`filter(n => n >= 75)` menghasilkan array baru berisi hanya nilai yang lebih besar atau sama dengan 75, sedangkan `map(n => n + 5)` menghasilkan array baru di mana setiap nilai ditambah 5. Kedua method ini tidak mengubah array asli, melainkan mengembalikan array baru.\n\n## Modul 3: Kondisi & Perulangan Lanjutan\nStruktur kondisi `if-else if-else` memungkinkan program mengambil keputusan berdasarkan lebih dari dua kemungkinan, sedangkan perulangan `for` dan `while` digunakan untuk menjalankan kode berulang kali. Perulangan `for` cocok saat jumlah pengulangan sudah diketahui, sementara `while` cocok saat pengulangan bergantung pada suatu kondisi.\n\n```javascript\nfunction cekPredikat(nilai) {\n  if (nilai >= 90) {\n    return \"Sangat Baik\";\n  } else if (nilai >= 75) {\n    return \"Baik\";\n  } else {\n    return \"Perlu Belajar Lagi\";\n  }\n}\n\nfor (let i = 0; i < 5; i++) {\n  console.log(`Percobaan ke-${i + 1}`);\n}\n```\n\nFungsi `cekPredikat` memeriksa nilai secara berurutan dari kondisi tertinggi, sedangkan perulangan `for` di bawahnya menjalankan `console.log` sebanyak lima kali, dengan `i` bertambah satu setiap putaran hingga mencapai batas yang ditentukan.\n\n## Modul 4: Fungsi — Function Declaration dan Arrow Function\nSelain `function namaFungsi() { }` (function declaration), JavaScript modern juga mendukung **arrow function** yang lebih ringkas, ditulis dengan tanda panah `=>`. Fungsi juga bisa memiliki nilai parameter default, sehingga tetap bisa dipanggil meskipun sebagian argumen tidak diisi.\n\n```javascript\nfunction sapa(nama) {\n  return `Halo, ${nama}!`;\n}\n\nconst sapaSingkat = (nama = \"Siswa\") => `Halo, ${nama}!`;\n\nconsole.log(sapa(\"Rani\"));\nconsole.log(sapaSingkat());\n```\n\n`sapa(\"Rani\")` menghasilkan \"Halo, Rani!\" menggunakan function declaration biasa. `sapaSingkat()` dipanggil tanpa argumen tetap menghasilkan \"Halo, Siswa!\" karena parameter `nama` memiliki nilai default `\"Siswa\"`.\n\n## Modul 5: Manipulasi DOM Lanjutan\nSelain mengubah teks, JavaScript bisa membuat elemen HTML baru secara dinamis menggunakan `document.createElement()`, lalu menambahkannya ke halaman dengan `appendChild()`. Untuk mengatur class CSS secara dinamis (misalnya menampilkan\/menyembunyikan elemen), gunakan `classList.add()`, `classList.remove()`, atau `classList.toggle()`.\n\n```javascript\nconst list = document.querySelector('#daftarSiswa');\n\nconst itemBaru = document.createElement('li');\nitemBaru.textContent = 'Siswa Baru';\nitemBaru.classList.add('siswa-item');\n\nlist.appendChild(itemBaru);\n```\n\nKode di atas membuat elemen `<li>` baru, mengisi teksnya, menambahkan class `siswa-item` untuk styling, lalu menempelkannya ke dalam elemen `<ul id=\"daftarSiswa\">` yang sudah ada di halaman — semuanya tanpa perlu memuat ulang halaman.\n\n## Modul 6: Fetch API & Asynchronous JavaScript Dasar\nBanyak aplikasi web perlu mengambil data dari server tanpa reload halaman, misalnya mengambil daftar materi dari API. JavaScript menyediakan `fetch()` untuk melakukan permintaan (request) ke server, yang bersifat asynchronous (berjalan di latar belakang) dan dikombinasikan dengan `async`\/`await` agar kode lebih mudah dibaca.\n\n```javascript\nasync function ambilData() {\n  const response = await fetch('https:\/\/api.contoh.com\/materi');\n  const data = await response.json();\n  console.log(data);\n}\n\nambilData();\n```\n\nKata kunci `async` di depan fungsi menandakan fungsi tersebut bisa menggunakan `await`, yaitu perintah untuk \"menunggu\" hasil dari operasi asynchronous seperti `fetch()` sebelum melanjutkan ke baris berikutnya. Pola ini menghindari kode yang rumit dibanding menggunakan `.then()` bertumpuk.\n\nDengan menguasai array, kondisi-perulangan, fungsi modern, manipulasi DOM lanjutan, dan dasar asynchronous JavaScript, kamu sudah punya fondasi kuat untuk membangun interaksi web yang lebih kompleks.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Fundamental JavaScript",
+                "items": [
+                    {
+                        "t": "Variabel, tipe data, dan operator",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Percabangan dan perulangan",
+                        "dur": "22"
+                    },
+                    {
+                        "t": "Fungsi dan arrow function",
+                        "dur": "18"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Struktur Data",
+                "items": [
+                    {
+                        "t": "Array dan method-nya",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Object dan destructuring",
+                        "dur": "18"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: DOM & Interaktivitas",
+                "items": [
+                    {
+                        "t": "Memilih dan mengubah elemen HTML",
+                        "dur": "22"
+                    },
+                    {
+                        "t": "Event handling (klik, submit, input)",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Fetch API dasar",
+                        "dur": "24"
+                    },
+                    {
+                        "t": "Praktik: membuat to-do list interaktif",
+                        "dur": "30"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "PHP Dasar: Pemrograman Sisi Server untuk Website Dinamis",
+        "category": "PHP",
+        "cat": "web",
+        "emoji": "🐘",
+        "desc": "Pahami sintaks PHP, variabel, array, fungsi, hingga cara memproses form dan session untuk membangun website dinamis seperti EduCare ini.",
+        "level": "intermediate",
+        "stars": 4.6,
+        "students": 845,
+        "modules": 14,
+        "color": "#777bb4",
+        "date": "2026-07-15",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=TaBWhb5SPfc",
+        "content": "## Deskripsi Singkat\nPHP adalah bahasa pemrograman sisi server yang digunakan untuk membangun website dinamis, memproses form, dan berkomunikasi dengan database.\n\n## Pengertian\nPHP (Hypertext Preprocessor) adalah bahasa pemrograman yang dijalankan di sisi server (server-side). Kode PHP diproses oleh server sebelum hasilnya dikirim sebagai HTML ke browser pengguna, sehingga cocok untuk membuat website dinamis seperti sistem login, e-commerce, atau platform belajar seperti EduCare ini.\n\n## Tujuan Pembelajaran\n- Memahami sintaks dasar PHP dan cara PHP dijalankan di server.\n- Mampu menggunakan variabel, kondisi, dan perulangan pada PHP.\n- Mampu membuat fungsi sederhana untuk mengolah data.\n- Memahami cara PHP menerima data dari form (`$_GET`, `$_POST`).\n\n## Penjelasan Materi\nKode PHP ditulis di antara tag `<?php` dan `?>`, dan dapat dicampur langsung dengan HTML. Variabel di PHP selalu diawali tanda dolar (`$`), misalnya `$nama = \"Budi\";`.\n\nPHP mendukung struktur kontrol seperti `if-else` untuk pengambilan keputusan dan `foreach`\/`for` untuk perulangan, mirip bahasa pemrograman lain namun dengan sintaks yang lebih longgar (loosely typed).\n\nUntuk menerima data dari pengguna, PHP menyediakan variabel superglobal seperti `$_GET` (data dari URL) dan `$_POST` (data dari form). Fungsi memungkinkan kita mengelompokkan logika yang bisa dipakai berulang kali tanpa menulis ulang kode.\n\n## Contoh\nContoh berikut membuat fungsi sederhana untuk menyapa pengguna berdasarkan nama yang dikirim lewat form.\n\n## Code\n```php\n<?php\nfunction sapaSiswa(string $nama): string {\n    if (empty($nama)) {\n        return \"Halo, Siswa!\";\n    }\n    return \"Halo, \" . htmlspecialchars($nama) . \"! Selamat belajar di EduCare.\";\n}\n\n$nama = $_POST['nama'] ?? '';\necho sapaSiswa($nama);\n?>\n```\n\n## Penjelasan Code\n- `function sapaSiswa(string $nama): string { ... }` mendeklarasikan fungsi bernama `sapaSiswa` yang menerima satu parameter string dan mengembalikan string.\n- `if (empty($nama))` mengecek apakah variabel `$nama` kosong, jika ya maka fungsi mengembalikan sapaan default.\n- `htmlspecialchars($nama)` digunakan untuk mencegah serangan XSS dengan mengubah karakter HTML berbahaya menjadi teks aman.\n- `$_POST['nama'] ?? ''` mengambil data `nama` yang dikirim dari form, dan menggunakan string kosong sebagai nilai cadangan jika tidak ada data terkirim.\n- `echo` menampilkan hasil fungsi ke halaman.\n\n## Output\nJika form dikirim dengan nama \"Ali\", hasil yang tampil adalah: `Halo, Ali! Selamat belajar di EduCare.` Jika tidak ada nama dikirim, hasilnya adalah: `Halo, Siswa!`.\n\n## Langkah-langkah Praktik\n1. Pastikan sudah menginstal XAMPP\/Laragon agar PHP dapat dijalankan secara lokal.\n2. Buat file `sapa.php`, lalu salin contoh kode di atas.\n3. Buat form HTML sederhana dengan `<input name=\"nama\">` yang mengirim data dengan method POST ke `sapa.php`.\n4. Jalankan melalui `localhost`, isi form, lalu kirim dan amati hasilnya.\n5. Coba modifikasi fungsi untuk menambahkan sapaan berbeda berdasarkan waktu.\n\n## Kesimpulan\nPHP memungkinkan website memproses data secara dinamis di sisi server. Dengan menguasai variabel, fungsi, dan penanganan input pengguna, kamu sudah siap membangun fitur-fitur interaktif seperti pada sistem EduCare.\n\n## Modul 2: Array PHP — Indexed dan Associative Array\nPHP mendukung dua jenis array utama: **indexed array**, yang menyimpan data berurutan dengan indeks angka mulai dari 0, dan **associative array**, yang menyimpan data berpasangan key-value seperti kamus. Perulangan `foreach` adalah cara paling umum untuk menjelajahi isi array.\n\n```php\n<?php\n$siswa = [\"Ali\", \"Budi\", \"Citra\"];\n\n$nilaiSiswa = [\n    \"Ali\" => 90,\n    \"Budi\" => 75,\n    \"Citra\" => 88\n];\n\nforeach ($nilaiSiswa as $nama => $nilai) {\n    echo \"$nama: $nilai\\n\";\n}\n?>\n```\n\n`$siswa` adalah indexed array berisi tiga nama, sedangkan `$nilaiSiswa` adalah associative array yang memasangkan setiap nama dengan nilainya. `foreach ($nilaiSiswa as $nama => $nilai)` mengambil setiap pasangan key (`$nama`) dan value (`$nilai`) secara berurutan untuk ditampilkan.\n\n## Modul 3: Struktur Kontrol Lanjutan — Switch dan Perulangan\nSelain `if-else`, PHP menyediakan `switch` untuk memeriksa satu variabel terhadap banyak kemungkinan nilai, biasanya lebih rapi dibanding banyak `else if` berurutan. Untuk perulangan, `for` cocok saat jumlah pengulangan sudah diketahui, sedangkan `while` cocok untuk pengulangan berbasis kondisi.\n\n```php\n<?php\n$hari = 3;\n\nswitch ($hari) {\n    case 1:\n        echo \"Senin\";\n        break;\n    case 2:\n        echo \"Selasa\";\n        break;\n    case 3:\n        echo \"Rabu\";\n        break;\n    default:\n        echo \"Hari tidak dikenal\";\n}\n?>\n```\n\n`switch ($hari)` memeriksa nilai `$hari` terhadap setiap `case`. Karena `$hari` bernilai 3, program mencetak \"Rabu\" lalu berhenti karena ada `break`. Tanpa `break`, PHP akan otomatis lanjut mengeksekusi `case` berikutnya.\n\n## Modul 4: PHP & Session — Menyimpan Data Login Pengguna\nSession memungkinkan server \"mengingat\" data pengguna antar halaman, misalnya status login. Session dimulai dengan `session_start()` di awal file, lalu data disimpan pada variabel superglobal `$_SESSION`, sama seperti yang digunakan pada sistem login EduCare.\n\n```php\n<?php\nsession_start();\n\n$_SESSION['user'] = [\n    'nama' => 'Ali',\n    'role' => 'siswa'\n];\n\nif (isset($_SESSION['user'])) {\n    echo \"Selamat datang, \" . $_SESSION['user']['nama'];\n}\n?>\n```\n\n`session_start()` wajib dipanggil sebelum output apa pun agar session aktif. Setelah data disimpan ke `$_SESSION['user']`, data tersebut tetap tersedia di halaman lain selama sesi browser belum ditutup atau session belum dihapus dengan `session_destroy()`.\n\n## Modul 5: PHP & File JSON — Membaca dan Menyimpan Data\nAplikasi sederhana sering menyimpan data ke file JSON alih-alih database, seperti yang dilakukan EduCare pada file-file di folder `data\/`. PHP menyediakan `file_get_contents()` untuk membaca isi file, `json_decode()` untuk mengubah teks JSON menjadi array PHP, dan `json_encode()` bersama `file_put_contents()` untuk menyimpan kembali.\n\n```php\n<?php\n$data = json_decode(file_get_contents('data\/materi.json'), true);\n\n$data[] = [\n    'id' => count($data) + 1,\n    'title' => 'Materi Baru'\n];\n\nfile_put_contents(\n    'data\/materi.json',\n    json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)\n);\n?>\n```\n\n`json_decode(..., true)` mengubah isi file JSON menjadi array asosiatif PHP agar mudah diolah. Setelah menambahkan data baru ke dalam array, `json_encode()` mengubahnya kembali menjadi teks JSON yang rapi (`JSON_PRETTY_PRINT`) sebelum disimpan ulang ke file menggunakan `file_put_contents()`.\n\n## Modul 6: Include & Require — Membuat Kode Lebih Modular\nAgar kode tidak diulang-ulang di banyak file, PHP menyediakan `include` dan `require` untuk memasukkan isi file lain, misalnya header, footer, atau sidebar yang dipakai di banyak halaman. Perbedaannya, `require` akan menghentikan program dengan error fatal jika file tidak ditemukan, sedangkan `include` hanya memunculkan peringatan dan program tetap berjalan.\n\n```php\n<?php\nrequire_once __DIR__ . '\/..\/function.php';\ninclude __DIR__ . '\/..\/includes\/header.php';\n?>\n<h1>Halaman Materi<\/h1>\n<?php include __DIR__ . '\/..\/includes\/footer.php'; ?>\n```\n\n`require_once` memastikan file `function.php` hanya dimuat satu kali meskipun dipanggil berulang, mencegah error karena fungsi dideklarasikan dua kali. Pola `include` untuk header dan footer inilah yang membuat setiap halaman EduCare punya tampilan konsisten tanpa menyalin kode yang sama di setiap file.\n\nDengan menguasai array, struktur kontrol lanjutan, session, pengolahan file JSON, dan modularitas kode lewat include\/require, kamu sudah memahami dasar-dasar penting untuk membangun aplikasi PHP dinamis seperti EduCare.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Fundamental PHP",
+                "items": [
+                    {
+                        "t": "Sintaks dasar dan variabel",
+                        "dur": "18"
+                    },
+                    {
+                        "t": "Struktur kontrol & perulangan",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Array asosiatif & multidimensi",
+                        "dur": "22"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Fungsi & Form Handling",
+                "items": [
+                    {
+                        "t": "Membuat dan memakai fungsi",
+                        "dur": "18"
+                    },
+                    {
+                        "t": "Menangani data form ($_POST, $_GET)",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Validasi & sanitasi input",
+                        "dur": "17"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Session & Data",
+                "items": [
+                    {
+                        "t": "Session dan autentikasi sederhana",
+                        "dur": "22"
+                    },
+                    {
+                        "t": "Membaca & menulis data JSON",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Praktik: membuat mini CRUD data siswa",
+                        "dur": "30"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Python Dasar: Bahasa Pemrograman Serbaguna untuk Pemula",
+        "category": "Python",
+        "cat": "programming",
+        "emoji": "🐍",
+        "desc": "Mulai perjalanan coding dengan Python: sintaks yang mudah dibaca, struktur data, fungsi, hingga studi kasus program sederhana.",
+        "level": "beginner",
+        "stars": 4.9,
+        "students": 1532,
+        "modules": 14,
+        "color": "#306998",
+        "date": "2026-07-17",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=fmZX-5r0t5E",
+        "content": "## Deskripsi Singkat\nPython adalah bahasa pemrograman serbaguna dengan sintaks yang sederhana, cocok untuk pemula hingga pengembangan AI dan data science.\n\n## Pengertian\nPython adalah bahasa pemrograman tingkat tinggi yang dikenal karena sintaksnya yang mudah dibaca, mirip bahasa Inggris sehari-hari. Python banyak digunakan untuk pengembangan web, otomatisasi, analisis data, hingga kecerdasan buatan (AI).\n\n## Tujuan Pembelajaran\n- Memahami sintaks dasar Python: variabel, tipe data, dan indentasi.\n- Mampu menggunakan struktur kontrol (if-else, perulangan for\/while).\n- Mampu membuat dan memanggil fungsi sederhana.\n- Memahami penggunaan list untuk menyimpan kumpulan data.\n\n## Penjelasan Materi\nBerbeda dengan banyak bahasa lain, Python tidak menggunakan tanda kurung kurawal `{}` untuk menandai blok kode, melainkan menggunakan indentasi (spasi\/tab) yang konsisten. Ini membuat kode Python cenderung lebih rapi dan mudah dibaca.\n\nPython memiliki tipe data dasar seperti `int` (bilangan bulat), `float` (desimal), `str` (teks), `bool` (benar\/salah), dan `list` (kumpulan data berurutan). Struktur kontrol seperti `if-elif-else` digunakan untuk pengambilan keputusan, sedangkan `for` dan `while` digunakan untuk perulangan.\n\nFungsi di Python dideklarasikan menggunakan kata kunci `def`, memungkinkan kita mengelompokkan logika yang dapat dipanggil berulang kali dengan parameter berbeda.\n\n## Contoh\nContoh berikut membuat fungsi untuk menghitung rata-rata nilai siswa dari sebuah list nilai.\n\n## Code\n```python\ndef hitung_rata_rata(nilai):\n    if len(nilai) == 0:\n        return 0\n    return sum(nilai) \/ len(nilai)\n\nnilai_siswa = [80, 90, 75, 88, 95]\nrata_rata = hitung_rata_rata(nilai_siswa)\n\nprint(f\"Rata-rata nilai: {rata_rata:.2f}\")\nif rata_rata >= 85:\n    print(\"Predikat: Sangat Baik\")\nelse:\n    print(\"Predikat: Baik\")\n```\n\n## Penjelasan Code\n- `def hitung_rata_rata(nilai):` mendefinisikan fungsi yang menerima satu parameter berupa list nilai.\n- `sum(nilai) \/ len(nilai)` menjumlahkan seluruh nilai dalam list lalu membaginya dengan jumlah data untuk mendapatkan rata-rata.\n- `nilai_siswa = [80, 90, 75, 88, 95]` adalah list yang menyimpan lima nilai siswa.\n- `f\"Rata-rata nilai: {rata_rata:.2f}\"` adalah f-string untuk menampilkan angka dengan dua angka di belakang koma.\n- Blok `if-else` menentukan predikat berdasarkan nilai rata-rata yang dihasilkan.\n\n## Output\n```\nRata-rata nilai: 85.60\nPredikat: Sangat Baik\n```\n\n## Langkah-langkah Praktik\n1. Instal Python dari python.org, lalu pastikan bisa dijalankan lewat terminal dengan perintah `python --version`.\n2. Buat file `nilai.py`, lalu salin contoh kode di atas.\n3. Jalankan dengan perintah `python nilai.py` di terminal.\n4. Amati hasil output yang muncul di layar.\n5. Coba ubah isi list `nilai_siswa` dan lihat bagaimana hasil serta predikatnya berubah.\n\n## Kesimpulan\nPython adalah bahasa pemrograman yang ramah pemula namun sangat kuat untuk kebutuhan lanjutan. Menguasai dasar sintaks, fungsi, dan list adalah langkah awal sebelum mempelajari pustaka (library) Python yang lebih kompleks seperti untuk data science atau AI.\n\n## Modul 2: Dictionary — Menyimpan Data Berpasangan Key-Value\nSelain list, Python memiliki tipe data `dict` (dictionary) untuk menyimpan data dalam pasangan key-value, mirip kamus di mana setiap kata (key) memiliki artinya sendiri (value). Dictionary sangat berguna untuk merepresentasikan data yang memiliki atribut, misalnya data satu siswa dengan nama, kelas, dan nilai.\n\n```python\nsiswa = {\n    \"nama\": \"Ali\",\n    \"kelas\": \"9A\",\n    \"nilai\": 90\n}\n\nprint(siswa[\"nama\"])\nsiswa[\"nilai\"] = 95\n\nfor key, value in siswa.items():\n    print(f\"{key}: {value}\")\n```\n\n`siswa[\"nama\"]` mengambil value dari key `\"nama\"`. Baris `siswa[\"nilai\"] = 95` mengubah nilai yang sudah ada. Method `.items()` memungkinkan kita melakukan perulangan sambil mengambil key dan value sekaligus.\n\n## Modul 3: Perulangan Lanjutan — For, While, dan Range\nFungsi `range()` sering dipakai bersama `for` untuk mengulang kode sebanyak jumlah tertentu, sedangkan `while` mengulang selama sebuah kondisi masih bernilai benar. Kata kunci `break` menghentikan perulangan lebih awal, dan `continue` melompati satu putaran tanpa menghentikan seluruh perulangan.\n\n```python\nfor i in range(1, 6):\n    if i == 4:\n        continue\n    print(f\"Perulangan ke-{i}\")\n\nhitung = 0\nwhile hitung < 3:\n    print(\"Sedang menghitung...\")\n    hitung += 1\n```\n\n`range(1, 6)` menghasilkan angka 1 sampai 5. Saat `i == 4`, `continue` membuat program melompati `print` untuk angka itu saja. Perulangan `while` di bawahnya berjalan tepat tiga kali karena `hitung` bertambah 1 setiap putaran hingga mencapai batas kondisi.\n\n## Modul 4: String Manipulation — Mengolah Teks di Python\nPython menyediakan banyak method bawaan untuk mengolah teks (string), seperti `.upper()` (mengubah ke huruf besar), `.lower()` (huruf kecil), `.strip()` (menghapus spasi di awal\/akhir), `.split()` (memecah teks jadi list), dan slicing `teks[awal:akhir]` untuk mengambil sebagian teks.\n\n```python\nnama_lengkap = \"  Ali Rahman  \"\nnama_bersih = nama_lengkap.strip()\n\nprint(nama_bersih.upper())\nprint(nama_bersih.split(\" \"))\nprint(nama_bersih[0:3])\n```\n\n`.strip()` menghapus spasi berlebih di awal dan akhir teks. `.upper()` mengubah seluruh huruf menjadi kapital, `.split(\" \")` memecah nama menjadi list `[\"Ali\", \"Rahman\"]`, dan `nama_bersih[0:3]` mengambil tiga karakter pertama menggunakan slicing.\n\n## Modul 5: Modul & Import — Menggunakan Library Python\nPython memiliki banyak modul bawaan yang bisa digunakan dengan kata kunci `import`, sehingga kita tidak perlu menulis semua fungsi dari nol. Contohnya modul `math` untuk fungsi matematika dan modul `random` untuk menghasilkan angka acak.\n\n```python\nimport math\nimport random\n\nakar = math.sqrt(64)\nangka_acak = random.randint(1, 10)\n\nprint(f\"Akar kuadrat 64 adalah {akar}\")\nprint(f\"Angka acak antara 1-10: {angka_acak}\")\n```\n\n`math.sqrt(64)` menghitung akar kuadrat dari 64, sedangkan `random.randint(1, 10)` menghasilkan bilangan bulat acak antara 1 sampai 10 (termasuk kedua batasnya). Import memungkinkan kita memakai fungsi-fungsi siap pakai ini tanpa menulis ulang logikanya.\n\n## Modul 6: Penanganan Error dengan Try-Except\nSaat program menemui kesalahan (misalnya membagi dengan nol atau mengubah teks yang bukan angka), Python akan menghentikan program dengan error jika tidak ditangani. Blok `try-except` memungkinkan kita \"menangkap\" error tersebut agar program tetap berjalan dan bisa memberi pesan yang lebih ramah.\n\n```python\ndef bagi(a, b):\n    try:\n        hasil = a \/ b\n        return hasil\n    except ZeroDivisionError:\n        return \"Error: tidak bisa membagi dengan nol\"\n\nprint(bagi(10, 2))\nprint(bagi(10, 0))\n```\n\nKode di dalam blok `try` dijalankan seperti biasa. Jika terjadi error `ZeroDivisionError` (pembagian dengan nol), program tidak langsung berhenti, melainkan menjalankan blok `except` dan mengembalikan pesan error yang mudah dipahami pengguna.\n\nDengan menguasai dictionary, perulangan lanjutan, manipulasi string, penggunaan modul, dan penanganan error, kamu sudah memiliki dasar Python yang cukup kuat untuk melanjutkan ke topik yang lebih lanjut seperti data science atau pengembangan aplikasi.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Pengenalan Python",
+                "items": [
+                    {
+                        "t": "Instalasi & menjalankan program pertama",
+                        "dur": "15"
+                    },
+                    {
+                        "t": "Variabel dan tipe data",
+                        "dur": "16"
+                    },
+                    {
+                        "t": "Operator dan input pengguna",
+                        "dur": "14"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Struktur Data & Kontrol Alur",
+                "items": [
+                    {
+                        "t": "List, tuple, dan dictionary",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Percabangan dan perulangan",
+                        "dur": "18"
+                    },
+                    {
+                        "t": "Fungsi dan parameter",
+                        "dur": "19"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Praktik Program",
+                "items": [
+                    {
+                        "t": "Penanganan error dengan try\/except",
+                        "dur": "16"
+                    },
+                    {
+                        "t": "Praktik: kalkulator sederhana",
+                        "dur": "22"
+                    },
+                    {
+                        "t": "Praktik: game tebak angka",
+                        "dur": "24"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Basis Data & SQL: Mengelola Data dengan MySQL",
+        "category": "Basis Data",
+        "cat": "data",
+        "emoji": "🗄️",
+        "desc": "Pahami konsep tabel, relasi, dan perintah SQL dasar (SELECT, INSERT, UPDATE, DELETE) untuk mengelola data aplikasi secara profesional.",
+        "level": "intermediate",
+        "stars": 4.7,
+        "students": 712,
+        "modules": 14,
+        "color": "#00758f",
+        "date": "2026-07-19",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=xYBclb-sYQ4",
+        "content": "## Deskripsi Singkat\nBasis data (database) digunakan untuk menyimpan, mengelola, dan mengambil data secara terstruktur menggunakan bahasa SQL, dengan MySQL sebagai salah satu sistem yang paling umum digunakan.\n\n## Pengertian\nBasis data adalah kumpulan data yang terorganisir sehingga mudah diakses, dikelola, dan diperbarui. SQL (Structured Query Language) adalah bahasa standar untuk berinteraksi dengan basis data relasional seperti MySQL, termasuk untuk membuat tabel, menambah data, mengubah data, dan mengambil data.\n\n## Tujuan Pembelajaran\n- Memahami konsep tabel, baris (row), dan kolom (column) dalam basis data relasional.\n- Mampu membuat tabel menggunakan perintah `CREATE TABLE`.\n- Mampu menambah, mengambil, mengubah, dan menghapus data (operasi CRUD) dengan SQL.\n- Memahami penggunaan klausa `WHERE` untuk menyaring data.\n\n## Penjelasan Materi\nDalam basis data relasional, data disimpan dalam bentuk tabel yang terdiri dari kolom (field) dan baris (record). Setiap tabel biasanya memiliki primary key, yaitu kolom unik yang membedakan setiap baris data, misalnya kolom `id`.\n\nOperasi dasar pada basis data dikenal dengan istilah CRUD:\n- **Create**: menambahkan data baru dengan `INSERT INTO`.\n- **Read**: mengambil data dengan `SELECT`.\n- **Update**: mengubah data yang sudah ada dengan `UPDATE`.\n- **Delete**: menghapus data dengan `DELETE`.\n\nKlausa `WHERE` digunakan untuk menyaring baris data tertentu, sehingga operasi tidak dilakukan pada seluruh tabel, melainkan hanya baris yang memenuhi kondisi tertentu.\n\n## Contoh\nContoh berikut membuat tabel siswa, menambahkan data, lalu mengambil data siswa dengan nilai di atas 80.\n\n## Code\n```sql\nCREATE TABLE siswa (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    nama VARCHAR(100) NOT NULL,\n    kelas VARCHAR(10),\n    nilai INT\n);\n\nINSERT INTO siswa (nama, kelas, nilai)\nVALUES ('Ali', '9A', 90), ('Siti', '9B', 75);\n\nSELECT nama, nilai FROM siswa\nWHERE nilai > 80\nORDER BY nilai DESC;\n```\n\n## Penjelasan Code\n- `CREATE TABLE siswa (...)` membuat tabel baru bernama `siswa` dengan kolom `id`, `nama`, `kelas`, dan `nilai`.\n- `id INT AUTO_INCREMENT PRIMARY KEY` menjadikan kolom `id` sebagai kunci utama yang otomatis bertambah setiap ada data baru.\n- `INSERT INTO siswa (...) VALUES (...)` menambahkan dua baris data siswa sekaligus ke dalam tabel.\n- `SELECT nama, nilai FROM siswa WHERE nilai > 80` mengambil hanya kolom `nama` dan `nilai` dari baris yang nilainya lebih dari 80.\n- `ORDER BY nilai DESC` mengurutkan hasil dari nilai tertinggi ke terendah.\n\n## Output\n```\n+------+-------+\n| nama | nilai |\n+------+-------+\n| Ali  | 90    |\n+------+-------+\n```\n\n## Langkah-langkah Praktik\n1. Buka phpMyAdmin atau MySQL Workbench, lalu buat database baru misalnya `latihan_db`.\n2. Buka tab SQL, lalu jalankan perintah `CREATE TABLE` di atas.\n3. Jalankan perintah `INSERT INTO` untuk menambahkan beberapa data siswa.\n4. Jalankan perintah `SELECT` dengan `WHERE` untuk melihat data yang tersaring.\n5. Coba ubah kondisi `WHERE` atau tambahkan `UPDATE`\/`DELETE` untuk berlatih lebih jauh.\n\n## Kesimpulan\nBasis data dan SQL adalah fondasi penting bagi hampir semua aplikasi modern. Dengan memahami struktur tabel dan operasi CRUD, kamu sudah bisa mengelola data secara terorganisir dan efisien.\n\n## Modul 2: UPDATE dan DELETE — Mengubah dan Menghapus Data\nSetelah data tersimpan, sering kali kita perlu memperbaruinya atau menghapusnya. Perintah `UPDATE` mengubah nilai kolom tertentu pada baris yang memenuhi kondisi `WHERE`, sedangkan `DELETE` menghapus baris yang sesuai kondisi tersebut. Klausa `WHERE` sangat penting di sini — tanpanya, `UPDATE`\/`DELETE` akan berlaku pada **seluruh** baris di tabel.\n\n```sql\nUPDATE siswa\nSET nilai = 95\nWHERE nama = 'Ali';\n\nDELETE FROM siswa\nWHERE nilai < 60;\n```\n\n`UPDATE siswa SET nilai = 95 WHERE nama = 'Ali'` hanya mengubah nilai milik siswa bernama Ali, bukan seluruh siswa. `DELETE FROM siswa WHERE nilai < 60` menghapus semua baris siswa yang nilainya di bawah 60.\n\n## Modul 3: Relasi Antar Tabel & JOIN\nBasis data relasional biasanya memiliki lebih dari satu tabel yang saling berhubungan, misalnya tabel `siswa` dan tabel `nilai_quiz`. Relasi ini dihubungkan lewat **foreign key**, yaitu kolom yang merujuk ke primary key tabel lain. Perintah `JOIN` menggabungkan data dari beberapa tabel dalam satu hasil query.\n\n```sql\nSELECT siswa.nama, nilai_quiz.skor\nFROM siswa\nJOIN nilai_quiz ON siswa.id = nilai_quiz.siswa_id;\n```\n\n`JOIN nilai_quiz ON siswa.id = nilai_quiz.siswa_id` menghubungkan tabel `siswa` dan `nilai_quiz` berdasarkan kolom `id` yang cocok, sehingga hasil query menampilkan nama siswa beserta skor quiz-nya dalam satu tabel gabungan, meskipun datanya tersimpan terpisah.\n\n## Modul 4: Fungsi Agregat & GROUP BY\nFungsi agregat digunakan untuk meringkas banyak baris data menjadi satu nilai, seperti `COUNT()` (menghitung jumlah baris), `SUM()` (menjumlahkan), `AVG()` (rata-rata), `MAX()`, dan `MIN()`. Klausa `GROUP BY` mengelompokkan baris berdasarkan kolom tertentu sebelum fungsi agregat diterapkan pada tiap kelompok.\n\n```sql\nSELECT kelas, AVG(nilai) AS rata_rata\nFROM siswa\nGROUP BY kelas;\n```\n\nQuery di atas mengelompokkan seluruh siswa berdasarkan kolom `kelas`, lalu menghitung rata-rata nilai (`AVG(nilai)`) untuk masing-masing kelas secara terpisah, menghasilkan satu baris ringkasan per kelas.\n\n## Modul 5: Index, Primary Key, dan Foreign Key\nPrimary key adalah kolom unik yang menjadi identitas setiap baris (biasanya `id`), sedangkan foreign key adalah kolom yang merujuk ke primary key tabel lain untuk menjaga relasi antar data tetap konsisten. Index adalah struktur tambahan yang mempercepat pencarian data pada kolom tertentu, terutama pada tabel dengan banyak baris.\n\n```sql\nCREATE TABLE nilai_quiz (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    siswa_id INT,\n    skor INT,\n    FOREIGN KEY (siswa_id) REFERENCES siswa(id)\n);\n\nCREATE INDEX idx_skor ON nilai_quiz (skor);\n```\n\n`FOREIGN KEY (siswa_id) REFERENCES siswa(id)` memastikan setiap `siswa_id` pada tabel `nilai_quiz` harus benar-benar ada di tabel `siswa`, mencegah data \"yatim\" yang tidak memiliki pemilik. `CREATE INDEX idx_skor` mempercepat pencarian atau pengurutan berdasarkan kolom `skor`.\n\n## Modul 6: Mencegah SQL Injection dengan Prepared Statement\nSQL Injection adalah serangan di mana input pengguna yang tidak difilter disisipi perintah SQL berbahaya. Menggabungkan input pengguna langsung ke dalam query (string concatenation) sangat rentan terhadap serangan ini. Solusinya adalah **prepared statement**, yaitu query yang parameternya diisi secara terpisah dan aman.\n\n```php\n<?php\n$stmt = $koneksi->prepare(\"SELECT * FROM siswa WHERE nama = ?\");\n$stmt->bind_param(\"s\", $nama);\n$nama = $_POST['nama'];\n$stmt->execute();\n$hasil = $stmt->get_result();\n?>\n```\n\nDengan prepared statement, nilai `$nama` dari input pengguna tidak pernah digabung langsung ke teks query, melainkan \"diikat\" secara aman lewat `bind_param()`, sehingga karakter berbahaya dalam input tidak bisa mengubah struktur query aslinya.\n\nDengan menguasai UPDATE\/DELETE, relasi antar tabel, fungsi agregat, index\/foreign key, hingga keamanan query, kamu sudah memahami dasar pengelolaan basis data yang solid untuk membangun aplikasi berbasis data seperti EduCare.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Konsep Dasar Basis Data",
+                "items": [
+                    {
+                        "t": "Apa itu database dan tabel",
+                        "dur": "14"
+                    },
+                    {
+                        "t": "Tipe data kolom",
+                        "dur": "12"
+                    },
+                    {
+                        "t": "Membuat tabel dengan CREATE TABLE",
+                        "dur": "18"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Query Dasar (CRUD)",
+                "items": [
+                    {
+                        "t": "INSERT INTO — menambah data",
+                        "dur": "16"
+                    },
+                    {
+                        "t": "SELECT & WHERE — mengambil data",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "UPDATE & DELETE — mengubah dan menghapus data",
+                        "dur": "18"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Relasi & Agregasi",
+                "items": [
+                    {
+                        "t": "Primary key, foreign key, dan JOIN",
+                        "dur": "24"
+                    },
+                    {
+                        "t": "GROUP BY dan fungsi agregasi",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Praktik: query laporan nilai siswa",
+                        "dur": "26"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Git & GitHub: Version Control untuk Kolaborasi Kode",
+        "category": "Version Control",
+        "cat": "tech",
+        "emoji": "🌿",
+        "desc": "Pelajari cara melacak perubahan kode, bekerja dengan branch, dan berkolaborasi lewat GitHub — skill wajib setiap programmer modern.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 654,
+        "modules": 14,
+        "color": "#f05032",
+        "date": "2026-07-21",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=fQbTeNX1mvM",
+        "content": "## Deskripsi Singkat\nGit adalah sistem version control untuk melacak perubahan kode, sedangkan GitHub adalah platform untuk menyimpan dan berkolaborasi pada project berbasis Git secara online.\n\n## Pengertian\nGit adalah sistem kontrol versi (version control system) yang mencatat setiap perubahan pada kode program dari waktu ke waktu, sehingga developer bisa kembali ke versi sebelumnya jika terjadi kesalahan. GitHub adalah layanan hosting berbasis cloud yang menyimpan repository Git dan memudahkan kolaborasi banyak orang dalam satu project.\n\n## Tujuan Pembelajaran\n- Memahami konsep repository, commit, branch, dan remote.\n- Mampu menginisialisasi project Git dan melakukan commit pertama.\n- Mampu menghubungkan repository lokal ke GitHub dan melakukan push.\n- Memahami alur dasar kolaborasi menggunakan branch.\n\n## Penjelasan Materi\n**Repository** adalah folder project yang dilacak oleh Git. **Commit** adalah \"titik simpan\" yang mencatat perubahan tertentu beserta pesan penjelasnya. **Branch** memungkinkan kita mengembangkan fitur baru secara terpisah tanpa mengganggu kode utama (biasanya branch `main`).\n\nAlur kerja dasar Git dimulai dari `git init` untuk membuat repository baru, `git add` untuk menandai file yang akan disimpan, dan `git commit` untuk menyimpan perubahan tersebut secara permanen ke riwayat project.\n\nUntuk kolaborasi online, repository lokal dihubungkan ke GitHub menggunakan `git remote add`, lalu perubahan dikirim ke server dengan `git push` dan diambil oleh anggota tim lain dengan `git pull`.\n\n## Contoh\nContoh berikut menunjukkan alur dasar membuat repository baru, melakukan commit pertama, dan mengunggahnya ke GitHub.\n\n## Code\n```bash\n# Inisialisasi repository Git baru\ngit init\n\n# Menambahkan seluruh file ke staging area\ngit add .\n\n# Menyimpan perubahan dengan pesan commit\ngit commit -m \"Initial commit: setup project EduCare\"\n\n# Menghubungkan ke repository GitHub\ngit remote add origin https:\/\/github.com\/username\/educare.git\n\n# Mengunggah perubahan ke branch utama\ngit push -u origin main\n```\n\n## Penjelasan Code\n- `git init` membuat repository Git baru pada folder project saat ini.\n- `git add .` menandai seluruh file yang berubah agar siap untuk di-commit (masuk staging area).\n- `git commit -m \"...\"` menyimpan perubahan yang sudah ditandai beserta pesan yang menjelaskan perubahan tersebut.\n- `git remote add origin <url>` menghubungkan repository lokal dengan repository di GitHub bernama `origin`.\n- `git push -u origin main` mengirimkan seluruh commit ke branch `main` di GitHub, sekaligus mengatur `origin main` sebagai tujuan default untuk push berikutnya.\n\n## Output\nSetelah perintah terakhir dijalankan, terminal akan menampilkan proses pengunggahan objek, dan seluruh file project akan muncul di halaman repository GitHub yang dituju.\n\n## Langkah-langkah Praktik\n1. Instal Git dari git-scm.com dan pastikan bisa dijalankan lewat terminal (`git --version`).\n2. Buat akun GitHub, lalu buat repository baru (kosong) di sana.\n3. Di folder project lokal, jalankan `git init`, `git add .`, dan `git commit -m \"pesan\"`.\n4. Hubungkan ke GitHub dengan `git remote add origin <url-repo>`, lalu jalankan `git push -u origin main`.\n5. Coba buat branch baru dengan `git checkout -b fitur-baru` untuk berlatih alur kolaborasi.\n\n## Kesimpulan\nGit dan GitHub adalah alat wajib bagi setiap developer untuk melacak perubahan kode dan berkolaborasi secara aman. Menguasai alur dasar commit, push, dan branch akan sangat membantu dalam project tim maupun individu.\n\n## Modul 2: Branching & Merging\nBranch memungkinkan kita mengembangkan fitur baru atau memperbaiki bug tanpa mengganggu kode utama di branch `main`. Setelah selesai dikerjakan dan diuji, branch tersebut bisa digabungkan kembali ke `main` menggunakan `git merge`.\n\n```bash\n# Membuat dan langsung berpindah ke branch baru\ngit checkout -b fitur-quiz\n\n# ...melakukan perubahan dan commit di branch ini...\n\n# Kembali ke branch main, lalu gabungkan\ngit checkout main\ngit merge fitur-quiz\n```\n\n`git checkout -b fitur-quiz` membuat branch baru bernama `fitur-quiz` sekaligus berpindah ke sana. Setelah pekerjaan di branch tersebut selesai dan di-commit, `git merge fitur-quiz` yang dijalankan dari branch `main` akan menggabungkan seluruh perubahan dari `fitur-quiz` ke dalam `main`.\n\n## Modul 3: Git Pull & Menyelesaikan Conflict\n`git pull` mengambil perubahan terbaru dari repository remote (misalnya GitHub) dan langsung menggabungkannya ke branch lokal. Saat dua orang mengubah baris kode yang sama secara bersamaan, bisa terjadi **merge conflict**, yaitu Git tidak tahu versi mana yang harus dipakai sehingga meminta developer memilih secara manual.\n\n```bash\ngit pull origin main\n\n# Jika terjadi conflict, Git menandai file dengan:\n# <<<<<<< HEAD\n# kode versi lokal\n# =======\n# kode versi dari remote\n# >>>>>>> origin\/main\n```\n\nSetelah conflict muncul, developer perlu membuka file yang ditandai, memilih atau menggabungkan kode yang benar secara manual, menghapus tanda `<<<<<<<`, `=======`, `>>>>>>>`, lalu melakukan `git add` dan `git commit` untuk menyelesaikan proses merge.\n\n## Modul 4: .gitignore — Mengecualikan File dari Git\nTidak semua file perlu dilacak oleh Git, misalnya file konfigurasi lokal, folder `node_modules`, atau file rahasia seperti `.env` yang berisi password database. File `.gitignore` berisi daftar pola file\/folder yang akan diabaikan oleh Git sepenuhnya.\n\n```\n# .gitignore\nnode_modules\/\n.env\n*.log\nvendor\/\n```\n\nSetiap baris pada `.gitignore` adalah satu pola yang diabaikan. `node_modules\/` mengabaikan seluruh folder dependency JavaScript, `.env` mengabaikan file environment yang biasanya berisi data sensitif, dan `*.log` mengabaikan semua file berekstensi `.log`, sehingga file-file ini tidak pernah ikut ter-commit ke repository.\n\n## Modul 5: Pull Request & Code Review di GitHub\nPull Request (PR) adalah cara meminta agar perubahan dari sebuah branch digabungkan ke branch lain (biasanya `main`), sekaligus membuka ruang bagi anggota tim lain untuk melakukan **code review** sebelum perubahan disetujui dan digabungkan. Ini adalah alur kolaborasi standar di banyak project open source maupun tim profesional.\n\nLangkah umum membuat Pull Request di GitHub:\n1. Push branch fitur ke GitHub dengan `git push origin fitur-quiz`.\n2. Buka repository di GitHub, lalu klik \"Compare & pull request\".\n3. Tulis judul dan deskripsi perubahan yang jelas.\n4. Anggota tim memberi komentar atau meminta perubahan (request changes) pada kode.\n5. Setelah disetujui (approved), PR bisa digabungkan (merge) ke branch utama.\n\nProses review ini membantu menjaga kualitas kode dan mengurangi bug sebelum masuk ke branch utama.\n\n## Modul 6: Git Log, Revert, dan Reset\n`git log` menampilkan riwayat seluruh commit pada repository, berguna untuk melacak siapa mengubah apa dan kapan. Jika sebuah commit ternyata bermasalah, `git revert` membuat commit baru yang membatalkan efek commit tersebut tanpa menghapus riwayat, sedangkan `git reset` memindahkan branch kembali ke commit tertentu (lebih berisiko karena bisa menghapus riwayat).\n\n```bash\ngit log --oneline\n\ngit revert a1b2c3d\n\ngit reset --hard a1b2c3d\n```\n\n`git log --oneline` menampilkan riwayat commit secara ringkas satu baris per commit. `git revert a1b2c3d` membuat commit baru yang membalikkan perubahan dari commit `a1b2c3d` secara aman. `git reset --hard a1b2c3d` mengembalikan seluruh kode ke kondisi persis seperti commit tersebut, sehingga perlu digunakan dengan hati-hati karena bisa menghilangkan perubahan setelahnya.\n\nDengan menguasai branching, pull & conflict, .gitignore, pull request, hingga log\/revert\/reset, kamu sudah memahami alur kerja Git yang dipakai developer profesional dalam kolaborasi tim sehari-hari.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Pengenalan Git",
+                "items": [
+                    {
+                        "t": "Apa itu version control & kenapa penting",
+                        "dur": "12"
+                    },
+                    {
+                        "t": "Instalasi Git dan konfigurasi awal",
+                        "dur": "10"
+                    },
+                    {
+                        "t": "git init, add, commit, status",
+                        "dur": "18"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Riwayat & Branching",
+                "items": [
+                    {
+                        "t": "git log dan git diff",
+                        "dur": "14"
+                    },
+                    {
+                        "t": "Branching: membuat & berpindah branch",
+                        "dur": "18"
+                    },
+                    {
+                        "t": "Merge dan menangani konflik dasar",
+                        "dur": "20"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Kolaborasi di GitHub",
+                "items": [
+                    {
+                        "t": "Remote repository: clone, push, pull",
+                        "dur": "18"
+                    },
+                    {
+                        "t": "Fork dan pull request",
+                        "dur": "16"
+                    },
+                    {
+                        "t": "Praktik: upload proyek pertama ke GitHub",
+                        "dur": "22"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "UI\/UX Design & Figma: Merancang Pengalaman Pengguna yang Baik",
+        "category": "UI\/UX Design",
+        "cat": "uiux",
+        "emoji": "🎯",
+        "desc": "Kenali prinsip desain visual, riset pengguna, wireframing, dan cara menggunakan Figma untuk merancang antarmuka aplikasi yang enak dipakai.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 598,
+        "modules": 13,
+        "color": "#a259ff",
+        "date": "2026-07-23",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=PJIKqnftfPw",
+        "content": "## Deskripsi Singkat\nUI\/UX Design adalah proses merancang tampilan (User Interface) dan pengalaman pengguna (User Experience) suatu aplikasi agar mudah, nyaman, dan menyenangkan digunakan, dengan Figma sebagai salah satu tools populer untuk merancangnya.\n\n## Pengertian\nUI (User Interface) adalah tampilan visual sebuah produk digital, seperti warna, tombol, tipografi, dan layout. UX (User Experience) adalah keseluruhan pengalaman pengguna saat berinteraksi dengan produk tersebut, mulai dari kemudahan navigasi hingga perasaan yang muncul saat menggunakannya. Figma adalah tools desain berbasis cloud yang banyak digunakan untuk merancang UI\/UX secara kolaboratif.\n\n## Tujuan Pembelajaran\n- Memahami perbedaan dan hubungan antara UI dan UX.\n- Memahami prinsip dasar desain: konsistensi, hierarki visual, dan kontras.\n- Mampu membuat alur pengguna (user flow) sederhana sebelum mendesain tampilan.\n- Mengenal fitur dasar Figma untuk membuat wireframe dan prototipe.\n\n## Penjelasan Materi\nDesain yang baik dimulai dari memahami kebutuhan pengguna, bukan sekadar mempercantik tampilan. Proses umum UI\/UX design meliputi:\n- **Riset pengguna**: memahami siapa yang akan menggunakan produk dan apa masalah mereka.\n- **Wireframe**: sketsa kasar tata letak halaman tanpa detail warna\/visual, fokus pada struktur dan alur.\n- **UI Design**: menambahkan warna, tipografi, ikon, dan elemen visual pada wireframe.\n- **Prototipe**: menghubungkan antar tampilan agar bisa disimulasikan seperti aplikasi sungguhan.\n\nBeberapa prinsip dasar desain yang penting dipahami:\n- **Konsistensi**: menggunakan warna, ukuran, dan gaya elemen yang seragam di seluruh halaman.\n- **Hierarki visual**: elemen penting dibuat lebih menonjol (ukuran lebih besar, warna lebih kontras) agar pengguna tahu ke mana harus fokus.\n- **Kontras dan keterbacaan**: memastikan teks tetap mudah dibaca di atas warna latar apa pun.\n\nFigma memudahkan proses ini karena mendukung kerja kolaboratif secara real-time, memiliki fitur auto-layout untuk tata letak responsif, dan komponen yang bisa dipakai ulang di banyak halaman desain.\n\n## Contoh\nSebagai contoh penerapan, saat merancang halaman login sebuah aplikasi, seorang UI\/UX designer akan membuat wireframe berisi kolom email, password, dan tombol masuk terlebih dahulu, memastikan alurnya logis, baru kemudian menambahkan warna brand, ikon mata untuk show\/hide password, dan micro-interaction seperti animasi tombol saat ditekan.\n\n## Langkah-langkah Praktik\n1. Buka Figma (bisa lewat browser tanpa instalasi), lalu buat file desain baru.\n2. Buat wireframe sederhana untuk sebuah halaman, misalnya halaman login, hanya menggunakan kotak-kotak dan teks placeholder.\n3. Tambahkan warna, tipografi, dan ikon untuk mengubah wireframe menjadi tampilan UI yang lengkap.\n4. Gunakan fitur Prototype di Figma untuk menghubungkan tombol dengan halaman berikutnya.\n5. Minta masukan (feedback) dari teman untuk menguji apakah alur desainmu mudah dipahami.\n\n## Kesimpulan\nUI\/UX Design bukan hanya soal tampilan yang indah, tetapi juga soal menciptakan pengalaman yang mudah dan menyenangkan bagi pengguna. Dengan memahami proses wireframe hingga prototipe serta menguasai tools seperti Figma, kamu sudah memiliki bekal dasar untuk merancang produk digital yang berkualitas.\n\n## Modul 2: Riset Pengguna & User Persona\nSebelum mendesain, seorang UI\/UX designer perlu memahami siapa yang akan menggunakan produknya. Riset pengguna bisa dilakukan lewat wawancara, survei, atau observasi langsung untuk menggali kebutuhan, kebiasaan, dan masalah (pain point) calon pengguna. Hasil riset ini sering dirangkum menjadi **user persona**, yaitu profil fiktif yang mewakili karakteristik pengguna target.\n\nContoh sederhana user persona:\n- **Nama**: Siti, 15 tahun, siswa SMP kelas 9.\n- **Tujuan**: Ingin belajar coding dengan cara yang menyenangkan dan tidak membosankan.\n- **Kendala**: Sering bingung dengan istilah teknis dan mudah kehilangan motivasi jika materi terlalu panjang.\n\nDengan persona seperti ini, desainer bisa membuat keputusan desain yang lebih terarah, misalnya menyederhanakan istilah teknis atau menambahkan elemen gamifikasi agar Siti tetap termotivasi belajar.\n\n## Modul 3: Tipografi dan Sistem Warna\nTipografi (pemilihan dan pengaturan huruf) dan warna adalah dua elemen visual yang sangat mempengaruhi kesan dan keterbacaan sebuah desain. Untuk tipografi, penting menjaga **hierarki** dengan membedakan ukuran\/ketebalan judul, subjudul, dan body text, serta menggunakan maksimal 2 jenis font agar tidak terkesan berantakan.\n\nUntuk warna, desainer biasanya menentukan satu **warna utama (primary color)**, satu **warna sekunder**, dan beberapa warna netral (abu-abu, putih, hitam) untuk latar dan teks. Kontras warna yang cukup antara teks dan latar belakang penting agar konten tetap mudah dibaca, termasuk bagi pengguna dengan gangguan penglihatan warna.\n\nPrinsip praktis:\n- Judul: font besar & tebal (contoh: 24–32px, bold).\n- Body text: font medium, mudah dibaca (contoh: 14–16px, regular).\n- Warna primary dipakai pada tombol utama & elemen penting agar mudah ditemukan pengguna.\n\n## Modul 4: Komponen & Auto Layout di Figma\nFigma memiliki fitur **Components**, yaitu elemen desain (misalnya tombol atau kartu) yang bisa dibuat sekali lalu dipakai berulang di banyak halaman. Jika komponen utama (main component) diubah, seluruh salinannya (instance) ikut berubah otomatis, sangat menghemat waktu saat perlu mengubah tampilan secara konsisten.\n\n**Auto Layout** adalah fitur yang membuat elemen menyesuaikan ukuran dan jaraknya secara otomatis, mirip Flexbox pada CSS. Dengan Auto Layout, sebuah tombol bisa otomatis melebar mengikuti panjang teks di dalamnya, atau susunan kartu bisa otomatis merapikan jarak antar elemen tanpa perlu diatur manual satu per satu.\n\nLangkah dasar menggunakan Auto Layout di Figma:\n1. Pilih beberapa elemen yang ingin disusun rapi.\n2. Tekan `Shift + A` untuk mengaktifkan Auto Layout.\n3. Atur arah (horizontal\/vertikal), jarak (gap), dan padding pada panel di sisi kanan.\n\n## Modul 5: Usability Testing Sederhana\nUsability testing adalah cara menguji apakah desain yang dibuat benar-benar mudah digunakan, dengan mengamati pengguna asli mencoba menyelesaikan tugas tertentu pada prototipe. Tes ini membantu menemukan masalah desain sebelum produk benar-benar dikembangkan, sehingga menghemat waktu dan biaya perbaikan di kemudian hari.\n\nLangkah sederhana melakukan usability testing:\n1. Siapkan prototipe interaktif di Figma dan tugas spesifik, misalnya \"coba daftar akun baru\".\n2. Minta 3–5 orang (tidak harus ahli) mencoba menyelesaikan tugas tanpa dibantu\/diarahkan.\n3. Amati di bagian mana mereka bingung, ragu, atau salah klik.\n4. Catat masukan mereka, lalu perbaiki bagian desain yang bermasalah.\n\nMenguji dengan 5 orang saja biasanya sudah cukup untuk menemukan sebagian besar masalah usability utama pada sebuah desain.\n\n## Modul 6: Design System & Konsistensi Antar Halaman\nDesign system adalah kumpulan aturan, komponen, warna, dan tipografi standar yang dipakai secara konsisten di seluruh halaman sebuah produk. Tujuannya agar tampilan tetap seragam meskipun dikerjakan oleh beberapa desainer atau dikembangkan dalam waktu lama, serta mempercepat proses desain karena elemen dasar sudah tersedia dan tinggal dipakai ulang.\n\nBagian umum dalam sebuah design system:\n- **Color palette**: daftar warna resmi beserta fungsinya (primary, secondary, success, danger, dll).\n- **Typography scale**: ukuran font standar untuk judul, subjudul, dan body text.\n- **Component library**: kumpulan tombol, form, kartu, dan elemen lain yang siap pakai.\n- **Spacing system**: satuan jarak konsisten (misalnya kelipatan 4px atau 8px) untuk margin dan padding.\n\nDengan design system, tampilan aplikasi seperti EduCare bisa tetap konsisten meskipun terus dikembangkan dan ditambah fitur baru dari waktu ke waktu.\n\nDengan menguasai riset pengguna, tipografi & warna, komponen\/auto layout, usability testing, hingga design system, kamu sudah memiliki bekal UI\/UX Design yang lebih menyeluruh untuk merancang produk digital yang matang.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Dasar Desain Visual",
+                "items": [
+                    {
+                        "t": "Prinsip hierarki, kontras, dan konsistensi",
+                        "dur": "18"
+                    },
+                    {
+                        "t": "Warna dan tipografi",
+                        "dur": "16"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: UX Research & Wireframe",
+                "items": [
+                    {
+                        "t": "User persona dan user journey",
+                        "dur": "17"
+                    },
+                    {
+                        "t": "Membuat wireframe low-fidelity",
+                        "dur": "20"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Figma & Prototyping",
+                "items": [
+                    {
+                        "t": "Pengenalan Figma: frame & component",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Auto layout dan desain high-fidelity",
+                        "dur": "22"
+                    },
+                    {
+                        "t": "Membuat prototype interaktif",
+                        "dur": "20"
+                    },
+                    {
+                        "t": "Praktik: redesign halaman login",
+                        "dur": "26"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Aljabar Dasar: Menyelesaikan Persamaan Linear Satu Variabel",
+        "category": "Matematika",
+        "cat": "mtk",
+        "emoji": "➗",
+        "desc": "Pelajari cara mencari nilai variabel dalam persamaan linear satu variabel lewat contoh soal dan penyelesaian langkah demi langkah.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 1120,
+        "modules": 14,
+        "color": "#f59e0b",
+        "date": "2026-07-20",
+        "video_url": "",
+        "content": "## Deskripsi Singkat\nAljabar dasar mengajarkan cara menemukan nilai variabel yang belum diketahui dalam sebuah persamaan, menggunakan prinsip keseimbangan di kedua ruas persamaan.\n\n## Pengertian\nPersamaan linear satu variabel adalah kalimat matematika terbuka yang memuat tanda sama dengan (=) dan hanya memiliki satu variabel berpangkat satu, misalnya x atau y. Menyelesaikan persamaan berarti mencari nilai variabel tersebut agar kalimat menjadi pernyataan yang benar.\n\n## Tujuan Pembelajaran\n- Memahami pengertian variabel, koefisien, dan konstanta.\n- Mampu menyelesaikan persamaan linear satu variabel dengan operasi penjumlahan, pengurangan, perkalian, dan pembagian.\n- Mampu menerapkan aljabar untuk menyelesaikan soal cerita sehari-hari.\n\n## Penjelasan Materi\nUntuk menyelesaikan persamaan linear satu variabel, gunakan prinsip keseimbangan: operasi apa pun yang dilakukan pada satu ruas harus dilakukan juga pada ruas lainnya. Langkah umumnya adalah memindahkan semua suku yang mengandung variabel ke satu ruas dan semua konstanta ke ruas lainnya, lalu membagi kedua ruas dengan koefisien variabel untuk mendapatkan nilai akhirnya.\n\n## Contoh Soal\nTentukan nilai x dari persamaan berikut: 3x + 5 = 20\n\n## Penyelesaian\n3x + 5 = 20\n3x = 20 - 5\n3x = 15\nx = 15 : 3\nx = 5\n\nJadi, nilai x yang memenuhi persamaan tersebut adalah **5**.\n\n## Kesimpulan\nPersamaan linear satu variabel dapat diselesaikan dengan memindahkan suku secara seimbang di kedua ruas. Keterampilan ini menjadi dasar untuk mempelajari aljabar tingkat lanjut seperti persamaan kuadrat dan sistem persamaan dua variabel.\n\n## Modul 2: Persamaan dengan Variabel di Kedua Ruas\nTerkadang variabel muncul di kedua ruas persamaan, misalnya pada bentuk `5x + 3 = 2x + 15`. Cara menyelesaikannya tetap sama: kumpulkan seluruh suku bervariabel di satu ruas dan seluruh konstanta di ruas lain, dengan tetap menjaga keseimbangan kedua ruas.\n\n**Contoh Soal:** Tentukan nilai x dari persamaan 5x + 3 = 2x + 15.\n\n**Penyelesaian:**\n5x + 3 = 2x + 15\n5x - 2x = 15 - 3\n3x = 12\nx = 12 : 3\nx = 4\n\nJadi, nilai x yang memenuhi persamaan tersebut adalah **4**.\n\n## Modul 3: Pertidaksamaan Linear Satu Variabel\nPertidaksamaan mirip persamaan, tetapi menggunakan tanda `<`, `>`, `≤`, atau `≥` alih-alih tanda sama dengan. Aturan penyelesaiannya sama seperti persamaan, dengan satu pengecualian penting: jika kedua ruas dikalikan atau dibagi dengan bilangan **negatif**, tanda pertidaksamaan harus dibalik arahnya.\n\n**Contoh Soal:** Tentukan himpunan penyelesaian dari 2x - 4 > 6.\n\n**Penyelesaian:**\n2x - 4 > 6\n2x > 6 + 4\n2x > 10\nx > 5\n\nJadi, himpunan penyelesaiannya adalah semua nilai **x lebih besar dari 5**.\n\n## Modul 4: Aljabar dalam Soal Cerita\nSalah satu kegunaan aljabar yang paling sering ditemui adalah menerjemahkan masalah sehari-hari menjadi persamaan matematika. Langkah pertama adalah menentukan apa yang dicari sebagai variabel (biasanya x), lalu menerjemahkan kalimat cerita menjadi persamaan.\n\n**Contoh Soal:** Umur Andi 3 tahun lebih tua dari umur adiknya. Jika jumlah umur mereka berdua adalah 21 tahun, berapa umur Andi?\n\n**Penyelesaian:**\nMisalkan umur adik = x, maka umur Andi = x + 3.\nx + (x + 3) = 21\n2x + 3 = 21\n2x = 18\nx = 9\n\nUmur adik = 9 tahun, sehingga umur Andi = x + 3 = **12 tahun**.\n\n## Modul 5: Operasi Bentuk Aljabar — Suku Sejenis\nBentuk aljabar seperti `3x + 2y - x + 5y` bisa disederhanakan dengan menggabungkan **suku sejenis**, yaitu suku yang memiliki variabel dan pangkat yang sama. Hanya suku sejenis yang bisa dijumlahkan atau dikurangkan langsung koefisiennya.\n\n**Contoh Soal:** Sederhanakan bentuk aljabar berikut: 3x + 2y - x + 5y.\n\n**Penyelesaian:**\n3x + 2y - x + 5y\n= (3x - x) + (2y + 5y)\n= 2x + 7y\n\nJadi, bentuk paling sederhana dari 3x + 2y - x + 5y adalah **2x + 7y**.\n\n## Modul 6: Pengantar Sistem Persamaan Linear Dua Variabel\nJika sebelumnya hanya membahas satu variabel, kini kita mengenal sistem yang melibatkan **dua persamaan dan dua variabel** sekaligus, misalnya x dan y. Salah satu metode penyelesaiannya adalah metode substitusi, yaitu mengganti satu variabel di persamaan pertama menggunakan bentuk dari persamaan kedua.\n\n**Contoh Soal:** Tentukan nilai x dan y dari sistem persamaan: x + y = 10 dan x - y = 2.\n\n**Penyelesaian:**\nDari persamaan kedua: x = y + 2\nSubstitusi ke persamaan pertama:\n(y + 2) + y = 10\n2y + 2 = 10\n2y = 8\ny = 4\n\nMaka x = y + 2 = 4 + 2 = **6**. Jadi, nilai x = 6 dan y = 4.\n\nDengan menguasai persamaan variabel di kedua ruas, pertidaksamaan, soal cerita, penyederhanaan suku sejenis, hingga pengantar sistem dua variabel, kamu sudah memiliki bekal aljabar yang cukup kuat untuk melanjutkan ke materi matematika tingkat lanjut.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Bilangan & Variabel",
+                "items": [
+                    {
+                        "t": "Mengenal variabel dan konstanta",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Koefisien dalam persamaan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Latihan mengenali bentuk aljabar",
+                        "dur": "10min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Menyelesaikan Persamaan",
+                "items": [
+                    {
+                        "t": "Operasi penjumlahan & pengurangan",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Operasi perkalian & pembagian",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Praktik: soal campuran",
+                        "dur": "14min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Penerapan Aljabar",
+                "items": [
+                    {
+                        "t": "Soal cerita sehari-hari",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Persamaan dalam konteks uang & jarak",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Evaluasi & latihan akhir",
+                        "dur": "10min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Ekosistem dan Rantai Makanan: Interaksi Makhluk Hidup",
+        "category": "IPA",
+        "cat": "ipa",
+        "emoji": "🧪",
+        "desc": "Kenali komponen ekosistem, rantai makanan, dan bagaimana makhluk hidup saling bergantung di alam.",
+        "level": "beginner",
+        "stars": 4.7,
+        "students": 940,
+        "modules": 14,
+        "color": "#16a34a",
+        "date": "2026-07-21",
+        "video_url": "",
+        "content": "## Deskripsi Singkat\nEkosistem adalah hubungan timbal balik antara makhluk hidup dan lingkungannya. Materi ini membahas rantai makanan sebagai salah satu bentuk interaksi paling dasar dalam ekosistem.\n\n## Pengertian\nEkosistem adalah satu kesatuan komunitas makhluk hidup (biotik) yang berinteraksi dengan lingkungan tak hidup (abiotik) di suatu tempat. Rantai makanan adalah peristiwa makan dan dimakan antar makhluk hidup dengan urutan tertentu, yang menggambarkan aliran energi dari satu organisme ke organisme lain.\n\n## Tujuan Pembelajaran\n- Memahami komponen biotik dan abiotik dalam ekosistem.\n- Mampu menyusun contoh rantai makanan dengan urutan yang benar.\n- Memahami peran produsen, konsumen, dan pengurai.\n\n## Penjelasan Materi\nDalam rantai makanan, produsen (tumbuhan hijau) menghasilkan energi melalui fotosintesis. Energi ini berpindah ke konsumen tingkat I (herbivora) yang memakan tumbuhan, lalu ke konsumen tingkat II (karnivora) yang memakan herbivora, dan seterusnya. Pengurai seperti bakteri dan jamur menguraikan sisa organisme mati menjadi zat hara yang kembali menyuburkan tanah, sehingga siklus energi terus berlanjut.\n\n## Contoh Soal\nSusunlah rantai makanan yang benar dari komponen berikut: elang, rumput, ulat, burung kecil.\n\n## Penyelesaian\nUrutan rantai makanan yang benar adalah: rumput (produsen) → ulat (konsumen I) → burung kecil (konsumen II) → elang (konsumen III). Energi mengalir dari produsen menuju konsumen puncak melalui setiap tingkat makanan.\n\n## Kesimpulan\nRantai makanan menunjukkan bagaimana energi berpindah antar makhluk hidup dalam suatu ekosistem. Jika satu komponen hilang, keseimbangan seluruh rantai bisa terganggu, sehingga menjaga ekosistem sangat penting.\n\n## Modul 2: Jaring-Jaring Makanan\nDi alam nyata, satu organisme jarang hanya dimakan oleh satu jenis pemangsa saja. Kumpulan dari banyak rantai makanan yang saling berhubungan disebut **jaring-jaring makanan** (food web). Jaring-jaring makanan menggambarkan hubungan makan-memakan yang lebih kompleks dan realistis dibanding rantai makanan tunggal.\n\n**Contoh Soal:** Mengapa jaring-jaring makanan dianggap lebih stabil dibanding rantai makanan tunggal?\n\n**Penyelesaian:** Dalam jaring-jaring makanan, satu jenis konsumen biasanya memiliki lebih dari satu sumber makanan. Jika salah satu jenis organisme berkurang jumlahnya, konsumen yang bergantung padanya masih bisa mendapatkan makanan dari organisme lain dalam jaring tersebut, sehingga ekosistem lebih tahan terhadap gangguan dibanding jika hanya bergantung pada satu rantai makanan saja.\n\n## Modul 3: Piramida Ekologi\nPiramida ekologi menggambarkan jumlah energi, biomassa, atau jumlah individu pada setiap tingkat rantai makanan, mulai dari produsen di dasar hingga konsumen puncak di ujung atas. Semakin tinggi tingkatannya, jumlah energi yang tersedia semakin sedikit karena sebagian energi hilang sebagai panas pada setiap perpindahan tingkat makanan.\n\n**Contoh Soal:** Mengapa jumlah singa di suatu ekosistem jauh lebih sedikit dibanding jumlah rumput?\n\n**Penyelesaian:** Energi berkurang secara signifikan (sekitar 90%) pada setiap perpindahan dari satu tingkat trofik ke tingkat berikutnya. Karena singa berada di tingkat konsumen puncak yang jauh dari produsen (rumput), energi yang tersisa untuk mendukung populasi singa jauh lebih sedikit, sehingga jumlah individunya pun jauh lebih sedikit dibanding rumput sebagai produsen.\n\n## Modul 4: Simbiosis — Hubungan Antar Makhluk Hidup\nSimbiosis adalah bentuk interaksi erat antara dua makhluk hidup berbeda spesies yang hidup berdampingan. Ada tiga jenis utama: **mutualisme** (kedua pihak diuntungkan), **komensalisme** (satu pihak diuntungkan, pihak lain tidak dirugikan maupun diuntungkan), dan **parasitisme** (satu pihak diuntungkan, pihak lain dirugikan).\n\n**Contoh Soal:** Tentukan jenis simbiosis antara kupu-kupu dan bunga, lalu jelaskan alasannya.\n\n**Penyelesaian:** Hubungan kupu-kupu dan bunga termasuk **mutualisme**. Kupu-kupu diuntungkan karena mendapatkan nektar sebagai makanan, sementara bunga diuntungkan karena dibantu proses penyerbukannya oleh kupu-kupu yang berpindah dari satu bunga ke bunga lain, sehingga keduanya sama-sama mendapat manfaat.\n\n## Modul 5: Daur Biogeokimia — Siklus Air Sederhana\nDaur biogeokimia adalah proses perputaran unsur atau senyawa penting di alam secara terus-menerus, misalnya siklus air. Air mengalami penguapan (evaporasi) dari laut dan sungai akibat panas matahari, membentuk awan melalui kondensasi, lalu turun kembali ke bumi sebagai hujan (presipitasi), dan mengalir kembali ke laut atau meresap ke tanah.\n\n**Contoh Soal:** Jelaskan mengapa siklus air penting bagi keberlangsungan ekosistem.\n\n**Penyelesaian:** Siklus air memastikan air terus tersedia dan didaur ulang secara alami bagi seluruh makhluk hidup, baik untuk diminum, fotosintesis tumbuhan, maupun menjaga kelembapan lingkungan. Tanpa siklus ini, air akan menumpuk di satu tempat (misalnya laut) dan wilayah lain seperti daratan akan kekurangan air, yang bisa mengganggu keseimbangan seluruh ekosistem.\n\n## Modul 6: Dampak Aktivitas Manusia terhadap Ekosistem\nAktivitas manusia seperti penebangan hutan, pencemaran air, dan perburuan liar dapat mengganggu keseimbangan rantai makanan dan jaring-jaring makanan dalam suatu ekosistem. Hilangnya satu spesies akibat aktivitas manusia bisa berdampak berantai (efek domino) pada spesies lain yang bergantung padanya.\n\n**Contoh Soal:** Apa dampak yang mungkin terjadi jika populasi predator seperti elang di suatu ekosistem terus diburu hingga berkurang drastis?\n\n**Penyelesaian:** Berkurangnya populasi elang (predator puncak) menyebabkan populasi mangsanya, misalnya tikus atau burung kecil, meningkat tidak terkendali karena tidak ada yang membatasi jumlahnya. Peningkatan populasi ini kemudian bisa merusak tanaman produsen secara berlebihan, sehingga keseimbangan seluruh ekosistem terganggu akibat hilangnya satu mata rantai penting.\n\nDengan menguasai jaring-jaring makanan, piramida ekologi, simbiosis, daur biogeokimia, hingga dampak aktivitas manusia, kamu sudah memahami bagaimana keseimbangan ekosistem terjaga dan mengapa menjaganya sangat penting bagi kehidupan.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Komponen Ekosistem",
+                "items": [
+                    {
+                        "t": "Komponen biotik dan abiotik",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Habitat makhluk hidup",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Latihan mengenal komponen",
+                        "dur": "9min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Rantai & Jaring Makanan",
+                "items": [
+                    {
+                        "t": "Produsen, konsumen, dan pengurai",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Menyusun rantai makanan",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Praktik: jaring-jaring makanan",
+                        "dur": "13min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Peran Manusia dalam Ekosistem",
+                "items": [
+                    {
+                        "t": "Dampak aktivitas manusia",
+                        "dur": "11min"
+                    },
+                    {
+                        "t": "Menjaga keseimbangan ekosistem",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Evaluasi & latihan akhir",
+                        "dur": "10min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Keragaman Sosial dan Budaya Indonesia",
+        "category": "IPS",
+        "cat": "ips",
+        "emoji": "🌍",
+        "desc": "Pahami keragaman suku, budaya, dan interaksi sosial masyarakat Indonesia melalui contoh kehidupan sehari-hari.",
+        "level": "beginner",
+        "stars": 4.6,
+        "students": 860,
+        "modules": 14,
+        "color": "#0ea5e9",
+        "date": "2026-07-22",
+        "video_url": "",
+        "content": "## Deskripsi Singkat\nIndonesia terdiri dari beribu-ribu pulau dengan ratusan suku dan budaya. Materi ini membahas bagaimana keragaman tersebut terbentuk dan bagaimana masyarakat berinteraksi di tengah perbedaan.\n\n## Pengertian\nKeragaman sosial budaya adalah kondisi masyarakat yang memiliki perbedaan suku, bahasa, agama, adat istiadat, dan kebiasaan, namun tetap hidup berdampingan dalam satu wilayah. Interaksi sosial adalah hubungan timbal balik antarindividu atau kelompok dalam masyarakat.\n\n## Tujuan Pembelajaran\n- Memahami faktor penyebab keragaman sosial budaya di Indonesia.\n- Mampu memberi contoh bentuk interaksi sosial dalam kehidupan sehari-hari.\n- Menumbuhkan sikap toleransi terhadap perbedaan.\n\n## Penjelasan Materi\nKeragaman di Indonesia dipengaruhi oleh kondisi geografis kepulauan, sejarah migrasi, serta pengaruh budaya luar yang masuk melalui perdagangan. Interaksi sosial dapat berupa kerja sama, akomodasi (penyesuaian), maupun persaingan yang sehat. Semboyan Bhinneka Tunggal Ika mengajarkan bahwa perbedaan bukan penghalang untuk bersatu, melainkan kekuatan bangsa.\n\n## Contoh Soal\nSebutkan satu contoh interaksi sosial positif yang dapat dilakukan siswa di sekolah untuk menghargai keragaman budaya teman-temannya.\n\n## Penyelesaian\nContoh interaksi sosial positif adalah gotong royong membersihkan kelas bersama teman dari suku dan daerah berbeda, atau saling menghargai saat teman merayakan hari besar keagamaannya masing-masing. Sikap ini memperkuat kerja sama dan toleransi di lingkungan sekolah.\n\n## Kesimpulan\nKeragaman sosial budaya Indonesia adalah kekayaan bangsa yang perlu dijaga melalui sikap toleransi, kerja sama, dan saling menghormati antarwarga negara.\n\n## Modul 2: Keragaman Suku Bangsa di Indonesia\nIndonesia memiliki ratusan suku bangsa yang tersebar dari Sabang sampai Merauke, masing-masing dengan adat istiadat, bahasa daerah, pakaian tradisional, dan kesenian yang berbeda. Beberapa suku besar di Indonesia antara lain Jawa, Sunda, Batak, Minangkabau, Bugis, Dayak, dan Asmat.\n\n**Contoh Soal:** Mengapa Indonesia memiliki begitu banyak suku bangsa dibanding negara lain?\n\n**Penyelesaian:** Kondisi geografis Indonesia yang berbentuk kepulauan membuat kelompok masyarakat di satu pulau berkembang secara terpisah dari kelompok di pulau lain selama ribuan tahun, sehingga muncul bahasa, adat, dan budaya yang berbeda-beda. Ditambah faktor sejarah migrasi dan interaksi dengan budaya luar melalui jalur perdagangan, keragaman suku bangsa di Indonesia menjadi semakin kaya.\n\n## Modul 3: Keragaman Agama dan Toleransi\nIndonesia mengakui enam agama resmi yaitu Islam, Kristen Protestan, Katolik, Hindu, Buddha, dan Konghucu, di samping berbagai kepercayaan lokal yang dihormati. Toleransi antarumat beragama sangat penting agar masyarakat dengan keyakinan berbeda tetap bisa hidup rukun berdampingan.\n\n**Contoh Soal:** Sebutkan satu contoh sikap toleransi beragama yang bisa diterapkan siswa di lingkungan sekolah.\n\n**Penyelesaian:** Contoh sikap toleransi adalah tidak mengganggu teman yang sedang beribadah sesuai agamanya, mengucapkan selamat saat teman merayakan hari besar keagamaan yang berbeda, dan tidak memaksakan keyakinan pribadi kepada teman lain. Sikap saling menghormati ini menjaga kerukunan meskipun latar belakang agama berbeda-beda.\n\n## Modul 4: Keragaman Bahasa Daerah dan Bahasa Persatuan\nIndonesia memiliki ratusan bahasa daerah yang digunakan oleh berbagai suku, seperti bahasa Jawa, Sunda, Batak, dan Bugis. Untuk mempersatukan seluruh masyarakat dari berbagai daerah, Indonesia menetapkan **Bahasa Indonesia** sebagai bahasa persatuan sejak Sumpah Pemuda tahun 1928, yang digunakan dalam pendidikan, pemerintahan, dan komunikasi resmi.\n\n**Contoh Soal:** Mengapa Bahasa Indonesia penting sebagai bahasa persatuan meskipun ada banyak bahasa daerah?\n\n**Penyelesaian:** Bahasa Indonesia memungkinkan masyarakat dari suku dan daerah yang berbeda bahasa daerahnya tetap bisa berkomunikasi dan saling memahami satu sama lain. Tanpa bahasa persatuan, akan sulit membangun kerja sama nasional di bidang pendidikan, ekonomi, maupun pemerintahan karena setiap daerah memiliki bahasa yang berbeda-beda.\n\n## Modul 5: Dampak Positif dan Negatif Keragaman Sosial\nKeragaman sosial budaya membawa banyak dampak positif, seperti memperkaya khazanah budaya bangsa dan mendorong sikap saling belajar antarbudaya. Namun jika tidak dikelola dengan baik, keragaman juga berpotensi memunculkan dampak negatif seperti kesalahpahaman antarbudaya atau konflik sosial akibat prasangka (stereotip) terhadap kelompok tertentu.\n\n**Contoh Soal:** Sebutkan satu dampak positif dan satu dampak negatif yang mungkin muncul dari keragaman sosial budaya di Indonesia.\n\n**Penyelesaian:** Dampak positif: masyarakat memiliki kekayaan seni, kuliner, dan tradisi yang beragam sehingga memperkaya identitas bangsa. Dampak negatif: bisa muncul konflik sosial jika ada kelompok yang merasa superior atau meremehkan budaya kelompok lain, sehingga penting menumbuhkan sikap saling menghargai sejak dini.\n\n## Modul 6: Upaya Menjaga Persatuan dalam Keberagaman\nMenjaga persatuan di tengah keberagaman membutuhkan usaha bersama, mulai dari lingkungan keluarga, sekolah, hingga masyarakat luas. Semboyan **Bhinneka Tunggal Ika** (\"Berbeda-beda tetapi tetap satu\") menjadi pedoman bahwa perbedaan bukan alasan untuk terpecah, melainkan kekuatan yang harus dijaga bersama.\n\n**Contoh Soal:** Apa saja upaya konkret yang bisa dilakukan siswa di sekolah untuk menjaga persatuan di tengah keberagaman teman-temannya?\n\n**Penyelesaian:** Beberapa upaya konkret antara lain: aktif mengikuti kegiatan gotong royong dan organisasi sekolah tanpa membeda-bedakan latar belakang teman, menghindari perundungan (bullying) berbasis suku atau agama, mempelajari dan menghargai budaya daerah lain, serta menyelesaikan perbedaan pendapat dengan musyawarah, bukan dengan konflik.\n\nDengan memahami keragaman suku, agama, bahasa, dampaknya, hingga upaya menjaga persatuan, kamu semakin siap menjadi generasi muda yang menghargai kebhinekaan sebagai kekuatan bangsa Indonesia.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Keragaman Budaya",
+                "items": [
+                    {
+                        "t": "Suku dan bahasa daerah",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Adat istiadat dan tradisi",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Latihan mengenal keragaman",
+                        "dur": "9min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Interaksi Sosial",
+                "items": [
+                    {
+                        "t": "Bentuk-bentuk interaksi sosial",
+                        "dur": "11min"
+                    },
+                    {
+                        "t": "Kerja sama dan gotong royong",
+                        "dur": "11min"
+                    },
+                    {
+                        "t": "Praktik: studi kasus interaksi",
+                        "dur": "12min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Peran Warga Negara",
+                "items": [
+                    {
+                        "t": "Hak dan kewajiban warga",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Toleransi dan persatuan",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Evaluasi & latihan akhir",
+                        "dur": "9min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Menulis Paragraf Efektif: Bahasa Indonesia & Bahasa Inggris",
+        "category": "Bahasa Indonesia & Inggris",
+        "cat": "bahasa",
+        "emoji": "🗣️",
+        "desc": "Latih kemampuan menyusun kalimat dan paragraf yang runtut dalam Bahasa Indonesia, serta kalimat dasar Bahasa Inggris.",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 990,
+        "modules": 14,
+        "color": "#e11d48",
+        "date": "2026-07-23",
+        "video_url": "",
+        "content": "## Deskripsi Singkat\nParagraf yang efektif dibangun dari kalimat-kalimat yang runtut dan satu ide pokok yang jelas. Materi ini juga memperkenalkan struktur kalimat dasar dalam Bahasa Inggris.\n\n## Pengertian\nParagraf adalah kumpulan kalimat yang saling berkaitan dan membahas satu ide pokok. Ide pokok biasanya terletak pada kalimat utama, sedangkan kalimat lain berfungsi sebagai kalimat penjelas.\n\n## Tujuan Pembelajaran\n- Memahami unsur kalimat utama dan kalimat penjelas dalam paragraf.\n- Mampu menyusun paragraf yang runtut dan padu.\n- Mengenal struktur kalimat dasar Simple Present Tense dalam Bahasa Inggris.\n\n## Penjelasan Materi\nSebuah paragraf yang baik memiliki satu kalimat utama yang memuat ide pokok, diikuti beberapa kalimat penjelas yang mendukung ide tersebut dengan detail atau contoh. Dalam Bahasa Inggris, kalimat dasar biasanya mengikuti pola Subject + Verb + Object (S-V-O), misalnya \"I read a book\" (Saya membaca sebuah buku). Untuk kalimat dengan kata kerja \"to be\", polanya adalah Subject + is\/am\/are + Complement, seperti \"She is a student\".\n\n## Contoh Soal\nSusunlah kalimat berikut menjadi kalimat Bahasa Inggris yang benar: (happy \/ I \/ am)\n\n## Penyelesaian\nSusunan yang benar mengikuti pola Subject + to be + Complement, sehingga menjadi: \"I am happy\" (Saya senang).\n\n## Kesimpulan\nMenulis paragraf yang efektif membutuhkan kalimat utama yang jelas dan kalimat penjelas yang relevan. Menguasai struktur kalimat dasar, baik dalam Bahasa Indonesia maupun Bahasa Inggris, adalah fondasi penting sebelum menulis teks yang lebih kompleks.\n\n## Modul 2: Jenis-Jenis Paragraf Berdasarkan Letak Ide Pokok\nBerdasarkan letak kalimat utamanya, paragraf dibedakan menjadi tiga jenis: **paragraf deduktif** (kalimat utama di awal, diikuti kalimat penjelas), **paragraf induktif** (kalimat penjelas dahulu, kalimat utama\/kesimpulan di akhir), dan **paragraf campuran** (kalimat utama muncul di awal dan ditegaskan kembali di akhir paragraf).\n\n**Contoh Soal:** Tentukan jenis paragraf berikut: \"Andi rajin belajar setiap hari. Ia juga aktif bertanya di kelas dan selalu mengerjakan tugas tepat waktu. Karena kebiasaan itu, Andi selalu mendapat nilai terbaik di kelasnya.\"\n\n**Penyelesaian:** Paragraf tersebut termasuk **paragraf induktif**, karena kalimat-kalimat penjelas (kebiasaan rajin belajar, aktif bertanya, mengerjakan tugas) disampaikan terlebih dahulu, baru diikuti kalimat utama\/kesimpulan di akhir paragraf yaitu \"Andi selalu mendapat nilai terbaik di kelasnya\".\n\n## Modul 3: Ciri-Ciri Kalimat Efektif\nKalimat efektif adalah kalimat yang menyampaikan pesan secara jelas, singkat, dan tidak menimbulkan makna ganda (ambigu). Ciri-cirinya meliputi: menggunakan struktur Subjek-Predikat-Objek yang jelas, tidak bertele-tele (menghindari pengulangan kata yang tidak perlu), serta menggunakan pilihan kata (diksi) yang tepat sesuai konteks.\n\n**Contoh Soal:** Perbaiki kalimat tidak efektif berikut menjadi kalimat efektif: \"Di dalam kelas itu terdapat banyak murid-murid yang sedang belajar-belajar.\"\n\n**Penyelesaian:** Kalimat tersebut tidak efektif karena mengulang kata secara berlebihan (\"murid-murid\", \"belajar-belajar\" padahal sudah ada kata \"banyak\" yang menunjukkan jamak). Kalimat efektifnya menjadi: **\"Di dalam kelas itu terdapat banyak murid yang sedang belajar.\"**\n\n## Modul 4: Simple Past Tense dalam Bahasa Inggris\nSimple Past Tense digunakan untuk menceritakan kejadian yang sudah selesai terjadi di masa lampau. Untuk kata kerja beraturan (regular verb), cukup tambahkan akhiran **-ed**, sedangkan kata kerja tidak beraturan (irregular verb) memiliki bentuk lampau tersendiri yang perlu dihafal, misalnya \"go\" menjadi \"went\".\n\n**Contoh Soal:** Ubah kalimat berikut ke dalam bentuk Simple Past Tense: \"I study English every day.\" (kejadian kemarin)\n\n**Penyelesaian:** Karena \"study\" adalah kata kerja beraturan, bentuk lampaunya adalah \"studied\". Kalimatnya menjadi: **\"I studied English yesterday.\"** (Saya belajar Bahasa Inggris kemarin.)\n\n## Modul 5: Menyusun Teks Deskriptif Sederhana\nTeks deskriptif adalah teks yang menggambarkan suatu objek, tempat, atau orang secara rinci sehingga pembaca seolah bisa melihat, mendengar, atau merasakan langsung objek tersebut. Ciri utamanya adalah penggunaan kata sifat (adjective) yang kaya dan penjelasan yang spesifik, bukan sekadar pernyataan umum.\n\n**Contoh Soal:** Ubah kalimat umum berikut menjadi kalimat deskriptif yang lebih hidup: \"Taman itu bagus.\"\n\n**Penyelesaian:** Kalimat \"Taman itu bagus\" terlalu umum dan tidak menggambarkan apa pun secara spesifik. Kalimat deskriptif yang lebih hidup misalnya: **\"Taman itu dipenuhi bunga mawar merah yang bermekaran, dengan jalan setapak berbatu kecil yang dikelilingi pohon-pohon rindang.\"** Kalimat ini memberi gambaran yang jelas dan detail bagi pembaca.\n\n## Modul 6: Kosakata & Kata Transisi dalam Bahasa Inggris\nKata transisi (transition words) menghubungkan antar kalimat atau antar ide agar tulisan mengalir lebih runtut dan mudah diikuti. Beberapa kata transisi umum dalam Bahasa Inggris: **\"first\"**, **\"then\"**, **\"however\"**, **\"in addition\"**, **\"finally\"**, dan **\"because\"**.\n\n**Contoh Soal:** Gabungkan dua kalimat berikut menggunakan kata transisi yang tepat: \"I woke up late. I still arrived at school on time.\"\n\n**Penyelesaian:** Kedua kalimat menunjukkan pertentangan (meski bangun terlambat, tetap tepat waktu), sehingga kata transisi yang tepat adalah **\"however\"**. Kalimat gabungannya menjadi: **\"I woke up late. However, I still arrived at school on time.\"** (Saya bangun terlambat. Namun, saya tetap tiba di sekolah tepat waktu.)\n\nDengan memahami jenis paragraf, kalimat efektif, Simple Past Tense, teks deskriptif, hingga kata transisi, kamu semakin siap menulis paragraf yang runtut dan menarik, baik dalam Bahasa Indonesia maupun Bahasa Inggris.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Struktur Kalimat",
+                "items": [
+                    {
+                        "t": "Subjek, predikat, dan objek",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Kalimat utama dan penjelas",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Latihan menyusun kalimat",
+                        "dur": "9min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Paragraf & Ide Pokok",
+                "items": [
+                    {
+                        "t": "Menemukan ide pokok paragraf",
+                        "dur": "11min"
+                    },
+                    {
+                        "t": "Menyusun paragraf padu",
+                        "dur": "11min"
+                    },
+                    {
+                        "t": "Praktik: menulis paragraf pendek",
+                        "dur": "13min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Dasar Bahasa Inggris",
+                "items": [
+                    {
+                        "t": "Simple Present Tense",
+                        "dur": "12min"
+                    },
+                    {
+                        "t": "Kosakata & percakapan sederhana",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Evaluasi & latihan akhir",
+                        "dur": "9min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Manajemen Waktu dan Kebiasaan Belajar Efektif",
+        "category": "Pengembangan Diri",
+        "cat": "self",
+        "emoji": "🌱",
+        "desc": "Bangun kebiasaan belajar yang konsisten lewat manajemen waktu, fokus, dan penetapan tujuan yang realistis.",
+        "level": "beginner",
+        "stars": 4.9,
+        "students": 1050,
+        "modules": 14,
+        "color": "#8b5cf6",
+        "date": "2026-07-24",
+        "video_url": "",
+        "content": "## Deskripsi Singkat\nManajemen waktu yang baik membantu siswa belajar lebih efektif tanpa merasa kewalahan. Materi ini membahas cara membangun kebiasaan belajar yang konsisten.\n\n## Pengertian\nManajemen waktu adalah kemampuan mengatur dan memprioritaskan kegiatan sehari-hari agar tujuan belajar tercapai secara efisien. Kebiasaan belajar efektif terbentuk dari rutinitas yang dilakukan secara konsisten dalam jangka waktu tertentu.\n\n## Tujuan Pembelajaran\n- Memahami pentingnya membuat jadwal dan prioritas harian.\n- Mampu menerapkan teknik fokus untuk mengurangi gangguan saat belajar.\n- Mampu menetapkan tujuan belajar yang realistis dan terukur.\n\n## Penjelasan Materi\nSalah satu teknik manajemen waktu yang mudah diterapkan adalah membuat daftar prioritas harian dan membagi tugas besar menjadi target-target kecil yang lebih mudah diselesaikan. Untuk menjaga fokus, siswa dapat menjauhkan gawai dari jangkauan saat belajar dan menetapkan waktu istirahat singkat di antara sesi belajar (misalnya teknik 25 menit belajar, 5 menit istirahat). Menetapkan tujuan yang spesifik dan realistis membuat proses belajar terasa lebih terarah dan memotivasi.\n\n## Contoh Soal\nSeorang siswa memiliki 3 tugas sekolah yang harus selesai dalam 2 hari. Bagaimana cara menyusun prioritas belajarnya?\n\n## Penyelesaian\nSiswa dapat mengurutkan tugas berdasarkan tenggat waktu terdekat dan tingkat kesulitannya, lalu membagi waktu belajar per hari untuk masing-masing tugas. Misalnya, tugas dengan tenggat waktu paling dekat dikerjakan lebih dulu, sementara tugas yang lebih mudah bisa diselesaikan di sela waktu luang.\n\n## Kesimpulan\nManajemen waktu dan kebiasaan belajar yang konsisten adalah kunci untuk mencapai hasil belajar yang maksimal tanpa merasa terbebani. Membiasakan diri membuat prioritas dan menjaga fokus akan sangat membantu dalam jangka panjang.\n\n## Modul 2: Teknik Pomodoro Secara Mendalam\nTeknik Pomodoro adalah metode manajemen waktu yang membagi sesi belajar menjadi interval fokus (biasanya 25 menit) diikuti istirahat singkat (5 menit). Setelah menyelesaikan empat siklus, siswa mengambil istirahat lebih panjang (15-30 menit) untuk memulihkan konsentrasi sebelum melanjutkan sesi berikutnya.\n\n**Contoh Soal:** Seorang siswa ingin belajar Matematika selama 100 menit menggunakan teknik Pomodoro. Berapa banyak sesi 25 menit yang bisa ia selesaikan, dan berapa total waktu istirahat singkatnya?\n\n**Penyelesaian:** 100 menit dibagi 25 menit per sesi menghasilkan **4 sesi Pomodoro**. Karena ada istirahat 5 menit setelah setiap sesi (kecuali biasanya setelah sesi terakhir langsung istirahat panjang), total istirahat singkat untuk 3 jeda antar sesi adalah 3 × 5 = **15 menit**.\n\n## Modul 3: Membuat To-Do List dengan Matriks Eisenhower\nMatriks Eisenhower membagi tugas ke dalam empat kuadran berdasarkan tingkat **urgensi** (mendesak\/tidak) dan **kepentingan** (penting\/tidak): (1) Penting & Mendesak — kerjakan segera, (2) Penting & Tidak Mendesak — jadwalkan, (3) Tidak Penting & Mendesak — bisa didelegasikan, (4) Tidak Penting & Tidak Mendesak — bisa dihilangkan.\n\n**Contoh Soal:** Seorang siswa memiliki tugas ujian besok pagi (belum belajar sama sekali) dan tugas membuat prakarya yang deadline-nya masih dua minggu lagi. Bagaimana ia menyusun prioritas menggunakan Matriks Eisenhower?\n\n**Penyelesaian:** Belajar untuk ujian besok termasuk kuadran **Penting & Mendesak**, sehingga harus dikerjakan segera hari ini. Sementara tugas prakarya termasuk kuadran **Penting & Tidak Mendesak** karena masih ada waktu dua minggu, sehingga bisa dijadwalkan untuk dikerjakan bertahap di hari-hari berikutnya, bukan ditunda hingga mendekati deadline.\n\n## Modul 4: Mengatasi Prokrastinasi (Kebiasaan Menunda)\nProkrastinasi adalah kebiasaan menunda-nunda pekerjaan meskipun tahu akan berdampak buruk. Penyebab umumnya antara lain merasa tugas terlalu berat, takut gagal, atau mudah teralihkan oleh gawai. Salah satu cara efektif mengatasinya adalah teknik **\"5 menit pertama\"**, yaitu berkomitmen mengerjakan tugas hanya selama 5 menit — biasanya setelah mulai, akan lebih mudah untuk melanjutkan.\n\n**Contoh Soal:** Seorang siswa selalu menunda mengerjakan PR Matematika karena merasa soalnya terlalu sulit dan memilih bermain game terlebih dahulu. Apa strategi yang bisa ia terapkan?\n\n**Penyelesaian:** Siswa tersebut bisa menerapkan teknik \"5 menit pertama\" dengan berkomitmen mengerjakan 1-2 soal termudah dahulu selama 5 menit tanpa memikirkan seluruh PR sekaligus. Selain itu, menjauhkan gawai dari jangkauan selama waktu belajar dan memecah PR menjadi beberapa soal per sesi (bukan mengerjakan sekaligus) juga membantu mengurangi rasa terbebani yang memicu penundaan.\n\n## Modul 5: Mengenal Gaya Belajar — Visual, Auditori, dan Kinestetik\nSetiap orang cenderung memiliki gaya belajar yang berbeda. **Visual** lebih mudah memahami lewat gambar, diagram, atau warna. **Auditori** lebih mudah memahami lewat mendengarkan, seperti penjelasan lisan atau rekaman audio. **Kinestetik** lebih mudah memahami lewat praktik langsung atau gerakan fisik. Mengenali gaya belajar sendiri membantu memilih metode belajar yang paling efektif.\n\n**Contoh Soal:** Seorang siswa lebih cepat paham materi biologi setelah membuat diagram dan menandai bagian penting dengan warna berbeda dibanding hanya membaca teks biasa. Termasuk gaya belajar apakah siswa tersebut, dan strategi apa yang cocok untuknya?\n\n**Penyelesaian:** Siswa tersebut cenderung memiliki gaya belajar **visual**. Strategi yang cocok antara lain membuat mind map, menggunakan highlighter warna-warni saat mencatat, menonton video pembelajaran bergambar, dan mengubah catatan teks panjang menjadi diagram atau infografis sederhana agar lebih mudah diingat.\n\n## Modul 6: Menjaga Keseimbangan Belajar dan Istirahat\nBelajar terus-menerus tanpa istirahat justru bisa menurunkan konsentrasi dan menyebabkan kelelahan mental (burnout). Keseimbangan antara belajar, istirahat, tidur cukup, dan waktu bersantai sangat penting agar proses belajar tetap efektif dalam jangka panjang, bukan hanya dalam satu-dua hari.\n\n**Contoh Soal:** Seorang siswa belajar hingga larut malam setiap hari menjelang ujian dan merasa semakin sulit berkonsentrasi meskipun waktu belajarnya bertambah. Apa yang sebaiknya ia lakukan?\n\n**Penyelesaian:** Siswa tersebut kemungkinan mengalami kelelahan akibat kurang istirahat, sehingga produktivitas belajarnya justru menurun meski waktu belajar bertambah. Sebaiknya ia mengatur jadwal tidur yang cukup (7-9 jam), menyisipkan waktu istirahat singkat di sela belajar, dan membagi materi ujian menjadi sesi-sesi lebih pendek beberapa hari sebelumnya, alih-alih memaksakan belajar semalaman menjelang ujian (sistem kebut semalam).\n\nDengan memahami teknik Pomodoro, Matriks Eisenhower, cara mengatasi prokrastinasi, gaya belajar, hingga pentingnya keseimbangan istirahat, kamu memiliki bekal manajemen waktu yang lebih lengkap untuk belajar secara efektif dan berkelanjutan.",
+        "lessons": [
+            {
+                "ch": "Bab 1: Kebiasaan Belajar",
+                "items": [
+                    {
+                        "t": "Membuat jadwal belajar harian",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Menentukan prioritas tugas",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Latihan menyusun jadwal",
+                        "dur": "9min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 2: Fokus & Konsentrasi",
+                "items": [
+                    {
+                        "t": "Mengurangi gangguan saat belajar",
+                        "dur": "11min"
+                    },
+                    {
+                        "t": "Teknik belajar fokus (25\/5)",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Praktik: sesi belajar fokus",
+                        "dur": "12min"
+                    }
+                ]
+            },
+            {
+                "ch": "Bab 3: Menetapkan Tujuan",
+                "items": [
+                    {
+                        "t": "Membuat tujuan belajar realistis",
+                        "dur": "10min"
+                    },
+                    {
+                        "t": "Mengevaluasi progres belajar",
+                        "dur": "9min"
+                    },
+                    {
+                        "t": "Evaluasi & refleksi akhir",
+                        "dur": "9min"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "title": "testting",
+        "category": "testing",
+        "cat": "testing",
+        "emoji": "📘",
+        "desc": "testing",
+        "content": "testing",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 0,
+        "modules": 3,
+        "color": "#4f7cff",
+        "date": "2026-09-04",
+        "video_url": "",
+        "lessons": [
+            {
+                "ch": "testing1",
+                "items": [
+                    {
+                        "t": "alhamdulillah",
+                        "dur": "5menit"
+                    },
+                    {
+                        "t": "in shaa Allah",
+                        "dur": "6menit"
+                    },
+                    {
+                        "t": "bismillah",
+                        "dur": "7menit"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "title": "testing2",
+        "category": "web",
+        "cat": "web",
+        "emoji": "📘",
+        "desc": "testing2",
+        "content": "testing2",
+        "level": "beginner",
+        "stars": 4.8,
+        "students": 0,
+        "modules": 3,
+        "color": "#fb7185",
+        "date": "2026-09-04",
+        "video_url": "",
+        "lessons": [
+            {
+                "ch": "testing2",
+                "items": [
+                    {
+                        "t": "testing2",
+                        "dur": "10min",
+                        "content": "testing 2 ini adalah seuah testing yang kedua, jadi ini testing yang kedua, selesai.",
+                        "video_url": ""
+                    },
+                    {
+                        "t": "testing2",
+                        "dur": "11min",
+                        "content": "testing 2 ini adalah seuah testing yang kedua, jadi ini testing yang kedua, selesai.",
+                        "video_url": ""
+                    },
+                    {
+                        "t": "testing2",
+                        "dur": "12min",
+                        "content": "testing 2 ini adalah seuah testing yang kedua, jadi ini testing yang kedua, selesai.",
+                        "video_url": ""
+                    }
+                ]
+            }
+        ]
+    }
+]
