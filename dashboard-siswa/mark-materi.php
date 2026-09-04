@@ -42,9 +42,14 @@ if (!csrfVerify($_POST['csrf_token'] ?? null)) {
     exit;
 }
 
-// Validasi: kategori harus benar-benar ada di kategori.json agar tidak
-// menyuntikkan key arbitrer (mis. path traversal / key palsu) ke progress.
-$validCats = array_column(readJSON('kategori.json'), 'name');
+// Validasi: kategori harus benar-benar ada (di kategori.json maupun di
+// materi.json) agar tidak menyuntikkan key arbitrer (mis. path traversal /
+// key palsu) ke progress. Materi baru yang dibuat guru bisa memakai kategori
+// bebas di luar kategori.json, jadi materi.json jadi sumber acuan utama.
+$validCats = array_unique(array_merge(
+    array_column(readJSON('kategori.json'), 'name'),
+    array_column(readJSON('materi.json'), 'category')
+));
 if (!in_array($category, $validCats, true)) {
     http_response_code(400);
     echo json_encode(['ok' => false, 'message' => 'Kategori tidak valid']);

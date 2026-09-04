@@ -418,24 +418,6 @@ $realCompletedCourseIds = array_values(array_map(
     array_filter($realEnrolledCourses, fn($e) => $e['progress'] >= 100)
 ));
 
-$realCertificates = [];
-foreach ($realEnrolledCourses as $e) {
-    if ($e['progress'] < 100) {
-        continue;
-    }
-    foreach ($guruCourses as $c) {
-        if ($c['id'] === $e['id']) {
-            $realCertificates[] = [
-                'courseId' => $e['id'],
-                'title'    => $c['title'],
-                'date'     => date('d/m/Y'),
-                'emoji'    => $c['emoji'] ?? '🏅',
-            ];
-            break;
-        }
-    }
-}
-
 $realActivity = [];
 foreach ($realEnrolledCourses as $e) {
     foreach ($guruCourses as $c) {
@@ -547,7 +529,6 @@ $dashboardSeed = [
     'quizzesDoneCount' => $myDoneQuizCount,
     'enrolledCourses' => $realEnrolledCourses,
     'completedCourses' => $realCompletedCourseIds,
-    'certificates'     => $realCertificates,
     'activity' => $realActivity,
     'leaderboard' => $leaderboardRows,
     'notifications' => [
@@ -889,7 +870,7 @@ $dashboardSeed = [
                         </div>
                         
                         <div class="materi-search">
-                            <span>🔎</span>
+                            <span></span>
                             <input class="fi" type="text" placeholder="Cari materi..." data-i18n-placeholder="siswa.materi.search_placeholder" oninput="onMateriSearch(this.value)" />
                         </div>
                         
@@ -1128,43 +1109,7 @@ $dashboardSeed = [
                             <div class="dch">
                                 <h3 data-i18n="siswa.profile.achievements_title">🏅 Pencapaian</h3>
                             </div>
-                            <div class="agrid" id="achieveGrid">
-                                <?php if (!empty($realCertificates)): ?>
-                                    <?php foreach ($realCertificates as $cert): ?>
-                                        <div class="achievement-item">
-                                            <div class="achievement-icon"><?= $cert['emoji'] ?? '🏅' ?></div>
-                                            <div class="achievement-name"><?= htmlspecialchars($cert['title']) ?></div>
-                                            <div class="achievement-date"><?= htmlspecialchars($cert['date']) ?></div>
-                                        </div>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    <div class="achievement-empty">
-                                        <div class="achievement-empty-icon">🏅</div>
-                                        <p>Belum ada pencapaian. Selesaikan kursus untuk mendapatkan sertifikat!</p>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                        <div class="dc">
-                            <div class="dch">
-                                <h3 data-i18n="siswa.profile.certificates_title">📜 Sertifikat</h3>
-                            </div>
-                            <?php if (!empty($realCertificates)): ?>
-                                <?php foreach ($realCertificates as $cert): ?>
-                                    <div class="certificate-item">
-                                        <div class="certificate-icon">📜</div>
-                                        <div class="certificate-info">
-                                            <div class="certificate-name"><?= htmlspecialchars($cert['title']) ?></div>
-                                            <div class="certificate-date">Diterbitkan: <?= htmlspecialchars($cert['date']) ?></div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <div class="certificate-empty">
-                                    <div class="certificate-empty-icon">📜</div>
-                                    <p>Belum ada sertifikat. Selesaikan kursus untuk mendapatkan sertifikat!</p>
-                                </div>
-                            <?php endif; ?>
+                            <div class="agrid" id="achieveGrid"></div>
                         </div>
                     </div>
                 </div>

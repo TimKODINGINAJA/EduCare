@@ -517,7 +517,6 @@
           subtitle: "Kelola informasi profil dan lihat pencapaianmu.",
           edit: "✏️ Edit Profil",
           achievements_title: "🏅 Pencapaian",
-          certificates_title: "📜 Sertifikat",
         },
         settings: {
           title: "Pengaturan ⚙️",
@@ -596,7 +595,7 @@
           },
           complete: {
             bonus: "Bonus chapter selesai!",
-            courseDone: "🎉 Selamat! Kursus selesai! +500 XP & Sertifikat diraih!",
+            courseDone: "🎉 Selamat! Kursus selesai! +500 XP!",
             lessonDone: "✅ Pelajaran selesai! +30 XP",
             allDone: "🎉 Kamu sudah menyelesaikan semua pelajaran!",
             allDoneToast: "🎉 Semua materi & kursus sudah kamu selesaikan!",
@@ -605,7 +604,7 @@
             chapterTitle: "Chapter Selesai!",
             chapterMsg: "Kamu telah menyelesaikan chapter di \"{title}\". Lanjut terus!",
             courseTitle: "Kursus Selesai!",
-            courseMsg: "Selamat! Kamu telah menyelesaikan \"{title}\". Sertifikatmu sudah tersedia!",
+            courseMsg: "Selamat! Kamu telah menyelesaikan kursus \"{title}\".",
           },
           playground: {
             onlyIT: "Coding Playground hanya tersedia untuk kursus IT/Pemrograman.",
@@ -662,19 +661,6 @@
             enrolledAt: "Didaftar: {date}",
             lessonsDone: "{n} pelajaran selesai",
           },
-          certs: {
-            emptyTitle: "Belum ada sertifikat",
-            emptyDesc: "Selesaikan kursus untuk mendapatkan sertifikat resmi EduCare yang diakui.",
-            viewMyCourses: "📚 Lihat Kursus Saya",
-            stillNeeds: "Selesaikan {n}% lagi untuk sertifikat ini",
-            stillNeedsShort: "Selesaikan {n}% lagi",
-            official: "SERTIFIKAT RESMI",
-            earnedBy: "Diraih oleh <strong>{name}</strong>",
-            view: "👁 Lihat",
-            download: "⬇ Unduh PDF",
-            viewToast: "Membuka sertifikat...",
-            downloadToast: "Mengunduh PDF...",
-          },
           notifs: {
             emptyTitle: "Tidak ada notifikasi",
             emptyDesc: "Mulai belajar untuk mendapatkan notifikasi progress!",
@@ -691,7 +677,6 @@
             ach: [
               ["First Blood", "Selesaikan pelajaran pertama"],
               ["Streak 3 Hari", "Belajar 3 hari berturut"],
-              ["Certified", "Raih sertifikat pertama"],
               ["Komunitas", "Post pertama di forum"],
               ["100 XP", "Kumpulkan 100 XP"],
               ["Enrolled", "Daftar kursus pertama"],
@@ -766,7 +751,7 @@
       belajar: {
         materi: {
           page_title: "Materi Pembelajaran",
-          page_subtitle: "Jelajahi materi, tonton modul video, dan selesaikan quiz untuk mendapatkan sertifikat.",
+          page_subtitle: "Jelajahi materi, tonton modul video, dan selesaikan quiz untuk menguji pemahamanmu.",
           class_label: "Kelas 9A • Siswa",
           tab_mtk: "Matematika",
           search_ph: "Cari materi...",
@@ -792,7 +777,7 @@
           quiz_cta_desc_prefix: "Selesaikan kuis interaktif",
           quiz_cta_desc_min: "(minimal",
           quiz_cta_desc_questions: "soal)",
-          quiz_cta_desc_suffix: "untuk menguji materi ini dan klaim sertifikat belajar Anda.",
+          quiz_cta_desc_suffix: "untuk menguji pemahamanmu terhadap materi ini.",
           take_quiz_now: "Kerjakan Kuis Sekarang",
           copied: "Copied!",
         },
@@ -1131,7 +1116,6 @@
           add_question: "+ Tambah Soal",
           chapter_placeholder: "Judul Chapter, contoh: Chapter 1: HTML Dasar",
           lesson_placeholder: "Judul pelajaran",
-          duration_placeholder: "Durasi (cth 15min)",
           question_placeholder: "Tulis pertanyaan...",
           option_placeholder: "Pilihan",
           chapter_unit: "chapter",
@@ -1642,7 +1626,6 @@
           subtitle: "Manage your profile info and see your achievements.",
           edit: "✏️ Edit Profile",
           achievements_title: "🏅 Achievements",
-          certificates_title: "📜 Certificates",
         },
         settings: {
           title: "Settings ⚙️",
@@ -1721,7 +1704,7 @@
           },
           complete: {
             bonus: "Bonus chapter complete!",
-            courseDone: "🎉 Congrats! Course complete! +500 XP & Certificate earned!",
+            courseDone: "🎉 Congrats! Course complete! +500 XP!",
             lessonDone: "✅ Lesson complete! +30 XP",
             allDone: "🎉 You've finished every lesson!",
             allDoneToast: "🎉 All materials & courses are done!",
@@ -1730,7 +1713,7 @@
             chapterTitle: "Chapter Complete!",
             chapterMsg: "You completed a chapter in \"{title}\". Keep going!",
             courseTitle: "Course Complete!",
-            courseMsg: "Congrats! You completed \"{title}\". Your certificate is ready!",
+            courseMsg: "Congrats! You completed the course \"{title}\".",
           },
           playground: {
             onlyIT: "Coding Playground is only available for IT/Programming courses.",
@@ -1787,19 +1770,6 @@
             enrolledAt: "Enrolled: {date}",
             lessonsDone: "{n} lessons completed",
           },
-          certs: {
-            emptyTitle: "No certificates yet",
-            emptyDesc: "Complete a course to earn an official EduCare certificate.",
-            viewMyCourses: "📚 View My Courses",
-            stillNeeds: "Complete {n}% more for this certificate",
-            stillNeedsShort: "Complete {n}% more",
-            official: "OFFICIAL CERTIFICATE",
-            earnedBy: "Awarded to <strong>{name}</strong>",
-            view: "👁 View",
-            download: "⬇ Download PDF",
-            viewToast: "Opening certificate...",
-            downloadToast: "Downloading PDF...",
-          },
           notifs: {
             emptyTitle: "No notifications",
             emptyDesc: "Start learning to get progress notifications!",
@@ -1816,7 +1786,6 @@
             ach: [
               ["First Blood", "Complete your first lesson"],
               ["3-Day Streak", "Study 3 days in a row"],
-              ["Certified", "Earn your first certificate"],
               ["Community", "First forum post"],
               ["100 XP", "Collect 100 XP"],
               ["Enrolled", "Enroll in your first course"],
@@ -1891,7 +1860,7 @@
       belajar: {
         materi: {
           page_title: "Learning Materials",
-          page_subtitle: "Explore materials, watch video modules, and complete quizzes to earn a certificate.",
+          page_subtitle: "Explore materials, watch video modules, and complete quizzes to test your understanding.",
           class_label: "Class 9A • Student",
           tab_mtk: "Mathematics",
           search_ph: "Search materials...",
@@ -1917,7 +1886,7 @@
           quiz_cta_desc_prefix: "Complete the interactive quiz",
           quiz_cta_desc_min: "(at least",
           quiz_cta_desc_questions: "questions)",
-          quiz_cta_desc_suffix: "to test this material and claim your learning certificate.",
+          quiz_cta_desc_suffix: "to test your understanding of this material.",
           take_quiz_now: "Take the Quiz Now",
           copied: "Copied!",
         },
@@ -2256,7 +2225,6 @@
           add_question: "+ Add Question",
           chapter_placeholder: "Chapter title, e.g. Chapter 1: HTML Basics",
           lesson_placeholder: "Lesson title",
-          duration_placeholder: "Duration (e.g. 15 min)",
           question_placeholder: "Write a question...",
           option_placeholder: "Option",
           chapter_unit: "chapters",

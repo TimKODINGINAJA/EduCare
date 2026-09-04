@@ -60,11 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $cleanItems = [];
       foreach ($items as $it) {
         $t = trim($it['t'] ?? '');
-        $dur = trim($it['dur'] ?? '') ?: '15min';
         if ($t === '') continue;
         $cleanItems[] = [
           't' => $t,
-          'dur' => $dur,
           'content' => trim($it['content'] ?? ''),
           'video_url' => trim($it['video_url'] ?? ''),
         ];
@@ -480,12 +478,6 @@ $analyticsData = [
       font-size: .85rem;
     }
 
-    .lessrow .less-dur {
-      flex: 1;
-      min-width: 0;
-      font-size: .85rem;
-    }
-
     .lessrow textarea.fi,
     .lessrow input.fi {
       width: 100%;
@@ -502,14 +494,12 @@ $analyticsData = [
       color: #a5b4fc;
     }
 
-    .lessrow .less-title::placeholder,
-    .lessrow .less-dur::placeholder {
+    .lessrow .less-title::placeholder {
       color: #94a3b8;
       opacity: 0.6;
     }
 
-    body.light-mode .lessrow .less-title::placeholder,
-    body.light-mode .lessrow .less-dur::placeholder {
+    body.light-mode .lessrow .less-title::placeholder {
       color: #94a3b8;
       opacity: 0.5;
     }
@@ -2821,7 +2811,6 @@ $analyticsData = [
       row.innerHTML = `
         <div style="display:flex;align-items:center;gap:8px">
           <input type="text" class="fi less-title" style="flex:2" placeholder="Judul pelajaran">
-          <input type="text" class="fi less-dur" style="flex:1" placeholder="Durasi (cth 15min)">
           <button type="button" style="all:unset;font-size:.7rem;color:var(--rose);font-weight:600;cursor:pointer;flex-shrink:0" onclick="this.parentElement.remove()">✕</button>
         </div>
         <textarea class="fi less-content" rows="3" placeholder="Isi materi pelajaran (opsional). Mendukung teks biasa, list, dan blok kode fenced \`\`\`...\`\`\`"></textarea>
@@ -2839,10 +2828,9 @@ $analyticsData = [
         const items = [];
         lessonRows.forEach(lr => {
           const t = lr.querySelector('.less-title').value.trim();
-          const dur = lr.querySelector('.less-dur').value.trim() || '15min';
           const content = lr.querySelector('.less-content').value.trim() || '';
           const video_url = lr.querySelector('.less-video').value.trim() || '';
-          if (t) items.push({ t, dur, content, video_url });
+          if (t) items.push({ t, content, video_url });
         });
         if (chTitle && items.length) chapters.push({ ch: chTitle, items });
       });
