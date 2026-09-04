@@ -1756,7 +1756,7 @@ $analyticsData = [
       <div class="sb-brand">
         <div class="sb-logo">
           <img
-            src="<?= htmlspecialchars(assetUrl('assets/img/EduCare-logo.png')) ?>"
+            src="<?= htmlspecialchars(assetUrl('assets/logo/EduCare-logo.png')) ?>"
             alt="Logo EduCare"
             width="40"
             height="40"

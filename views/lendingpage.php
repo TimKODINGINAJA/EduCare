@@ -25,16 +25,12 @@
 
         <div class="mt-14 flex items-center gap-10 max-w-md border-t border-slate-200 dark:border-slate-800 pt-8">
           <div>
-            <p class="font-display text-[26px] font-bold text-slate-900 dark:text-white"><span class="counter" data-target="100">0</span>+</p>
+            <p class="font-display text-[26px] font-bold text-slate-900 dark:text-white"><span class="counter" data-target="13">0</span>+</p>
             <p class="text-[12.5px] text-slate-500 dark:text-slate-400 mt-1">Materi</p>
           </div>
           <div>
-            <p class="font-display text-[26px] font-bold text-slate-900 dark:text-white"><span class="counter" data-target="50">0</span>+</p>
+            <p class="font-display text-[26px] font-bold text-slate-900 dark:text-white"><span class="counter" data-target="8">0</span>+</p>
             <p class="text-[12.5px] text-slate-500 dark:text-slate-400 mt-1">Video</p>
-          </div>
-          <div>
-            <p class="font-display text-[26px] font-bold text-slate-900 dark:text-white"><span class="counter" data-target="1000">0</span>+</p>
-            <p class="text-[12.5px] text-slate-500 dark:text-slate-400 mt-1">Siswa aktif</p>
           </div>
         </div>
       </div>
@@ -101,20 +97,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== TRUST BAR ===================== -->
-<section id="trust-bar" class="relative px-6 py-10 border-y border-slate-100 dark:border-slate-800">
-  <div class="max-w-6xl mx-auto reveal" data-reveal="up">
-    <p class="text-center text-[13px] text-slate-500 dark:text-slate-400 mb-7">Dipercaya oleh sekolah-sekolah berikut</p>
-    <div class="flex flex-wrap items-center justify-center gap-x-14 gap-y-5 text-slate-400 dark:text-slate-500">
-      <span class="font-display font-semibold text-[15px] tracking-tight trust-item">SMKN 1 Cikarang</span>
-      <span class="font-display font-semibold text-[15px] tracking-tight trust-item">SMK Telkom</span>
-      <span class="font-display font-semibold text-[15px] tracking-tight trust-item">SMKN 2 Bekasi</span>
-      <span class="font-display font-semibold text-[15px] tracking-tight trust-item">SMK Wikrama</span>
-      <span class="font-display font-semibold text-[15px] tracking-tight trust-item">SMKN 3 Karawang</span>
     </div>
   </div>
 </section>
