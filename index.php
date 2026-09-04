@@ -23,18 +23,32 @@ require_once __DIR__ . '/function.php';
             }
         })();
     </script>
-    <!-- Alpine.js (opsional, jika nanti ingin menambah interaktivitas lain) -->
+
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class'
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Valley Sans"', 'sans-serif'],
+                        display: ['"Valley Sans"', 'sans-serif']
+                    }
+                }
+            }
         };
     </script>
+
+    <!-- Alpine.js (opsional, jika nanti ingin menambah interaktivitas lain) -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Valley+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <title data-i18n="page.index">EduCare - Platform Belajar Digital</title>
 
@@ -43,6 +57,12 @@ require_once __DIR__ . '/function.php';
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl('assets/css/style.css')) ?>">
+
+    <style>
+        body {
+            font-family: 'Valley Sans', sans-serif;
+        }
+    </style>
 </head>
 
 <body class="bg-white dark:bg-[#0b1120] transition-colors duration-300">

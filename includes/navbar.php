@@ -31,7 +31,7 @@ $navItems = [
     ['path' => 'index.php', 'label' => 'Beranda', 'key' => 'nav.home'],
     ['path' => 'views/about.php', 'label' => 'Tentang', 'key' => 'nav.about'],
     ['path' => 'index.php', 'label' => 'Edukasi', 'anchor' => '#edukasi', 'key' => 'nav.edukasi'],
-    ['path' => 'index.php', 'label' => 'Silapor', 'anchor' => '#silapor', 'key' => 'nav.silapor'],
+    ['path' => 'views/silapor.php', 'label' => 'silapor', 'key' => 'nav.silapor'],
     ['path' => 'index.php', 'label' => 'Cara Kerja', 'anchor' => '#alur', 'key' => 'nav.cara_kerja'],
     ['path' => 'index.php', 'label' => 'Testimoni', 'anchor' => '#testimoni', 'key' => 'nav.testimoni'],
     ['path' => 'index.php', 'label' => 'FAQ', 'anchor' => '#faq', 'key' => 'nav.faq'],
@@ -54,6 +54,69 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
     return $currentPath === $itemPath;
 }
 ?>
+<style>
+    /* === Navbar auto-hide saat scroll ke bawah, muncul lagi saat scroll ke atas === */
+    #site-navbar {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #site-navbar.navbar-hidden {
+        transform: translateY(-100%);
+    }
+
+    /* === Animasi hamburger -> X (tombol utama di navbar) === */
+    #navbar-toggle.active .bar-1 {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    #navbar-toggle.active .bar-2 {
+        opacity: 0;
+    }
+
+    #navbar-toggle.active .bar-3 {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* === Drawer & overlay (CSS murni, tidak bergantung pada purge Tailwind) === */
+    .navbar-drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 18rem;
+        max-width: 80%;
+        background: #ffffff;
+        z-index: 50;
+        box-shadow: -12px 0 30px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-out;
+    }
+
+    .navbar-drawer.open {
+        transform: translateX(0);
+    }
+
+    .navbar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(17, 24, 39, 0.5);
+        z-index: 40;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-out;
+    }
+
+    .navbar-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Cegah scroll body saat drawer terbuka */
+    body.navbar-drawer-open {
+        overflow: hidden;
+    }
+</style>
+
 <header id="site-navbar"
     class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200 transition-all duration-300">
 
@@ -389,6 +452,93 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
             });
             menu.querySelectorAll('[data-lang-set]').forEach(function(item) {
                 item.addEventListener('click', closeMenu);
+            });
+        });
+    })();
+</script>
+
+<!-- JavaScript Mobile Drawer (Buka/Tutup) -->
+<script>
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggleBtn = document.getElementById('navbar-toggle');
+            var closeBtn = document.getElementById('navbar-close');
+            var drawer = document.getElementById('navbar-mobile-menu');
+            var overlay = document.getElementById('navbar-overlay');
+            if (!toggleBtn || !drawer || !overlay) return;
+
+            function openDrawer() {
+                drawer.classList.add('open');
+                overlay.classList.add('open');
+                toggleBtn.classList.add('active');
+                toggleBtn.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('navbar-drawer-open');
+            }
+
+            function closeDrawer() {
+                drawer.classList.remove('open');
+                overlay.classList.remove('open');
+                toggleBtn.classList.remove('active');
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('navbar-drawer-open');
+            }
+
+            toggleBtn.addEventListener('click', function() {
+                drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+            });
+            if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+            overlay.addEventListener('click', closeDrawer);
+
+            // Tutup drawer otomatis kalau layar di-resize ke atas breakpoint xl
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1280) closeDrawer();
+            });
+        });
+    })();
+</script>
+
+<!-- JavaScript Navbar Auto-Hide saat Scroll -->
+<script>
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            var navbar = document.getElementById('site-navbar');
+            if (!navbar) return;
+
+            var lastScrollY = window.scrollY;
+            var scrollThreshold = 80; // jarak minimal sebelum navbar mulai sembunyi
+            var ticking = false;
+
+            function handleScroll() {
+                var currentScrollY = window.scrollY;
+
+                // Jangan sembunyikan navbar kalau drawer mobile sedang terbuka
+                if (document.body.classList.contains('navbar-drawer-open')) {
+                    ticking = false;
+                    return;
+                }
+
+                if (currentScrollY <= scrollThreshold) {
+                    // Selalu tampil kalau masih di area atas halaman
+                    navbar.classList.remove('navbar-hidden');
+                } else if (currentScrollY > lastScrollY) {
+                    // Scroll ke bawah -> sembunyikan
+                    navbar.classList.add('navbar-hidden');
+                } else {
+                    // Scroll ke atas -> tampilkan
+                    navbar.classList.remove('navbar-hidden');
+                }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(handleScroll);
+                    ticking = true;
+                }
+            }, {
+                passive: true
             });
         });
     })();

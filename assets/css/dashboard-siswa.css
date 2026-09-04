@@ -82,7 +82,7 @@ body {
 }
 
 .light-mode body {
-    background: #C6E7FF;
+    background: white;
 }
 
 @keyframes auroraBG {
