@@ -4,6 +4,15 @@ require_once __DIR__ . '/../function.php';
 
 $pageTitle = 'Tentang EduCare — Profil';
 
+$materiData = readJSON('materi.json');
+$totalMateri = count($materiData);
+$totalVideo = 0;
+foreach ($materiData as $m) {
+  if (!empty($m['video_url'])) {
+    $totalVideo++;
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -673,7 +682,7 @@ $pageTitle = 'Tentang EduCare — Profil';
                                text-3xl
                                font-semibold
                                text-primary">
-              100+
+              <?= (int) $totalMateri ?>
             </p>
 
             <p
@@ -694,7 +703,7 @@ $pageTitle = 'Tentang EduCare — Profil';
                                text-3xl
                                font-semibold
                                text-primary">
-              50+
+              <?= (int) $totalVideo ?>
             </p>
 
             <p

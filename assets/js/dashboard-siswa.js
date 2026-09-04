@@ -3480,7 +3480,7 @@ function saveUD() {
 // ================================================================
 
 function getActiveAccent(mode = null) {
-  const currentMode = mode || UD?.settings?.themeMode || "light";
+  const currentMode = mode || UD?.settings?.themeMode || getGlobalThemeMode();
   const accentKey =
     currentMode === "light" ? "themeAccentLight" : "themeAccentDark";
   return (
@@ -3504,6 +3504,19 @@ function updateThemePickerUI(mode, accent) {
     const value = (btn.getAttribute("data-theme-accent") || "").toLowerCase();
     btn.classList.toggle("active", value === activeAccent);
   });
+}
+
+// Mode tema global disinkronkan dgn landing page via key 'educare-theme'
+// (disimpan sebagai string polos 'dark'/'light', bukan JSON). Jika belum ada,
+// fallback ke pengaturan lama dashboard-siswa ('themeMode'), lalu preferensi sistem.
+function getGlobalThemeMode() {
+  let g = null;
+  try { g = localStorage.getItem("educare-theme"); } catch (e) {}
+  if (g === "dark" || g === "light") return g;
+  const legacy = LS.get("themeMode");
+  if (legacy === "dark" || legacy === "light") return legacy;
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+  return "light";
 }
 
 function setTheme(mode, accent = null, persist = true) {
@@ -3533,6 +3546,7 @@ function setTheme(mode, accent = null, persist = true) {
   }
 
   if (persist) {
+    localStorage.setItem("educare-theme", currentMode);
     LS.set("themeMode", currentMode);
     LS.set("themeAccentDark", UD?.settings?.themeAccentDark || "#4C8DFF");
     LS.set("themeAccentLight", UD?.settings?.themeAccentLight || "#2F5FE0");
@@ -3542,19 +3556,18 @@ function setTheme(mode, accent = null, persist = true) {
 }
 
 function toggleTheme() {
-  const nextMode =
-    (UD?.settings?.themeMode || "light") === "light" ? "dark" : "light";
+  const nextMode = getGlobalThemeMode() === "light" ? "dark" : "light";
   setTheme(nextMode, getActiveAccent(nextMode));
 }
 
 function applyTheme(color, mode = null) {
-  const targetMode = mode || UD?.settings?.themeMode || "light";
+  const targetMode = mode || getGlobalThemeMode();
   setTheme(targetMode, color);
   showToast(dashT("siswa.chrome.settings.themeChanged", "Tema diubah!"), "ok");
 }
 
 function loadTheme() {
-  const savedMode = LS.get("themeMode") || UD?.settings?.themeMode || "light";
+  const savedMode = getGlobalThemeMode();
   const savedAccent = getActiveAccent(savedMode);
   setTheme(savedMode, savedAccent, false);
 }
@@ -5926,9 +5939,7 @@ function openMateriDetail(id) {
             <div style="font-size:.75rem;color:var(--text2);font-family:var(--mono)">${dashT("siswa.chrome.materi.published", "Diterbitkan: {date}", { date: escapeHtml(m.dateLabel || "") })}</div>
         </div>
         ${videoHtml}
-        <div class="dc materi-dark-content">
-            ${m.contentHtml || ""}
-        </div>
+        ${m.contentHtml || m.lessonsHtml ? `<div class="dc materi-dark-content">${m.contentHtml || ""}${m.lessonsHtml || ""}</div>` : ""}
         ${navHtml}
         ${quizHtml}
     `;

@@ -140,7 +140,21 @@ include __DIR__ . '/../includes/header.php';
                 <!-- Content Area -->
                 <article class="glassmorphism rounded-3xl p-6 md:p-8 border border-white/60 shadow-xl bg-white/40 max-w-none" id="materiArticle">
                     <h3 class="text-sm font-bold text-slate-800 mb-5 pb-2 border-b border-slate-100 flex items-center gap-2"><i data-lucide="book-open" class="text-blue-600"></i> <span data-i18n="belajar.materi.page_title">Materi Pembelajaran</span></h3>
-                    <?= renderMateriContent(t_dynamic($m['content'] ?? '', 'materi.' . $m['id'] . '.content'), $materiGroup) ?>
+                    <?php
+                    $materiBody = trim($m['content'] ?? '');
+                    $materiLessons = $m['lessons'] ?? [];
+
+                    $hasRealContent = preg_match('/^##\s+/m', $materiBody) || strlen(strip_tags($materiBody)) > 40;
+
+                    if ($hasRealContent) {
+                        echo renderMateriContent(t_dynamic($materiBody, 'materi.' . $m['id'] . '.content'), $materiGroup);
+                    }
+
+                    $lessonsHtml = renderMateriLessons(is_array($materiLessons) ? $materiLessons : [], $materiGroup);
+                    if ($lessonsHtml !== '') {
+                        echo $lessonsHtml;
+                    }
+                    ?>
                 </article>
 
                 <!-- Navigasi Antar Materi -->

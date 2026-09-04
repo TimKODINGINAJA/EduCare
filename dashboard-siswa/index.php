@@ -342,6 +342,7 @@ foreach ($materiSorted as $idx => $m) {
         'video_url'     => $videoUrl,
         'embedUrl'      => $videoUrl !== '' ? ec_youtube_embed($videoUrl) : '',
         'contentHtml'   => renderMateriContent(t_dynamic($m['content'] ?? '', 'materi.' . $mId . '.content'), $group),
+        'lessonsHtml'   => renderMateriLessons(is_array($m['lessons'] ?? null) ? $m['lessons'] : [], $group),
         'done'          => (($myProgressMap[$category] ?? 0) >= 100),
         'quizAvailable' => $linkedQuizName !== null,
         'quizName'      => $linkedQuizName !== null ? t_dynamic($linkedQuizName, 'quiz.' . ($linkedQuizId ?: '') . '.name') : '',
@@ -575,8 +576,16 @@ $dashboardSeed = [
     <script>
         (function() {
             try {
-                var raw = localStorage.getItem('themeMode');
-                var mode = raw ? JSON.parse(raw) : 'light';
+                // Sumber kebenaran tema global adalah 'educare-theme'
+                // (dipakai bareng landing page & dashboard-guru).
+                var savedEdu = localStorage.getItem('educare-theme');
+                var mode;
+                if (savedEdu === 'dark' || savedEdu === 'light') {
+                    mode = savedEdu;
+                } else {
+                    var legacy = localStorage.getItem('themeMode');
+                    mode = legacy ? (JSON.parse(legacy) || 'light') : 'light';
+                }
                 var root = document.documentElement;
                 if (mode !== 'dark') {
                     root.classList.add('light-mode');
@@ -585,6 +594,12 @@ $dashboardSeed = [
                     root.style.setProperty('--cyan', accent);
                     root.style.setProperty('--cd', accent + '1A');
                     root.style.setProperty('--cg', accent + '3D');
+                } else {
+                    var accentDRaw = localStorage.getItem('themeAccentDark');
+                    var accentD = accentDRaw ? JSON.parse(accentDRaw) : '#4C8DFF';
+                    root.style.setProperty('--cyan', accentD);
+                    root.style.setProperty('--cd', accentD + '1A');
+                    root.style.setProperty('--cg', accentD + '3D');
                 }
             } catch (e) {
                 document.documentElement.classList.add('light-mode');
