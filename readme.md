@@ -88,7 +88,7 @@ Banyak sekolah masih mengandalkan proses manual dalam pembelajaran dan pengelola
 
 ### Live Demo
 
-🔗 **[Kunjungi Website](https://[URL_DEMO])**
+🔗 **[Kunjungi Website](http://educare-timkodinginaja.page.gd)**
 
 ### Link Github
 🔗 **[Kunjungi Repo Github EduCare](https://github.com/TimKODINGINAJA/EduCare)**
@@ -232,11 +232,7 @@ Banyak sekolah masih mengandalkan proses manual dalam pembelajaran dan pengelola
   <p><em>Laporan Siswa</em></p>
 </div>
 
-### Video Demo
 
-📹 **[Link Video Demo](https://[URL_VIDEO])** _(opsional)_
-
----
 
 ## 🛠️ Teknologi
 
