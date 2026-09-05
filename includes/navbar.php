@@ -14,8 +14,6 @@ if ($isLoggedIn) {
     $role = $_SESSION['user']['role'] ?? 'siswa';
     switch ($role) {
         case 'admin':
-            // Tidak ada dashboard admin terpisah; arahkan ke dashboard-siswa
-            // (satu-satunya dashboard yang mengizinkan role admin).
             $dashboardLink = pageUrl('dashboard-siswa/index.php');
             break;
         case 'guru':
@@ -55,16 +53,12 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
 }
 ?>
 <style>
-    /* === Navbar auto-hide saat scroll ke bawah, muncul lagi saat scroll ke atas === */
+    /* === Navbar selalu sticky, tidak pernah hilang === */
     #site-navbar {
-        transition: transform 0.3s ease-in-out;
+        /* Tidak ada transform */
     }
 
-    #site-navbar.navbar-hidden {
-        transform: translateY(-100%);
-    }
-
-    /* === Animasi hamburger -> X (tombol utama di navbar) === */
+    /* === Animasi hamburger -> X === */
     #navbar-toggle.active .bar-1 {
         transform: translateY(7px) rotate(45deg);
     }
@@ -77,7 +71,7 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* === Drawer & overlay (CSS murni, tidak bergantung pada purge Tailwind) === */
+    /* === Drawer & overlay === */
     .navbar-drawer {
         position: fixed;
         top: 0;
@@ -111,43 +105,56 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
         pointer-events: auto;
     }
 
-    /* Cegah scroll body saat drawer terbuka */
     body.navbar-drawer-open {
         overflow: hidden;
+    }
+
+    /* Warna dark mode (akan di-override oleh Tailwind jika ada) */
+    html.dark .navbar-drawer {
+        background: #1e293b;
+    }
+
+    html.dark #navbar-mobile-menu .border-gray-200 {
+        border-color: #334155;
+    }
+
+    html.dark #navbar-mobile-menu .text-gray-900 {
+        color: #f1f5f9;
+    }
+
+    html.dark #navbar-mobile-menu .text-gray-600 {
+        color: #cbd5e1;
+    }
+
+    html.dark #navbar-mobile-menu .bg-gray-50 {
+        background-color: #334155;
+    }
+
+    html.dark #navbar-mobile-menu .bg-gray-100 {
+        background-color: #475569;
     }
 </style>
 
 <header id="site-navbar"
-    class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200 transition-all duration-300">
+    class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200 transition-all duration-300 dark:bg-slate-900/80 dark:border-slate-700">
 
     <nav class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navigasi utama">
 
         <div class="flex items-center justify-between h-20">
 
             <!-- Logo -->
-            <a
-                href="<?= htmlspecialchars($baseUrl) ?>"
+            <a href="<?= htmlspecialchars($baseUrl) ?>"
                 class="flex items-center gap-3 group shrink-0">
-
-                <img
-                    src="<?= htmlspecialchars(assetUrl('assets/logo/EduCare-logo.png')) ?>"
+                <img src="<?= htmlspecialchars(assetUrl('assets/logo/EduCare-logo.png')) ?>"
                     alt="Logo EduCare"
-                    width="40"
-                    height="40"
+                    width="40" height="40"
                     class="w-10 h-10 object-contain rounded-xl">
-
-                <span
-                    class="font-bold text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                <span class="font-bold text-xl text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-300">
                     EduCare
                 </span>
-
             </a>
 
             <!-- Desktop Menu -->
-            <!-- Breakpoint dinaikkan dari lg -> xl karena 8 menu item + language switcher +
-                 dark mode + jam digital + tombol auth terlalu banyak untuk muat nyaman di
-                 lebar layar "lg" (1024px). Di antara lg dan xl sekarang otomatis jatuh ke
-                 drawer mobile supaya tidak dempet. -->
             <ul class="hidden xl:flex items-center gap-6 2xl:gap-8">
                 <?php foreach ($navItems as $item):
                     $file = $item['path'];
@@ -159,14 +166,13 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                     } else {
                         $href = pageUrl($file) . $anchor;
                     }
-
                     $active = isActiveLink($file, $currentPath, $anchor);
                 ?>
                     <li>
                         <a href="<?= htmlspecialchars($href) ?>"
                             data-path="<?= htmlspecialchars($file) ?>"
                             data-anchor="<?= htmlspecialchars($anchor) ?>"
-                            class="nav-link relative text-sm font-medium py-2 whitespace-nowrap transition-colors <?= $active ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600' ?>">
+                            class="nav-link relative text-sm font-medium py-2 whitespace-nowrap transition-colors <?= $active ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400' ?>">
                             <span data-i18n="<?= htmlspecialchars($item['key'] ?? '') ?>"><?= htmlspecialchars($label) ?></span>
                             <span class="line-indicator absolute left-0 -bottom-2 h-0.5 bg-blue-600 transition-all duration-300 <?= $active ? 'w-full' : 'w-0' ?>"></span>
                         </a>
@@ -174,13 +180,15 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                 <?php endforeach; ?>
             </ul>
 
-            <!-- Jam Digital & Auth (Desktop) -->
+            <!-- Kanan: Bahasa, Dark Mode, Jam, Auth (Desktop) -->
             <div class="hidden xl:flex items-center gap-3 2xl:gap-5 shrink-0">
+
                 <!-- Language Switcher Desktop -->
                 <div class="relative">
                     <button id="lang-toggle" type="button"
-                        class="flex items-center gap-1.5 px-2.5 h-9 rounded-xl bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/70 transition-colors text-xs font-semibold"
-                        aria-haspopup="true" aria-expanded="false" aria-label="Ganti bahasa / Change language" title="Ganti bahasa / Change language">
+                        class="flex items-center gap-1.5 px-2.5 h-9 rounded-xl bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/70 transition-colors text-xs font-semibold dark:bg-slate-700/80 dark:border-slate-600 dark:text-gray-200"
+                        aria-haspopup="true" aria-expanded="false"
+                        aria-label="Ganti bahasa / Change language" title="Ganti bahasa / Change language">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="9"></circle>
                             <path d="M3 12h18M12 3a14.5 14.5 0 010 18M12 3a14.5 14.5 0 000 18"></path>
@@ -190,18 +198,19 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                             <path d="M6 9l6 6 6-6"></path>
                         </svg>
                     </button>
-                    <div id="lang-menu" class="hidden absolute right-0 mt-2 w-40 rounded-xl bg-white border border-gray-200 shadow-lg shadow-slate-900/5 overflow-hidden z-50">
-                        <button type="button" data-lang-set="id" class="lang-option w-full text-left px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 transition-colors flex items-center gap-2">
+                    <div id="lang-menu" class="hidden absolute right-0 mt-2 w-40 rounded-xl bg-white border border-gray-200 shadow-lg shadow-slate-900/5 overflow-hidden z-50 dark:bg-slate-800 dark:border-slate-700">
+                        <button type="button" data-lang-set="id" class="lang-option w-full text-left px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 transition-colors flex items-center gap-2 dark:text-gray-300 dark:hover:bg-slate-700">
                             <span>🇮🇩</span> Bahasa Indonesia
                         </button>
-                        <button type="button" data-lang-set="en" class="lang-option w-full text-left px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 transition-colors flex items-center gap-2">
+                        <button type="button" data-lang-set="en" class="lang-option w-full text-left px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 transition-colors flex items-center gap-2 dark:text-gray-300 dark:hover:bg-slate-700">
                             <span>🇬🇧</span> English
                         </button>
                     </div>
                 </div>
+
                 <!-- Toggle Dark Mode Desktop -->
                 <button id="theme-toggle" type="button"
-                    class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/70 transition-colors"
+                    class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-100/80 border border-gray-200/60 text-gray-700 hover:bg-gray-200/70 transition-colors dark:bg-slate-700/80 dark:border-slate-600 dark:text-gray-200"
                     aria-label="Ganti mode gelap/terang" title="Ganti mode gelap/terang">
                     <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="4"></circle>
@@ -211,9 +220,10 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                         <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
                     </svg>
                 </button>
-                <!-- Digital Clock Desktop (baru muncul mulai 2xl supaya tidak menambah desakan di xl) -->
-                <div class="hidden 2xl:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gray-100/80 border border-gray-200/60 text-gray-700 font-mono text-xs font-semibold tracking-wider">
-                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Digital Clock Desktop (hanya di 2xl) -->
+                <div class="hidden 2xl:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gray-100/80 border border-gray-200/60 text-gray-700 font-mono text-xs font-semibold tracking-wider dark:bg-slate-700/80 dark:border-slate-600 dark:text-gray-200">
+                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <span class="digital-clock">00:00:00 WIB</span>
@@ -221,7 +231,7 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
 
                 <?php if ($isLoggedIn): ?>
                     <a href="<?= htmlspecialchars($dashboardLink) ?>"
-                        class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors whitespace-nowrap">
+                        class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors whitespace-nowrap dark:text-gray-300 dark:hover:text-blue-400">
                         <?= $userName ? 'Halo, ' . htmlspecialchars($userName) : 'Dashboard' ?>
                     </a>
                     <a href="<?= htmlspecialchars($baseUrl . 'auth/logout.php') ?>"
@@ -232,7 +242,7 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                 <?php else: ?>
                     <a href="<?= htmlspecialchars($baseUrl . 'auth/login.php') ?>"
                         data-i18n="nav.login"
-                        class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors py-2 px-3 rounded-xl hover:bg-gray-50 whitespace-nowrap">
+                        class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors py-2 px-3 rounded-xl hover:bg-gray-50 whitespace-nowrap dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-slate-700">
                         Masuk
                     </a>
                     <a href="<?= htmlspecialchars($baseUrl . 'auth/register.php') ?>"
@@ -243,10 +253,10 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                 <?php endif; ?>
             </div>
 
-            <!-- Mobile Button (sekarang tampil di bawah xl, bukan lg) -->
+            <!-- Mobile Button (hanya di bawah xl) -->
             <button id="navbar-toggle"
                 type="button"
-                class="xl:hidden relative w-9 h-9 flex items-center justify-center rounded-md text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="xl:hidden relative w-9 h-9 flex items-center justify-center rounded-md text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-gray-200 dark:hover:bg-slate-700"
                 aria-expanded="false"
                 aria-controls="navbar-mobile-menu"
                 aria-label="Buka menu navigasi">
@@ -260,18 +270,18 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
 
     </nav>
 
-    <!-- Overlay gelap di belakang drawer -->
+    <!-- Overlay gelap -->
     <div id="navbar-overlay" class="navbar-overlay xl:hidden"></div>
 
-    <!-- Mobile Menu (Slide-in Drawer dari kanan) -->
+    <!-- Mobile Menu (Slide-in Drawer) -->
     <div id="navbar-mobile-menu"
-        class="navbar-drawer xl:hidden flex flex-col">
+        class="navbar-drawer xl:hidden flex flex-col dark:bg-slate-800">
 
-        <div class="flex items-center justify-between h-20 px-6 border-b border-gray-200">
-            <span class="font-bold text-lg text-gray-900" data-i18n="nav.menu">Menu</span>
+        <div class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-slate-700">
+            <span class="font-bold text-lg text-gray-900 dark:text-white" data-i18n="nav.menu">Menu</span>
             <button id="navbar-close"
                 type="button"
-                class="w-9 h-9 flex items-center justify-center rounded-md text-gray-600 hover:bg-gray-100 transition-colors"
+                class="w-9 h-9 flex items-center justify-center rounded-md text-gray-600 hover:bg-gray-100 transition-colors dark:text-gray-300 dark:hover:bg-slate-700"
                 aria-label="Tutup menu navigasi">
                 <div class="w-5 h-4 relative flex flex-col justify-center">
                     <span class="close-bar close-bar-1 block h-0.5 w-full bg-current rounded absolute rotate-45"></span>
@@ -297,45 +307,49 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                     <a href="<?= htmlspecialchars($href) ?>"
                         data-path="<?= htmlspecialchars($file) ?>"
                         data-anchor="<?= htmlspecialchars($anchor) ?>"
-                        data-i18n="<?= htmlspecialchars($item['key'] ?? '') ?>"
-                        class="nav-link-mobile block px-3 py-2.5 rounded-md text-sm font-medium transition-colors <?= $active ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100 hover:text-blue-600' ?>">
+                        class="nav-link-mobile block px-3 py-2.5 rounded-md text-sm font-medium transition-colors <?= $active ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' : 'text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-blue-400' ?>"
+                        data-i18n="<?= htmlspecialchars($item['key'] ?? '') ?>">
                         <?= htmlspecialchars($label) ?>
                     </a>
                 </li>
             <?php endforeach; ?>
         </ul>
 
-        <!-- Jam Digital & Auth (Mobile) -->
-        <div class="mt-auto flex flex-col gap-3 px-4 pb-6 pt-3 border-t border-gray-200">
+        <!-- Bagian bawah drawer: bahasa, dark mode, jam, auth -->
+        <div class="mt-auto flex flex-col gap-3 px-4 pb-6 pt-3 border-t border-gray-200 dark:border-slate-700">
+
             <!-- Language Switcher Mobile -->
-            <div class="flex items-center rounded-xl bg-gray-50 border border-gray-200/80 p-1 text-xs font-semibold">
-                <button type="button" data-lang-set="id" class="lang-option flex-1 py-2 rounded-lg transition-colors text-gray-500">🇮🇩 ID</button>
-                <button type="button" data-lang-set="en" class="lang-option flex-1 py-2 rounded-lg transition-colors text-gray-500">🇬🇧 EN</button>
+            <div class="flex items-center rounded-xl bg-gray-50 border border-gray-200/80 p-1 text-xs font-semibold dark:bg-slate-700 dark:border-slate-600">
+                <button type="button" data-lang-set="id" class="lang-option flex-1 py-2 rounded-lg transition-colors text-gray-500 dark:text-gray-400">🇮🇩 ID</button>
+                <button type="button" data-lang-set="en" class="lang-option flex-1 py-2 rounded-lg transition-colors text-gray-500 dark:text-gray-400">🇬🇧 EN</button>
             </div>
+
             <!-- Toggle Dark Mode Mobile -->
             <button id="theme-toggle-mobile" type="button"
-                class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-700 text-xs font-semibold hover:bg-gray-100 transition-colors">
-                <svg id="theme-icon-sun-mobile" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-700 text-xs font-semibold hover:bg-gray-100 transition-colors dark:bg-slate-700 dark:border-slate-600 dark:text-gray-200 dark:hover:bg-slate-600">
+                <svg id="theme-icon-sun-mobile" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <circle cx="12" cy="12" r="4"></circle>
                     <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
                 </svg>
-                <svg id="theme-icon-moon-mobile" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg id="theme-icon-moon-mobile" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
                 </svg>
                 <span id="theme-label-mobile">Mode Gelap</span>
             </button>
+
             <!-- Digital Clock Mobile -->
-            <div class="flex items-center justify-center gap-2 py-2 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-700 font-mono text-xs font-semibold tracking-wider">
-                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div class="flex items-center justify-center gap-2 py-2 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-700 font-mono text-xs font-semibold tracking-wider dark:bg-slate-700 dark:border-slate-600 dark:text-gray-200">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <span class="digital-clock">00:00:00 WIB</span>
             </div>
 
+            <!-- Auth buttons mobile -->
             <div class="flex items-center gap-3">
                 <?php if ($isLoggedIn): ?>
                     <a href="<?= htmlspecialchars($dashboardLink) ?>"
-                        class="flex-1 text-center px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors">
+                        class="flex-1 text-center px-4 py-2.5 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors dark:text-gray-200 dark:hover:bg-slate-700">
                         Dashboard
                     </a>
                     <a href="<?= htmlspecialchars($baseUrl . 'auth/logout.php') ?>"
@@ -346,7 +360,7 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
                 <?php else: ?>
                     <a href="<?= htmlspecialchars($baseUrl . 'auth/login.php') ?>"
                         data-i18n="nav.login"
-                        class="flex-1 text-center px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 border border-gray-200 hover:bg-gray-50 transition-colors">
+                        class="flex-1 text-center px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 border border-gray-200 hover:bg-gray-50 transition-colors dark:text-gray-300 dark:border-slate-600 dark:hover:bg-slate-700">
                         Masuk
                     </a>
                     <a href="<?= htmlspecialchars($baseUrl . 'auth/register.php') ?>"
@@ -369,12 +383,10 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
             const timeString = `${hours}:${minutes}:${seconds} WIB`;
-
             document.querySelectorAll('.digital-clock').forEach(clock => {
                 clock.textContent = timeString;
             });
         }
-
         updateDigitalClock();
         setInterval(updateDigitalClock, 1000);
     });
@@ -405,9 +417,7 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
             document.documentElement.classList.toggle('dark', dark);
             try {
                 localStorage.setItem('educare-theme', dark ? 'dark' : 'light');
-            } catch (e) {
-                /* localStorage tidak tersedia, abaikan */
-            }
+            } catch (e) {}
             syncIcons();
         }
 
@@ -450,6 +460,7 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
             document.addEventListener('click', function(e) {
                 if (!menu.contains(e.target) && e.target !== toggle) closeMenu();
             });
+            // Tutup dropdown saat salah satu opsi bahasa dipilih
             menu.querySelectorAll('[data-lang-set]').forEach(function(item) {
                 item.addEventListener('click', closeMenu);
             });
@@ -457,7 +468,7 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
     })();
 </script>
 
-<!-- JavaScript Mobile Drawer (Buka/Tutup) -->
+<!-- JavaScript Mobile Drawer -->
 <script>
     (function() {
         document.addEventListener('DOMContentLoaded', function() {
@@ -489,7 +500,11 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
             if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
             overlay.addEventListener('click', closeDrawer);
 
-            // Tutup drawer otomatis kalau layar di-resize ke atas breakpoint xl
+            // Tutup drawer saat pilih bahasa (mobile)
+            drawer.querySelectorAll('[data-lang-set]').forEach(function(btn) {
+                btn.addEventListener('click', closeDrawer);
+            });
+
             window.addEventListener('resize', function() {
                 if (window.innerWidth >= 1280) closeDrawer();
             });
@@ -497,52 +512,5 @@ function isActiveLink(string $itemPath, string $currentPath, string $anchor = ''
     })();
 </script>
 
-<!-- JavaScript Navbar Auto-Hide saat Scroll -->
-<script>
-    (function() {
-        document.addEventListener('DOMContentLoaded', function() {
-            var navbar = document.getElementById('site-navbar');
-            if (!navbar) return;
-
-            var lastScrollY = window.scrollY;
-            var scrollThreshold = 80; // jarak minimal sebelum navbar mulai sembunyi
-            var ticking = false;
-
-            function handleScroll() {
-                var currentScrollY = window.scrollY;
-
-                // Jangan sembunyikan navbar kalau drawer mobile sedang terbuka
-                if (document.body.classList.contains('navbar-drawer-open')) {
-                    ticking = false;
-                    return;
-                }
-
-                if (currentScrollY <= scrollThreshold) {
-                    // Selalu tampil kalau masih di area atas halaman
-                    navbar.classList.remove('navbar-hidden');
-                } else if (currentScrollY > lastScrollY) {
-                    // Scroll ke bawah -> sembunyikan
-                    navbar.classList.add('navbar-hidden');
-                } else {
-                    // Scroll ke atas -> tampilkan
-                    navbar.classList.remove('navbar-hidden');
-                }
-
-                lastScrollY = currentScrollY;
-                ticking = false;
-            }
-
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(handleScroll);
-                    ticking = true;
-                }
-            }, {
-                passive: true
-            });
-        });
-    })();
-</script>
-
-<!-- i18n: Fitur Bahasa (ID/EN) -->
+<!-- i18n: Fitur Bahasa (ID/EN) - PASTIKAN PATH INI BENAR -->
 <script src="<?= htmlspecialchars($baseUrl) ?>assets/js/i18n.js" defer></script>
