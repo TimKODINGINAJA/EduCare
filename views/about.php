@@ -155,7 +155,7 @@ foreach ($materiData as $m) {
           class="text-xs font-semibold tracking-wide
                        text-slate-500 dark:text-slate-400"
           data-i18n="about.badge">
-          Tentang EduCare
+          Profil
         </span>
 
       </div>
@@ -173,11 +173,9 @@ foreach ($materiData as $m) {
                    leading-tight
                    tracking-tight
                    text-slate-900
-                   dark:text-white">
-        Satu Platform untuk
-        <span class="text-primary dark:text-blue-400">
-          Sekolah yang Lebih Baik
-        </span>
+                   dark:text-white"
+        data-i18n="about.title">
+        Satu Platform untuk Menjawab Dua Kebutuhan Sekolah Sekaligus
       </h1>
 
 
@@ -192,10 +190,9 @@ foreach ($materiData as $m) {
                    md:text-lg
                    leading-relaxed
                    text-slate-600
-                   dark:text-slate-400">
-        EduCare adalah platform digital sekolah yang menghubungkan
-        proses pembelajaran, komunikasi, dan pelaporan dalam satu
-        sistem yang sederhana dan mudah digunakan.
+                   dark:text-slate-400"
+        data-i18n="about.deck">
+        Di tengah sekolah yang masih mengelola pembelajaran dan pengaduan secara terpisah, EduCare hadir menyatukan keduanya — dari ruang kelas digital sampai laporan fasilitas rusak, dalam satu alur yang sama.
       </p>
 
 
@@ -213,8 +210,9 @@ foreach ($materiData as $m) {
                        font-semibold
                        text-white
                        hover:bg-blue-800
-                       transition">
-          Mulai Menggunakan EduCare
+                       transition"
+          data-i18n="about.cta_button">
+          Mulai Belajar
 
           <svg
             width="16"
@@ -280,8 +278,9 @@ foreach ($materiData as $m) {
                            font-bold
                            uppercase
                            tracking-[0.18em]
-                           text-primary">
-            Tentang Kami
+                           text-primary"
+            data-i18n="about.crumb">
+            Tentang EduCare
           </p>
 
         </div>
@@ -296,9 +295,9 @@ foreach ($materiData as $m) {
                            text-3xl
                            md:text-4xl
                            font-semibold
-                           leading-tight">
-            Pendidikan tidak hanya
-            tentang belajar.
+                           leading-tight"
+            data-i18n="about.title">
+            Satu Platform untuk Menjawab Dua Kebutuhan Sekolah Sekaligus
           </h2>
 
           <p
@@ -306,33 +305,42 @@ foreach ($materiData as $m) {
                            md:text-lg
                            leading-relaxed
                            text-slate-600
-                           dark:text-slate-400">
-            EduCare dibuat dari sebuah kebutuhan sederhana:
-            bagaimana membuat aktivitas sekolah menjadi lebih
-            terhubung secara digital.
+                           dark:text-slate-400"
+            data-i18n="about.p1">
+            EduCare dimulai dari pengamatan sederhana: siswa belajar lewat satu aplikasi, sementara keluhan tentang fasilitas atau lingkungan sekolah dilaporkan lewat cara yang berbeda-beda — dari kertas, grup chat, sampai kotak saran yang jarang dibuka. Dua kebutuhan yang sebenarnya berjalan setiap hari, tapi tidak pernah benar-benar terhubung.
           </p>
 
           <p
             class="text-base
                            leading-relaxed
                            text-slate-600
-                           dark:text-slate-400">
-            Dalam satu platform, siswa dapat mengakses materi,
-            mengikuti pembelajaran, mengerjakan kuis, dan
-            memantau perkembangan mereka. Di sisi lain, guru
-            dan pihak sekolah dapat mengelola informasi serta
-            menerima laporan dari siswa dengan lebih terstruktur.
+                           dark:text-slate-400"
+            data-i18n-html="about.p2_html">
+            Dari situ EduCare dibangun sebagai satu platform yang menggabungkan <strong class="font-semibold text-slate-900 dark:text-white">Belajar Online</strong> — mulai dari mata pelajaran umum seperti Matematika dan IPA, sampai bidang IT seperti Pemrograman dan AI — dengan <strong class="font-semibold text-slate-900 dark:text-white">SiLapor Sekolah</strong>, sistem pelaporan yang membuat setiap laporan tercatat, terlacak statusnya, dan sampai ke pihak yang tepat.
+          </p>
+
+          <blockquote
+            class="border-l-4 border-primary pl-6 italic text-slate-700 dark:text-slate-300 text-lg"
+            data-i18n="about.quote">
+            “Sekolah yang responsif bukan cuma soal mengajar dengan baik, tapi juga mendengar dengan cepat.”
+          </blockquote>
+
+          <p
+            class="text-base
+                           leading-relaxed
+                           text-slate-600
+                           dark:text-slate-400"
+            data-i18n="about.p3">
+            Bagi siswa, ini berarti satu akun untuk mengakses materi, mengerjakan kuis, dan memantau progres belajar dari mata pelajaran apa pun. Bagi guru dan pihak sekolah, setiap laporan yang masuk melalui SiLapor punya status yang jelas — mulai dari diterima, diproses, hingga selesai ditangani — sehingga tidak ada laporan yang hilang begitu saja.
           </p>
 
           <p
             class="text-base
                            leading-relaxed
                            text-slate-600
-                           dark:text-slate-400">
-            Dengan pendekatan tersebut, EduCare ingin membantu
-            menciptakan lingkungan sekolah yang lebih terbuka,
-            responsif, dan siap menghadapi kebutuhan pendidikan
-            di era digital.
+                           dark:text-slate-400"
+            data-i18n="about.p4">
+            Hari ini, EduCare digunakan oleh guru dan siswa untuk menjalankan dua sisi kehidupan sekolah yang sama pentingnya: belajar setiap hari, dan memastikan lingkungan belajar itu sendiri tetap layak digunakan.
           </p>
 
         </div>
@@ -346,7 +354,7 @@ foreach ($materiData as $m) {
 
 
   <!-- =========================================================
-     VISI & MISI
+     FAKTA SINGKAT
 ========================================================= -->
 
   <section class="px-6 py-20">
@@ -355,31 +363,19 @@ foreach ($materiData as $m) {
 
       <div class="text-center mb-12">
 
-        <p
-          class="text-xs
-                       font-bold
-                       uppercase
-                       tracking-[0.18em]
-                       text-primary
-                       mb-3">
-          Visi & Tujuan
-        </p>
-
         <h2
           class="font-serif
                        text-3xl
                        md:text-4xl
-                       font-semibold">
-          Membangun sekolah yang lebih terhubung
+                       font-semibold"
+          data-i18n="about.facts_heading">
+          Fakta Singkat
         </h2>
 
       </div>
 
 
-      <div class="grid md:grid-cols-2 gap-5">
-
-
-        <!-- Vision -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
         <div
           class="about-card
@@ -390,52 +386,28 @@ foreach ($materiData as $m) {
                        bg-white
                        dark:bg-slate-900
                        p-7
-                       md:p-8">
+                       text-center">
 
-          <div
-            class="w-11 h-11
-                           rounded-xl
-                           bg-blue-50
-                           dark:bg-blue-500/10
-                           text-primary
-                           flex items-center
-                           justify-center
-                           mb-6">
-
-            <svg
-              width="21"
-              height="21"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8">
-              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-
-          </div>
-
-          <h3
-            class="text-xl
-                           font-semibold
-                           mb-3">
-            Visi
-          </h3>
-
-          <p
-            class="leading-relaxed
-                           text-slate-600
-                           dark:text-slate-400">
-            Menjadi platform digital yang membantu sekolah
-            menciptakan proses belajar dan komunikasi yang
-            lebih mudah, transparan, dan terintegrasi.
-          </p>
+          <p class="text-4xl font-bold text-primary dark:text-blue-400"><?= $totalMateri ?>+</p>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400" data-i18n="about.fact1_label">Materi tersedia</p>
 
         </div>
 
+        <div
+          class="about-card
+                       rounded-2xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-7
+                       text-center">
 
+          <p class="text-4xl font-bold text-primary dark:text-blue-400"><?= $totalVideo ?>+</p>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400" data-i18n="about.fact2_label">Video pembelajaran</p>
 
-        <!-- Mission -->
+        </div>
 
         <div
           class="about-card
@@ -446,47 +418,26 @@ foreach ($materiData as $m) {
                        bg-white
                        dark:bg-slate-900
                        p-7
-                       md:p-8">
+                       text-center">
 
-          <div
-            class="w-11 h-11
-                           rounded-xl
-                           bg-blue-50
-                           dark:bg-blue-500/10
-                           text-primary
-                           flex items-center
-                           justify-center
-                           mb-6">
+          <p class="text-4xl font-bold text-primary dark:text-blue-400">50+</p>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400" data-i18n="about.fact3_label">Siswa aktif</p>
 
-            <svg
-              width="21"
-              height="21"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8">
-              <path d="M12 2v20" />
-              <path d="m5 9 7-7 7 7" />
-              <path d="M5 15h14" />
-            </svg>
+        </div>
 
-          </div>
+        <div
+          class="about-card
+                       rounded-2xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-7
+                       text-center">
 
-          <h3
-            class="text-xl
-                           font-semibold
-                           mb-3">
-            Tujuan
-          </h3>
-
-          <p
-            class="leading-relaxed
-                           text-slate-600
-                           dark:text-slate-400">
-            Menghadirkan teknologi yang sederhana dan bermanfaat
-            agar siswa, guru, dan sekolah dapat beraktivitas
-            dengan lebih efektif.
-          </p>
+          <p class="text-4xl font-bold text-primary dark:text-blue-400">5</p>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400" data-i18n="about.fact4_label">Sekolah mitra</p>
 
         </div>
 
@@ -499,7 +450,7 @@ foreach ($materiData as $m) {
 
 
   <!-- =========================================================
-     PERAN PENGGUNA (Siswa / Guru / Sekolah)
+     BACA JUGA
 ========================================================= -->
 
   <section
@@ -512,97 +463,67 @@ foreach ($materiData as $m) {
 
     <div class="max-w-5xl mx-auto">
 
-      <!-- Heading -->
-      <div class="grid md:grid-cols-[1fr_320px] gap-8 items-start
-                  border-b border-slate-200 dark:border-slate-800 pb-10 mb-2">
+      <div class="text-center mb-12">
 
-        <h2 class="font-serif text-3xl md:text-4xl font-semibold leading-tight">
-          Satu login, tiga
-          pengalaman yang fokus.
+        <h2
+          class="font-serif
+                       text-3xl
+                       md:text-4xl
+                       font-semibold"
+          data-i18n="about.related_heading">
+          Baca Juga
         </h2>
 
-        <p class="text-slate-600 dark:text-slate-400 leading-relaxed md:pt-2">
-          Siswa, guru, dan pihak sekolah masing-masing punya ruang kerja
-          sendiri, sementara seluruh sekolah berjalan di atas data yang
-          sama dan terhubung.
-        </p>
-
       </div>
 
+      <div class="grid md:grid-cols-3 gap-5">
 
-      <!-- Row: Siswa -->
-      <div class="grid md:grid-cols-[80px_260px_1fr] gap-6 md:gap-10
-                  py-10 border-b border-slate-200 dark:border-slate-800">
+        <div
+          class="about-card
+                       rounded-2xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-7">
 
-        <p class="font-serif text-xl text-primary dark:text-blue-400">01</p>
+          <h3 class="text-lg font-semibold" data-i18n="about.related1_title">Belajar Pemrograman dari Nol lewat EduCare</h3>
+          <p class="mt-1 text-sm text-primary dark:text-blue-400" data-i18n="about.related1_cat">Edukasi IT</p>
+          <a href="#" class="mt-4 inline-block text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 transition">Baca →</a>
 
-        <div>
-          <h3 class="text-xl font-semibold mb-1">Siswa</h3>
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500 mb-3">
-            Belajar
-          </p>
-          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-            Satu tempat untuk materi, tugas, dan hasil belajar, lengkap
-            dengan kuis dan pemantauan progress.
-          </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 content-start">
-          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
-            Akses materi dan tugas pembelajaran
-          </p>
-          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
-            Kuis dan evaluasi terstruktur
-          </p>
-          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
-            Pantau progress belajar
-          </p>
-          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
-            Sampaikan laporan lewat SiLapor
-          </p>
+        <div
+          class="about-card
+                       rounded-2xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-7">
+
+          <h3 class="text-lg font-semibold" data-i18n="about.related2_title">Cara Kerja SiLapor: dari Laporan Masuk sampai Selesai</h3>
+          <p class="mt-1 text-sm text-primary dark:text-blue-400" data-i18n="about.related2_cat">SiLapor</p>
+          <a href="#" class="mt-4 inline-block text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 transition">Baca →</a>
+
         </div>
 
-      </div>
+        <div
+          class="about-card
+                       rounded-2xl
+                       border
+                       border-slate-200
+                       dark:border-slate-800
+                       bg-white
+                       dark:bg-slate-900
+                       p-7">
 
+          <h3 class="text-lg font-semibold" data-i18n="about.related3_title">Memantau Progres Belajar Siswa secara Real-Time</h3>
+          <p class="mt-1 text-sm text-primary dark:text-blue-400" data-i18n="about.related3_cat">Belajar Online</p>
+          <a href="#" class="mt-4 inline-block text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-blue-400 transition">Baca →</a>
 
-      <!-- Row: Guru -->
-      <div class="grid md:grid-cols-[80px_260px_1fr] gap-6 md:gap-10
-                  py-10 border-b border-slate-200 dark:border-slate-800">
-
-        <p class="font-serif text-xl text-primary dark:text-blue-400">02</p>
-
-        <div>
-          <h3 class="text-xl font-semibold mb-1">Guru</h3>
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500 mb-3">
-            Mengajar
-          </p>
-          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-            Kelola aktivitas pembelajaran dan informasi siswa dengan
-            lebih terstruktur, tanpa proses yang berbelit.
-          </p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3 content-start">
-          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
-            Kelola aktivitas pembelajaran
-          </p>
-          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
-            Buat dan nilai kuis siswa
-          </p>
-          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
-            Pantau perkembangan siswa
-          </p>
-          <p class="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-            <span class="text-primary dark:text-blue-400 mt-0.5">✓</span>
-            Terima dan tindak lanjuti laporan SiLapor
-          </p>
         </div>
 
       </div>
@@ -610,6 +531,8 @@ foreach ($materiData as $m) {
     </div>
 
   </section>
+
+
 
   <!-- =========================================================
      CTA
@@ -633,20 +556,10 @@ foreach ($materiData as $m) {
                    text-3xl
                    md:text-4xl
                    font-semibold
-                   text-white">
-        Mari mulai perjalanan belajar
-        yang lebih baik.
+                   text-white"
+        data-i18n="about.cta_text">
+        Mau lihat sendiri bagaimana EduCare bekerja?
       </h2>
-
-      <p
-        class="max-w-xl
-                   mx-auto
-                   mt-4
-                   text-blue-100
-                   leading-relaxed">
-        Bergabung dengan EduCare dan nikmati pengalaman
-        pembelajaran sekolah yang lebih sederhana dan terhubung.
-      </p>
 
       <a
         href="<?= htmlspecialchars($baseUrl . 'auth/register.php') ?>"
@@ -662,8 +575,9 @@ foreach ($materiData as $m) {
                    font-semibold
                    text-primary
                    hover:bg-blue-50
-                   transition">
-        Mulai Sekarang
+                   transition"
+        data-i18n="about.cta_button">
+        Mulai Belajar
 
         <svg
           width="16"

@@ -7,7 +7,7 @@ $baseUrl = rtrim(BASE_URL, '/') . '/';
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10 pb-12">
             <div>
                 <a href="<?= htmlspecialchars(pageUrl('index.php') . '#home') ?>" class="flex items-center gap-2.5 mb-4">
-                    <img src="<?= htmlspecialchars(assetUrl('assets/img/EduCare-logo.png')) ?>" alt="Logo EduCare" width="28" height="28" class="w-7 h-7 object-contain rounded-md">
+                    <img src="<?= htmlspecialchars(assetUrl('assets/logo/EduCare-logo.png')) ?>" alt="Logo EduCare" width="28" height="28" class="w-7 h-7 object-contain rounded-md">
                     <span class="font-display font-bold text-slate-900">EduCare</span>
                 </a>
                 <p class="text-[13.5px] text-slate-500 leading-relaxed" data-i18n="footer.desc">Platform pembelajaran digital untuk siswa yang ingin menguasai skill teknologi masa depan.</p>

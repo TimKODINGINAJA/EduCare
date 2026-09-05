@@ -164,14 +164,64 @@
           meta: "kategori: kebersihan · 3 hari lalu",
         },
         status: {
-          in_review: "in-review",
-          open: "open",
-          resolved: "resolved",
+          in_review: "Diperiksa",
+          open: "Belum diproses",
+          resolved: "Selesai",
         },
         issues_label: "Laporan Masuk",
-        header_open_count: "3 open",
+        header_open_count: "3 belum selesai",
         admin_note:
           "Dashboard admin memantau seluruh laporan hingga selesai ditangani.",
+
+        // ===== TAMBAHAN UNTUK SILAPOR =====
+        howitworks: {
+          badge: "Cara Kerja",
+          title: "Tiga langkah sederhana, dari lapor sampai selesai.",
+          desc: "SiLapor dirancang agar siswa tidak perlu bingung harus lapor ke siapa. Cukup buat laporan, dan sistem akan meneruskannya ke pihak yang tepat.",
+          step1: {
+            title: "Pilih kategori & tulis laporan",
+            desc: "Pilih kategori yang sesuai — fasilitas rusak, bullying, kebersihan, atau kehilangan barang — lalu jelaskan situasinya secara singkat. Foto bisa dilampirkan sebagai bukti pendukung.",
+          },
+          step2: {
+            title: "Laporan diteruskan otomatis",
+            desc: "Sistem memberi nomor tiket dan meneruskan laporan ke guru atau admin sekolah yang berwenang menangani kategori tersebut.",
+          },
+          step3: {
+            title: "Pantau status seperti tiket",
+            desc: "Status laporan berubah dari Belum diproses → Diperiksa → Selesai, dan siswa bisa memantaunya kapan saja lewat dashboard.",
+          },
+        },
+        categories: {
+          badge: "Kategori Laporan",
+          title: "Setiap jenis masalah, punya jalur penanganannya sendiri.",
+          desc: "Kategori membantu laporan langsung sampai ke pihak yang tepat, tanpa perlu bolak-balik menjelaskan ke siapa harus melapor.",
+        },
+        status_legend: {
+          title: "Arti status laporan",
+          open_desc:
+            "Laporan baru masuk dan belum ditinjau oleh pihak sekolah.",
+          in_review_desc:
+            "Laporan sedang ditinjau atau ditindaklanjuti oleh pihak yang berwenang.",
+          resolved_desc:
+            "Masalah sudah ditangani dan laporan dinyatakan tuntas.",
+        },
+        faq: {
+          badge: "Pertanyaan Umum",
+          title: "Yang sering ditanyakan tentang SiLapor",
+          q1: "Apakah identitas saya akan diketahui saat melapor?",
+          a1: "Untuk kategori sensitif seperti bullying, identitas pelapor dijaga kerahasiaannya dan hanya dapat diakses oleh guru BK atau pihak yang berwenang menangani kasus tersebut.",
+          q2: "Berapa lama laporan biasanya ditindaklanjuti?",
+          a2: "Waktu penanganan tergantung pada kategori dan tingkat urgensi laporan. Setiap perubahan status akan terlihat langsung di dashboard, sehingga siswa dapat memantau perkembangannya.",
+          q3: "Apakah saya bisa melampirkan foto sebagai bukti?",
+          a3: "Bisa. Melampirkan foto sangat disarankan, terutama untuk laporan fasilitas rusak atau kebersihan, agar pihak sekolah dapat lebih cepat memahami kondisi sebenarnya.",
+          q4: "Apa yang terjadi setelah laporan berstatus 'Selesai'?",
+          a4: "Laporan akan tersimpan sebagai riwayat dan tetap dapat dibuka kembali kapan saja. Jika masalah muncul lagi, siswa disarankan membuat laporan baru agar tercatat sebagai kasus terpisah.",
+        },
+        cta: {
+          title: "Ada masalah di sekolah? Jangan dipendam sendiri.",
+          desc: "Laporkan lewat SiLapor dan biarkan pihak sekolah membantu menyelesaikannya.",
+          button: "Buat Laporan Sekarang",
+        },
       },
       alur: {
         badge: "Cara Kerja",
@@ -296,7 +346,7 @@
         kontak: "Kontak Kami - EduCare",
         about: "Tentang EduCare — Profil",
         dashboard_siswa: "Dashboard Siswa • EduCare",
-        dashboard_guru: "Dashboard Guru • EduCare"
+        dashboard_guru: "Dashboard Guru • EduCare",
       },
       kontak: {
         badge: "Hubungi Kami",
@@ -458,7 +508,8 @@
           tab_it: "IT / Teknologi",
           tab_umum: "Umum",
           search_placeholder: "🔎 Cari materi...",
-          no_quiz_category: "Kuis untuk kategori materi ini belum tersedia. Silakan hubungi guru Anda.",
+          no_quiz_category:
+            "Kuis untuk kategori materi ini belum tersedia. Silakan hubungi guru Anda.",
         },
         quiz: {
           title: "Quiz & Latihan ❓",
@@ -467,14 +518,16 @@
           all_quiz_title: "🧑‍🏫 Semua Quiz",
           manage_questions: "Kelola Soal",
           no_questions_title: "Belum Ada Soal",
-          no_questions_desc: "Silakan tambahkan soal pertama untuk kuis ini dengan mengklik tombol \"Tambah Soal\".",
+          no_questions_desc:
+            'Silakan tambahkan soal pertama untuk kuis ini dengan mengklik tombol "Tambah Soal".',
           submit_button: "Kirim",
           prev_question: "← Sebelumnya",
           next_question: "Berikutnya →",
           submit_quiz: "📤 Selesai & Kirim",
           time_up: "Waktu habis! Jawaban akan dikirim otomatis.",
           confirm_submit: "Yakin ingin mengumpulkan jawaban?",
-          confirm_leave_progress: "Progres jawabanmu belum dikirim dan akan hilang jika keluar sekarang. Yakin ingin kembali ke dashboard?",
+          confirm_leave_progress:
+            "Progres jawabanmu belum dikirim dan akan hilang jika keluar sekarang. Yakin ingin kembali ke dashboard?",
           confirm_leave: "Yakin ingin keluar dari quiz ini?",
           back_to_dashboard: "← Kembali ke Dashboard",
         },
@@ -536,10 +589,34 @@
             xpNext: "{n} XP lagi menuju Level {level}",
             xpFraction: "{have} / {need} XP",
             calTitle: "📅 Kalender",
-            months: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+            months: [
+              "Januari",
+              "Februari",
+              "Maret",
+              "April",
+              "Mei",
+              "Juni",
+              "Juli",
+              "Agustus",
+              "September",
+              "Oktober",
+              "November",
+              "Desember",
+            ],
             days: ["S", "S", "R", "K", "J", "S", "M"],
           },
-          levelNames: ["Pemula", "Explorer", "Pelajar", "Intermediate", "Advanced", "Pro", "Expert", "Master", "Elite", "Legend"],
+          levelNames: [
+            "Pemula",
+            "Explorer",
+            "Pelajar",
+            "Intermediate",
+            "Advanced",
+            "Pro",
+            "Expert",
+            "Master",
+            "Elite",
+            "Legend",
+          ],
           levelBadges: ["🌱 Pemula", "🌿 Menengah", "🌳 Lanjutan"],
           lbYou: "(Kamu)",
           time: {
@@ -550,15 +627,16 @@
             daysAgo: "{n} hari lalu",
           },
           enroll: {
-            activity: "Mendaftar kursus \"{title}\"",
-            activityAlt: "Mendaftar ke kursus \"{title}\"",
+            activity: 'Mendaftar kursus "{title}"',
+            activityAlt: 'Mendaftar ke kursus "{title}"',
             toast: "Berhasil mendaftar!",
             notifTitle: "Kursus Baru!",
-            notifMsg: "Kamu berhasil mendaftar ke \"{title}\". Selamat belajar!",
+            notifMsg: 'Kamu berhasil mendaftar ke "{title}". Selamat belajar!',
           },
           mycourses: {
             emptyTitle: "Belum ada kursus yang selesai",
-            emptyDesc: "Kursus akan muncul di sini setelah kamu menyelesaikannya 100%. Yuk lanjutkan belajar dulu!",
+            emptyDesc:
+              "Kursus akan muncul di sini setelah kamu menyelesaikannya 100%. Yuk lanjutkan belajar dulu!",
             continue: "▶️ Lanjut Belajar",
             progress100: "100% selesai",
             lessonsCount: "{n} pelajaran",
@@ -571,13 +649,15 @@
             scriptPlaceholder: "📄 Script Langkah",
             close: "Tutup ✕",
             scriptHeading: "📖 Script Praktik: {title}",
-            stepsIntro: "Berikut adalah langkah-langkah praktik untuk memahami materi ini:",
+            stepsIntro:
+              "Berikut adalah langkah-langkah praktik untuk memahami materi ini:",
             step1: "Buka <strong>Coding Playground</strong> (tombol di bawah).",
             step2: "Salin kode contoh dan modifikasi sesuai petunjuk.",
             step3: "Jalankan kode dan amati hasilnya.",
             step4: "Coba variasikan nilai atau struktur kode.",
             tip: "Tips:",
-            tipText: "Gunakan <code>console.log()</code> untuk debug di playground. Jalankan kode di atas untuk melihat output simulasi!",
+            tipText:
+              "Gunakan <code>console.log()</code> untuk debug di playground. Jalankan kode di atas untuk melihat output simulasi!",
             playgroundBtn: "💻 Coding Playground",
             aiBtn: "🤖 Tanya AI Tutor",
             noteBtn: "🔖 Simpan Catatan",
@@ -587,29 +667,36 @@
             doneNext: "✓ Selesai & Lanjut →",
             forumTitle: "💬 Forum Diskusi — {title}",
             forumNew: "+ Buat Topik Baru",
-            forumEmpty: "Belum ada diskusi. Jadilah yang pertama bertanya atau berbagi!",
+            forumEmpty:
+              "Belum ada diskusi. Jadilah yang pertama bertanya atau berbagi!",
             like: "Suka",
             reply: "Balas",
             noActiveDesc: "Daftar kursus dulu untuk mulai belajar!",
             noLessonsTitle: "Kursus belum punya pelajaran",
-            noLessonsDesc: "Kursus \"{title}\" belum memiliki pelajaran. Silakan hubungi guru Anda atau cek materi lain.",
+            noLessonsDesc:
+              'Kursus "{title}" belum memiliki pelajaran. Silakan hubungi guru Anda atau cek materi lain.',
           },
           complete: {
             bonus: "Bonus chapter selesai!",
-            courseDone: "🎉 Selamat! Kursus selesai! +500 XP & Sertifikat diraih!",
+            courseDone:
+              "🎉 Selamat! Kursus selesai! +500 XP & Sertifikat diraih!",
             lessonDone: "✅ Pelajaran selesai! +30 XP",
             allDone: "🎉 Kamu sudah menyelesaikan semua pelajaran!",
             allDoneToast: "🎉 Semua materi & kursus sudah kamu selesaikan!",
-            lessonReason: "Menyelesaikan pelajaran di \"{title}\"",
-            courseReason: "Menyelesaikan kursus \"{title}\"",
+            lessonReason: 'Menyelesaikan pelajaran di "{title}"',
+            courseReason: 'Menyelesaikan kursus "{title}"',
             chapterTitle: "Chapter Selesai!",
-            chapterMsg: "Kamu telah menyelesaikan chapter di \"{title}\". Lanjut terus!",
+            chapterMsg:
+              'Kamu telah menyelesaikan chapter di "{title}". Lanjut terus!',
             courseTitle: "Kursus Selesai!",
-            courseMsg: "Selamat! Kamu telah menyelesaikan \"{title}\". Sertifikatmu sudah tersedia!",
+            courseMsg:
+              'Selamat! Kamu telah menyelesaikan "{title}". Sertifikatmu sudah tersedia!',
           },
           playground: {
-            onlyIT: "Coding Playground hanya tersedia untuk kursus IT/Pemrograman.",
-            noLesson: "Kursus ini belum punya pelajaran untuk dipraktikkan. Tambahkan pelajaran dari dashboard guru.",
+            onlyIT:
+              "Coding Playground hanya tersedia untuk kursus IT/Pemrograman.",
+            noLesson:
+              "Kursus ini belum punya pelajaran untuk dipraktikkan. Tambahkan pelajaran dari dashboard guru.",
             placeholder: "// Tulis kode di sini...",
             title: "💻 Coding Playground: {title}",
             hint: "Tulis atau modifikasi kode di bawah, lalu klik Jalankan.",
@@ -623,7 +710,8 @@
           ai: {
             prompt: "Tanyakan sesuatu tentang materi ini (AI Tutor):",
             thinking: "AI Tutor sedang memproses...",
-            reply: "🤖 AI: Terima kasih atas pertanyaanmu! Pastikan untuk mempraktikkan kode setiap selesai membaca.",
+            reply:
+              "🤖 AI: Terima kasih atas pertanyaanmu! Pastikan untuk mempraktikkan kode setiap selesai membaca.",
           },
           forum: {
             postTitle: "Judul topik diskusi:",
@@ -640,8 +728,10 @@
             noActiveDesc: "Daftar kursus dulu untuk bisa mengerjakan quiz-nya!",
             viewMateri: "📘 Lihat Materi",
             guruSoal: "{n} soal · Quiz Guru",
-            guruRetake: "Quiz ini sudah kamu kerjakan. Kerjakan ulang untuk meningkatkan skor.",
-            guruAvailable: "Quiz ini dibuat oleh guru. Kerjakan di halaman khusus untuk mengumpulkan skor.",
+            guruRetake:
+              "Quiz ini sudah kamu kerjakan. Kerjakan ulang untuk meningkatkan skor.",
+            guruAvailable:
+              "Quiz ini dibuat oleh guru. Kerjakan di halaman khusus untuk mengumpulkan skor.",
             retake: "Kerjakan Ulang →",
             start: "Mulai Kerjakan →",
             gnotAvailableTitle: "Quiz belum tersedia",
@@ -664,7 +754,8 @@
           },
           certs: {
             emptyTitle: "Belum ada sertifikat",
-            emptyDesc: "Selesaikan kursus untuk mendapatkan sertifikat resmi EduCare yang diakui.",
+            emptyDesc:
+              "Selesaikan kursus untuk mendapatkan sertifikat resmi EduCare yang diakui.",
             viewMyCourses: "📚 Lihat Kursus Saya",
             stillNeeds: "Selesaikan {n}% lagi untuk sertifikat ini",
             stillNeedsShort: "Selesaikan {n}% lagi",
@@ -680,7 +771,8 @@
             emptyDesc: "Mulai belajar untuk mendapatkan notifikasi progress!",
             allRead: "Semua notifikasi ditandai dibaca.",
             welcomeTitle: "Selamat bergabung!",
-            welcomeMsg: "Selamat datang di EduCare! Mulai perjalanan belajarmu dari nol hari ini.",
+            welcomeMsg:
+              "Selamat datang di EduCare! Mulai perjalanan belajarmu dari nol hari ini.",
           },
           profile: {
             roleFallback: "Pelajar Aktif",
@@ -696,7 +788,7 @@
               ["100 XP", "Kumpulkan 100 XP"],
               ["Enrolled", "Daftar kursus pertama"],
               ["Speed Learner", "Selesaikan kursus <30 hari"],
-              ["Top Scorer", "Skor quiz 100%"]
+              ["Top Scorer", "Skor quiz 100%"],
             ],
             earned: "✓ DIRAIH",
           },
@@ -732,12 +824,14 @@
             colorAmber: "Amber",
             colorPink: "Merah Muda",
             colorCyan: "Cyan",
-            saved: "Profil berhasil diperbarui secara lokal! Hubungi admin untuk perubahan data resmi. ✅",
+            saved:
+              "Profil berhasil diperbarui secara lokal! Hubungi admin untuk perubahan data resmi. ✅",
             themeChanged: "Tema diubah!",
           },
           materi: {
             emptyTitle: "Materi tidak ditemukan",
-            emptyDesc: "Belum ada materi yang cocok dengan pencarian atau kategori ini.",
+            emptyDesc:
+              "Belum ada materi yang cocok dengan pencarian atau kategori ini.",
             notOpened: "Belum Dibuka",
             hasVideo: "🎬 Ada Video",
             textModule: "📄 Modul Teks",
@@ -747,13 +841,14 @@
             prev: "← Materi Sebelumnya",
             next: "Materi Selanjutnya →",
             quizCta: "🎯 Siap Menguji Pemahamanmu?",
-            quizCtaDesc: "Kerjakan <strong>{quiz}</strong> untuk menguji materi ini dan mengumpulkan skor.",
+            quizCtaDesc:
+              "Kerjakan <strong>{quiz}</strong> untuk menguji materi ini dan mengumpulkan skor.",
             takeQuiz: "Kerjakan Kuis →",
             back: "← Kembali ke Materi",
             studied: "✓ Selesai Dipelajari",
-            openedXp: "Membuka materi \"{title}\"",
+            openedXp: 'Membuka materi "{title}"',
             openedNotifTitle: "Materi Dipelajari",
-            openedNotifMsg: "Kamu membuka materi \"{title}\".",
+            openedNotifMsg: 'Kamu membuka materi "{title}".',
             published: "Diterbitkan: {date}",
           },
           levelup: {
@@ -766,7 +861,8 @@
       belajar: {
         materi: {
           page_title: "Materi Pembelajaran",
-          page_subtitle: "Jelajahi materi, tonton modul video, dan selesaikan quiz untuk mendapatkan sertifikat.",
+          page_subtitle:
+            "Jelajahi materi, tonton modul video, dan selesaikan quiz untuk mendapatkan sertifikat.",
           class_label: "Kelas 9A • Siswa",
           tab_mtk: "Matematika",
           search_ph: "Cari materi...",
@@ -775,7 +871,8 @@
           text_module: "Modul Teks",
           start_learning: "Mulai Belajar",
           empty_title: "Materi Belajar Kosong",
-          empty_desc: "Belum ada materi pelajaran yang diunggah oleh guru saat ini.",
+          empty_desc:
+            "Belum ada materi pelajaran yang diunggah oleh guru saat ini.",
         },
         detail: {
           back_to_materi: "Kembali ke Materi",
@@ -792,7 +889,8 @@
           quiz_cta_desc_prefix: "Selesaikan kuis interaktif",
           quiz_cta_desc_min: "(minimal",
           quiz_cta_desc_questions: "soal)",
-          quiz_cta_desc_suffix: "untuk menguji materi ini dan klaim sertifikat belajar Anda.",
+          quiz_cta_desc_suffix:
+            "untuk menguji materi ini dan klaim sertifikat belajar Anda.",
           take_quiz_now: "Kerjakan Kuis Sekarang",
           copied: "Copied!",
         },
@@ -829,7 +927,8 @@
             required_fields: "Field Nama, Email, dan Role wajib diisi!",
             email_exists_other: "Email sudah digunakan oleh user lain!",
             update_success: "Data user berhasil diperbarui!",
-            cannot_delete_self: "Anda tidak dapat menghapus akun Anda sendiri yang sedang aktif!",
+            cannot_delete_self:
+              "Anda tidak dapat menghapus akun Anda sendiri yang sedang aktif!",
             delete_success: "User berhasil dihapus!",
           },
           laporan: {
@@ -844,8 +943,10 @@
           },
         },
         quiz: {
-          no_questions: "Quiz ini belum memiliki soal. Silakan hubungi guru Anda.",
-          no_valid_questions: "Quiz ini belum memiliki soal yang valid. Silakan hubungi guru Anda.",
+          no_questions:
+            "Quiz ini belum memiliki soal. Silakan hubungi guru Anda.",
+          no_valid_questions:
+            "Quiz ini belum memiliki soal yang valid. Silakan hubungi guru Anda.",
         },
       },
 
@@ -915,7 +1016,8 @@
           video_active: "Video Aktif",
           text_only: "Teks Saja",
           empty_title: "Belum Ada Materi",
-          empty_desc: "Materi pembelajaran digital belum tersedia. Silakan klik tombol \"Tambah Materi\" untuk mengunggah.",
+          empty_desc:
+            'Materi pembelajaran digital belum tersedia. Silakan klik tombol "Tambah Materi" untuk mengunggah.',
           add_modal_title: "Tambah Materi Baru",
           title_label: "Judul Materi",
           title_placeholder: "Contoh: Dasar HTML & Tag",
@@ -932,25 +1034,32 @@
           delete_confirm_title: "Hapus Materi?",
           delete_confirm_desc: "Apakah Anda yakin ingin menghapus materi",
           delete_confirm_warning: "Tindakan ini tidak dapat dibatalkan.",
-          helper_code_subject: 'Gunakan heading <code class="materi-inline-code">## Judul Bagian</code> untuk memisahkan bagian (contoh: Pengertian, Tujuan Pembelajaran, Contoh, Kesimpulan), dan blok <code class="materi-inline-code">&#x60;&#x60;&#x60;html ... &#x60;&#x60;&#x60;</code> untuk kode yang otomatis diberi syntax highlighting. Materi tanpa format ini tetap bisa disimpan &mdash; akan ditampilkan sebagai paragraf biasa.',
-          helper_general_subject: 'Kategori ini adalah mapel Umum (bukan IT/Pemrograman), jadi <strong>tidak perlu</strong> menyertakan blok kode. Gunakan heading <code class="materi-inline-code">## Judul Bagian</code> untuk memisahkan bagian seperti Pengertian, Contoh Soal, Penyelesaian, dan Kesimpulan &mdash; materi akan ditampilkan sebagai teks/paragraf biasa.',
-          edit_helper_code_subject: 'Gunakan heading <code class="materi-inline-code">## Judul Bagian</code> untuk memisahkan bagian, dan blok <code class="materi-inline-code">&#x60;&#x60;&#x60;html ... &#x60;&#x60;&#x60;</code> untuk kode.',
-          edit_helper_general_subject: 'Kategori ini adalah mapel Umum (bukan IT/Pemrograman) &mdash; sebaiknya isi materi tanpa blok kode, cukup heading <code class="materi-inline-code">## Judul Bagian</code> dan penjelasan/contoh soal dalam bentuk teks biasa.',
+          helper_code_subject:
+            'Gunakan heading <code class="materi-inline-code">## Judul Bagian</code> untuk memisahkan bagian (contoh: Pengertian, Tujuan Pembelajaran, Contoh, Kesimpulan), dan blok <code class="materi-inline-code">&#x60;&#x60;&#x60;html ... &#x60;&#x60;&#x60;</code> untuk kode yang otomatis diberi syntax highlighting. Materi tanpa format ini tetap bisa disimpan &mdash; akan ditampilkan sebagai paragraf biasa.',
+          helper_general_subject:
+            'Kategori ini adalah mapel Umum (bukan IT/Pemrograman), jadi <strong>tidak perlu</strong> menyertakan blok kode. Gunakan heading <code class="materi-inline-code">## Judul Bagian</code> untuk memisahkan bagian seperti Pengertian, Contoh Soal, Penyelesaian, dan Kesimpulan &mdash; materi akan ditampilkan sebagai teks/paragraf biasa.',
+          edit_helper_code_subject:
+            'Gunakan heading <code class="materi-inline-code">## Judul Bagian</code> untuk memisahkan bagian, dan blok <code class="materi-inline-code">&#x60;&#x60;&#x60;html ... &#x60;&#x60;&#x60;</code> untuk kode.',
+          edit_helper_general_subject:
+            'Kategori ini adalah mapel Umum (bukan IT/Pemrograman) &mdash; sebaiknya isi materi tanpa blok kode, cukup heading <code class="materi-inline-code">## Judul Bagian</code> dan penjelasan/contoh soal dalam bentuk teks biasa.',
         },
         quiz: {
           title: "Kelola Quiz ❓",
           subtitle: "Buat dan kelola quiz untuk siswa.",
           questions_title: "Soal:",
-          questions_subtitle: "Kelola pertanyaan pilihan ganda dan kunci jawaban kuis ini.",
+          questions_subtitle:
+            "Kelola pertanyaan pilihan ganda dan kunci jawaban kuis ini.",
           add_question_button: "Tambah Soal",
           answer_key: "Kunci",
           questions_count: "Jumlah Soal",
           no_quiz_empty_title: "Belum ada quiz yang dibuat.",
-          no_quiz_empty_desc: "Buat quiz pertama untuk mulai menguji pemahaman siswa.",
+          no_quiz_empty_desc:
+            "Buat quiz pertama untuk mulai menguji pemahaman siswa.",
           add_quiz_button: "Tambah Quiz",
           add_quiz_modal_title: "Buat Quiz Baru",
           not_linked_option: "— Tidak ditautkan (quiz berdiri sendiri) —",
-          link_materi_helper: "Jika dipilih, kuis ini tampil di detail materi tersebut dan di daftar Quiz & Latihan siswa dengan judul yang sama.",
+          link_materi_helper:
+            "Jika dipilih, kuis ini tampil di detail materi tersebut dan di daftar Quiz & Latihan siswa dengan judul yang sama.",
           status_label: "Status Kuis",
           edit_modal_title: "Edit Informasi Kuis",
           add_question_modal_title: "Tambah Soal Kuis",
@@ -969,12 +1078,15 @@
           option_d: "Pilihan D",
           delete_confirm_title: "Hapus Quiz?",
           delete_confirm_desc: "Apakah Anda yakin ingin menghapus kuis",
-          delete_confirm_warning: "Semua data nilai progres siswa yang berkaitan juga terpengaruh.",
+          delete_confirm_warning:
+            "Semua data nilai progres siswa yang berkaitan juga terpengaruh.",
           delete_question_confirm_title: "Hapus Soal Kuis?",
-          delete_question_confirm_desc: "Apakah Anda yakin ingin menghapus soal ini dari kuis? Tindakan ini tidak dapat dibatalkan.",
+          delete_question_confirm_desc:
+            "Apakah Anda yakin ingin menghapus soal ini dari kuis? Tindakan ini tidak dapat dibatalkan.",
         },
         kategori: {
-          subtitle: "Kelola kategori mata pelajaran untuk struktur pembelajaran.",
+          subtitle:
+            "Kelola kategori mata pelajaran untuk struktur pembelajaran.",
           add_kategori: "Tambah Kategori",
           search_placeholder: "Cari nama kategori...",
           add_modal_title: "Tambah Kategori",
@@ -986,13 +1098,15 @@
           group_it: "IT / Teknologi (menampilkan penjelasan + code + praktik)",
           group_mtk: "Matematika (menampilkan rumus + contoh soal)",
           group_umum: "Umum (penjelasan biasa)",
-          group_helper: "Menentukan bagaimana materi pada kategori ini akan ditampilkan ke siswa.",
+          group_helper:
+            "Menentukan bagaimana materi pada kategori ini akan ditampilkan ke siswa.",
           edit_modal_title: "Edit Kategori",
           delete_confirm_title: "Hapus Kategori?",
           delete_confirm_desc: "Apakah Anda yakin ingin menghapus kategori",
           delete_confirm_warning: "Tindakan ini tidak dapat dibatalkan.",
           empty_title: "Belum Ada Kategori",
-          empty_desc: "Kategori baru belum ditambahkan. Silakan klik tombol \"Tambah Kategori\" di pojok kanan atas.",
+          empty_desc:
+            'Kategori baru belum ditambahkan. Silakan klik tombol "Tambah Kategori" di pojok kanan atas.',
         },
         user: {
           subtitle: "Kelola hak akses dan profil akun Siswa dan Guru.",
@@ -1022,7 +1136,8 @@
         },
         laporan: {
           title: "Laporan Pengaduan Siswa (SiLapor)",
-          subtitle: "Tindak lanjuti laporan, keluhan, dan saran fasilitas dari siswa secara real-time.",
+          subtitle:
+            "Tindak lanjuti laporan, keluhan, dan saran fasilitas dari siswa secara real-time.",
           print_pdf: "Cetak PDF",
           export_csv: "Ekspor CSV",
           search_placeholder: "Cari judul, pelapor, atau isi deskripsi...",
@@ -1041,7 +1156,8 @@
         },
         pengaturan: {
           title: "Pengaturan Akun",
-          subtitle: "Perbarui profil pribadi, alamat email, dan kata sandi Anda.",
+          subtitle:
+            "Perbarui profil pribadi, alamat email, dan kata sandi Anda.",
           my_profile: "Profil Saya",
           change_password_title: "Ubah Kata Sandi",
           new_password: "Kata Sandi Baru",
@@ -1085,7 +1201,8 @@
           confirm_delete: "Ya, Hapus",
           action: "Aksi",
           link_materi: "Tautkan ke Materi/Kursus (opsional)",
-          link_materi_desc: "Jika dipilih, quiz ini akan otomatis muncul di detail materi tersebut DAN di daftar Quiz & Latihan siswa dengan judul yang sama.",
+          link_materi_desc:
+            "Jika dipilih, quiz ini akan otomatis muncul di detail materi tersebut DAN di daftar Quiz & Latihan siswa dengan judul yang sama.",
           linked_to: 'tertaut ke "{title}"',
           not_linked: "belum tertaut",
           edit: "Edit",
@@ -1161,12 +1278,12 @@
         register: "Sign Up",
         logout: "Log Out",
         menu: "Menu",
-          courses: "Courses",
+        courses: "Courses",
       },
 
-        site: {
-          title: "EduCare"
-        },
+      site: {
+        title: "EduCare",
+      },
       hero: {
         badge: "Digital School Platform",
         title:
@@ -1290,14 +1407,62 @@
           meta: "category: cleanliness · 3 days ago",
         },
         status: {
-          in_review: "in-review",
-          open: "open",
-          resolved: "resolved",
+          in_review: "In review",
+          open: "Open",
+          resolved: "Resolved",
         },
         issues_label: "Incoming Reports",
         header_open_count: "3 open",
         admin_note:
           "The admin dashboard monitors every report until it's fully resolved.",
+
+        // ===== ADDITIONS FOR SILAPOR (EN) =====
+        howitworks: {
+          badge: "How It Works",
+          title: "Three simple steps, from reporting to resolution.",
+          desc: "SiLapor is designed so students don't need to wonder who to report to. Just create a report, and the system will forward it to the right people.",
+          step1: {
+            title: "Choose category & write your report",
+            desc: "Select the appropriate category — damaged facility, bullying, cleanliness, or lost items — then briefly describe the situation. Photos can be attached as supporting evidence.",
+          },
+          step2: {
+            title: "Report is automatically forwarded",
+            desc: "The system assigns a ticket number and forwards the report to the teacher or school admin responsible for that category.",
+          },
+          step3: {
+            title: "Track status like a ticket",
+            desc: "Report status changes from Open → In review → Resolved, and students can track it anytime via the dashboard.",
+          },
+        },
+        categories: {
+          badge: "Report Categories",
+          title: "Every type of issue has its own handling path.",
+          desc: "Categories ensure reports go directly to the right person, without needing to explain who to contact.",
+        },
+        status_legend: {
+          title: "Report status meanings",
+          open_desc: "New report just submitted and not yet reviewed.",
+          in_review_desc:
+            "Report is being reviewed or followed up by the authorized party.",
+          resolved_desc: "The issue has been handled and the report is closed.",
+        },
+        faq: {
+          badge: "FAQ",
+          title: "Frequently asked questions about SiLapor",
+          q1: "Will my identity be known when I report?",
+          a1: "For sensitive categories like bullying, the reporter's identity is kept confidential and only accessible to the guidance counselor or authorized personnel handling the case.",
+          q2: "How long does it usually take for a report to be followed up?",
+          a2: "Handling time depends on the category and urgency. Any status change will be visible on the dashboard, so students can track progress.",
+          q3: "Can I attach a photo as evidence?",
+          a3: "Yes. Attaching photos is highly recommended, especially for facility damage or cleanliness reports, so the school can better understand the actual condition.",
+          q4: "What happens after the report status is 'Resolved'?",
+          a4: "The report will be saved in your history and can be reopened anytime. If the issue recurs, students are advised to create a new report so it's recorded as a separate case.",
+        },
+        cta: {
+          title: "Have a problem at school? Don't keep it to yourself.",
+          desc: "Report it via SiLapor and let the school help resolve it.",
+          button: "Submit a Report Now",
+        },
       },
       alur: {
         badge: "How It Works",
@@ -1422,7 +1587,7 @@
         kontak: "Contact Us - EduCare",
         about: "About EduCare — Profile",
         dashboard_siswa: "Student Dashboard • EduCare",
-        dashboard_guru: "Teacher Dashboard • EduCare"
+        dashboard_guru: "Teacher Dashboard • EduCare",
       },
       kontak: {
         badge: "Contact Us",
@@ -1583,7 +1748,8 @@
           tab_it: "IT / Technology",
           tab_umum: "General",
           search_placeholder: "🔎 Search materials...",
-          no_quiz_category: "Quizzes for this material category are not available yet. Please contact your teacher.",
+          no_quiz_category:
+            "Quizzes for this material category are not available yet. Please contact your teacher.",
         },
         quiz: {
           title: "Quiz & Practice ❓",
@@ -1592,14 +1758,16 @@
           all_quiz_title: "🧑‍🏫 All Quizzes",
           manage_questions: "Manage Questions",
           no_questions_title: "No Questions Yet",
-          no_questions_desc: "Please add the first question for this quiz by clicking the \"Add Question\" button.",
+          no_questions_desc:
+            'Please add the first question for this quiz by clicking the "Add Question" button.',
           submit_button: "Submit",
           prev_question: "← Previous",
           next_question: "Next →",
           submit_quiz: "📤 Finish & Submit",
           time_up: "Time's up! Your answers will be submitted automatically.",
           confirm_submit: "Are you sure you want to submit your answers?",
-          confirm_leave_progress: "Your answer progress hasn't been submitted and will be lost if you leave now. Are you sure you want to return to the dashboard?",
+          confirm_leave_progress:
+            "Your answer progress hasn't been submitted and will be lost if you leave now. Are you sure you want to return to the dashboard?",
           confirm_leave: "Are you sure you want to leave this quiz?",
           back_to_dashboard: "← Back to Dashboard",
         },
@@ -1661,10 +1829,34 @@
             xpNext: "{n} XP to reach Level {level}",
             xpFraction: "{have} / {need} XP",
             calTitle: "📅 Calendar",
-            months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            months: [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ],
             days: ["S", "M", "T", "W", "T", "F", "S"],
           },
-          levelNames: ["Beginner", "Explorer", "Learner", "Intermediate", "Advanced", "Pro", "Expert", "Master", "Elite", "Legend"],
+          levelNames: [
+            "Beginner",
+            "Explorer",
+            "Learner",
+            "Intermediate",
+            "Advanced",
+            "Pro",
+            "Expert",
+            "Master",
+            "Elite",
+            "Legend",
+          ],
           levelBadges: ["🌱 Beginner", "🌿 Intermediate", "🌳 Advanced"],
           lbYou: "(You)",
           time: {
@@ -1675,15 +1867,16 @@
             daysAgo: "{n} days ago",
           },
           enroll: {
-            activity: "Enrolled in \"{title}\"",
-            activityAlt: "Enrolled in \"{title}\"",
+            activity: 'Enrolled in "{title}"',
+            activityAlt: 'Enrolled in "{title}"',
             toast: "Successfully enrolled!",
             notifTitle: "New Course!",
-            notifMsg: "You've enrolled in \"{title}\". Happy learning!",
+            notifMsg: 'You\'ve enrolled in "{title}". Happy learning!',
           },
           mycourses: {
             emptyTitle: "No completed courses yet",
-            emptyDesc: "Courses appear here after you complete them 100%. Keep learning first!",
+            emptyDesc:
+              "Courses appear here after you complete them 100%. Keep learning first!",
             continue: "▶️ Continue Learning",
             progress100: "100% complete",
             lessonsCount: "{n} lessons",
@@ -1696,13 +1889,16 @@
             scriptPlaceholder: "📄 Step Script",
             close: "Close ✕",
             scriptHeading: "📖 Practice Script: {title}",
-            stepsIntro: "Here are the practice steps to understand this material:",
-            step1: "Open the <strong>Coding Playground</strong> (button below).",
+            stepsIntro:
+              "Here are the practice steps to understand this material:",
+            step1:
+              "Open the <strong>Coding Playground</strong> (button below).",
             step2: "Copy the example code and modify it as directed.",
             step3: "Run the code and observe the output.",
             step4: "Try varying the values or the code structure.",
             tip: "Tip:",
-            tipText: "Use <code>console.log()</code> to debug in the playground. Run the code above to see the simulated output!",
+            tipText:
+              "Use <code>console.log()</code> to debug in the playground. Run the code above to see the simulated output!",
             playgroundBtn: "💻 Coding Playground",
             aiBtn: "🤖 Ask AI Tutor",
             noteBtn: "🔖 Save Note",
@@ -1717,24 +1913,29 @@
             reply: "Reply",
             noActiveDesc: "Enroll in a course first to start learning!",
             noLessonsTitle: "This course has no lessons yet",
-            noLessonsDesc: "Course \"{title}\" has no lessons yet. Please contact your teacher or check other materials.",
+            noLessonsDesc:
+              'Course "{title}" has no lessons yet. Please contact your teacher or check other materials.',
           },
           complete: {
             bonus: "Bonus chapter complete!",
-            courseDone: "🎉 Congrats! Course complete! +500 XP & Certificate earned!",
+            courseDone:
+              "🎉 Congrats! Course complete! +500 XP & Certificate earned!",
             lessonDone: "✅ Lesson complete! +30 XP",
             allDone: "🎉 You've finished every lesson!",
             allDoneToast: "🎉 All materials & courses are done!",
-            lessonReason: "Completed a lesson in \"{title}\"",
-            courseReason: "Completed the course \"{title}\"",
+            lessonReason: 'Completed a lesson in "{title}"',
+            courseReason: 'Completed the course "{title}"',
             chapterTitle: "Chapter Complete!",
-            chapterMsg: "You completed a chapter in \"{title}\". Keep going!",
+            chapterMsg: 'You completed a chapter in "{title}". Keep going!',
             courseTitle: "Course Complete!",
-            courseMsg: "Congrats! You completed \"{title}\". Your certificate is ready!",
+            courseMsg:
+              'Congrats! You completed "{title}". Your certificate is ready!',
           },
           playground: {
-            onlyIT: "Coding Playground is only available for IT/Programming courses.",
-            noLesson: "This course has no lessons to practice yet. Add lessons from the teacher dashboard.",
+            onlyIT:
+              "Coding Playground is only available for IT/Programming courses.",
+            noLesson:
+              "This course has no lessons to practice yet. Add lessons from the teacher dashboard.",
             placeholder: "// Write code here...",
             title: "💻 Coding Playground: {title}",
             hint: "Write or modify the code below, then click Run.",
@@ -1748,7 +1949,8 @@
           ai: {
             prompt: "Ask something about this material (AI Tutor):",
             thinking: "AI Tutor is processing...",
-            reply: "🤖 AI: Thanks for your question! Make sure to practice the code every time you finish reading.",
+            reply:
+              "🤖 AI: Thanks for your question! Make sure to practice the code every time you finish reading.",
           },
           forum: {
             postTitle: "Discussion topic title:",
@@ -1765,12 +1967,15 @@
             noActiveDesc: "Enroll in a course first to take its quiz!",
             viewMateri: "📘 View Materials",
             guruSoal: "{n} questions · Teacher Quiz",
-            guruRetake: "You've taken this quiz. Retake it to improve your score.",
-            guruAvailable: "Created by your teacher. Take it on the dedicated page to submit your score.",
+            guruRetake:
+              "You've taken this quiz. Retake it to improve your score.",
+            guruAvailable:
+              "Created by your teacher. Take it on the dedicated page to submit your score.",
             retake: "Retake →",
             start: "Start →",
             gnotAvailableTitle: "Quiz not available",
-            gnotAvailableDesc: "A quiz for this course hasn't been prepared yet.",
+            gnotAvailableDesc:
+              "A quiz for this course hasn't been prepared yet.",
             estTime: "{n} questions · about 10 minutes",
             timer: "TIME",
             reset: "🔄 Reset",
@@ -1789,7 +1994,8 @@
           },
           certs: {
             emptyTitle: "No certificates yet",
-            emptyDesc: "Complete a course to earn an official EduCare certificate.",
+            emptyDesc:
+              "Complete a course to earn an official EduCare certificate.",
             viewMyCourses: "📚 View My Courses",
             stillNeeds: "Complete {n}% more for this certificate",
             stillNeedsShort: "Complete {n}% more",
@@ -1805,7 +2011,8 @@
             emptyDesc: "Start learning to get progress notifications!",
             allRead: "All notifications marked as read.",
             welcomeTitle: "Welcome!",
-            welcomeMsg: "Welcome to EduCare! Start your learning journey from scratch today.",
+            welcomeMsg:
+              "Welcome to EduCare! Start your learning journey from scratch today.",
           },
           profile: {
             roleFallback: "Active Student",
@@ -1821,7 +2028,7 @@
               ["100 XP", "Collect 100 XP"],
               ["Enrolled", "Enroll in your first course"],
               ["Speed Learner", "Finish a course in <30 days"],
-              ["Top Scorer", "100% quiz score"]
+              ["Top Scorer", "100% quiz score"],
             ],
             earned: "✓ EARNED",
           },
@@ -1857,7 +2064,8 @@
             colorAmber: "Amber",
             colorPink: "Pink",
             colorCyan: "Cyan",
-            saved: "Profile updated locally! Contact admin for official data changes. ✅",
+            saved:
+              "Profile updated locally! Contact admin for official data changes. ✅",
             themeChanged: "Theme changed!",
           },
           materi: {
@@ -1872,13 +2080,14 @@
             prev: "← Previous Material",
             next: "Next Material →",
             quizCta: "🎯 Ready to Test Yourself?",
-            quizCtaDesc: "Take <strong>{quiz}</strong> to test this material and earn your score.",
+            quizCtaDesc:
+              "Take <strong>{quiz}</strong> to test this material and earn your score.",
             takeQuiz: "Take Quiz →",
             back: "← Back to Materials",
             studied: "✓ Studied",
-            openedXp: "Opened material \"{title}\"",
+            openedXp: 'Opened material "{title}"',
             openedNotifTitle: "Material Studied",
-            openedNotifMsg: "You opened the material \"{title}\".",
+            openedNotifMsg: 'You opened the material "{title}".',
             published: "Published: {date}",
           },
           levelup: {
@@ -1891,7 +2100,8 @@
       belajar: {
         materi: {
           page_title: "Learning Materials",
-          page_subtitle: "Explore materials, watch video modules, and complete quizzes to earn a certificate.",
+          page_subtitle:
+            "Explore materials, watch video modules, and complete quizzes to earn a certificate.",
           class_label: "Class 9A • Student",
           tab_mtk: "Mathematics",
           search_ph: "Search materials...",
@@ -1900,7 +2110,8 @@
           text_module: "Text Module",
           start_learning: "Start Learning",
           empty_title: "No Learning Materials",
-          empty_desc: "No learning materials have been uploaded by teachers yet.",
+          empty_desc:
+            "No learning materials have been uploaded by teachers yet.",
         },
         detail: {
           back_to_materi: "Back to Materials",
@@ -1917,7 +2128,8 @@
           quiz_cta_desc_prefix: "Complete the interactive quiz",
           quiz_cta_desc_min: "(at least",
           quiz_cta_desc_questions: "questions)",
-          quiz_cta_desc_suffix: "to test this material and claim your learning certificate.",
+          quiz_cta_desc_suffix:
+            "to test this material and claim your learning certificate.",
           take_quiz_now: "Take the Quiz Now",
           copied: "Copied!",
         },
@@ -1969,8 +2181,10 @@
           },
         },
         quiz: {
-          no_questions: "This quiz does not have questions yet. Please contact your teacher.",
-          no_valid_questions: "This quiz has no valid questions yet. Please contact your teacher.",
+          no_questions:
+            "This quiz does not have questions yet. Please contact your teacher.",
+          no_valid_questions:
+            "This quiz has no valid questions yet. Please contact your teacher.",
         },
       },
 
@@ -2040,7 +2254,8 @@
           video_active: "Video Active",
           text_only: "Text Only",
           empty_title: "No Materials Yet",
-          empty_desc: "Digital learning materials are not yet available. Please click the \"Add Material\" button to upload.",
+          empty_desc:
+            'Digital learning materials are not yet available. Please click the "Add Material" button to upload.',
           add_modal_title: "Add New Material",
           title_label: "Material Title",
           title_placeholder: "Example: HTML Basics & Tags",
@@ -2057,25 +2272,32 @@
           delete_confirm_title: "Delete Material?",
           delete_confirm_desc: "Are you sure you want to delete this material",
           delete_confirm_warning: "This action cannot be undone.",
-          helper_code_subject: 'Use heading <code class="materi-inline-code">## Section Title</code> to separate sections (e.g., Definition, Learning Objectives, Examples, Conclusion), and block <code class="materi-inline-code">&#x60;&#x60;&#x60;html ... &#x60;&#x60;&#x60;</code> for code with automatic syntax highlighting. Materials without this format can still be saved and will be displayed as plain paragraphs.',
-          helper_general_subject: 'This category is a General subject (not IT/Programming), so there\'s <strong>no need</strong> to include code blocks. Use heading <code class="materi-inline-code">## Section Title</code> to separate sections like Definition, Practice Problems, Solutions, and Conclusion — materials will be displayed as plain text/paragraphs.',
-          edit_helper_code_subject: 'Use heading <code class="materi-inline-code">## Section Title</code> to separate sections, and block <code class="materi-inline-code">&#x60;&#x60;&#x60;html ... &#x60;&#x60;&#x60;</code> for code.',
-          edit_helper_general_subject: 'This category is a General subject (not IT/Programming) — you should fill the material without code blocks, just use heading <code class="materi-inline-code">## Section Title</code> and explanations/practice problems in plain text format.',
+          helper_code_subject:
+            'Use heading <code class="materi-inline-code">## Section Title</code> to separate sections (e.g., Definition, Learning Objectives, Examples, Conclusion), and block <code class="materi-inline-code">&#x60;&#x60;&#x60;html ... &#x60;&#x60;&#x60;</code> for code with automatic syntax highlighting. Materials without this format can still be saved and will be displayed as plain paragraphs.',
+          helper_general_subject:
+            'This category is a General subject (not IT/Programming), so there\'s <strong>no need</strong> to include code blocks. Use heading <code class="materi-inline-code">## Section Title</code> to separate sections like Definition, Practice Problems, Solutions, and Conclusion — materials will be displayed as plain text/paragraphs.',
+          edit_helper_code_subject:
+            'Use heading <code class="materi-inline-code">## Section Title</code> to separate sections, and block <code class="materi-inline-code">&#x60;&#x60;&#x60;html ... &#x60;&#x60;&#x60;</code> for code.',
+          edit_helper_general_subject:
+            'This category is a General subject (not IT/Programming) — you should fill the material without code blocks, just use heading <code class="materi-inline-code">## Section Title</code> and explanations/practice problems in plain text format.',
         },
         quiz: {
           title: "Manage Quizzes ❓",
           subtitle: "Create and manage quizzes for students.",
           questions_title: "Questions:",
-          questions_subtitle: "Manage multiple-choice questions and answer keys for this quiz.",
+          questions_subtitle:
+            "Manage multiple-choice questions and answer keys for this quiz.",
           add_question_button: "Add Question",
           answer_key: "Key",
           questions_count: "Question Count",
           no_quiz_empty_title: "No quizzes have been created yet.",
-          no_quiz_empty_desc: "Create your first quiz to start testing student understanding.",
+          no_quiz_empty_desc:
+            "Create your first quiz to start testing student understanding.",
           add_quiz_button: "Add Quiz",
           add_quiz_modal_title: "Create New Quiz",
           not_linked_option: "— Not linked (standalone quiz) —",
-          link_materi_helper: "If selected, this quiz appears in that material's detail page and in the student's Quiz & Practice list with the same title.",
+          link_materi_helper:
+            "If selected, this quiz appears in that material's detail page and in the student's Quiz & Practice list with the same title.",
           status_label: "Quiz Status",
           edit_modal_title: "Edit Quiz Information",
           add_question_modal_title: "Add Quiz Question",
@@ -2094,9 +2316,11 @@
           option_d: "Option D",
           delete_confirm_title: "Delete Quiz?",
           delete_confirm_desc: "Are you sure you want to delete this quiz",
-          delete_confirm_warning: "All related student progress and grade data will also be affected.",
+          delete_confirm_warning:
+            "All related student progress and grade data will also be affected.",
           delete_question_confirm_title: "Delete Quiz Question?",
-          delete_question_confirm_desc: "Are you sure you want to delete this question from the quiz? This action cannot be undone.",
+          delete_question_confirm_desc:
+            "Are you sure you want to delete this question from the quiz? This action cannot be undone.",
         },
         kategori: {
           subtitle: "Manage subject categories for learning structure.",
@@ -2111,16 +2335,19 @@
           group_it: "IT / Technology (shows explanation + code + practice)",
           group_mtk: "Mathematics (shows formulas + example problems)",
           group_umum: "General (normal explanation)",
-          group_helper: "Determines how materials in this category are displayed to students.",
+          group_helper:
+            "Determines how materials in this category are displayed to students.",
           edit_modal_title: "Edit Category",
           delete_confirm_title: "Delete Category?",
           delete_confirm_desc: "Are you sure you want to delete this category",
           delete_confirm_warning: "This action cannot be undone.",
           empty_title: "No Categories Yet",
-          empty_desc: "No new categories have been added. Please click the \"Add Category\" button in the top right corner.",
+          empty_desc:
+            'No new categories have been added. Please click the "Add Category" button in the top right corner.',
         },
         user: {
-          subtitle: "Manage access rights and account profiles for Students and Teachers.",
+          subtitle:
+            "Manage access rights and account profiles for Students and Teachers.",
           add_user: "Add User",
           search_placeholder: "Search name or email...",
           all_roles: "All Roles",
@@ -2140,17 +2367,20 @@
           edit_modal_title: "Edit User",
           new_password: "New Password",
           leave_blank: "(Leave blank if unchanged)",
-          new_password_placeholder: "Enter a new password if you want to change it",
+          new_password_placeholder:
+            "Enter a new password if you want to change it",
           delete_confirm_title: "Delete User?",
           delete_confirm_desc: "Are you sure you want to delete this user",
           delete_confirm_warning: "This action cannot be undone.",
         },
         laporan: {
           title: "Student Complaint Reports (SiLapor)",
-          subtitle: "Follow up on student reports, complaints, and facility suggestions in real time.",
+          subtitle:
+            "Follow up on student reports, complaints, and facility suggestions in real time.",
           print_pdf: "Print PDF",
           export_csv: "Export CSV",
-          search_placeholder: "Search title, reporter, or description content...",
+          search_placeholder:
+            "Search title, reporter, or description content...",
           all_status: "All Statuses",
           status_pending: "Pending",
           status_process: "In Progress",
@@ -2158,7 +2388,8 @@
           category_label: "Category:",
           follow_up: "Follow Up",
           empty_title: "No Reports",
-          empty_desc: "No complaint reports have been submitted by students yet.",
+          empty_desc:
+            "No complaint reports have been submitted by students yet.",
           follow_up_modal_title: "Report Follow Up",
           report_title_label: "Report Title",
           change_status_label: "Change Report Status",
@@ -2166,7 +2397,8 @@
         },
         pengaturan: {
           title: "Account Settings",
-          subtitle: "Update your personal profile, email address, and password.",
+          subtitle:
+            "Update your personal profile, email address, and password.",
           my_profile: "My Profile",
           change_password_title: "Change Password",
           new_password: "New Password",
@@ -2210,7 +2442,8 @@
           confirm_delete: "Yes, Delete",
           action: "Action",
           link_materi: "Link to Materi/Course (optional)",
-          link_materi_desc: "If selected, this quiz will automatically appear in that materi's detail page AND in the student's Quiz & Latihan list with the same title.",
+          link_materi_desc:
+            "If selected, this quiz will automatically appear in that materi's detail page AND in the student's Quiz & Latihan list with the same title.",
           linked_to: 'linked to "{title}"',
           not_linked: "not linked",
           edit: "Edit",
@@ -2265,7 +2498,8 @@
           questions_word: "questions",
           add_lesson: "+ Add Lesson",
           question_word: "QUESTION",
-          correct_answer_hint: "Select the radio button next to the correct answer",
+          correct_answer_hint:
+            "Select the radio button next to the correct answer",
           min_chapter_error: "Add at least 1 chapter with 1 lesson.",
           footer_rights: "EduCare. All rights reserved.",
         },
@@ -2357,7 +2591,7 @@
     document.dispatchEvent(
       new CustomEvent("educare:languagechange", {
         detail: { lang: lang },
-      })
+      }),
     );
   }
 
@@ -2395,7 +2629,10 @@
     buttons.forEach(function (btn) {
       (function (b) {
         try {
-          console.debug("i18n: registering lang button", b.getAttribute("data-lang-set"));
+          console.debug(
+            "i18n: registering lang button",
+            b.getAttribute("data-lang-set"),
+          );
         } catch (e) {}
         b.addEventListener("click", function () {
           var langTo = b.getAttribute("data-lang-set");
@@ -2409,13 +2646,13 @@
 
     // Fallback: event delegation so clicks on any element with `data-lang-set`
     // are handled even if buttons are moved/hidden or other scripts close the menu.
-    document.addEventListener('click', function (ev) {
+    document.addEventListener("click", function (ev) {
       try {
-        var el = ev.target.closest && ev.target.closest('[data-lang-set]');
+        var el = ev.target.closest && ev.target.closest("[data-lang-set]");
         if (!el) return;
-        var langTo = el.getAttribute('data-lang-set');
+        var langTo = el.getAttribute("data-lang-set");
         if (!langTo) return;
-        console.debug('i18n: delegated lang click', langTo);
+        console.debug("i18n: delegated lang click", langTo);
         setLang(langTo);
       } catch (e) {
         // ignore
